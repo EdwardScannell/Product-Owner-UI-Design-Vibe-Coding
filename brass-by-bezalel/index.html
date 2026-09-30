@@ -1,0 +1,1247 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Brass by Bezalel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap">
+<style>
+/* ============================================================
+   BRASS BY BEZALEL — a storefront for handwrought brass
+   Ground: fine linen cream. Ink: Tyrian purple. Thread: scarlet.
+   One invisible sun lives in the plaque, upper-left: every
+   highlight enters from the top-left, every shadow falls away
+   to the lower-right. This page commits to a single, lit world.
+   ============================================================ */
+:root{
+  color-scheme: only light;
+  --linen:#f5ecd7;
+  --linen-2:#efe3c6;
+  --linen-3:#e7d8b4;
+  --ink:#46165e;
+  --ink-soft:#6d3f8a;
+  --scarlet:#a31d1d;
+  --brass-dk:#5f4310;
+  --brass-mid:#7c5c1e;
+  --brass:#a57d28;
+  --brass-lt:#d9ab45;
+  --brass-pale:#e7c469;
+  --brass-hi:#f8e9b8;
+  --lilac:#cdb0ec;
+  --lilac-soft:rgba(205,176,236,.55);
+  --sun:rgba(255,240,186,.9);
+  --sun-soft:rgba(255,240,186,.5);
+  --shadow:rgba(74,48,8,.22);
+  --f-body:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --f-disp:"Cinzel Decorative","Cinzel",Georgia,serif;
+  --f-caps:"Cinzel",Georgia,serif;
+  --f-fell:"IM Fell English","Cormorant Garamond",Georgia,serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--f-body);
+  font-size:19px;
+  line-height:1.65;
+  color:var(--ink);
+  background-color:var(--linen);
+  background-image:
+    radial-gradient(1100px 720px at 6% -4%, rgba(255,243,198,.6), rgba(255,243,198,0) 62%),
+    repeating-linear-gradient(0deg, rgba(120,90,40,.032) 0 1px, rgba(120,90,40,0) 1px 3px),
+    repeating-linear-gradient(90deg, rgba(120,90,40,.026) 0 1px, rgba(120,90,40,0) 1px 3px);
+  overflow-x:hidden;
+}
+::selection{background:var(--ink);color:var(--brass-hi)}
+a{color:var(--ink)}
+button{font:inherit}
+:focus-visible{outline:2px dashed var(--brass);outline-offset:3px}
+.grain{
+  position:fixed;inset:0;z-index:130;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.18 0 0 0 0 0.06 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.defsonly{position:absolute;width:0;height:0;overflow:hidden}
+
+/* ---------- masthead: plaque + antique-brass nav ---------- */
+.masthead{
+  position:relative;z-index:60;
+  display:flex;align-items:center;gap:1.4rem 2rem;flex-wrap:wrap;
+  padding:1.15rem clamp(1rem,4vw,2.6rem) 1rem;
+  background:linear-gradient(180deg, rgba(240,228,196,.85), rgba(240,228,196,0));
+  border-bottom:1px solid rgba(140,105,40,.4);
+}
+.masthead::after{
+  content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;
+  background:linear-gradient(90deg, rgba(140,105,40,0), rgba(165,125,40,.55) 12%, rgba(165,125,40,.55) 88%, rgba(140,105,40,0));
+}
+.plaque{
+  display:inline-flex;flex-direction:column;align-items:center;gap:.28rem;
+  padding:.9rem 1.7rem .78rem;border-radius:6px;text-decoration:none;
+  border:1px solid #55400e;
+  background-image:
+    radial-gradient(circle at 9px 9px, #f4df9d 0 2.5px, #6b4c12 3.5px, rgba(0,0,0,0) 5px),
+    radial-gradient(circle at calc(100% - 9px) 9px, #f4df9d 0 2.5px, #6b4c12 3.5px, rgba(0,0,0,0) 5px),
+    radial-gradient(circle at 9px calc(100% - 9px), #e9cf8d 0 2.5px, #5f4310 3.5px, rgba(0,0,0,0) 5px),
+    radial-gradient(circle at calc(100% - 9px) calc(100% - 9px), #e9cf8d 0 2.5px, #5f4310 3.5px, rgba(0,0,0,0) 5px),
+    linear-gradient(150deg,#93701f 0%,#c2963a 18%,#e9c96e 32%,#b58a2c 52%,#7c5c1e 74%,#a57d28 100%);
+  box-shadow:
+    inset 0 0 0 3px rgba(255,240,190,.32),
+    inset 0 0 0 4px rgba(70,50,10,.55),
+    inset 3px 3px 7px rgba(255,246,205,.6),
+    inset -4px -5px 10px rgba(58,40,6,.5),
+    7px 10px 24px var(--shadow);
+  position:relative;overflow:hidden;isolation:isolate;
+  transition:filter .35s ease, transform .35s ease;
+}
+.plaque:hover{filter:brightness(1.07)}
+.plaque:active{transform:translateY(1px)}
+.plaque::after{
+  content:"";position:absolute;inset:-40% -30%;z-index:2;pointer-events:none;
+  background:linear-gradient(115deg, rgba(255,252,225,0) 42%, rgba(255,252,225,.75) 50%, rgba(255,252,225,0) 58%);
+  mix-blend-mode:screen;transform:translateX(-130%) ;
+  animation:plaquesweep 7s ease-in-out infinite;
+}
+@keyframes plaquesweep{
+  0%,52%{transform:translateX(-130%)}
+  72%,100%{transform:translateX(130%)}
+}
+.plaque .name{
+  font-family:var(--f-disp);font-weight:900;line-height:1;
+  font-size:clamp(1.3rem,2.7vw,1.85rem);letter-spacing:.03em;white-space:nowrap;
+  background:linear-gradient(100deg,#7c5a16 0%,#8a6420 14%,#e7c469 30%,#fff8dc 41%,#f0d27a 47%,#9c752a 60%,#c99e3f 74%,#fff3c0 88%,#a57d28 100%);
+  background-size:230% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 1px 0 rgba(255,249,216,.6)) drop-shadow(0 -1px 0 rgba(50,34,4,.85));
+  animation:gleam 7s ease-in-out infinite;
+}
+@keyframes gleam{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+.plaque .sub{
+  font-family:var(--f-caps);font-size:.55rem;font-weight:600;
+  letter-spacing:.44em;text-transform:uppercase;text-indent:.44em;
+  color:#4c370c;text-shadow:0 1px 0 rgba(255,242,200,.55);
+}
+.tabnav{margin-left:auto;display:flex;flex-wrap:wrap;gap:.4rem .45rem;align-items:center;justify-content:flex-end}
+.tabnav a{
+  position:relative;text-decoration:none;border-radius:3px;
+  font-family:var(--f-caps);font-weight:600;font-size:.73rem;
+  letter-spacing:.13em;text-transform:uppercase;
+  padding:.52rem .7rem .44rem;
+  background:linear-gradient(160deg, rgba(124,92,30,.17), rgba(124,92,30,.05));
+  border:1px solid rgba(95,67,16,.38);
+  box-shadow:
+    inset 1px 1px 0 rgba(255,244,202,.55),
+    inset -1px -1px 0 rgba(64,45,8,.28),
+    2px 3px 7px rgba(74,48,8,.13);
+  transition:box-shadow .3s ease, border-color .3s ease, transform .2s ease;
+}
+.tabnav a span{
+  background:linear-gradient(175deg,#b08a33 0%,#7c5c1e 38%,#59400e 62%,#96712a 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 1px 0 rgba(255,246,208,.5));
+  transition:filter .3s ease;
+}
+.tabnav a:hover{transform:translateY(-1px);border-color:rgba(138,100,32,.7);
+  box-shadow:inset 2px 2px 3px rgba(255,246,208,.65), inset -2px -2px 4px rgba(64,45,8,.3), 3px 5px 10px rgba(74,48,8,.18)}
+.tabnav a:hover span,.tabnav a.active span{
+  background:linear-gradient(175deg,#f6df95 0%,#d9ab45 34%,#8a6420 68%,#e7c469 100%);
+  -webkit-background-clip:text;background-clip:text;
+}
+.tabnav a.active{border-color:#8a6420;
+  box-shadow:inset 2px 2px 5px rgba(255,246,208,.6), inset -2px -2px 5px rgba(64,45,8,.34), 1px 2px 5px rgba(74,48,8,.12)}
+.tabnav a.active::after{
+  content:"";position:absolute;left:16%;right:16%;bottom:-3px;height:2px;
+  background:linear-gradient(90deg,transparent,var(--brass-lt),transparent);
+}
+
+/* ---------- shared page furniture ---------- */
+main{max-width:1180px;margin:0 auto;padding:0 clamp(1rem,4vw,2.4rem) 3rem;position:relative;z-index:2}
+.page:not([hidden]){animation:pagein .55s ease}
+@keyframes pagein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.kicker{
+  font-family:var(--f-caps);font-weight:600;font-size:.67rem;
+  letter-spacing:.4em;text-transform:uppercase;text-indent:.4em;
+  color:var(--scarlet);text-align:center;margin:2.6rem 0 .3rem;
+}
+.pagetitle{
+  font-family:var(--f-disp);font-weight:700;text-align:center;text-wrap:balance;
+  font-size:clamp(1.75rem,3.8vw,2.6rem);line-height:1.18;color:var(--ink);
+  margin:.2rem 0 .4rem;
+}
+.ornrule{display:flex;align-items:center;gap:.9rem;max-width:520px;margin:.9rem auto 1.6rem}
+.ornrule::before,.ornrule::after{content:"";flex:1;height:1px}
+.ornrule::before{background:linear-gradient(90deg,transparent,rgba(138,100,32,.65))}
+.ornrule::after{background:linear-gradient(90deg,rgba(138,100,32,.65),transparent)}
+.ornrule svg{width:22px;height:22px;flex:none}
+.prose{max-width:64ch;margin:0 auto;font-size:1.16rem}
+.prose p{margin:0 0 1.1em}
+.centerprose{text-align:center}
+
+/* ---------- hero: the tumbling ring ---------- */
+.hero{position:relative;display:flex;flex-direction:column;align-items:center;padding:2rem 0 .6rem}
+.hero .kicker{margin:0 0 1.4rem}
+.scene{
+  width:min(430px,76vw);aspect-ratio:1;position:relative;
+  perspective:1150px;z-index:2;
+}
+.stage3d{position:absolute;inset:0;transform-style:preserve-3d}
+.tilt{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateZ(-7deg)}
+.tumbler{position:absolute;inset:0;transform-style:preserve-3d;animation:tumble 4s linear infinite}
+@keyframes tumble{from{transform:rotateX(0deg)}to{transform:rotateX(360deg)}}
+.ringlayer{
+  position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 205deg,
+    #5f4310,#8a6420 8%,#d9ab45 16%,#f8ecc0 24%,#e2b955 33%,#93701f 45%,
+    #6b4c12 55%,#a57d28 66%,#e7c469 76%,#fdf6d3 84%,#b58a2c 92%,#5f4310);
+  -webkit-mask:radial-gradient(closest-side, rgba(0,0,0,0) calc(100% - 58px), #000 calc(100% - 56px));
+  mask:radial-gradient(closest-side, rgba(0,0,0,0) calc(100% - 58px), #000 calc(100% - 56px));
+}
+.jewelstage{position:absolute;inset:0;transform:translateZ(.4px);display:grid;place-items:center}
+.heropiece{
+  grid-area:1/1;width:47%;aspect-ratio:1;position:relative;
+  display:grid;place-items:center;opacity:0;
+  animation:jewelcycle 32s linear infinite;
+  animation-delay:calc(var(--i) * 8s);
+}
+@keyframes jewelcycle{
+  0%{opacity:0}2.6%{opacity:1}21.4%{opacity:1}25%{opacity:0}100%{opacity:0}
+}
+.heropiece .halo{
+  position:absolute;inset:-26%;border-radius:50%;z-index:-1;
+  background:radial-gradient(circle, rgba(205,176,236,.55), rgba(205,176,236,.2) 46%, rgba(205,176,236,0) 72%);
+  filter:blur(7px);
+}
+.heropiece svg{
+  width:100%;height:100%;
+  filter:
+    drop-shadow(0 0 13px rgba(205,176,236,.8))
+    drop-shadow(-3px -3px 9px rgba(255,240,186,.55))
+    drop-shadow(7px 9px 10px rgba(74,48,8,.3));
+}
+.sunkiss{
+  position:absolute;left:-5%;top:-6%;width:58%;height:58%;z-index:6;pointer-events:none;
+  background:radial-gradient(circle at 32% 30%, rgba(255,247,208,.95), rgba(255,240,186,.38) 46%, rgba(255,240,186,0) 70%);
+  mix-blend-mode:screen;filter:blur(4px);
+  animation:sunbreathe 9s ease-in-out infinite;
+}
+@keyframes sunbreathe{0%,100%{opacity:.82}50%{opacity:1}}
+.heroshadow{
+  width:min(320px,54vw);height:26px;margin:-26px 0 0 56px;border-radius:50%;
+  background:radial-gradient(closest-side, rgba(74,48,8,.34), rgba(74,48,8,0) 72%);
+  filter:blur(5px);
+  animation:shadowpulse 2s ease-in-out infinite alternate;
+}
+@keyframes shadowpulse{from{transform:scaleX(.72);opacity:.75}to{transform:scaleX(1);opacity:1}}
+.motto{
+  font-family:var(--f-fell);font-style:italic;font-size:1.2rem;
+  color:var(--ink-soft);text-align:center;margin:1.5rem 0 0;
+}
+
+/* ---------- the cases (carousel) ---------- */
+.underglass{margin-top:2.6rem}
+.caroWrap{position:relative;max-width:1020px;margin:0 auto;padding:0 44px}
+.caseviewport{position:relative;height:492px;overflow:visible}
+.caseslot{
+  position:absolute;top:0;width:288px;
+  transition:left .7s cubic-bezier(.22,.8,.28,1), opacity .5s ease, transform .7s cubic-bezier(.22,.8,.28,1);
+}
+.caseslot.offstage{opacity:0;pointer-events:none;transform:translateY(16px) scale(.94)}
+.vitrine{position:relative;height:312px}
+.pedestal{
+  position:absolute;bottom:0;left:7%;right:7%;height:58px;border-radius:4px;
+  background:linear-gradient(160deg,#eee0bc,#cdbb8e);
+  border:1px solid #ab9257;
+  box-shadow:
+    inset 2px 3px 6px rgba(255,248,216,.85),
+    inset -3px -4px 8px rgba(90,65,20,.3),
+    8px 11px 20px var(--shadow);
+}
+.pedestal::after{
+  content:"";position:absolute;left:6px;right:6px;top:7px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg, rgba(138,100,32,.1), rgba(217,171,69,.85) 18%, rgba(248,233,184,.95) 30%, rgba(165,125,40,.7) 60%, rgba(138,100,32,.15));
+}
+.jewelmount{
+  position:absolute;left:0;right:0;bottom:66px;display:flex;justify-content:center;
+  transition:filter .6s ease, transform .6s ease;
+  filter:drop-shadow(-2px -2px 6px rgba(255,240,186,.45)) drop-shadow(6px 8px 9px rgba(74,48,8,.3));
+}
+.jewelmount svg{width:172px;height:172px}
+.belljar{
+  position:absolute;left:13%;right:13%;top:4px;bottom:46px;
+  border-radius:48% 48% 12px 12px / 32% 32% 8px 8px;
+  background:linear-gradient(115deg,
+    rgba(255,255,255,.5) 4%, rgba(255,255,255,.09) 24%,
+    rgba(233,224,250,.07) 55%, rgba(205,176,236,.16) 100%);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:
+    0 0 17px 2px rgba(205,176,236,.6),
+    0 0 3px rgba(205,176,236,.9),
+    inset 0 0 24px rgba(205,176,236,.32),
+    inset 2px 3px 8px rgba(255,246,206,.8),
+    inset -3px -5px 12px rgba(120,90,160,.15),
+    10px 15px 26px rgba(74,48,8,.17);
+  -webkit-backdrop-filter:blur(1.2px) saturate(1.04);
+  backdrop-filter:blur(1.2px) saturate(1.04);
+  transition:opacity .65s ease, filter .65s ease, transform .65s ease;
+}
+.belljar::before{
+  content:"";position:absolute;left:11%;top:7%;width:17%;height:54%;
+  background:linear-gradient(105deg, rgba(255,255,255,.8), rgba(255,255,255,0));
+  border-radius:50%;transform:rotate(13deg);filter:blur(1px);
+}
+.belljar::after{
+  content:"";position:absolute;left:50%;top:-9px;width:15px;height:15px;margin-left:-7px;border-radius:50%;
+  background:radial-gradient(circle at 34% 28%, #f8e9b8, #a57d28 55%, #5f4310);
+  box-shadow:1px 2px 4px rgba(74,48,8,.4);
+}
+.vitrine:hover .belljar,.vitrine:focus-within .belljar{opacity:0;filter:blur(12px);transform:translateY(-8px) scale(1.05)}
+.vitrine:hover .jewelmount,.vitrine:focus-within .jewelmount{
+  transform:translateY(-3px);
+  filter:brightness(1.27) saturate(1.16)
+    drop-shadow(-5px -5px 12px rgba(255,240,186,.95))
+    drop-shadow(-2px -2px 28px rgba(255,226,132,.65))
+    drop-shadow(8px 11px 11px rgba(74,48,8,.36));
+}
+.vitrine:hover .pedestal{box-shadow:
+  inset 3px 4px 7px rgba(255,250,224,.95), inset -3px -4px 8px rgba(90,65,20,.3), 8px 11px 22px var(--shadow)}
+.casemeta{margin-top:1rem;display:flex;flex-direction:column;align-items:center;gap:.34rem;text-align:center}
+.price{font-family:var(--f-caps);font-weight:700;font-size:1.22rem;letter-spacing:.05em;color:var(--scarlet)}
+.price small{font-size:.58rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-top:.1rem}
+.madeby{font-family:var(--f-caps);font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.btn-details{
+  margin-top:.35rem;cursor:pointer;position:relative;border-radius:999px;
+  font-family:var(--f-caps);font-weight:700;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;text-indent:.24em;
+  color:#332305;padding:.56rem 1.55rem .5rem;
+  background:linear-gradient(165deg,#eecd77 0%,#c2963a 40%,#8a6420 78%,#a57d28 100%);
+  border:1px solid #55400e;
+  box-shadow:
+    inset 1px 2px 3px rgba(255,248,214,.85),
+    inset -2px -3px 5px rgba(64,45,8,.42),
+    4px 6px 13px var(--shadow);
+  transition:transform .16s ease, filter .25s ease;
+}
+.btn-details:hover{filter:brightness(1.1)}
+.btn-details:active{transform:scale(.94)}
+.btn-details::after{
+  content:"";position:absolute;inset:-4px;border-radius:999px;pointer-events:none;
+  border:2px solid rgba(217,171,69,.95);opacity:0;
+}
+.btn-details.pulse::after{animation:ringpulse .5s ease-out}
+@keyframes ringpulse{0%{opacity:.95;transform:scale(.92)}100%{opacity:0;transform:scale(1.55)}}
+.caro-arrow{
+  position:absolute;top:36%;z-index:8;width:46px;height:46px;border-radius:50%;cursor:pointer;
+  font-family:var(--f-caps);font-size:1.05rem;line-height:1;color:#3b2806;
+  background:linear-gradient(150deg,#eecd77,#a57d28 62%,#7c5c1e);
+  border:1px solid #55400e;
+  box-shadow:inset 1px 2px 3px rgba(255,248,214,.8), inset -2px -3px 5px rgba(64,45,8,.4), 4px 6px 12px var(--shadow);
+  transition:filter .25s ease, transform .16s ease;
+}
+.caro-arrow:hover{filter:brightness(1.12)}
+.caro-arrow:active{transform:scale(.92)}
+.caro-arrow.prev{left:-10px}
+.caro-arrow.next{right:-10px}
+.caro-dots{display:flex;gap:.55rem;justify-content:center;margin-top:1.2rem}
+.caro-dots i{
+  width:9px;height:9px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #e7c469, #7c5c1e 75%);
+  opacity:.4;transition:.3s;
+}
+.caro-dots i.on{opacity:1;box-shadow:0 0 9px rgba(217,171,69,.85)}
+
+/* ---------- house note ---------- */
+.housenote{margin:3.4rem auto 0;max-width:60ch;text-align:center;font-size:1.16rem}
+.housenote .links{margin-top:1rem;display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap}
+.ghostlink{
+  display:inline-block;text-decoration:none;border-radius:999px;
+  font-family:var(--f-caps);font-weight:600;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;text-indent:.22em;
+  padding:.55rem 1.4rem .48rem;border:1px solid rgba(138,100,32,.55);
+  background:rgba(238,205,119,.09);
+  box-shadow:inset 1px 1px 2px rgba(255,246,208,.5), 2px 3px 8px rgba(74,48,8,.1);
+  transition:.3s;
+}
+.ghostlink span{
+  background:linear-gradient(175deg,#a57d28,#6b4c12 60%,#93701f);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.ghostlink:hover{border-color:#a57d28;background:rgba(238,205,119,.2);transform:translateY(-1px)}
+.ghostlink:hover span{background:linear-gradient(175deg,#e7c469,#a57d28 55%,#d9ab45);-webkit-background-clip:text;background-clip:text}
+
+/* ---------- piece pages ---------- */
+.piecepage{display:grid;grid-template-columns:minmax(300px,5fr) minmax(280px,4fr);gap:clamp(1.6rem,4vw,3rem);align-items:start;margin-top:1.4rem}
+.viewer3d{--ry:0deg;position:relative}
+.viewer{
+  position:relative;width:100%;aspect-ratio:1/.98;perspective:1050px;
+  cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;
+}
+.viewer.grabbing{cursor:grabbing}
+.spinstack{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(7deg) rotateY(var(--ry))}
+.spinstack .lyr{position:absolute;inset:9%}
+.spinstack .lyr svg{width:100%;height:100%}
+.viewer .sunplate{
+  position:absolute;left:-2%;top:-3%;width:52%;height:52%;z-index:6;pointer-events:none;
+  background:radial-gradient(circle at 32% 30%, rgba(255,247,208,.85), rgba(255,240,186,.3) 46%, rgba(255,240,186,0) 70%);
+  mix-blend-mode:screen;filter:blur(4px);
+}
+.reflection{
+  aspect-ratio:1/.3;margin-top:-4%;pointer-events:none;position:relative;overflow:hidden;opacity:.32;
+  transform:scaleY(-1);
+  -webkit-mask-image:linear-gradient(to bottom, transparent 30%, rgba(0,0,0,.65) 100%);
+  mask-image:linear-gradient(to bottom, transparent 30%, rgba(0,0,0,.65) 100%);
+  filter:blur(1px) saturate(.85);
+}
+.reflection .viewer{position:absolute;left:0;right:0;bottom:2%;cursor:default;pointer-events:none}
+.draghint{
+  text-align:center;font-family:var(--f-caps);font-size:.6rem;font-weight:600;
+  letter-spacing:.3em;text-transform:uppercase;text-indent:.3em;color:var(--ink-soft);
+  opacity:.8;margin-top:.4rem;
+}
+.placard .catline{font-family:var(--f-caps);font-size:.66rem;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--scarlet);margin:0 0 .4rem}
+.piecename{font-family:var(--f-disp);font-weight:700;font-size:clamp(1.6rem,3vw,2.15rem);line-height:1.15;color:var(--ink);margin:0 0 .9rem;text-wrap:balance}
+.pricerow{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:.6rem}
+.bigprice{font-family:var(--f-caps);font-weight:700;font-size:1.7rem;color:var(--scarlet);letter-spacing:.04em}
+.oneofone{
+  font-family:var(--f-caps);font-size:.58rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;text-indent:.3em;
+  color:#4c370c;padding:.42rem .8rem .36rem;border-radius:3px;
+  background:linear-gradient(150deg,#e9c96e,#b58a2c 60%,#93701f);
+  border:1px solid #55400e;
+  box-shadow:inset 1px 1px 2px rgba(255,248,214,.8), inset -1px -2px 3px rgba(64,45,8,.4), 3px 4px 9px rgba(74,48,8,.18);
+}
+.craftrow{display:flex;align-items:center;gap:.6rem;font-family:var(--f-caps);font-size:.76rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.craftrow svg{width:21px;height:21px;flex:none}
+.artisansays{
+  margin:1.5rem 0 0;padding:.2rem 0 .2rem 1.5rem;position:relative;
+  border-left:2px solid rgba(163,29,29,.4);
+  font-family:var(--f-fell);font-style:italic;font-size:1.16rem;line-height:1.78;color:#4b2560;
+}
+.artisansays::before{
+  content:"“";font-family:var(--f-disp);font-style:normal;font-size:2.1rem;line-height:1;
+  position:absolute;left:.35rem;top:-.15rem;color:var(--scarlet);opacity:.85;
+}
+.artisansays p{margin:0 0 .8em}
+.artisansays p:last-child{margin-bottom:0}
+.finishdate{
+  margin-top:1.2rem;font-family:var(--f-caps);font-size:.7rem;font-weight:600;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);
+  display:flex;align-items:center;gap:.7rem;
+}
+.finishdate::before{content:"";width:34px;height:1px;background:linear-gradient(90deg,rgba(138,100,32,.7),transparent)}
+.bookrow{margin-top:1.6rem;display:flex;gap:1rem;flex-wrap:wrap}
+.forgenote{
+  margin:3.2rem auto 0;max-width:620px;padding:1.3rem 1.6rem;text-align:center;border-radius:6px;
+  border:1px dashed rgba(107,76,18,.45);background:rgba(236,224,196,.5);
+  font-family:var(--f-fell);font-style:italic;font-size:1.05rem;color:var(--ink-soft);
+}
+.forgenote b{font-family:var(--f-caps);font-style:normal;font-weight:600;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--scarlet);display:block;margin-bottom:.35rem}
+
+/* ---------- artisans ---------- */
+.verse{
+  font-family:var(--f-fell);font-style:italic;text-align:center;
+  font-size:1.28rem;line-height:1.7;color:var(--ink);
+  max-width:44ch;margin:1.8rem auto .4rem;
+}
+.verse cite{
+  display:block;font-family:var(--f-caps);font-style:normal;font-size:.64rem;font-weight:600;
+  letter-spacing:.34em;text-transform:uppercase;color:var(--scarlet);margin-top:.7rem;
+}
+.artisangrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:1.7rem;margin-top:2.6rem}
+.artisancard{
+  text-align:center;padding:1.9rem 1.4rem 1.6rem;border-radius:8px;
+  background:linear-gradient(170deg, rgba(240,228,198,.75), rgba(233,218,180,.4));
+  border:1px solid rgba(140,105,40,.32);
+  box-shadow:inset 2px 2px 6px rgba(255,246,214,.65), 7px 9px 20px rgba(74,48,8,.13);
+}
+.medallion{
+  width:92px;height:112px;margin:0 auto 1rem;border-radius:50%/46%;position:relative;
+  background:
+    radial-gradient(circle at 32% 26%, rgba(255,248,214,.9), rgba(255,248,214,0) 40%),
+    linear-gradient(150deg,#c2963a,#93701f 45%,#6b4c12 80%,#8a6420);
+  border:1px solid #55400e;
+  box-shadow:inset 2px 3px 5px rgba(255,246,208,.75), inset -3px -4px 7px rgba(58,40,6,.5), 6px 8px 16px var(--shadow);
+  display:grid;place-items:center;
+}
+.medallion::after{content:"";position:absolute;inset:7px;border-radius:50%/46%;border:1px solid rgba(76,55,12,.65);box-shadow:inset 1px 1px 2px rgba(255,246,208,.5)}
+.medallion b{
+  font-family:var(--f-disp);font-weight:900;font-size:2.5rem;color:#4c370c;
+  text-shadow:0 1px 0 rgba(255,246,208,.6), 0 -1px 1px rgba(40,28,4,.6);
+}
+.artisanname{font-family:var(--f-disp);font-weight:700;font-size:1.18rem;color:var(--ink);margin:.2rem 0 .15rem}
+.artisanrole{font-family:var(--f-caps);font-size:.62rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--scarlet)}
+.artisanmark{margin:.7rem auto .4rem;width:26px;height:26px;opacity:.9}
+.artisanbio{font-size:1.02rem;line-height:1.62;color:#54306b;margin:.4rem 0 .8rem}
+.marklegend{font-family:var(--f-caps);font-size:.56rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
+.artisanlink{font-family:var(--f-caps);font-size:.64rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7c5c1e;text-decoration:none;border-bottom:1px solid rgba(138,100,32,.5);padding-bottom:2px}
+.artisanlink:hover{color:#a57d28;border-color:#d9ab45}
+
+/* ---------- booking ---------- */
+.legend{display:flex;gap:1.6rem;justify-content:center;flex-wrap:wrap;margin:1.4rem 0 .4rem;font-family:var(--f-caps);font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.legend i{display:inline-block;width:13px;height:13px;border-radius:3px;vertical-align:-2px;margin-right:.45rem;border:1px solid rgba(107,76,18,.4)}
+.legend .l-open i{background:linear-gradient(160deg,rgba(248,240,216,.95),rgba(236,222,188,.95))}
+.legend .l-taken i{background:repeating-linear-gradient(45deg, rgba(120,95,40,.16) 0 5px, rgba(120,95,40,.05) 5px 10px)}
+.legend .l-sealed i{background:radial-gradient(circle at 34% 30%, #c33f33, #7e1410 72%);border-color:#5e0e08}
+.scrollx{overflow-x:auto;padding-bottom:.5rem}
+.weekgrid{display:grid;grid-template-columns:70px repeat(5,minmax(108px,1fr));gap:7px;min-width:660px;margin-top:1rem}
+.daylabel{text-align:center;padding:.45rem 0 .55rem}
+.daylabel b{display:block;font-family:var(--f-caps);font-weight:600;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+.daylabel span{font-family:var(--f-fell);font-style:italic;font-size:.95rem;color:var(--ink-soft)}
+.hourlabel{
+  display:flex;align-items:center;justify-content:flex-end;padding-right:.6rem;
+  font-family:var(--f-caps);font-size:.62rem;font-weight:600;letter-spacing:.12em;color:var(--ink-soft);
+  font-variant-numeric:tabular-nums;
+}
+.slot{
+  height:44px;border-radius:4px;cursor:pointer;
+  font-family:var(--f-caps);font-size:.56rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#6b4c12;
+  background:linear-gradient(160deg, rgba(248,240,216,.95), rgba(236,222,188,.95));
+  border:1px solid rgba(107,76,18,.38);
+  box-shadow:inset 1px 1px 2px rgba(255,248,220,.85), inset -1px -2px 3px rgba(90,65,20,.16);
+  transition:.22s ease;
+}
+.slot:hover:not(:disabled){border-color:#a57d28;transform:translateY(-1px);box-shadow:0 0 11px rgba(217,171,69,.55), inset 1px 1px 2px rgba(255,248,220,.9)}
+.slot:disabled{cursor:default}
+.slot.taken{
+  color:rgba(107,76,18,.5);box-shadow:none;
+  background:repeating-linear-gradient(45deg, rgba(120,95,40,.14) 0 6px, rgba(120,95,40,.04) 6px 12px);
+}
+.slot.picked{outline:2px solid var(--brass-lt);box-shadow:0 0 13px rgba(217,171,69,.75)}
+.slot.sealed{
+  position:relative;color:var(--scarlet);
+  background:linear-gradient(160deg,#f4e7c9,#e9d9b2);
+  border-color:rgba(163,29,29,.5);
+}
+.slot.sealed::after{
+  content:"";position:absolute;right:5px;top:5px;width:15px;height:15px;border-radius:50%;
+  background:radial-gradient(circle at 34% 28%, #d24a3e, #8e1a12 62%, #5e0e08);
+  box-shadow:0 1px 3px rgba(0,0,0,.4), inset 0 0 0 2px rgba(255,255,255,.12), inset 2px 2px 3px rgba(255,180,160,.4);
+}
+.bookform{
+  margin:2rem auto 0;max-width:680px;padding:1.7rem 1.8rem;border-radius:8px;
+  border:1px solid rgba(140,105,40,.4);
+  background:rgba(240,229,201,.7);
+  box-shadow:inset 2px 3px 7px rgba(255,246,214,.6), 8px 11px 22px rgba(74,48,8,.12);
+}
+.chosenline{font-family:var(--f-fell);font-style:italic;font-size:1.18rem;color:var(--ink);margin:0 0 1.1rem}
+.bookfields{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.bookfields label{display:flex;flex-direction:column;gap:.35rem;font-family:var(--f-caps);font-size:.6rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
+.bookfields label.wide{grid-column:1/-1}
+.bookfields input,.bookfields select{
+  font-family:var(--f-body);font-size:1.08rem;color:var(--ink);
+  background:rgba(255,252,240,.9);border:1px solid rgba(107,76,18,.45);border-radius:4px;
+  padding:.55rem .8rem;box-shadow:inset 1px 2px 3px rgba(120,90,40,.12);
+}
+.bookfields input:focus,.bookfields select:focus{outline:none;border-color:#a57d28;box-shadow:0 0 9px rgba(217,171,69,.5), inset 1px 2px 3px rgba(120,90,40,.1)}
+.bookfields input.err{animation:shake .4s ease;border-color:var(--scarlet)}
+@keyframes shake{0%,100%{transform:none}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.sealbtn{
+  margin-top:1.2rem;cursor:pointer;border-radius:999px;
+  font-family:var(--f-caps);font-weight:700;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;text-indent:.28em;
+  color:#f8e9b8;padding:.72rem 1.9rem .64rem;
+  background:radial-gradient(circle at 35% 28%, #c33f33, #8e1a12 62%, #6a0f09);
+  border:1px solid #4c0a06;
+  box-shadow:inset 1px 2px 4px rgba(255,190,170,.45), inset -2px -3px 6px rgba(40,4,2,.55), 4px 6px 14px rgba(74,48,8,.3);
+  transition:transform .16s ease, filter .25s ease;
+}
+.sealbtn:hover{filter:brightness(1.12)}
+.sealbtn:active{transform:scale(.95)}
+.sealednote{font-family:var(--f-fell);font-style:italic;font-size:1.16rem;color:var(--ink)}
+.demonote{
+  margin-top:1.6rem;text-align:center;
+  font-family:var(--f-caps);font-size:.56rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);opacity:.8;
+}
+
+/* ---------- contact ---------- */
+.dropcap::first-letter{
+  font-family:var(--f-disp);font-weight:700;font-size:3.6em;float:left;
+  line-height:.8;padding:.08em .14em 0 0;color:var(--scarlet);
+}
+.ledger{margin:2.2rem auto 0;max-width:660px;display:grid;grid-template-columns:max-content 1fr;gap:.95rem 2.2rem}
+.ledger dt{
+  font-family:var(--f-caps);font-size:.64rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--scarlet);padding-top:.4rem;text-align:right;
+}
+.ledger dd{margin:0;font-size:1.14rem;color:var(--ink)}
+.ledger dd .sub2{display:block;font-size:.95rem;color:var(--ink-soft)}
+.ledger a{color:#7c5c1e;text-decoration:none;border-bottom:1px solid rgba(138,100,32,.5)}
+.ledger a:hover{color:#a57d28;border-color:#d9ab45}
+
+/* ---------- footer ---------- */
+.footer{
+  margin-top:4.5rem;position:relative;z-index:2;
+  border-top:1px solid rgba(140,105,40,.45);
+  background:linear-gradient(180deg, rgba(236,224,196,.92), rgba(224,207,168,.96));
+  box-shadow:inset 0 2px 0 rgba(255,246,208,.75), inset 0 14px 26px -20px rgba(74,48,8,.4);
+  padding:2.4rem clamp(1rem,4vw,2.6rem) 1.5rem;
+}
+.footgrid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:2.2rem}
+.footname{
+  font-family:var(--f-disp);font-weight:900;font-size:1.15rem;
+  background:linear-gradient(100deg,#6b4c12,#c99e3f 35%,#f4df9d 50%,#93701f 70%,#b58a2c);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 1px 0 rgba(255,249,216,.5));
+}
+.footmotto{font-family:var(--f-fell);font-style:italic;font-size:1rem;color:var(--ink-soft);margin:.5rem 0 .8rem}
+.footverse{font-family:var(--f-fell);font-style:italic;font-size:.92rem;color:#6b4c12;max-width:34ch}
+.foothead{font-family:var(--f-caps);font-size:.6rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--scarlet);margin:0 0 .8rem}
+.footlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.42rem}
+.footlist a{font-family:var(--f-caps);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.footlist a:hover{color:#a57d28}
+.footsmall{font-size:.98rem;color:var(--ink);line-height:1.6;margin:0 0 .5rem}
+.footsmall .sub2{color:var(--ink-soft)}
+.footbase{
+  max-width:1180px;margin:2rem auto 0;padding-top:1rem;
+  border-top:1px solid rgba(140,105,40,.35);
+  display:flex;justify-content:space-between;gap:.6rem 1.6rem;flex-wrap:wrap;
+  font-family:var(--f-caps);font-size:.58rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:920px){
+  .masthead{flex-direction:column;align-items:center;text-align:center}
+  .tabnav{margin-left:0;justify-content:center}
+  .footgrid{grid-template-columns:1fr;gap:1.8rem}
+}
+@media (max-width:880px){
+  .piecepage{grid-template-columns:1fr}
+  .reflection{display:none}
+  .ledger{grid-template-columns:1fr;gap:.2rem 0}
+  .ledger dt{text-align:left;padding-top:1rem}
+  .bookfields{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:17.5px}
+  .caroWrap{padding:0 40px}
+  .caseviewport{height:472px}
+  .heroshadow{margin-left:26px}
+}
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .tumbler{animation:none;transform:rotateX(68deg)}
+  .heropiece{animation:none}
+  .page:not([hidden]){animation:none}
+  .heropiece[style*="--i:0"]{opacity:1}
+  .plaque::after,.sunkiss,.heroshadow{animation:none}
+  .plaque .name{animation:none}
+  .page{animation:none}
+  .caseslot{transition:opacity .3s ease}
+}
+</style>
+<svg class="defsonly" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="gBrass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdf3cd"/>
+      <stop offset=".28" stop-color="#e2b955"/>
+      <stop offset=".55" stop-color="#a57d28"/>
+      <stop offset=".8" stop-color="#7c5c1e"/>
+      <stop offset="1" stop-color="#5f4310"/>
+    </linearGradient>
+    <linearGradient id="gBrassEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8a6420"/>
+      <stop offset=".5" stop-color="#5f4310"/>
+      <stop offset="1" stop-color="#3e2c08"/>
+    </linearGradient>
+    <radialGradient id="gSapphire" cx=".38" cy=".3" r=".9">
+      <stop offset="0" stop-color="#dbe7ff"/>
+      <stop offset=".18" stop-color="#6d8fe0"/>
+      <stop offset=".45" stop-color="#2b4fa8"/>
+      <stop offset=".78" stop-color="#16265f"/>
+      <stop offset="1" stop-color="#0c1638"/>
+    </radialGradient>
+  </defs>
+
+  <symbol id="g-ring" viewBox="0 0 200 200">
+    <ellipse cx="100" cy="114" rx="70" ry="76" fill="none" stroke="rgba(62,44,8,.5)" stroke-width="2"/>
+    <ellipse cx="100" cy="114" rx="60" ry="66" fill="none" stroke="url(#gBrass)" stroke-width="19"/>
+    <ellipse cx="100" cy="114" rx="50" ry="56" fill="none" stroke="rgba(62,44,8,.55)" stroke-width="3"/>
+    <g fill="none" stroke-linecap="round">
+      <path d="M46 88 a70 74 0 0 1 10 -18" stroke="rgba(255,248,214,.5)" stroke-width="6"/>
+      <path d="M40 120 a70 74 0 0 1 2 -20" stroke="rgba(60,42,8,.3)" stroke-width="6"/>
+      <path d="M48 152 a70 74 0 0 0 -6 -22" stroke="rgba(255,248,214,.28)" stroke-width="6"/>
+      <path d="M96 180 a70 74 0 0 1 -26 -12" stroke="rgba(60,42,8,.32)" stroke-width="6"/>
+      <path d="M140 168 a70 74 0 0 1 -22 10" stroke="rgba(255,248,214,.3)" stroke-width="6"/>
+      <path d="M158 130 a70 74 0 0 1 -8 24" stroke="rgba(60,42,8,.3)" stroke-width="6"/>
+      <path d="M156 96 a70 74 0 0 1 4 20" stroke="rgba(255,248,214,.35)" stroke-width="6"/>
+    </g>
+    <ellipse cx="100" cy="46" rx="31" ry="23" fill="url(#gBrass)" stroke="#4c370c" stroke-width="2"/>
+    <ellipse cx="100" cy="46" rx="24" ry="17" fill="none" stroke="rgba(76,55,12,.75)" stroke-width="1.4"/>
+    <g stroke="#4c370c" stroke-width="1.7" stroke-linecap="round">
+      <line x1="100" y1="37" x2="100" y2="55"/>
+      <line x1="91" y1="46" x2="109" y2="46"/>
+      <line x1="94" y1="40" x2="106" y2="52"/>
+      <line x1="106" y1="40" x2="94" y2="52"/>
+    </g>
+    <circle cx="100" cy="46" r="2.1" fill="#4c370c"/>
+    <path d="M52 74 a66 70 0 0 1 26 -24" fill="none" stroke="rgba(255,252,228,.9)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M76 30 a34 24 0 0 1 24 -6" fill="none" stroke="rgba(255,252,228,.85)" stroke-width="3.4" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="g-earrings" viewBox="0 0 200 200">
+    <g id="lanternone">
+      <path d="M62 47 L62 40 C62 26 82 26 82 40 C82 48 74 52 68 50" fill="none" stroke="url(#gBrassEdge)" stroke-width="3.4" stroke-linecap="round"/>
+      <circle cx="62" cy="52" r="4.6" fill="none" stroke="url(#gBrass)" stroke-width="3.4"/>
+      <path fill-rule="evenodd" fill="url(#gBrass)" stroke="#4c370c" stroke-width="1.6" d="M62 58 C47 76 45 98 62 134 C79 98 77 76 62 58 Z M62 74 C58.5 80 58.5 88 62 96 C65.5 88 65.5 80 62 74 Z M55 90 C53 96 53.5 104 56.5 111 C58.5 104 57.5 96 55 90 Z M69 90 C71 96 70.5 104 67.5 111 C65.5 104 66.5 96 69 90 Z"/>
+      <circle cx="62" cy="140" r="5" fill="url(#gBrass)" stroke="#4c370c" stroke-width="1.4"/>
+      <path d="M52 78 C50 86 50 96 54 108" fill="none" stroke="rgba(255,252,228,.8)" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+    <use href="#lanternone" x="76"/>
+  </symbol>
+
+  <symbol id="g-necklace" viewBox="0 0 200 200">
+    <path d="M24 40 C56 106 144 106 176 40" fill="none" stroke="url(#gBrassEdge)" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 4.5"/>
+    <path d="M24 40 C56 106 144 106 176 40" fill="none" stroke="#e7c469" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="7 4.5" stroke-dashoffset="1.5" opacity=".85"/>
+    <path d="M28 44 C36 58 46 70 58 79" fill="none" stroke="rgba(255,252,228,.65)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"/>
+    <ellipse cx="100" cy="94" rx="5" ry="7.5" fill="none" stroke="url(#gBrass)" stroke-width="3.4"/>
+    <ellipse cx="100" cy="128" rx="25" ry="29" fill="url(#gBrass)" stroke="#4c370c" stroke-width="2"/>
+    <ellipse cx="100" cy="128" rx="19" ry="23" fill="#59400e"/>
+    <ellipse cx="100" cy="128" rx="16" ry="20" fill="url(#gSapphire)" stroke="#0c1638" stroke-width="1"/>
+    <ellipse cx="96" cy="121" rx="8.5" ry="10.5" fill="rgba(255,255,255,.13)"/>
+    <ellipse cx="92.5" cy="116" rx="3.4" ry="5" fill="rgba(238,247,255,.9)" transform="rotate(-16 92.5 116)"/>
+    <g stroke="rgba(240,248,255,.9)" stroke-width="1.1" stroke-linecap="round">
+      <line x1="108" y1="139" x2="108" y2="147"/>
+      <line x1="104" y1="143" x2="112" y2="143"/>
+    </g>
+    <path d="M80 111 a25 29 0 0 1 14 -11" fill="none" stroke="rgba(255,252,228,.9)" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="g-bracelet" viewBox="0 0 200 200">
+    <path d="M144 52 A62 62 0 1 0 144 152" fill="none" stroke="url(#gBrass)" stroke-width="21" stroke-linecap="round"/>
+    <path d="M144 52 A62 62 0 1 0 144 152" fill="none" stroke="rgba(62,44,8,.55)" stroke-width="1.8"/>
+    <path d="M138 60 A55 55 0 1 0 138 144" fill="none" stroke="rgba(62,44,8,.22)" stroke-width="1.2"/>
+    <path d="M150 46 A69 69 0 1 0 150 158" fill="none" stroke="rgba(62,44,8,.18)" stroke-width="1.2"/>
+    <circle cx="144" cy="52" r="13" fill="url(#gBrass)" stroke="#4c370c" stroke-width="2"/>
+    <circle cx="144" cy="152" r="13" fill="url(#gBrass)" stroke="#4c370c" stroke-width="2"/>
+    <circle cx="144" cy="52" r="5" fill="none" stroke="rgba(76,55,12,.8)" stroke-width="1.5"/>
+    <circle cx="144" cy="152" r="5" fill="none" stroke="rgba(76,55,12,.8)" stroke-width="1.5"/>
+    <path d="M58 74 A62 62 0 0 1 92 43" fill="none" stroke="rgba(255,252,228,.9)" stroke-width="5.5" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="mk-star" viewBox="0 0 26 26">
+    <g stroke="#7c5c1e" stroke-width="1.6" stroke-linecap="round" fill="none">
+      <line x1="13" y1="4" x2="13" y2="22"/><line x1="4" y1="13" x2="22" y2="13"/>
+      <line x1="7" y1="7" x2="19" y2="19"/><line x1="19" y1="7" x2="7" y2="19"/>
+    </g>
+    <circle cx="13" cy="13" r="2" fill="#7c5c1e"/>
+  </symbol>
+  <symbol id="mk-lantern" viewBox="0 0 26 26">
+    <g stroke="#7c5c1e" stroke-width="1.5" fill="none">
+      <path d="M13 3 C7 10 6.5 16 13 23 C19.5 16 19 10 13 3 Z"/>
+      <path d="M13 8 C11 11 11 15 13 18 C15 15 15 11 13 8 Z"/>
+    </g>
+  </symbol>
+  <symbol id="mk-kettle" viewBox="0 0 26 26">
+    <g stroke="#7c5c1e" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <path d="M6 12 H20 C20 20 6 20 6 12 Z"/>
+      <path d="M9 12 C9 7 17 7 17 12"/>
+      <path d="M20 13 L24 10"/>
+    </g>
+  </symbol>
+  <symbol id="mk-river" viewBox="0 0 26 26">
+    <g stroke="#7c5c1e" stroke-width="1.6" fill="none" stroke-linecap="round">
+      <path d="M3 10 C7 6 11 14 15 10 C18 7 21 11 23 9"/>
+      <path d="M3 17 C7 13 11 21 15 17 C18 14 21 18 23 16"/>
+    </g>
+  </symbol>
+  <symbol id="orn-gem" viewBox="0 0 22 22">
+    <path d="M11 1 L15 11 L11 21 L7 11 Z" fill="url(#gBrass)" stroke="#5f4310" stroke-width="1"/>
+    <path d="M11 1 L15 11 L11 21 Z" fill="rgba(60,42,8,.25)"/>
+  </symbol>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="masthead">
+  <a class="plaque" href="#/" aria-label="Brass by Bezalel — return to the front of the shop">
+    <span class="name">Brass by Bezalel</span>
+    <span class="sub">Handwrought · One of One</span>
+  </a>
+  <nav class="tabnav" aria-label="The shop">
+    <a href="#/rings" data-page="rings"><span>Rings</span></a>
+    <a href="#/earrings" data-page="earrings"><span>Earrings</span></a>
+    <a href="#/necklaces" data-page="necklaces"><span>Necklaces</span></a>
+    <a href="#/bracelets" data-page="bracelets"><span>Bracelets</span></a>
+    <a href="#/artisans" data-page="artisans"><span>About our Artisans</span></a>
+    <a href="#/book" data-page="book"><span>Book an Appointment</span></a>
+    <a href="#/contact" data-page="contact"><span>Contact Us</span></a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="page" id="page-home">
+    <div class="hero">
+      <p class="kicker">The House of Bezalel · Four Benches · One Forge</p>
+      <div class="scene" role="img" aria-label="A great hand-forged brass ring tumbles slowly; within its circle, the season's four works — a signet ring, a pair of pierced earrings, a sapphire necklace, and a cuff — appear in turn, each haloed in pale lilac.">
+        <div class="stage3d">
+          <div class="tilt">
+            <div class="tumbler">
+              <span class="ringlayer" style="transform:translateZ(-10px);filter:brightness(.74)"></span>
+              <span class="ringlayer" style="transform:translateZ(-7.5px);filter:brightness(.79)"></span>
+              <span class="ringlayer" style="transform:translateZ(-5px);filter:brightness(.84)"></span>
+              <span class="ringlayer" style="transform:translateZ(-2.5px);filter:brightness(.9)"></span>
+              <span class="ringlayer" style="transform:translateZ(0px);filter:brightness(.96)"></span>
+              <span class="ringlayer" style="transform:translateZ(2.5px);filter:brightness(1)"></span>
+              <span class="ringlayer" style="transform:translateZ(5px);filter:brightness(1.04)"></span>
+              <span class="ringlayer" style="transform:translateZ(7.5px);filter:brightness(1.07)"></span>
+              <span class="ringlayer" style="transform:translateZ(10px);filter:brightness(1.1)"></span>
+            </div>
+            <div class="jewelstage">
+              <div class="heropiece" style="--i:0"><div class="halo"></div><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#g-ring"/></svg></div>
+              <div class="heropiece" style="--i:1"><div class="halo"></div><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#g-earrings"/></svg></div>
+              <div class="heropiece" style="--i:2"><div class="halo"></div><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#g-necklace"/></svg></div>
+              <div class="heropiece" style="--i:3"><div class="halo"></div><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#g-bracelet"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="sunkiss"></div>
+      </div>
+      <div class="heroshadow" aria-hidden="true"></div>
+      <p class="motto">“Metal remembers the hand that shapes it.”</p>
+    </div>
+
+    <section class="underglass" aria-label="The season's featured pieces, under glass">
+      <p class="kicker">Now Under Glass</p>
+      <h2 class="pagetitle">The Season’s Four</h2>
+      <div class="ornrule" aria-hidden="true"><svg viewBox="0 0 22 22"><use href="#orn-gem"/></svg></div>
+      <div class="caroWrap">
+        <button class="caro-arrow prev" type="button" aria-label="Turn the cases back">❮</button>
+        <div class="caseviewport" id="caseviewport"></div>
+        <button class="caro-arrow next" type="button" aria-label="Turn the cases forward">❯</button>
+      </div>
+      <div class="caro-dots" id="carodots" aria-hidden="true"></div>
+    </section>
+
+    <div class="housenote">
+      <p>We are four artisans and one forge, working brass the old way — drawn, raised, pierced, and planished by hand, sealed in beeswax, and released one piece at a time. Nothing here is twice.</p>
+      <div class="links">
+        <a class="ghostlink" href="#/artisans"><span>About our Artisans</span></a>
+        <a class="ghostlink" href="#/book"><span>Book an Appointment</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="page-rings" hidden></section>
+  <section class="page" id="page-earrings" hidden></section>
+  <section class="page" id="page-necklaces" hidden></section>
+  <section class="page" id="page-bracelets" hidden></section>
+
+  <section class="page" id="page-artisans" hidden>
+    <p class="kicker">About our Artisans</p>
+    <h2 class="pagetitle">Four Pairs of Hands</h2>
+    <div class="ornrule" aria-hidden="true"><svg viewBox="0 0 22 22"><use href="#orn-gem"/></svg></div>
+    <div class="prose centerprose">
+      <p>This house is named for Bezalel son of Uri, son of Hur — the first maker called by name in scripture, filled with the spirit “in wisdom, and in understanding, and in knowledge, and in all manner of workmanship.” We keep a smaller ambition: four benches, one forge, few pieces, and no two alike.</p>
+    </div>
+    <blockquote class="verse">
+      “To devise cunning works, to work in gold, and in silver, and in brass … to work in all manner of workmanship.”
+      <cite>Exodus XXXI · 4–5</cite>
+    </blockquote>
+    <div class="artisangrid" id="artisangrid"></div>
+  </section>
+
+  <section class="page" id="page-book" hidden>
+    <p class="kicker">Book an Appointment</p>
+    <h2 class="pagetitle">Sit with the Maker</h2>
+    <div class="ornrule" aria-hidden="true"><svg viewBox="0 0 22 22"><use href="#orn-gem"/></svg></div>
+    <div class="prose centerprose">
+      <p>Every piece in this house may be held, turned against the light, and argued with — at the very bench where it was made. Choose any open hour below. Each appointment is a full hour, with the artisan themselves, and the kettle will be on.</p>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span class="l-open"><i></i>Open</span>
+      <span class="l-taken"><i></i>Spoken for</span>
+      <span class="l-sealed"><i></i>Held for you</span>
+    </div>
+    <div class="scrollx">
+      <div class="weekgrid" id="weekgrid" role="grid" aria-label="Open hours at the bench, Tuesday through Saturday"></div>
+    </div>
+    <div class="bookform" id="bookform" hidden>
+      <p class="chosenline" id="chosenline"></p>
+      <div class="bookfields" id="bookfields">
+        <label>At the bench of
+          <select id="bkArtisan">
+            <option>Whoever made the piece I love</option>
+            <option>Zipporah Hur — rings &amp; signets</option>
+            <option>Aharon Oholiab — piercework &amp; earrings</option>
+            <option>Naomi Kessler — stones &amp; chains</option>
+            <option>Tobias Faber — forgework &amp; cuffs</option>
+          </select>
+        </label>
+        <label>Your name
+          <input id="bkName" type="text" autocomplete="off" placeholder="As you would have us greet you">
+        </label>
+        <label class="wide">Where a letter may find you
+          <input id="bkMail" type="text" inputmode="email" autocomplete="off" placeholder="post@somewhere.com">
+        </label>
+      </div>
+      <button class="sealbtn" id="sealbtn" type="button">Seal the Hour</button>
+    </div>
+    <p class="demonote">A demonstration ledger — its hours reset with the sun.</p>
+  </section>
+
+  <section class="page" id="page-contact" hidden>
+    <p class="kicker">Contact Us</p>
+    <h2 class="pagetitle">Write, Call, or Come to the Court</h2>
+    <div class="ornrule" aria-hidden="true"><svg viewBox="0 0 22 22"><use href="#orn-gem"/></svg></div>
+    <div class="prose">
+      <p class="dropcap">Whether this is your first hour among our cases or a returning one — thank you. You have looked closely at slow work, and that is a kindness to the hands that made it. Most of what is sold in the world is stamped out by the thousand; you chose to spend your attention on pieces that exist exactly once, and to learn how they came to be.</p>
+      <p>Every work in this house is begun and finished by a single artisan, and each is happiest meeting its wearer across the bench. If a piece has caught you, write to us, telephone, or better still — take an hour and come sit at the forge.</p>
+    </div>
+    <dl class="ledger">
+      <dt>By telephone</dt>
+      <dd>(617) 555-0170<span class="sub2">Tuesday through Saturday, during bench hours</span></dd>
+      <dt>By correspondence</dt>
+      <dd><a href="mailto:letters@brassbybezalel.com">letters@brassbybezalel.com</a><span class="sub2">Answered within two days, in order of arrival</span></dd>
+      <dt>The workshop</dt>
+      <dd>No. 7 Lantern Court, Boston, Massachusetts 02114<span class="sub2">Three doors off the brick end of the court — mind the low lintel</span></dd>
+      <dt>Hours at the bench</dt>
+      <dd>Tuesday – Saturday, ten o’clock to six<span class="sub2">Closed Sunday and Monday, when the forge rests</span></dd>
+      <dt>By appointment</dt>
+      <dd><a href="#/book">Book an hour with the artisan →</a><span class="sub2">To view a piece in hand and talk through its making</span></dd>
+      <dt>Of care</dt>
+      <dd>Brass wants wearing. It warms and deepens against skin; a soft cloth returns the shine, and a drop of oil once a season keeps it honest.</dd>
+      <dt>Of commissions</dt>
+      <dd>We take twelve a year, and speak of them only across the bench. Ask early.</dd>
+    </dl>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footgrid">
+    <div>
+      <div class="footname">Brass by Bezalel</div>
+      <p class="footmotto">“Metal remembers the hand that shapes it.”</p>
+      <p class="footverse">“… to work in gold, and in silver, and in brass.” — Exodus XXXI · 4</p>
+    </div>
+    <div>
+      <p class="foothead">The Cases</p>
+      <ul class="footlist">
+        <li><a href="#/rings">Rings</a></li>
+        <li><a href="#/earrings">Earrings</a></li>
+        <li><a href="#/necklaces">Necklaces</a></li>
+        <li><a href="#/bracelets">Bracelets</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foothead">The House</p>
+      <ul class="footlist">
+        <li><a href="#/artisans">About our Artisans</a></li>
+        <li><a href="#/book">Book an Appointment</a></li>
+        <li><a href="#/contact">Contact Us</a></li>
+      </ul>
+      <p class="footsmall" style="margin-top:1rem">No. 7 Lantern Court, Boston<span class="sub2">Tue – Sat · 10 to 6 · (617) 555-0170</span></p>
+    </div>
+  </div>
+  <div class="footbase">
+    <span>© MMXXVI Brass by Bezalel · Boston</span>
+    <span>A design study — its artisans &amp; ledger are imagined</span>
+    <span>Handwrought, slowly</span>
+  </div>
+</footer>
+<style>
+/* refinements */
+.sub2{display:block}
+.btn-details{color:#332305}
+@media (max-width:640px){
+  .tabnav a{font-size:.65rem;padding:.44rem .5rem .38rem;letter-spacing:.1em}
+}
+</style>
+<script>
+(function(){
+"use strict";
+var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+var GEM = '<svg viewBox="0 0 22 22" aria-hidden="true"><use href="#orn-gem"/></svg>';
+
+/* ------------------------------------------------ data */
+var PIECES = [
+  { key:"rings", nav:"Rings", cat:"Ring", sym:"g-ring", mark:"mk-star",
+    name:"The Hur Signet", tagline:"A signet in planished brass",
+    price:"$285", artisan:"Zipporah Hur", first:"Zipporah",
+    date:"14 February 2026",
+    words:"<p>I raised this band from a single ingot of red-tempered brass — forged flat, curved on the mandrel, closed with a seam you will never find. The signet face is planished: hundreds of small hammer-falls, each catching the light at its own angle, and the star of my grandmother’s house cut freehand with a graver.</p><p>Annealed four times, quenched in rainwater, burnished with the agate my father used before me. Wear it until it warms. Brass keeps the heat of a hand longer than you would think.</p>",
+    forge:"A second band is on the mandrel now — narrower, quieter. It will not be this ring; nothing in this house is made twice." },
+  { key:"earrings", nav:"Earrings", cat:"Earrings", sym:"g-earrings", mark:"mk-lantern",
+    name:"The Lantern Drops", tagline:"Pierced lanterns on drawn-wire hooks",
+    price:"$340", artisan:"Aharon Oholiab", first:"Aharon",
+    date:"27 March 2026",
+    words:"<p>Each drop is pierced from sheet with a jeweler’s saw — forty minutes to a lantern, if the blade is kind — so that candlelight, or streetlight, passes through the openwork and moves as you move. The hooks are drawn brass wire, shaped cold and hardened by planishing.</p><p>I matched the pair by weight on a balance older than I am; they differ by less than a grain of barley. They chime, very softly, when you laugh.</p>",
+    forge:"A pair of crescent drops is at the saw. If the blade stays kind, they hang before winter." },
+  { key:"necklaces", nav:"Necklaces", cat:"Necklace", sym:"g-necklace", mark:"mk-kettle",
+    name:"The Bezalel Sapphire", tagline:"A Ceylon sapphire, bezel-set in brass",
+    price:"$925", artisan:"Naomi Kessler", first:"Naomi",
+    date:"9 January 2026",
+    words:"<p>The stone is a deep Ceylon sapphire, oval-cut, held in a bezel I raised and burnished by hand until the metal lay against the girdle like water. A bezel from Bezalel — I could not resist. Every link of the chain is cut, closed, and soldered singly; there are one hundred and six.</p><p>The clasp is my own pattern, a hook that fastens blind at the nape. The brass is sealed in beeswax, and will deepen to honey where it rests on the collarbone.</p>",
+    forge:"A chain of one hundred forty links is half closed. The stone that will end it has not yet been chosen." },
+  { key:"bracelets", nav:"Bracelets", cat:"Bracelet", sym:"g-bracelet", mark:"mk-river",
+    name:"The Jordan Cuff", tagline:"A fold-forged cuff with a single chased line",
+    price:"$460", artisan:"Tobias Faber", first:"Tobias",
+    date:"21 April 2026",
+    words:"<p>This cuff is fold-forged: the bar doubled over itself and hammered back together, seven times, so the finished metal carries a grain like river-water. The pattern rises when the light is low. The terminals are flared over the horn of the anvil and rounded so they never catch a sleeve.</p><p>Down the center runs a single chased line, cut in one pass. You cannot correct such a line; you can only begin again. I began again eleven times. The twelfth ran true.</p>",
+    forge:"The next cuff is folded eight times and resting. Ask at your appointment — Tobias will show you the grain." }
+];
+
+var ARTISANS = [
+  { name:"Zipporah Hur", initial:"Z", role:"Rings & Signets", mark:"mk-star", markname:"Her mark · the eight-rayed star",
+    bio:"Third of her line to keep a mandrel, Zipporah learned annealing before arithmetic. She works only in bands and signets, and holds that the seam of a well-made ring should be a secret the wearer keeps. Her agate burnisher belonged to her father, and to his mother before him.",
+    link:"See her rings", route:"rings" },
+  { name:"Aharon Oholiab", initial:"A", role:"Piercework & Earrings", mark:"mk-lantern", markname:"His mark · the pierced lantern",
+    bio:"Aharon is named, as the house is, out of Exodus — for Oholiab, the appointed helper of Bezalel. He cuts openwork with a jeweler’s saw by window-light, keeps the ledger of weights, and matches every pair on a balance older than himself.",
+    link:"See his earrings", route:"earrings" },
+  { name:"Naomi Kessler", initial:"N", role:"Stones & Chains", mark:"mk-kettle", markname:"Her mark · the kettle",
+    bio:"Kessler means kettle-smith; her people raised copper in Prague for six generations before the sea crossing. Naomi closes every link herself, sets stones in bezels she raises by hand, and will not hurry a clasp for anyone.",
+    link:"See her necklaces", route:"necklaces" },
+  { name:"Tobias Faber", initial:"T", role:"Forgework & Cuffs", mark:"mk-river", markname:"His mark · the river line",
+    bio:"Faber is only Latin for smith — the name, he says, left him no choice. Tobias folds his bars like pastry and hammers them true again, then chases one unbroken line down whatever survives. He is the reason the forge is lit at six.",
+    link:"See his bracelets", route:"bracelets" }
+];
+
+/* ------------------------------------------------ piece pages */
+function viewerHTML(sym){
+  var layers = [
+    [-9,  "brightness(.66)"],
+    [-4.5,"brightness(.8)"],
+    [0,   "brightness(.92)"],
+    [4.5, "brightness(1)"],
+    [9,   "brightness(1.07)"]
+  ].map(function(l){
+    return '<div class="lyr" style="transform:translateZ('+l[0]+'px);filter:'+l[1]+'">'+
+           '<svg viewBox="0 0 200 200" aria-hidden="true"><use href="#'+sym+'"/></svg></div>';
+  }).join("");
+  return '<div class="viewer3d">'+
+    '<div class="viewer" data-grab role="img" aria-label="The piece, turnable in the round — drag to rotate">'+
+      '<div class="spinstack">'+layers+'</div>'+
+      '<div class="sunplate"></div>'+
+    '</div>'+
+    '<div class="reflection" aria-hidden="true"><div class="viewer"><div class="spinstack">'+
+      '<div class="lyr"><svg viewBox="0 0 200 200"><use href="#'+sym+'"/></svg></div>'+
+    '</div></div></div>'+
+  '</div>';
+}
+PIECES.forEach(function(p){
+  var sec = document.getElementById("page-"+p.key);
+  sec.innerHTML =
+    '<p class="kicker">The Season’s Case · '+p.cat+'</p>'+
+    '<h2 class="pagetitle">'+p.nav+'</h2>'+
+    '<div class="ornrule" aria-hidden="true">'+GEM+'</div>'+
+    '<div class="piecepage">'+
+      '<div>'+viewerHTML(p.sym)+
+        '<p class="draghint">Drag to turn the piece in the round · left alone, it turns itself</p>'+
+      '</div>'+
+      '<div class="placard">'+
+        '<p class="catline">'+p.tagline+'</p>'+
+        '<h3 class="piecename">'+p.name+'</h3>'+
+        '<div class="pricerow"><span class="bigprice">'+p.price+'</span><span class="oneofone">One of One</span></div>'+
+        '<div class="craftrow"><svg viewBox="0 0 26 26" aria-hidden="true"><use href="#'+p.mark+'"/></svg>Crafted by · '+p.artisan+'</div>'+
+        '<div class="artisansays">'+p.words+'</div>'+
+        '<p class="finishdate">Completed '+p.date+'</p>'+
+        '<div class="bookrow">'+
+          '<a class="ghostlink" href="#/book"><span>Sit with the maker</span></a>'+
+          '<a class="ghostlink" href="#/artisans"><span>About '+p.first+'</span></a>'+
+        '</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="forgenote"><b>In the Forge</b>'+p.forge+'</div>';
+});
+
+/* ------------------------------------------------ artisans grid */
+document.getElementById("artisangrid").innerHTML = ARTISANS.map(function(a){
+  return '<article class="artisancard">'+
+    '<div class="medallion" aria-hidden="true"><b>'+a.initial+'</b></div>'+
+    '<h3 class="artisanname">'+a.name+'</h3>'+
+    '<p class="artisanrole">'+a.role+'</p>'+
+    '<svg class="artisanmark" viewBox="0 0 26 26" aria-hidden="true"><use href="#'+a.mark+'"/></svg>'+
+    '<p class="marklegend">'+a.markname+'</p>'+
+    '<p class="artisanbio">'+a.bio+'</p>'+
+    '<a class="artisanlink" href="#/'+a.route+'">'+a.link+' →</a>'+
+  '</article>';
+}).join("");
+
+/* ------------------------------------------------ carousel */
+var viewport = document.getElementById("caseviewport");
+var dotsWrap = document.getElementById("carodots");
+viewport.innerHTML = PIECES.map(function(p,i){
+  return '<article class="caseslot" data-i="'+i+'">'+
+    '<div class="vitrine" tabindex="0" aria-label="'+p.name+' — '+p.price+', crafted by '+p.artisan+'. The glass lifts as you linger.">'+
+      '<div class="pedestal"></div>'+
+      '<div class="jewelmount"><svg viewBox="0 0 200 200" role="img" aria-label="'+p.name+'"><use href="#'+p.sym+'"/></svg></div>'+
+      '<div class="belljar"></div>'+
+    '</div>'+
+    '<div class="casemeta">'+
+      '<div class="price">'+p.price+'<small>one of one</small></div>'+
+      '<div class="madeby">Crafted by · '+p.artisan+'</div>'+
+      '<button class="btn-details" type="button" data-route="'+p.key+'">Details</button>'+
+    '</div>'+
+  '</article>';
+}).join("");
+dotsWrap.innerHTML = "<i></i><i></i><i></i><i></i>";
+var cards = [].slice.call(viewport.children);
+var dots = [].slice.call(dotsWrap.children);
+var start = 0;
+function layout(){
+  var W = viewport.clientWidth;
+  var N = W < 620 ? 1 : (W < 900 ? 2 : 3);
+  var gap = 28;
+  var cw = Math.min(288, (W - (N-1)*gap) / N);
+  var total = N*cw + (N-1)*gap;
+  var x0 = (W - total) / 2;
+  cards.forEach(function(el){ el.style.width = cw + "px"; });
+  cards.forEach(function(el, i){
+    var rel = (i - start + 4) % 4;
+    if (rel < N){
+      el.style.left = (x0 + rel*(cw+gap)) + "px";
+      el.classList.remove("offstage");
+    } else {
+      el.style.left = (x0 + N*(cw+gap) + 30) + "px";
+      el.classList.add("offstage");
+    }
+  });
+  dots.forEach(function(d,i){ d.classList.toggle("on", ((i - start + 4) % 4) < N); });
+}
+function turn(dir){ start = (start + dir + 4) % 4; layout(); }
+document.querySelector(".caro-arrow.prev").addEventListener("click", function(){ turn(-1); poke(); });
+document.querySelector(".caro-arrow.next").addEventListener("click", function(){ turn(1); poke(); });
+addEventListener("resize", layout);
+layout();
+var timer = null;
+function poke(){
+  if (timer) clearInterval(timer);
+  if (reduced) return;
+  timer = setInterval(function(){ turn(1); }, 6500);
+}
+poke();
+var caro = document.querySelector(".caroWrap");
+caro.addEventListener("pointerenter", function(){ if (timer) clearInterval(timer); timer = null; });
+caro.addEventListener("pointerleave", poke);
+caro.addEventListener("focusin", function(){ if (timer) clearInterval(timer); timer = null; });
+caro.addEventListener("focusout", poke);
+
+/* ------------------------------------------------ 360 viewers */
+function initViewer(w){
+  var ry = -24, vel = 0, dragging = false, lastX = 0, resumeAt = 0;
+  var grab = w.querySelector("[data-grab]");
+  grab.addEventListener("pointerdown", function(e){
+    dragging = true; lastX = e.clientX; vel = 0; resumeAt = Infinity;
+    grab.setPointerCapture(e.pointerId);
+    grab.classList.add("grabbing");
+    e.preventDefault();
+  });
+  grab.addEventListener("pointermove", function(e){
+    if (!dragging) return;
+    var dx = e.clientX - lastX; lastX = e.clientX;
+    ry += dx * .55; vel = dx * .55;
+  });
+  function end(){
+    if (!dragging) return;
+    dragging = false;
+    grab.classList.remove("grabbing");
+    resumeAt = performance.now() + 2600;
+  }
+  grab.addEventListener("pointerup", end);
+  grab.addEventListener("pointercancel", end);
+  function tick(t){
+    if (w.offsetParent !== null){
+      if (!dragging){
+        if (!reduced && t > resumeAt) ry += .28;
+        ry += vel; vel *= .93;
+        if (Math.abs(vel) < .01) vel = 0;
+      }
+      w.style.setProperty("--ry", ry.toFixed(2) + "deg");
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+[].forEach.call(document.querySelectorAll(".viewer3d"), initViewer);
+
+/* ------------------------------------------------ booking */
+var WD = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var MO = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+var grid = document.getElementById("weekgrid");
+var form = document.getElementById("bookform");
+var formHTML = form.innerHTML;
+var days = [];
+(function(){
+  var d = new Date();
+  while (days.length < 5){
+    d.setDate(d.getDate() + 1);
+    var wd = d.getDay();
+    if (wd >= 2 && wd <= 6) days.push(new Date(d));
+  }
+})();
+var HOURS = [10,11,12,13,14,15,16,17];
+function takenSeed(day, h){ return ((day.getDate()*131 + h*37) % 97) < 29; }
+(function buildGrid(){
+  var html = '<div></div>';
+  days.forEach(function(d){
+    html += '<div class="daylabel"><b>'+WD[d.getDay()]+'</b><span>'+d.getDate()+' '+MO[d.getMonth()]+'</span></div>';
+  });
+  HOURS.forEach(function(h){
+    html += '<div class="hourlabel">'+h+':00</div>';
+    days.forEach(function(d, di){
+      var taken = takenSeed(d, h);
+      html += taken
+        ? '<button class="slot taken" type="button" disabled aria-label="'+WD[d.getDay()]+' '+d.getDate()+' '+MO[d.getMonth()]+', '+h+' o’clock — spoken for">Spoken for</button>'
+        : '<button class="slot" type="button" data-di="'+di+'" data-h="'+h+'" aria-label="'+WD[d.getDay()]+' '+d.getDate()+' '+MO[d.getMonth()]+', '+h+' o’clock — open">Open</button>';
+    });
+  });
+  grid.innerHTML = html;
+})();
+var pickedSlot = null;
+grid.addEventListener("click", function(e){
+  var b = e.target.closest(".slot");
+  if (!b || b.disabled || b.classList.contains("taken")) return;
+  if (form.querySelector(".sealednote")) form.innerHTML = formHTML;
+  if (pickedSlot) pickedSlot.classList.remove("picked");
+  pickedSlot = b; b.classList.add("picked");
+  var d = days[+b.dataset.di], h = +b.dataset.h;
+  form.hidden = false;
+  document.getElementById("chosenline").textContent =
+    "The hour of "+h+":00 on "+WD[d.getDay()]+", "+d.getDate()+" "+MO[d.getMonth()]+" — the bench will be cleared for you.";
+  form.scrollIntoView({behavior: reduced ? "auto" : "smooth", block:"nearest"});
+});
+form.addEventListener("click", function(e){
+  if (!e.target.closest("#sealbtn") || !pickedSlot) return;
+  var nameEl = document.getElementById("bkName");
+  var mailEl = document.getElementById("bkMail");
+  var name = nameEl.value.trim();
+  if (!name){
+    nameEl.classList.remove("err"); void nameEl.offsetWidth; nameEl.classList.add("err");
+    nameEl.focus();
+    return;
+  }
+  var sel = document.getElementById("bkArtisan").value;
+  var who = sel.indexOf("—") > -1 ? sel.split(" ")[0] : "the maker";
+  var mail = mailEl.value.trim();
+  pickedSlot.classList.remove("picked");
+  pickedSlot.classList.add("sealed");
+  pickedSlot.disabled = true;
+  pickedSlot.textContent = "Held for you";
+  pickedSlot.setAttribute("aria-label", "Held for you");
+  form.innerHTML =
+    '<p class="sealednote">It is held, '+name.replace(/[<>&]/g,"")+'. Come to the low green door on Lantern Court; '+who+' will have the kettle on. Bring your questions — the bench seats three, counting the maker.</p>'+
+    '<p class="demonote" style="text-align:left;margin-top:1rem">A demonstration ledger — no true hour was taken'+(mail ? ", and no letter will trouble " + mail.replace(/[<>&]/g,"") : "")+'.</p>';
+  pickedSlot = null;
+});
+
+/* ------------------------------------------------ details buttons */
+document.addEventListener("click", function(e){
+  var b = e.target.closest(".btn-details");
+  if (!b) return;
+  b.classList.add("pulse");
+  setTimeout(function(){ location.hash = "#/" + b.dataset.route; }, 260);
+  setTimeout(function(){ b.classList.remove("pulse"); }, 640);
+});
+
+/* ------------------------------------------------ router */
+var PAGE_KEYS = ["home","rings","earrings","necklaces","bracelets","artisans","book","contact"];
+function route(){
+  var h = location.hash.replace(/^#\/?/, "");
+  if (PAGE_KEYS.indexOf(h) === -1) h = "home";
+  PAGE_KEYS.forEach(function(p){
+    document.getElementById("page-" + p).hidden = (p !== h);
+  });
+  [].forEach.call(document.querySelectorAll(".tabnav a"), function(a){
+    a.classList.toggle("active", a.dataset.page === h);
+  });
+  scrollTo(0, 0);
+  if (h === "home") layout();
+}
+addEventListener("hashchange", route);
+route();
+})();
+</script>
+
+</body></html>

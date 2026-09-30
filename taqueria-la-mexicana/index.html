@@ -1,0 +1,1420 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Taqueria La Mexicana</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600;1,9..144,900&family=Archivo:wght@400;500;600;700;800&display=swap">
+<style>
+/* ============================================================
+   TAQUERIA LA MEXICANA — fiesta-luxe design system
+   Palette: crema masa ground + rosa mexicano / cempasúchil /
+   talavera cobalt / nopal verde / chile red on roasted-cacao ink.
+   Single committed theme (brand world), painted explicitly.
+   ============================================================ */
+:root{
+  --crema:#FAF1DE;
+  --crema-deep:#F3E3C2;
+  --paper:#FFFDF4;
+  --ink:#2A1508;
+  --ink-soft:#57402C;
+  --rosa:#E42878;
+  --rosa-deep:#B91B5E;
+  --chile:#D63B2F;
+  --marigold:#F2A413;
+  --marigold-soft:#F8C55C;
+  --cobalt:#2148B1;
+  --verde:#2E7D4F;
+  --lime:#8CB43C;
+  --shadow:4px 4px 0 var(--ink);
+  --shadow-lg:7px 7px 0 var(--ink);
+  --radius:12px;
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Archivo","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+body{
+  background:var(--crema);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16.5px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:4px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--crema);padding:10px 18px;z-index:200;font-weight:700}
+.skip-link:focus{left:12px;top:12px}
+
+/* ---------- type ---------- */
+h1,h2,h3{font-family:var(--font-display);font-weight:900;line-height:1.04;text-wrap:balance;letter-spacing:-.01em}
+.eyebrow{font-family:var(--font-body);font-weight:800;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:3px;background:var(--rosa);display:inline-block}
+.section-title{font-size:clamp(34px,4.6vw,54px);margin:14px 0 12px}
+.section-kicker{max-width:56ch;color:var(--ink-soft);font-size:17px}
+.accent-i{font-style:italic;color:var(--rosa)}
+.accent-i.gold{color:var(--marigold)}
+
+/* ---------- layout ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+section{position:relative}
+.band{padding:88px 0}
+.band-tight{padding:64px 0}
+
+/* ---------- hours ribbon ---------- */
+.hours-ribbon{background:var(--ink);color:var(--crema);font-size:13.5px;font-weight:600;letter-spacing:.06em}
+.hours-ribbon .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:9px;padding-bottom:9px}
+.hours-ribbon .hr-right{display:flex;gap:18px;align-items:center}
+.hours-ribbon a{color:var(--marigold-soft);text-decoration:none;font-weight:700}
+.hours-ribbon a:hover{text-decoration:underline}
+.dot-open{width:9px;height:9px;border-radius:50%;background:var(--lime);display:inline-block;margin-right:7px;box-shadow:0 0 0 3px rgba(140,180,60,.25)}
+.dot-open.closed{background:var(--chile);box-shadow:0 0 0 3px rgba(214,59,47,.25)}
+@media(max-width:720px){.hours-ribbon .hr-right{display:none}}
+
+/* ---------- nav ---------- */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(250,241,222,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink)}
+.site-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .tiles{flex:none}
+.brand-name{line-height:1}
+.brand-name .b1{display:block;font-weight:800;font-size:11.5px;letter-spacing:.34em;text-transform:uppercase}
+.brand-name .b2{display:block;font-family:var(--font-display);font-style:italic;font-weight:900;font-size:24px;color:var(--rosa);margin-top:2px}
+.nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+.nav-links a{display:block;padding:9px 13px;text-decoration:none;font-weight:700;font-size:13.5px;letter-spacing:.08em;border-radius:8px}
+.nav-links a:hover{background:var(--crema-deep)}
+.nav-links a.active{background:var(--ink);color:var(--crema)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.hamburger{display:none;background:none;border:2px solid var(--ink);border-radius:8px;padding:8px 10px}
+.hamburger svg{width:22px;height:16px}
+@media(max-width:1080px){
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .nav-cta .btn{display:none}
+}
+.mobile-menu{display:none;background:var(--crema);border-bottom:3px solid var(--ink)}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;padding:10px 28px 22px}
+.mobile-menu a{display:block;padding:13px 4px;font-family:var(--font-display);font-weight:900;font-size:26px;text-decoration:none;border-bottom:1px dashed rgba(42,21,8,.25)}
+.mobile-menu a:hover{color:var(--rosa)}
+.mobile-menu .mm-order{margin-top:16px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:800;font-size:15px;letter-spacing:.03em;text-decoration:none;border:2.5px solid var(--ink);border-radius:999px;padding:13px 26px;background:var(--paper);color:var(--ink);box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink)}
+.btn-primary{background:var(--marigold)}
+.btn-rosa{background:var(--rosa);color:#fff}
+.btn-ghost{background:transparent;box-shadow:none;border-color:transparent;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px;text-decoration-color:var(--rosa)}
+.btn-ghost:hover{transform:none;box-shadow:none;color:var(--rosa)}
+.btn-sm{padding:9px 18px;font-size:13.5px}
+.btn-lg{padding:16px 34px;font-size:17px}
+.btn-dark{background:var(--ink);color:var(--crema);box-shadow:4px 4px 0 rgba(42,21,8,.35)}
+
+/* ---------- hero ---------- */
+.hero{overflow:hidden;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;padding-top:34px;padding-bottom:72px}
+.picado{margin-bottom:26px}
+.picado .flag{transform-origin:top center;animation:sway 3.4s ease-in-out infinite}
+.picado .flag:nth-child(odd){animation-delay:-1.7s}
+@keyframes sway{0%,100%{transform:rotate(1.6deg)}50%{transform:rotate(-1.6deg)}}
+.hero h1{font-size:clamp(46px,6.4vw,84px);margin:18px 0 20px}
+.hero-sub{font-size:19px;max-width:52ch;color:var(--ink-soft);margin-bottom:30px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:26px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:2px solid var(--ink);border-radius:999px;padding:7px 15px;font-size:13.5px;font-weight:700}
+.chip .stars{color:var(--marigold);letter-spacing:1px;font-size:14px}
+.hero-art{position:relative}
+.arch{border:3px solid var(--ink);border-radius:300px 300px var(--radius) var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--cobalt)}
+.arch svg{width:100%;height:auto}
+.hero-badge{position:absolute;top:-6px;left:-18px;transform:rotate(-8deg);background:var(--chile);color:#fff;border:2.5px solid var(--ink);border-radius:999px;padding:10px 18px;font-weight:800;font-size:13px;letter-spacing:.1em;box-shadow:var(--shadow)}
+@media(max-width:960px){
+  .hero .wrap{grid-template-columns:1fr;padding-bottom:56px}
+  .hero-art{max-width:520px;margin:0 auto}
+  .hero-badge{left:auto;right:0}
+}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--rosa);color:#fff;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);overflow:hidden}
+.ticker-track{display:flex;gap:0;white-space:nowrap;animation:ticker 26s linear infinite;width:max-content}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker span{display:inline-flex;align-items:center;gap:18px;padding:11px 18px;font-family:var(--font-display);font-style:italic;font-weight:700;font-size:17px;letter-spacing:.04em}
+.ticker .tk-star{color:var(--marigold-soft);font-style:normal}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- specials ---------- */
+.menu-band{background:var(--crema)}
+.specials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+.dish-card{background:var(--paper);border:2.5px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden;transition:transform .18s,box-shadow .18s}
+.dish-card:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-lg)}
+.dish-art{background:var(--crema-deep);border-bottom:2.5px solid var(--ink);padding:22px 22px 14px;position:relative}
+.dish-flag{position:absolute;top:12px;right:12px;background:var(--ink);color:var(--crema);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.dish-flag.rosa{background:var(--rosa);color:#fff}
+.dish-flag.verde{background:var(--verde);color:#fff}
+.dish-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.dish-body h3{font-size:26px}
+.dish-desc{color:var(--ink-soft);font-size:15px;flex:1}
+.dish-foot{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.price{font-family:var(--font-display);font-weight:900;font-size:24px}
+.price small{font-size:13px;font-weight:600;color:var(--ink-soft);font-family:var(--font-body)}
+.taco-picker{display:flex;gap:8px;flex-wrap:wrap}
+.taco-picker button{border:2px solid var(--ink);background:var(--paper);border-radius:999px;padding:6px 14px;font-weight:800;font-size:12.5px;letter-spacing:.05em}
+.taco-picker button[aria-pressed="true"]{background:var(--ink);color:var(--crema)}
+.perk-strip{margin-top:34px;background:var(--verde);color:#fff;border:2.5px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;align-items:center;gap:22px;padding:20px 28px;flex-wrap:wrap}
+.perk-strip svg{flex:none}
+.perk-strip p{font-size:16.5px}
+.perk-strip strong{font-family:var(--font-display);font-style:italic;font-size:19px}
+@media(max-width:960px){.specials-grid{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}}
+
+/* ---------- salsa bar ---------- */
+.salsa-band{background:var(--ink);color:var(--crema)}
+.salsa-band .eyebrow{color:var(--marigold-soft)}
+.salsa-band .eyebrow::before{background:var(--marigold)}
+.salsa-band .section-kicker{color:#D8C3A5}
+.salsa-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:40px}
+.salsa-card{background:#3A2312;border:2px solid #6b4c2e;border-radius:var(--radius);padding:20px 16px;text-align:center;transition:transform .16s,border-color .16s}
+.salsa-card:hover{transform:translateY(-5px);border-color:var(--marigold)}
+.salsa-cup{width:64px;height:64px;border-radius:50%;margin:0 auto 14px;border:3px solid var(--crema);position:relative}
+.salsa-cup::after{content:"";position:absolute;inset:8px;border-radius:50%;background:rgba(255,255,255,.14)}
+.salsa-card h4{font-family:var(--font-display);font-size:19px;font-weight:700;margin-bottom:2px}
+.salsa-card .s-sub{font-size:12.5px;color:#C9B08D;margin-bottom:10px}
+.heat{display:inline-flex;gap:3px}
+.heat svg{width:14px;height:14px}
+.heat .off{opacity:.22}
+@media(max-width:960px){.salsa-grid{grid-template-columns:repeat(2,1fr)}.salsa-card:last-child{grid-column:1/-1}}
+
+/* ---------- experience ---------- */
+.exp-band{background:var(--crema-deep)}
+.mural-strip{border:3px solid var(--ink);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);margin:44px 0 40px;background:var(--cobalt)}
+.mural-strip svg{width:100%;height:auto}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.exp-card{background:var(--paper);border:2.5px solid var(--ink);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.exp-card .exp-ico{margin-bottom:16px}
+.exp-card h3{font-size:23px;margin-bottom:8px}
+.exp-card p{color:var(--ink-soft);font-size:15px}
+.two-speeds{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.speed{border:2.5px solid var(--ink);border-radius:var(--radius);padding:26px 28px;box-shadow:var(--shadow)}
+.speed.fast{background:var(--marigold)}
+.speed.slow{background:var(--rosa);color:#fff}
+.speed .sp-tag{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+.speed h3{font-size:27px;margin:8px 0 8px}
+.speed p{font-size:15.5px}
+@media(max-width:960px){.exp-grid{grid-template-columns:1fr}.two-speeds{grid-template-columns:1fr}}
+
+/* ---------- reviews ---------- */
+.reviews-band{background:var(--crema)}
+.reviews-layout{display:grid;grid-template-columns:340px 1fr;gap:30px;margin-top:44px;align-items:start}
+.rating-widget{background:var(--paper);border:2.5px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;text-align:center}
+.rating-big{font-family:var(--font-display);font-weight:900;font-size:64px;line-height:1}
+.rating-stars{color:var(--marigold);font-size:24px;letter-spacing:3px;margin:6px 0 2px}
+.rating-count{font-size:13.5px;color:var(--ink-soft);font-weight:600}
+.rating-bars{margin-top:18px;display:flex;flex-direction:column;gap:7px;text-align:left}
+.rbar{display:grid;grid-template-columns:26px 1fr 38px;gap:10px;align-items:center;font-size:12.5px;font-weight:700}
+.rbar .track{height:9px;background:var(--crema-deep);border:1.5px solid var(--ink);border-radius:99px;overflow:hidden}
+.rbar .fill{height:100%;background:var(--marigold)}
+.rating-src{margin-top:18px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.src-pill{font-size:11px;font-weight:800;letter-spacing:.08em;border:1.5px solid var(--ink);border-radius:999px;padding:4px 10px;background:var(--crema)}
+.sample-note{margin-top:14px;font-size:11.5px;color:var(--ink-soft)}
+.carousel{position:relative}
+.review-track{display:grid;grid-template-columns:1fr;overflow:hidden}
+.review-card{grid-area:1/1;background:var(--paper);border:2.5px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 34px;opacity:0;transform:translateX(26px);transition:opacity .45s,transform .45s;pointer-events:none;visibility:hidden}
+.review-card.current{opacity:1;transform:none;pointer-events:auto;visibility:visible}
+.review-quote{font-family:var(--font-display);font-size:clamp(19px,2vw,24px);font-weight:600;line-height:1.42}
+.review-meta{display:flex;align-items:center;gap:14px;margin-top:20px}
+.avatar{width:46px;height:46px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-weight:900;font-family:var(--font-display);font-size:18px;color:#fff}
+.review-meta .rm-name{font-weight:800;font-size:14.5px}
+.review-meta .rm-sub{font-size:12.5px;color:var(--ink-soft)}
+.review-meta .rm-stars{margin-left:auto;color:var(--marigold);letter-spacing:2px}
+.car-controls{display:flex;align-items:center;gap:14px;margin-top:20px}
+.car-btn{width:44px;height:44px;border-radius:50%;border:2.5px solid var(--ink);background:var(--paper);box-shadow:3px 3px 0 var(--ink);font-size:18px;font-weight:900}
+.car-btn:hover{background:var(--marigold)}
+.car-dots{display:flex;gap:8px}
+.car-dots button{width:11px;height:11px;border-radius:50%;border:2px solid var(--ink);background:transparent;padding:0}
+.car-dots button[aria-current="true"]{background:var(--rosa)}
+@media(max-width:960px){.reviews-layout{grid-template-columns:1fr}}
+
+/* ---------- order ---------- */
+.order-band{background:var(--ink);color:var(--crema)}
+.order-band .eyebrow{color:var(--marigold-soft)}
+.order-band .eyebrow::before{background:var(--marigold)}
+.order-band .section-kicker{color:#D8C3A5}
+.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+.order-card{background:#3A2312;border:2.5px solid #6b4c2e;border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:14px}
+.order-card h3{font-size:27px;color:var(--crema)}
+.order-card p{color:#D8C3A5;font-size:15.5px}
+.order-card .oc-eta{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.06em;color:var(--marigold-soft)}
+.order-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.partner-row{display:flex;flex-wrap:wrap;gap:10px}
+.partner{border:2px solid var(--crema);border-radius:999px;background:transparent;color:var(--crema);font-weight:800;font-size:13.5px;letter-spacing:.04em;padding:10px 20px;text-decoration:none}
+.partner:hover{background:var(--crema);color:var(--ink)}
+@media(max-width:960px){.order-grid{grid-template-columns:1fr}}
+
+/* ---------- directions ---------- */
+.find-band{background:var(--crema)}
+.find-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;margin-top:44px;align-items:stretch}
+.map-frame{border:3px solid var(--ink);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:#EFE6CE;min-height:340px}
+.map-frame svg{width:100%;height:100%;display:block}
+.find-card{background:var(--paper);border:2.5px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px;display:flex;flex-direction:column;gap:18px}
+.find-card h3{font-size:24px}
+.addr{font-size:16.5px;line-height:1.5}
+.hours-table{border-top:2px dashed rgba(42,21,8,.3);padding-top:16px;display:flex;flex-direction:column;gap:8px}
+.hours-table .hrow{display:flex;justify-content:space-between;font-size:15px}
+.hours-table .hrow strong{font-weight:800}
+.hours-table .hnote{font-size:13px;color:var(--ink-soft)}
+.open-pill{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;background:var(--verde);color:#fff;border:2px solid var(--ink);border-radius:999px;padding:8px 16px;font-weight:800;font-size:13.5px}
+.open-pill.closed{background:var(--chile)}
+@media(max-width:960px){.find-grid{grid-template-columns:1fr}}
+
+/* ---------- catering & events ---------- */
+.ce-band{background:var(--crema-deep)}
+.ce-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.ce-card{border:2.5px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px;background:var(--paper);position:relative;overflow:hidden}
+.ce-card.catering{background:var(--cobalt);color:#fff}
+.ce-card.events{background:var(--paper)}
+.ce-card h3{font-size:30px;margin:10px 0 10px}
+.ce-card p{font-size:15.5px;margin-bottom:22px;max-width:46ch}
+.ce-card.catering p{color:#DCE4FA}
+.ce-card .eyebrow{font-size:11.5px}
+.ce-card.catering .eyebrow::before{background:var(--marigold)}
+.ce-tag{position:absolute;top:20px;right:-40px;transform:rotate(35deg);background:var(--marigold);border:2px solid var(--ink);color:var(--ink);font-size:11px;font-weight:800;letter-spacing:.12em;padding:5px 48px}
+.event-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+.event-list li{display:flex;gap:12px;align-items:baseline;font-size:15px}
+.event-list .ev-day{flex:none;font-weight:900;font-family:var(--font-display);color:var(--rosa);width:56px}
+@media(max-width:960px){.ce-grid{grid-template-columns:1fr}}
+
+/* ---------- share ---------- */
+.share-band{background:var(--rosa);color:#fff;border-top:3px solid var(--ink)}
+.share-band .wrap{display:flex;align-items:center;justify-content:space-between;gap:26px;padding-top:40px;padding-bottom:40px;flex-wrap:wrap}
+.share-band h2{font-size:clamp(26px,3vw,36px)}
+.share-band p{color:#FBD9E8;font-size:15px;max-width:44ch}
+.share-row{display:flex;gap:12px;flex-wrap:wrap}
+.share-ico{width:52px;height:52px;border-radius:50%;border:2.5px solid var(--ink);background:var(--paper);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--ink);transition:transform .15s}
+.share-ico:hover{transform:translate(-2px,-2px)}
+.share-ico svg{width:22px;height:22px}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:#D8C3A5}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:36px;padding:64px 0 44px}
+.foot-brand .brand-name .b1{color:var(--crema)}
+.foot-brand p{font-size:14px;margin-top:14px;max-width:30ch}
+.foot-social{display:flex;gap:10px;margin-top:18px}
+.foot-social a{width:40px;height:40px;border-radius:50%;border:2px solid #6b4c2e;display:inline-flex;align-items:center;justify-content:center;color:var(--crema)}
+.foot-social a:hover{background:var(--rosa);border-color:var(--rosa)}
+.foot-social svg{width:17px;height:17px}
+footer h4{color:var(--crema);font-size:12.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-links a{text-decoration:none;font-size:14.5px}
+.foot-links a:hover{color:var(--marigold-soft)}
+.foot-hours{display:flex;flex-direction:column;gap:8px;font-size:14.5px}
+.newsletter p{font-size:14px;margin-bottom:14px}
+.nl-form{display:flex;gap:0}
+.nl-form input{flex:1;min-width:0;background:#3A2312;border:2px solid #6b4c2e;border-right:none;border-radius:999px 0 0 999px;padding:11px 18px;color:var(--crema);font-family:inherit;font-size:14px}
+.nl-form input::placeholder{color:#9c7f5f}
+.nl-form button{border:2px solid var(--marigold);background:var(--marigold);color:var(--ink);font-weight:800;font-size:13.5px;border-radius:0 999px 999px 0;padding:11px 20px}
+.nl-form button:hover{background:var(--marigold-soft)}
+.nl-msg{font-size:13px;color:var(--lime);margin-top:10px;min-height:18px}
+.foot-legal{border-top:1px solid #4a3018;padding:22px 0 30px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#9c7f5f}
+.foot-legal a{color:inherit}
+@media(max-width:960px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.foot-grid{grid-template-columns:1fr}}
+
+/* ---------- música pill ---------- */
+.musica{position:fixed;left:18px;bottom:18px;z-index:120;display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--crema);border:2.5px solid var(--crema);border-radius:999px;padding:11px 20px;font-weight:800;font-size:14px;box-shadow:0 6px 22px rgba(42,21,8,.45)}
+.musica:hover{background:var(--rosa)}
+.musica .eq{display:inline-flex;align-items:flex-end;gap:2.5px;height:14px}
+.musica .eq i{width:3.5px;background:var(--marigold);height:4px;border-radius:2px}
+.musica.playing .eq i{animation:eq 0.7s ease-in-out infinite}
+.musica.playing .eq i:nth-child(2){animation-delay:.15s}
+.musica.playing .eq i:nth-child(3){animation-delay:.3s}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}}
+.musica-hint{position:fixed;left:18px;bottom:74px;z-index:119;background:var(--paper);color:var(--ink);border:2px solid var(--ink);border-radius:10px;padding:8px 14px;font-size:12.5px;font-weight:700;box-shadow:var(--shadow);opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s;pointer-events:none}
+.musica-hint.show{opacity:1;transform:none}
+
+/* ---------- toast ---------- */
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--crema);border:2px solid var(--crema);border-radius:999px;padding:12px 24px;font-weight:700;font-size:14px;opacity:0;transition:opacity .35s,transform .35s;z-index:130;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+
+<!-- ============================================================
+  TAQUERIA LA MEXICANA — landing page concept (fiesta-luxe)
+  IA: top nav routes HOME/MENU/ORDER/DIRECTIONS/CATERING/EVENTS/ABOUT US.
+  On this one-page concept they anchor to sections; in production they
+  become routes. All contact info, prices & review data = sample placeholders.
+
+  PRODUCTION PHOTO SWAP (art-directed shortlist, Unsplash, free license):
+    hero tacos ..... https://unsplash.com/photos/z_PfaGzeN9E  (Jeswin Thomas)
+    tacos card ..... https://unsplash.com/photos/E0txIcqePac  (Jarritos)
+    enchiladas ..... https://unsplash.com/photos/95cl8vePOf4  (Pablo Hernández)
+    burrito ........ https://unsplash.com/photos/BqV9zOdio6A  (Snappr)
+    margarita ...... https://unsplash.com/photos/2EBTwzczg2A  (Tai's Captures)
+    chips+salsa .... https://unsplash.com/photos/GH4wbLUCYMg  (Frankie Lopez)
+    mural wall ..... https://unsplash.com/photos/U9IN2bFUc4Y  (Steven Mason)
+  Swap into .arch, .dish-art and .mural-strip containers; the illustrated
+  system below is the shipping look until photography is licensed/shot.
+============================================================ -->
+
+<a class="skip-link" href="#home">Skip to content</a>
+
+<!-- SVG symbol library -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="sym-tiles" viewBox="0 0 40 40">
+      <rect x="1" y="1" width="18" height="18" rx="4" fill="#E42878" stroke="#2A1508" stroke-width="2"/>
+      <rect x="21" y="1" width="18" height="18" rx="4" fill="#F2A413" stroke="#2A1508" stroke-width="2"/>
+      <rect x="1" y="21" width="18" height="18" rx="4" fill="#2148B1" stroke="#2A1508" stroke-width="2"/>
+      <rect x="21" y="21" width="18" height="18" rx="4" fill="#2E7D4F" stroke="#2A1508" stroke-width="2"/>
+      <circle cx="10" cy="10" r="3" fill="#FAF1DE"/><circle cx="30" cy="10" r="3" fill="#FAF1DE"/>
+      <circle cx="10" cy="30" r="3" fill="#FAF1DE"/><circle cx="30" cy="30" r="3" fill="#FAF1DE"/>
+    </symbol>
+    <symbol id="sym-chile" viewBox="0 0 14 14">
+      <path d="M8.2 2.6 C10.4 3.1 11.6 5.4 11 8.2 C10.4 11 8 12.8 5.6 12.8 C3.2 12.8 1.6 10.8 2.1 8.1 C2.6 5.4 5 3.2 7 2.8 Z" fill="currentColor"/>
+      <path d="M7.4 2.9 C7.2 1.9 7.8 1 8.9 .8" fill="none" stroke="#2E7D4F" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="sym-sun" viewBox="0 0 80 80">
+      <g fill="#F2A413" stroke="#2A1508" stroke-width="2">
+        <circle cx="40" cy="40" r="17"/>
+        <g>
+          <polygon points="40,4 45,18 35,18"/><polygon points="40,76 45,62 35,62"/>
+          <polygon points="4,40 18,35 18,45"/><polygon points="76,40 62,35 62,45"/>
+          <polygon points="14,14 26,20 20,26"/><polygon points="66,14 60,26 54,20"/>
+          <polygon points="14,66 20,54 26,60"/><polygon points="66,66 54,60 60,54"/>
+        </g>
+      </g>
+      <circle cx="34" cy="37" r="2.4" fill="#2A1508"/><circle cx="46" cy="37" r="2.4" fill="#2A1508"/>
+      <path d="M33 45 Q40 50 47 45" fill="none" stroke="#2A1508" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="sym-flower" viewBox="0 0 60 60">
+      <g fill="#E42878" stroke="#2A1508" stroke-width="2">
+        <ellipse cx="30" cy="12" rx="9" ry="11"/><ellipse cx="30" cy="48" rx="9" ry="11"/>
+        <ellipse cx="12" cy="30" rx="11" ry="9"/><ellipse cx="48" cy="30" rx="11" ry="9"/>
+        <ellipse cx="17" cy="17" rx="8" ry="8"/><ellipse cx="43" cy="17" rx="8" ry="8"/>
+        <ellipse cx="17" cy="43" rx="8" ry="8"/><ellipse cx="43" cy="43" rx="8" ry="8"/>
+      </g>
+      <circle cx="30" cy="30" r="9" fill="#F2A413" stroke="#2A1508" stroke-width="2"/>
+    </symbol>
+    <symbol id="sym-agave" viewBox="0 0 70 60">
+      <g fill="#2E7D4F" stroke="#2A1508" stroke-width="2" stroke-linejoin="round">
+        <polygon points="35,2 41,58 29,58"/>
+        <polygon points="12,14 34,58 22,58"/>
+        <polygon points="58,14 48,58 36,58"/>
+        <polygon points="2,32 28,58 16,58"/>
+        <polygon points="68,32 54,58 42,58"/>
+      </g>
+    </symbol>
+    <symbol id="sym-bird" viewBox="0 0 70 50">
+      <g stroke="#2A1508" stroke-width="2">
+        <path d="M12 28 Q28 8 46 18 Q60 24 58 34 Q44 44 28 40 Q16 37 12 28 Z" fill="#FAF1DE"/>
+        <path d="M30 24 Q42 14 50 22 Q42 30 32 30 Z" fill="#E42878"/>
+        <circle cx="52" cy="26" r="2.2" fill="#2A1508" stroke="none"/>
+        <polygon points="58,26 68,24 58,32" fill="#F2A413"/>
+        <path d="M12 28 Q4 30 2 26" fill="none" stroke-linecap="round"/>
+      </g>
+    </symbol>
+    <symbol id="sym-marg" viewBox="0 0 60 70">
+      <g stroke="#2A1508" stroke-width="2.4" stroke-linejoin="round">
+        <path d="M6 8 H54 L34 34 V56 H26 V34 Z" fill="#B9E8B0"/>
+        <path d="M8 10 H52 L33 33 H27 Z" fill="#DFF6D6"/>
+        <rect x="18" y="56" width="24" height="6" rx="3" fill="#F2A413"/>
+        <circle cx="50" cy="10" r="8" fill="#8CB43C"/>
+        <circle cx="50" cy="10" r="4.5" fill="#DFF6D6"/>
+      </g>
+      <g fill="#FAF1DE"><circle cx="10" cy="7" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="26" cy="7" r="1.6"/><circle cx="34" cy="6" r="1.6"/><circle cx="42" cy="7" r="1.6"/></g>
+    </symbol>
+    <symbol id="sym-share" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+        <circle cx="6" cy="12" r="3"/><circle cx="18" cy="5" r="3"/><circle cx="18" cy="19" r="3"/>
+        <path d="M8.7 10.6 15.3 6.5 M8.7 13.4 15.3 17.5"/>
+      </g>
+    </symbol>
+    <symbol id="sym-ig" viewBox="0 0 24 24">
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="12" cy="12" r="4.6" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="17.6" cy="6.6" r="1.6" fill="currentColor"/>
+    </symbol>
+    <symbol id="sym-fb" viewBox="0 0 24 24">
+      <path d="M14.5 21 V13.5 H17.5 L18 10 H14.5 V8 C14.5 6.9 15 6 16.6 6 H18.2 V3.2 C17.6 3.1 16.4 3 15.4 3 C12.7 3 11 4.7 11 7.6 V10 H8 V13.5 H11 V21 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="sym-x" viewBox="0 0 24 24">
+      <path d="M4 3 H9 L13.4 9.4 L19 3 H21.5 L14.6 11 L21.8 21 H16.8 L11.9 14.1 L5.9 21 H3.4 L10.7 12.6 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="sym-wa" viewBox="0 0 24 24">
+      <path d="M12 2.8 A9 9 0 0 0 4.2 16.3 L3 21 L7.9 19.8 A9 9 0 1 0 12 2.8 Z" fill="none" stroke="currentColor" stroke-width="2.1"/>
+      <path d="M8.6 8.4 C8.6 12 11.6 15.2 15.4 15.4 C16 15.4 16.6 14.9 16.6 14.2 C16.6 13.7 16.2 13.4 15.7 13.2 L14.2 12.6 L13.2 13.5 C11.9 12.9 11 12 10.4 10.8 L11.3 9.8 L10.7 8.3 C10.5 7.8 10.2 7.4 9.7 7.4 C9 7.4 8.6 7.9 8.6 8.4 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="sym-pin" viewBox="0 0 24 24">
+      <path d="M12 2 C7.6 2 4.5 5.2 4.5 9.3 C4.5 14.6 12 22 12 22 C12 22 19.5 14.6 19.5 9.3 C19.5 5.2 16.4 2 12 2 Z" fill="currentColor"/>
+      <circle cx="12" cy="9.3" r="3.2" fill="#FAF1DE"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ======================= HOURS RIBBON ======================= -->
+<div class="hours-ribbon" role="region" aria-label="Hours and contact">
+  <div class="wrap">
+    <span><span class="dot-open" id="openDot"></span><span id="openText">Abierto todos los días · 10 AM – 1 AM</span></span>
+    <span class="hr-right">
+      <span>Counter service · Dine-in · Pickup · Delivery</span>
+      <a href="tel:+15550101234">(555) 010-1234</a>
+    </span>
+  </div>
+</div>
+
+<!-- ======================= NAV ======================= -->
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Taqueria La Mexicana — home">
+      <svg class="tiles" width="42" height="42" aria-hidden="true"><use href="#sym-tiles"/></svg>
+      <span class="brand-name"><span class="b1">Taqueria</span><span class="b2">La Mexicana</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="#directions">Directions</a></li>
+        <li><a href="#catering">Catering</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm" href="#order">Order Now</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg viewBox="0 0 22 16" aria-hidden="true"><g stroke="#2A1508" stroke-width="2.6" stroke-linecap="round"><path d="M1 2 H21"/><path d="M1 8 H21"/><path d="M1 14 H21"/></g></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#order">Order</a></li>
+      <li><a href="#directions">Directions</a></li>
+      <li><a href="#catering">Catering</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#about">About Us</a></li>
+    </ul>
+    <div class="wrap mm-order" style="padding-bottom:24px">
+      <a class="btn btn-primary" href="#order" style="width:100%">🌮 Order Now</a>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-copy">
+      <svg class="picado" viewBox="0 0 560 74" role="img" aria-label="Papel picado banner">
+        <path d="M0 8 Q280 30 560 8" fill="none" stroke="#2A1508" stroke-width="2.5"/>
+        <g stroke="#2A1508" stroke-width="2">
+          <g class="flag"><path d="M22 10 h44 v30 q-11 9 -22 0 q-11 9 -22 0 Z" fill="#E42878"/><circle cx="44" cy="24" r="5" fill="#FAF1DE"/></g>
+          <g class="flag"><path d="M86 14 h44 v30 q-11 9 -22 0 q-11 9 -22 0 Z" fill="#F2A413"/><circle cx="108" cy="28" r="5" fill="#FAF1DE"/></g>
+          <g class="flag"><path d="M150 17 h44 v30 q-11 9 -22 0 q-11 9 -22 0 Z" fill="#2148B1"/><circle cx="172" cy="31" r="5" fill="#FAF1DE"/></g>
+          <g class="flag"><path d="M214 19 h44 v30 q-11 9 -22 0 q-11 9 -22 0 Z" fill="#2E7D4F"/><circle cx="236" cy="33" r="5" fill="#FAF1DE"/></g>
+          <g class="flag"><path d="M278 20 h44 v30 q-11 9 -22 0 q-11 9 -22 0 Z" fill="#D63B2F"/><circle cx="300" cy="34" r="5" fill="#FAF1DE"/></g>
+          <g class="flag"><path d="M342 19 h44 v30 q-11 9 -22 0 q-11 9 -22 0 Z" fill="#E42878"/><circle cx="364" cy="33" r="5" fill="#FAF1DE"/></g>
+          <g class="flag"><path d="M406 17 h44 v30 q-11 9 -22 0 q-11 9 -22 0 Z" fill="#F2A413"/><circle cx="428" cy="31" r="5" fill="#FAF1DE"/></g>
+          <g class="flag"><path d="M470 14 h44 v30 q-11 9 -22 0 q-11 9 -22 0 Z" fill="#2148B1"/><circle cx="492" cy="28" r="5" fill="#FAF1DE"/></g>
+        </g>
+      </svg>
+      <span class="eyebrow">Hecho a mano, todos los días</span>
+      <h1>Fast tacos,<br><span class="accent-i">slow</span> margaritas.</h1>
+      <p class="hero-sub">Order at the counter and watch it made in the open kitchen — out the door in minutes, or linger at a mosaic table under two walls of murals with chips and <strong>five house salsas, on us</strong>.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary btn-lg" href="#order">🌮 Order Pickup</a>
+        <a class="btn btn-lg" href="#order">Order Delivery</a>
+        <a class="btn btn-ghost" href="#menu">See the menu ↓</a>
+      </div>
+      <div class="hero-chips">
+        <span class="chip" id="heroOpenChip"><span class="dot-open" data-opendot></span><span data-opentext>Open now · until 1 AM</span></span>
+        <a class="chip" href="#reviews" style="text-decoration:none"><span class="stars">★★★★★</span> 4.8 · 1,247 reviews</a>
+        <span class="chip">🌶 Salsa bar · 5 house salsas</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-badge">Abierto hasta la 1 AM</div>
+      <div class="arch">
+        <svg viewBox="0 0 520 640" role="img" aria-label="Illustration of tacos and a margarita under a smiling sun, in the style of the taqueria’s murals">
+          <rect width="520" height="640" fill="#2148B1"/>
+          <circle cx="260" cy="210" r="150" fill="#2E5BC7"/>
+          <circle cx="260" cy="210" r="105" fill="#3B6CD6"/>
+          <g transform="translate(212,72) scale(1.2)"><use href="#sym-sun" width="80" height="80"/></g>
+          <g transform="translate(52,86) scale(.75)"><use href="#sym-flower" width="60" height="60"/></g>
+          <g transform="translate(404,110) scale(.62)"><use href="#sym-flower" width="60" height="60"/></g>
+          <g transform="translate(60,180)"><use href="#sym-bird" width="70" height="50"/></g>
+          <!-- plate of three tacos -->
+          <ellipse cx="238" cy="452" rx="178" ry="46" fill="#1B3A8F"/>
+          <ellipse cx="238" cy="440" rx="172" ry="52" fill="#FAF1DE" stroke="#2A1508" stroke-width="3"/>
+          <g fill="#2148B1"><circle cx="92" cy="446" r="4"/><circle cx="130" cy="466" r="4"/><circle cx="238" cy="482" r="4"/><circle cx="346" cy="466" r="4"/><circle cx="384" cy="446" r="4"/><circle cx="178" cy="478" r="4"/><circle cx="298" cy="478" r="4"/></g>
+          <g stroke="#2A1508" stroke-width="3">
+            <g transform="translate(96,330)">
+              <path d="M6 96 A66 66 0 0 1 138 96 L120 96 A48 48 0 0 0 24 96 Z" fill="#F2A413"/>
+              <path d="M24 96 A48 48 0 0 1 120 96 Z" fill="#F8C55C"/>
+              <circle cx="46" cy="86" r="9" fill="#8A4B22"/><circle cx="70" cy="80" r="9" fill="#D63B2F"/><circle cx="96" cy="86" r="9" fill="#2E7D4F"/>
+            </g>
+            <g transform="translate(190,304)">
+              <path d="M6 108 A72 72 0 0 1 150 108 L130 108 A52 52 0 0 0 26 108 Z" fill="#F2A413"/>
+              <path d="M26 108 A52 52 0 0 1 130 108 Z" fill="#F8C55C"/>
+              <circle cx="52" cy="96" r="10" fill="#E42878"/><circle cx="78" cy="88" r="10" fill="#8A4B22"/><circle cx="106" cy="96" r="10" fill="#8CB43C"/>
+            </g>
+            <g transform="translate(302,330)">
+              <path d="M6 96 A66 66 0 0 1 138 96 L120 96 A48 48 0 0 0 24 96 Z" fill="#F2A413"/>
+              <path d="M24 96 A48 48 0 0 1 120 96 Z" fill="#F8C55C"/>
+              <circle cx="46" cy="86" r="9" fill="#FAF1DE"/><circle cx="70" cy="80" r="9" fill="#8CB43C"/><circle cx="96" cy="86" r="9" fill="#D63B2F"/>
+            </g>
+          </g>
+          <g transform="translate(404,320) scale(1.35)"><use href="#sym-marg" width="60" height="70"/></g>
+          <g transform="translate(6,506)"><use href="#sym-agave" width="120" height="104"/></g>
+          <g transform="translate(400,516) scale(-1,1) translate(-110,0)"><use href="#sym-agave" width="110" height="96"/></g>
+          <!-- mosaic footer band = the eight tables -->
+          <g stroke="#2A1508" stroke-width="2.5">
+            <rect x="0" y="596" width="520" height="44" fill="#2A1508"/>
+            <rect x="14" y="604" width="50" height="28" rx="6" fill="#E42878"/><rect x="78" y="604" width="50" height="28" rx="6" fill="#F2A413"/>
+            <rect x="142" y="604" width="50" height="28" rx="6" fill="#2E7D4F"/><rect x="206" y="604" width="50" height="28" rx="6" fill="#D63B2F"/>
+            <rect x="270" y="604" width="50" height="28" rx="6" fill="#FAF1DE"/><rect x="334" y="604" width="50" height="28" rx="6" fill="#2148B1"/>
+            <rect x="398" y="604" width="50" height="28" rx="6" fill="#E42878"/><rect x="462" y="604" width="50" height="28" rx="6" fill="#F2A413"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= TICKER ======================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack">
+    <span>Enchiladas Potosinas <i class="tk-star">★</i> Tacos de Res · Pollo · Pescado <i class="tk-star">★</i> Super Burrito ahogado en queso <i class="tk-star">★</i> Margarita de la casa <i class="tk-star">★</i> 5 salsas hechas cada mañana <i class="tk-star">★</i> Abierto 10 AM – 1 AM <i class="tk-star">★</i></span>
+  </div>
+</div>
+
+<!-- ======================= SPECIALS / MENU ======================= -->
+<section class="band menu-band" id="menu">
+  <div class="wrap">
+    <span class="eyebrow">Las Especialidades de la Casa</span>
+    <h2 class="section-title">Three plates we’re <span class="accent-i">famous</span> for</h2>
+    <p class="section-kicker">The full menu runs deep — but these are the dishes people cross town for, pressed and plated in the open kitchen behind the counter.</p>
+
+    <div class="specials-grid">
+      <article class="dish-card">
+        <div class="dish-art">
+          <span class="dish-flag rosa">La Firma</span>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Illustration of enchiladas potosinas on a talavera plate">
+            <ellipse cx="180" cy="196" rx="150" ry="18" fill="rgba(42,21,8,.16)"/>
+            <ellipse cx="180" cy="128" rx="158" ry="76" fill="#FAF1DE" stroke="#2A1508" stroke-width="3"/>
+            <ellipse cx="180" cy="124" rx="130" ry="60" fill="#FFFDF4" stroke="#2A1508" stroke-width="1.5"/>
+            <g fill="#2148B1"><circle cx="52" cy="112" r="4"/><circle cx="70" cy="150" r="4"/><circle cx="180" cy="182" r="4"/><circle cx="290" cy="150" r="4"/><circle cx="308" cy="112" r="4"/><circle cx="120" cy="174" r="4"/><circle cx="240" cy="174" r="4"/></g>
+            <g stroke="#2A1508" stroke-width="2.5">
+              <rect x="84" y="92" width="192" height="26" rx="13" fill="#C23324" transform="rotate(-4 180 105)"/>
+              <rect x="80" y="116" width="200" height="26" rx="13" fill="#D63B2F"/>
+              <rect x="88" y="140" width="188" height="26" rx="13" fill="#B12A1D" transform="rotate(3 180 153)"/>
+            </g>
+            <path d="M92 112 Q118 100 144 112 T196 112 T248 112" fill="none" stroke="#FFF7E6" stroke-width="6" stroke-linecap="round"/>
+            <g fill="#FFF7E6"><circle cx="120" cy="140" r="4"/><circle cx="160" cy="150" r="4"/><circle cx="205" cy="142" r="4"/><circle cx="242" cy="150" r="4"/></g>
+            <g fill="#2E7D4F"><ellipse cx="140" cy="96" rx="6" ry="3"/><ellipse cx="226" cy="96" rx="6" ry="3" transform="rotate(20 226 96)"/><ellipse cx="186" cy="164" rx="6" ry="3" transform="rotate(-15 186 164)"/></g>
+          </svg>
+        </div>
+        <div class="dish-body">
+          <h3>Enchiladas Potosinas</h3>
+          <p class="dish-desc">Chile-red masa folded over queso fresco and seared on the comal — the San Luis Potosí classic we made our signature. Crema, salsa verde, a little fire.</p>
+          <div class="dish-foot">
+            <span class="price">$13.95</span>
+            <a class="btn btn-sm btn-primary" href="#order">Order this →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish-card">
+        <div class="dish-art">
+          <span class="dish-flag">Al Momento</span>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Illustration of three street tacos">
+            <ellipse cx="180" cy="196" rx="150" ry="18" fill="rgba(42,21,8,.16)"/>
+            <ellipse cx="180" cy="150" rx="160" ry="52" fill="#FAF1DE" stroke="#2A1508" stroke-width="3"/>
+            <g stroke="#2A1508" stroke-width="2.5">
+              <g transform="translate(38,52)">
+                <path d="M4 96 A54 54 0 0 1 112 96 L96 96 A38 38 0 0 0 20 96 Z" fill="#F2A413"/>
+                <path d="M20 96 A38 38 0 0 1 96 96 Z" fill="#F8C55C"/>
+                <circle cx="40" cy="86" r="8" fill="#8A4B22"/><circle cx="58" cy="80" r="8" fill="#D63B2F"/><circle cx="78" cy="86" r="8" fill="#2E7D4F"/>
+              </g>
+              <g transform="translate(126,40)">
+                <path d="M4 104 A58 58 0 0 1 120 104 L102 104 A42 42 0 0 0 22 104 Z" fill="#F2A413"/>
+                <path d="M22 104 A42 42 0 0 1 102 104 Z" fill="#F8C55C"/>
+                <circle cx="44" cy="92" r="9" fill="#E4A24C"/><circle cx="62" cy="86" r="9" fill="#FAF1DE"/><circle cx="82" cy="92" r="9" fill="#8CB43C"/>
+              </g>
+              <g transform="translate(222,52)">
+                <path d="M4 96 A54 54 0 0 1 112 96 L96 96 A38 38 0 0 0 20 96 Z" fill="#F2A413"/>
+                <path d="M20 96 A38 38 0 0 1 96 96 Z" fill="#F8C55C"/>
+                <circle cx="40" cy="86" r="8" fill="#FAF1DE"/><circle cx="58" cy="80" r="8" fill="#8CB43C"/><circle cx="78" cy="86" r="8" fill="#E42878"/>
+              </g>
+              <circle cx="52" cy="176" r="12" fill="#8CB43C"/><circle cx="52" cy="176" r="7" fill="#DFF6D6"/>
+              <circle cx="308" cy="176" r="12" fill="#8CB43C"/><circle cx="308" cy="176" r="7" fill="#DFF6D6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="dish-body">
+          <h3>Tacos <span class="accent-i" id="tacoKind">de Res</span></h3>
+          <div class="taco-picker" role="group" aria-label="Choose your taco">
+            <button type="button" data-taco="res" aria-pressed="true">Beef</button>
+            <button type="button" data-taco="pollo" aria-pressed="false">Chicken</button>
+            <button type="button" data-taco="pescado" aria-pressed="false">Fish</button>
+          </div>
+          <p class="dish-desc" id="tacoDesc">Slow-braised beef on double corn tortillas, cilantro, onion — then you pick your salsa at the bar.</p>
+          <div class="dish-foot">
+            <span class="price" id="tacoPrice">$4.25 <small>/ each</small></span>
+            <a class="btn btn-sm btn-primary" href="#order">Order this →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish-card">
+        <div class="dish-art">
+          <span class="dish-flag verde">Smothered</span>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Illustration of a super burrito smothered in melted cheese">
+            <ellipse cx="180" cy="196" rx="150" ry="18" fill="rgba(42,21,8,.16)"/>
+            <ellipse cx="180" cy="140" rx="160" ry="58" fill="#FAF1DE" stroke="#2A1508" stroke-width="3"/>
+            <g stroke="#2A1508" stroke-width="3">
+              <rect x="52" y="84" width="256" height="76" rx="38" fill="#E8CF9E"/>
+              <path d="M60 96 C90 78 130 108 168 92 C210 74 250 104 300 88 L300 118 C260 134 220 108 180 124 C140 140 100 116 60 128 Z" fill="#F8C55C"/>
+              <path d="M74 118 q6 16 -2 26 M148 122 q6 16 -2 26 M226 118 q6 16 -2 26 M288 116 q5 14 -2 24" fill="none" stroke="#2A1508" stroke-width="0" />
+              <path d="M76 116 q8 14 0 30" fill="none" stroke="#F8C55C" stroke-width="12" stroke-linecap="round"/>
+              <path d="M150 120 q8 14 0 30" fill="none" stroke="#F8C55C" stroke-width="12" stroke-linecap="round"/>
+              <path d="M228 116 q8 14 0 30" fill="none" stroke="#F8C55C" stroke-width="12" stroke-linecap="round"/>
+            </g>
+            <g fill="#D63B2F" stroke="#2A1508" stroke-width="2"><circle cx="96" cy="90" r="6"/><circle cx="196" cy="84" r="6"/><circle cx="276" cy="92" r="6"/></g>
+            <g fill="#2E7D4F"><ellipse cx="140" cy="86" rx="7" ry="3"/><ellipse cx="240" cy="82" rx="7" ry="3" transform="rotate(15 240 82)"/></g>
+            <g stroke="#2A1508" stroke-width="2"><circle cx="66" cy="172" r="10" fill="#E42878"/><circle cx="66" cy="172" r="5" fill="#FAF1DE"/></g>
+          </svg>
+        </div>
+        <div class="dish-body">
+          <h3>Super Burrito Ahogado</h3>
+          <p class="dish-desc">A two-hand burrito — rice, beans, your meat, crema — smothered edge to edge in molten queso. Bring patience or a friend.</p>
+          <div class="dish-foot">
+            <span class="price">$12.50</span>
+            <a class="btn btn-sm btn-primary" href="#order">Order this →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="perk-strip">
+      <svg width="54" height="62" aria-hidden="true"><use href="#sym-marg"/></svg>
+      <p><strong>Staying a while?</strong> Every dine-in order comes with complimentary chips and your pick from the salsa bar — and the house margarita ($9) has never met a clock it respected.</p>
+      <a class="btn btn-sm" href="#menu" style="margin-left:auto">Full menu on the Menu page →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SALSA BAR ======================= -->
+<section class="band-tight salsa-band" id="salsas" aria-label="The salsa bar">
+  <div class="wrap">
+    <span class="eyebrow">La Barra de Salsas</span>
+    <h2 class="section-title">Five salsas, made <span class="accent-i gold">every morning</span></h2>
+    <p class="section-kicker">Free with chips for every table. Roasted, blended and argued over daily behind the counter — pick your fighter.</p>
+    <div class="salsa-grid">
+      <div class="salsa-card">
+        <div class="salsa-cup" style="background:#7FA33A"></div>
+        <h4>Verde Tomatillo</h4>
+        <p class="s-sub">bright · herby</p>
+        <span class="heat" role="img" aria-label="Heat level 1 of 5"><svg style="color:#D63B2F"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg></span>
+      </div>
+      <div class="salsa-card">
+        <div class="salsa-cup" style="background:#DA4E3C"></div>
+        <h4>Pico de Gallo</h4>
+        <p class="s-sub">fresh · chunky</p>
+        <span class="heat" role="img" aria-label="Heat level 1 of 5"><svg style="color:#D63B2F"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg></span>
+      </div>
+      <div class="salsa-card">
+        <div class="salsa-cup" style="background:#B3271E"></div>
+        <h4>Roja Asada</h4>
+        <p class="s-sub">fire-roasted</p>
+        <span class="heat" role="img" aria-label="Heat level 2 of 5"><svg style="color:#D63B2F"><use href="#sym-chile"/></svg><svg style="color:#D63B2F"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg></span>
+      </div>
+      <div class="salsa-card">
+        <div class="salsa-cup" style="background:#8A3D1E"></div>
+        <h4>Chipotle Ahumada</h4>
+        <p class="s-sub">smoky · deep</p>
+        <span class="heat" role="img" aria-label="Heat level 3 of 5"><svg style="color:#D63B2F"><use href="#sym-chile"/></svg><svg style="color:#D63B2F"><use href="#sym-chile"/></svg><svg style="color:#D63B2F"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg><svg class="off"><use href="#sym-chile"/></svg></span>
+      </div>
+      <div class="salsa-card">
+        <div class="salsa-cup" style="background:#E85A0C"></div>
+        <h4>Habanero Bravo</h4>
+        <p class="s-sub">sign a waiver</p>
+        <span class="heat" role="img" aria-label="Heat level 5 of 5"><svg style="color:#F2A413"><use href="#sym-chile"/></svg><svg style="color:#F2A413"><use href="#sym-chile"/></svg><svg style="color:#F2A413"><use href="#sym-chile"/></svg><svg style="color:#F2A413"><use href="#sym-chile"/></svg><svg style="color:#F2A413"><use href="#sym-chile"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= EXPERIENCE / ABOUT ======================= -->
+<section class="band exp-band" id="about">
+  <div class="wrap">
+    <span class="eyebrow">La Experiencia · About Us</span>
+    <h2 class="section-title">Painted walls, <span class="accent-i">open</span> flame</h2>
+    <p class="section-kicker">La Mexicana is a counter, eight tables and two walls of murals — a little plaza indoors. You order face-to-face, you watch your food happen, and nobody hurries the marigold-yellow table by the window.</p>
+
+    <div class="mural-strip" role="img" aria-label="Decorative mural band with suns, flowers, birds and agaves — an echo of the two mural walls inside the taqueria">
+      <svg viewBox="0 0 1200 240">
+        <rect width="1200" height="240" fill="#2148B1"/>
+        <g fill="#FAF1DE" opacity=".5"><circle cx="40" cy="40" r="3"/><circle cx="200" cy="26" r="3"/><circle cx="330" cy="52" r="3"/><circle cx="470" cy="30" r="3"/><circle cx="640" cy="44" r="3"/><circle cx="800" cy="26" r="3"/><circle cx="960" cy="48" r="3"/><circle cx="1120" cy="30" r="3"/><circle cx="120" cy="190" r="3"/><circle cx="420" cy="196" r="3"/><circle cx="740" cy="192" r="3"/><circle cx="1060" cy="196" r="3"/></g>
+        <g transform="translate(50,130)"><use href="#sym-agave" width="84" height="72"/></g>
+        <g transform="translate(70,44) scale(.7)"><use href="#sym-flower" width="60" height="60"/></g>
+        <g transform="translate(160,64) scale(1.25)"><use href="#sym-sun" width="80" height="80"/></g>
+        <g transform="translate(300,58)"><use href="#sym-flower" width="60" height="60"/></g>
+        <g transform="translate(302,142) scale(.62)"><use href="#sym-flower" width="60" height="60"/></g>
+        <g transform="translate(400,96) scale(1.25)"><use href="#sym-bird" width="70" height="50"/></g>
+        <g transform="translate(548,134)"><use href="#sym-agave" width="96" height="82"/></g>
+        <g transform="translate(566,44) scale(.85)"><use href="#sym-flower" width="60" height="60"/></g>
+        <g transform="translate(692,62) scale(1.15)"><use href="#sym-sun" width="80" height="80"/></g>
+        <g transform="translate(836,96) scale(1.2) scale(-1,1) translate(-70,0)"><use href="#sym-bird" width="70" height="50"/></g>
+        <g transform="translate(950,54)"><use href="#sym-flower" width="60" height="60"/></g>
+        <g transform="translate(948,140) scale(.66)"><use href="#sym-flower" width="60" height="60"/></g>
+        <g transform="translate(1058,64) scale(1.25)"><use href="#sym-sun" width="80" height="80"/></g>
+        <g transform="translate(1148,132) scale(-1,1) translate(-70,0)"><use href="#sym-agave" width="70" height="60"/></g>
+        <g stroke="#2A1508" stroke-width="2">
+          <rect x="0" y="214" width="1200" height="26" fill="#2A1508"/>
+          <rect x="16" y="219" width="40" height="16" rx="4" fill="#E42878"/><rect x="66" y="219" width="40" height="16" rx="4" fill="#F2A413"/>
+          <rect x="116" y="219" width="40" height="16" rx="4" fill="#2E7D4F"/><rect x="166" y="219" width="40" height="16" rx="4" fill="#FAF1DE"/>
+          <rect x="216" y="219" width="40" height="16" rx="4" fill="#D63B2F"/><rect x="266" y="219" width="40" height="16" rx="4" fill="#2148B1"/>
+          <rect x="316" y="219" width="40" height="16" rx="4" fill="#E42878"/><rect x="366" y="219" width="40" height="16" rx="4" fill="#F2A413"/>
+          <rect x="416" y="219" width="40" height="16" rx="4" fill="#2E7D4F"/><rect x="466" y="219" width="40" height="16" rx="4" fill="#FAF1DE"/>
+          <rect x="516" y="219" width="40" height="16" rx="4" fill="#D63B2F"/><rect x="566" y="219" width="40" height="16" rx="4" fill="#2148B1"/>
+          <rect x="616" y="219" width="40" height="16" rx="4" fill="#E42878"/><rect x="666" y="219" width="40" height="16" rx="4" fill="#F2A413"/>
+          <rect x="716" y="219" width="40" height="16" rx="4" fill="#2E7D4F"/><rect x="766" y="219" width="40" height="16" rx="4" fill="#FAF1DE"/>
+          <rect x="816" y="219" width="40" height="16" rx="4" fill="#D63B2F"/><rect x="866" y="219" width="40" height="16" rx="4" fill="#2148B1"/>
+          <rect x="916" y="219" width="40" height="16" rx="4" fill="#E42878"/><rect x="966" y="219" width="40" height="16" rx="4" fill="#F2A413"/>
+          <rect x="1016" y="219" width="40" height="16" rx="4" fill="#2E7D4F"/><rect x="1066" y="219" width="40" height="16" rx="4" fill="#FAF1DE"/>
+          <rect x="1116" y="219" width="40" height="16" rx="4" fill="#D63B2F"/><rect x="1166" y="219" width="34" height="16" rx="4" fill="#2148B1"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="exp-grid">
+      <div class="exp-card">
+        <svg class="exp-ico" width="56" height="48" viewBox="0 0 56 48" aria-hidden="true">
+          <rect x="2" y="2" width="52" height="44" rx="6" fill="#2148B1" stroke="#2A1508" stroke-width="2.5"/>
+          <g transform="translate(5,7) scale(.42)"><use href="#sym-sun" width="80" height="80"/></g>
+          <g transform="translate(34,20) scale(.34)"><use href="#sym-flower" width="60" height="60"/></g>
+        </svg>
+        <h3>Two walls of murals</h3>
+        <p>Local painters covered the long walls in suns, birds and cempasúchil — same spirit you’ll find echoed across this page. Eat inside a painting.</p>
+      </div>
+      <div class="exp-card">
+        <svg class="exp-ico" width="56" height="48" viewBox="0 0 56 48" aria-hidden="true">
+          <circle cx="28" cy="22" r="18" fill="#FAF1DE" stroke="#2A1508" stroke-width="2.5"/>
+          <g stroke="#2A1508" stroke-width="1.6">
+            <rect x="17" y="11" width="10" height="10" rx="2" fill="#E42878"/><rect x="29" y="11" width="10" height="10" rx="2" fill="#F2A413"/>
+            <rect x="17" y="23" width="10" height="10" rx="2" fill="#2E7D4F"/><rect x="29" y="23" width="10" height="10" rx="2" fill="#2148B1"/>
+          </g>
+          <path d="M28 40 V46 M18 46 H38" stroke="#2A1508" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Eight mosaic tables</h3>
+        <p>Each one tiled by hand in a different palette of Mexico — rosa, cobalt, marigold, nopal. Regulars have favorites. Regulars <em>defend</em> favorites.</p>
+      </div>
+      <div class="exp-card">
+        <svg class="exp-ico" width="56" height="48" viewBox="0 0 56 48" aria-hidden="true">
+          <rect x="2" y="26" width="52" height="18" rx="4" fill="#F2A413" stroke="#2A1508" stroke-width="2.5"/>
+          <g stroke="#2A1508" stroke-width="2.5" fill="#D63B2F">
+            <path d="M18 22 C14 16 20 12 19 6 C25 10 26 16 24 22 Z"/>
+            <path d="M31 22 C27 15 33 12 32 4 C39 9 40 16 37 22 Z"/>
+            <path d="M44 22 C41 17 45 14 44 9 C49 13 50 18 48 22 Z"/>
+          </g>
+        </svg>
+        <h3>The open kitchen</h3>
+        <p>Order at the counter and watch the comal work — tortillas pressed, queso poured, your plate built in front of you. Nothing to hide, everything to smell.</p>
+      </div>
+    </div>
+
+    <div class="two-speeds">
+      <div class="speed fast">
+        <span class="sp-tag">In a hurry</span>
+        <h3>Counter → salsa bar → door in 6 minutes</h3>
+        <p>Lunch-break certified. Order ahead for pickup and your bag is waiting at the counter, salsas packed on the side.</p>
+      </div>
+      <div class="speed slow">
+        <span class="sp-tag">In no hurry at all</span>
+        <h3>The margarita knows no clock</h3>
+        <p>Take a mosaic table, order the house margarita, let the chips and five salsas do their slow work. We’re open until 1 AM — so is the conversation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= REVIEWS ======================= -->
+<section class="band reviews-band" id="reviews">
+  <div class="wrap">
+    <span class="eyebrow">Reseñas Verificadas</span>
+    <h2 class="section-title">Don’t take <span class="accent-i">our</span> word for it</h2>
+    <p class="section-kicker">Honest ratings, pulled straight from the platforms people actually use — the good, the great, and the “too spicy, went back next day”.</p>
+
+    <div class="reviews-layout">
+      <aside class="rating-widget" aria-label="Aggregate rating">
+        <div class="rating-big">4.8</div>
+        <div class="rating-stars" aria-hidden="true">★★★★★</div>
+        <div class="rating-count">1,247 reviews · all platforms</div>
+        <div class="rating-bars" aria-hidden="true">
+          <div class="rbar"><span>5★</span><span class="track"><span class="fill" style="width:82%"></span></span><span>82%</span></div>
+          <div class="rbar"><span>4★</span><span class="track"><span class="fill" style="width:12%"></span></span><span>12%</span></div>
+          <div class="rbar"><span>3★</span><span class="track"><span class="fill" style="width:4%"></span></span><span>4%</span></div>
+          <div class="rbar"><span>2★</span><span class="track"><span class="fill" style="width:1%"></span></span><span>1%</span></div>
+          <div class="rbar"><span>1★</span><span class="track"><span class="fill" style="width:1%"></span></span><span>1%</span></div>
+        </div>
+        <div class="rating-src">
+          <span class="src-pill">Google Reviews</span><span class="src-pill">Yelp</span><span class="src-pill">TripAdvisor</span>
+        </div>
+        <p class="sample-note">Concept widget shown with sample data — wires to the live Google Business / Trustpilot feed in production.</p>
+      </aside>
+
+      <div class="carousel">
+        <div class="review-track" id="reviewTrack">
+          <blockquote class="review-card current">
+            <p class="review-quote">“The enchiladas potosinas taste like San Luis Potosí opened a window in our neighborhood. Went five salsas deep. Regret nothing.”</p>
+            <div class="review-meta">
+              <span class="avatar" style="background:#E42878">M</span>
+              <span><span class="rm-name">María G.</span><br><span class="rm-sub">Google review · sample</span></span>
+              <span class="rm-stars" aria-label="5 stars">★★★★★</span>
+            </div>
+          </blockquote>
+          <blockquote class="review-card">
+            <p class="review-quote">“Ordered at the counter, watched them press the tortillas, was out the door in six minutes. Fast food that isn’t fast food.”</p>
+            <div class="review-meta">
+              <span class="avatar" style="background:#2148B1">D</span>
+              <span><span class="rm-name">Devon R.</span><br><span class="rm-sub">Yelp review · sample</span></span>
+              <span class="rm-stars" aria-label="5 stars">★★★★★</span>
+            </div>
+          </blockquote>
+          <blockquote class="review-card">
+            <p class="review-quote">“Came for a quick burrito, stayed two hours at the pink mosaic table. The house margarita is dangerously good.”</p>
+            <div class="review-meta">
+              <span class="avatar" style="background:#2E7D4F">P</span>
+              <span><span class="rm-name">Priya &amp; Tom</span><br><span class="rm-sub">Google review · sample</span></span>
+              <span class="rm-stars" aria-label="5 stars">★★★★★</span>
+            </div>
+          </blockquote>
+          <blockquote class="review-card">
+            <p class="review-quote">“Open till 1 AM is the public service this city needed. The habanero salsa means business — respect it.”</p>
+            <div class="review-meta">
+              <span class="avatar" style="background:#D63B2F">A</span>
+              <span><span class="rm-name">Alex M.</span><br><span class="rm-sub">TripAdvisor review · sample</span></span>
+              <span class="rm-stars" aria-label="4 stars">★★★★☆</span>
+            </div>
+          </blockquote>
+        </div>
+        <div class="car-controls">
+          <button class="car-btn" id="prevReview" aria-label="Previous review">←</button>
+          <button class="car-btn" id="nextReview" aria-label="Next review">→</button>
+          <div class="car-dots" id="carDots" role="tablist" aria-label="Choose review"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ORDER ======================= -->
+<section class="band order-band" id="order">
+  <div class="wrap">
+    <span class="eyebrow">Para Llevar · Delivery</span>
+    <h2 class="section-title">Hungry? You’re <span class="accent-i gold">two taps</span> away</h2>
+    <p class="section-kicker">Skip the line entirely — order ahead and your bag is waiting at the counter, or have the fiesta come to your door.</p>
+    <div class="order-grid">
+      <div class="order-card">
+        <span class="oc-eta">⏱ Ready in 12–15 min</span>
+        <h3>Pickup at the counter</h3>
+        <p>Order online or call it in. We’ll pack your salsas on the side and wave you past the line — say hi to the open kitchen on your way out.</p>
+        <div class="order-actions">
+          <a class="btn btn-primary btn-lg" href="#order" data-demo="pickup">Start Pickup Order</a>
+          <a class="btn btn-lg" href="tel:+15550101234" style="background:transparent;color:var(--crema);border-color:var(--crema);box-shadow:4px 4px 0 rgba(0,0,0,.4)">Call (555) 010-1234</a>
+        </div>
+      </div>
+      <div class="order-card">
+        <span class="oc-eta">🛵 Averaging 25–35 min citywide</span>
+        <h3>Delivery to your door</h3>
+        <p>Find us on your favorite app — same menu, same five salsas, tortillas wrapped to travel. Habanero shipped only with your explicit consent.</p>
+        <div class="partner-row">
+          <a class="partner" href="#order" data-demo="DoorDash">DoorDash</a>
+          <a class="partner" href="#order" data-demo="Uber Eats">Uber Eats</a>
+          <a class="partner" href="#order" data-demo="Grubhub">Grubhub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= DIRECTIONS ======================= -->
+<section class="band find-band" id="directions">
+  <div class="wrap">
+    <span class="eyebrow">Encuéntranos</span>
+    <h2 class="section-title">Follow the <span class="accent-i">painted</span> corner</h2>
+    <p class="section-kicker">One block off the plaza, under the marigold awning. If you can smell the comal, you’re close.</p>
+    <div class="find-grid">
+      <div class="map-frame">
+        <svg viewBox="0 0 640 480" role="img" aria-label="Stylized neighborhood map with a pin marking Taqueria La Mexicana at Mercado Street and Fifth">
+          <rect width="640" height="480" fill="#EFE6CE"/>
+          <g fill="#E4D8B8">
+            <rect x="24" y="24" width="150" height="120" rx="8"/><rect x="24" y="180" width="150" height="130" rx="8"/>
+            <rect x="210" y="24" width="180" height="120" rx="8"/><rect x="426" y="24" width="190" height="120" rx="8"/>
+            <rect x="426" y="180" width="190" height="130" rx="8"/><rect x="24" y="346" width="150" height="110" rx="8"/>
+            <rect x="426" y="346" width="190" height="110" rx="8"/>
+          </g>
+          <rect x="210" y="180" width="180" height="130" rx="8" fill="#BFD8A8"/>
+          <g fill="#8CB43C"><circle cx="250" cy="220" r="12"/><circle cx="300" cy="250" r="14"/><circle cx="350" cy="215" r="11"/><circle cx="265" cy="278" r="10"/><circle cx="340" cy="278" r="12"/></g>
+          <text x="300" y="304" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-size="13" font-weight="700" fill="#2E7D4F">PLAZA VERDE</text>
+          <g stroke="#FFFDF4" stroke-width="26">
+            <path d="M0 160 H640"/><path d="M0 330 H640"/><path d="M195 0 V480"/><path d="M410 0 V480"/>
+          </g>
+          <g stroke="#D9CCA8" stroke-width="2" stroke-dasharray="10 12">
+            <path d="M0 160 H640"/><path d="M0 330 H640"/><path d="M195 0 V480"/><path d="M410 0 V480"/>
+          </g>
+          <g font-family="Archivo,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#57402C">
+            <text x="90" y="165" dy="4">MERCADO ST</text>
+            <text x="480" y="335" dy="4">CALLE LUNA</text>
+            <text x="199" y="60" transform="rotate(90 199 60)">FIFTH AVE</text>
+            <text x="414" y="380" transform="rotate(90 414 380)">AVENIDA SOL</text>
+          </g>
+          <g transform="translate(410,160)">
+            <circle r="34" fill="rgba(228,40,120,.18)">
+              <animate attributeName="r" values="26;40;26" dur="2.6s" repeatCount="indefinite"/>
+            </circle>
+            <use href="#sym-pin" x="-26" y="-56" width="52" height="52" color="#E42878"/>
+          </g>
+          <g transform="translate(410,160)">
+            <rect x="24" y="-20" width="196" height="40" rx="8" fill="#2A1508"/>
+            <text x="122" y="0" dy="5" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-size="13.5" font-weight="800" fill="#FAF1DE">TAQUERIA LA MEXICANA</text>
+          </g>
+          <g transform="translate(576,52)" stroke="#2A1508" stroke-width="2">
+            <circle r="22" fill="#FFFDF4"/>
+            <path d="M0 -13 L6 8 L0 3 L-6 8 Z" fill="#D63B2F"/>
+            <text y="34" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-size="11" font-weight="800" fill="#57402C" stroke="none">N</text>
+          </g>
+        </svg>
+      </div>
+      <div class="find-card">
+        <span class="open-pill" id="findOpenPill"><span class="dot-open" data-opendot style="box-shadow:none"></span><span data-opentext>Open now · until 1 AM</span></span>
+        <h3>Taqueria La Mexicana</h3>
+        <p class="addr"><strong>123 Mercado Street</strong> · corner of Fifth<br>Centro District <em>(placeholder address)</em><br><a href="tel:+15550101234">(555) 010-1234</a> · <a href="mailto:hola@lamexicana.example">hola@lamexicana.example</a></p>
+        <div class="hours-table">
+          <div class="hrow"><span>Monday – Sunday</span><strong>10:00 AM – 1:00 AM</strong></div>
+          <div class="hrow"><span>Kitchen</span><strong>Serves till close</strong></div>
+          <p class="hnote">365 días — holidays included. Late-night menu is the whole menu.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto">
+          <a class="btn btn-primary" href="https://maps.google.com/?q=Taqueria+La+Mexicana" target="_blank" rel="noopener">Get Directions ↗</a>
+          <a class="btn" href="#order">Order Instead</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CATERING & EVENTS ======================= -->
+<section class="band-tight ce-band" id="catering">
+  <div class="wrap">
+    <div class="ce-grid">
+      <div class="ce-card catering">
+        <span class="ce-tag">Feeds 10–200</span>
+        <span class="eyebrow" style="color:#DCE4FA">Catering</span>
+        <h3>Bring the taqueria to them</h3>
+        <p>Fiesta trays, a traveling salsa bar, and a person who says “more queso?” at the right moment. Offices, weddings, quinceañeras, film sets.</p>
+        <a class="btn btn-primary" href="mailto:catering@lamexicana.example?subject=Catering%20inquiry">Plan your fiesta →</a>
+      </div>
+      <div class="ce-card events" id="events">
+        <span class="eyebrow">Events at La Mexicana</span>
+        <h3>Something’s always on</h3>
+        <ul class="event-list">
+          <li><span class="ev-day">Vie</span><span><strong>Mariachi Fridays</strong> — live set at 8 PM, requests encouraged</span></li>
+          <li><span class="ev-day">Dom</span><span><strong>Lotería Sundays</strong> — cards at 6, winner eats free</span></li>
+          <li><span class="ev-day">Oct</span><span><strong>Día de Muertos week</strong> — mural lighting &amp; special menu</span></li>
+        </ul>
+        <a class="btn" href="#events">Full calendar on the Events page →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SHARE ======================= -->
+<section class="share-band" aria-label="Share Taqueria La Mexicana">
+  <div class="wrap">
+    <div>
+      <h2>Comparte la mesa</h2>
+      <p>Know somebody who needs tacos at 12:40 AM? Send them here — friends don’t let friends eat sad desk lunches.</p>
+    </div>
+    <div class="share-row">
+      <button class="share-ico" id="shareNative" aria-label="Share this page" title="Share"><svg><use href="#sym-share"/></svg></button>
+      <a class="share-ico" id="shareWa" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp" title="WhatsApp"><svg><use href="#sym-wa"/></svg></a>
+      <a class="share-ico" id="shareFb" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Facebook"><svg><use href="#sym-fb"/></svg></a>
+      <a class="share-ico" id="shareX" href="#" target="_blank" rel="noopener" aria-label="Share on X" title="X"><svg><use href="#sym-x"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#home" aria-label="Back to top">
+          <svg class="tiles" width="40" height="40" aria-hidden="true"><use href="#sym-tiles"/></svg>
+          <span class="brand-name"><span class="b1">Taqueria</span><span class="b2">La Mexicana</span></span>
+        </a>
+        <p>Counter-fast tacos, mural-slow afternoons, and five salsas that settle arguments. Hecho con maíz y cariño.</p>
+        <div class="foot-social">
+          <a href="#home" aria-label="Instagram (placeholder)"><svg><use href="#sym-ig"/></svg></a>
+          <a href="#home" aria-label="Facebook (placeholder)"><svg><use href="#sym-fb"/></svg></a>
+          <a href="#home" aria-label="X (placeholder)"><svg><use href="#sym-x"/></svg></a>
+          <a href="#home" aria-label="WhatsApp (placeholder)"><svg><use href="#sym-wa"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <div class="foot-hours">
+          <span>123 Mercado Street · Centro</span>
+          <span>(555) 010-1234</span>
+          <span><strong style="color:var(--marigold-soft)">Open daily 10 AM – 1 AM</strong></span>
+          <span id="footOpenText">—</span>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="foot-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#order">Order</a></li>
+          <li><a href="#directions">Directions</a></li>
+          <li><a href="#catering">Catering</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div class="newsletter">
+        <h4>Taco-day alerts</h4>
+        <p>One email a week: specials, events, and the occasional salsa drop. No spam, ever.</p>
+        <form class="nl-form" id="nlForm">
+          <input type="email" id="nlEmail" placeholder="you@correo.com" aria-label="Email address" required>
+          <button type="submit">Suscribir</button>
+        </form>
+        <p class="nl-msg" id="nlMsg"></p>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Taqueria La Mexicana · Landing page design concept — contact details, prices &amp; review data are sample placeholders.</span>
+      <span><a href="#home">Privacy</a> · <a href="#home">Accessibility</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= MÚSICA ======================= -->
+<div class="musica-hint" id="musicaHint">Toca para la música 🎺</div>
+<button class="musica" id="musicaBtn" aria-pressed="false" aria-label="Toggle mariachi background music">
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+  <span id="musicaLabel">Música</span>
+</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   TAQUERIA LA MEXICANA — interactions
+   (concept build: no external requests, no tracking)
+   ============================================================ */
+(function(){
+"use strict";
+var $=function(s,c){return (c||document).querySelector(s)};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var reducedMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null}}
+var toastEl=$("#toast"),toastTimer=null;
+function toast(msg){if(!toastEl)return;toastEl.textContent=msg;toastEl.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(function(){toastEl.classList.remove("show")},2600)}
+
+/* ---------- seamless ticker loop ---------- */
+(function(){
+  var t=$("#tickerTrack");
+  if(t)t.appendChild(t.children[0].cloneNode(true));
+})();
+
+/* ---------- open-now (10:00 → 01:00 daily, viewer's local time) ---------- */
+function updateOpenState(){
+  var h=new Date().getHours();
+  var open=(h>=10)||(h<1);
+  var text=open?((h===0)?"Open now · closes at 1 AM":"Open now · until 1 AM"):"Closed · opens at 10 AM";
+  var ribbon=$("#openText");if(ribbon)ribbon.textContent="Abierto todos los días · 10 AM – 1 AM · "+(open?"Open now":"Opens 10 AM");
+  $$("[data-opentext]").forEach(function(el){el.textContent=text});
+  $$("[data-opendot], #openDot").forEach(function(el){el.classList.toggle("closed",!open)});
+  var pill=$("#findOpenPill");if(pill)pill.classList.toggle("closed",!open);
+  var foot=$("#footOpenText");if(foot)foot.textContent=open?"Right now: open — come through.":"Right now: closed — see you at 10 AM.";
+}
+updateOpenState();setInterval(updateOpenState,60000);
+
+/* ---------- mobile menu ---------- */
+var burger=$("#hamburger"),mm=$("#mobileMenu");
+if(burger&&mm){
+  burger.addEventListener("click",function(){
+    var open=mm.classList.toggle("open");
+    burger.setAttribute("aria-expanded",open?"true":"false");
+    burger.setAttribute("aria-label",open?"Close menu":"Open menu");
+  });
+  $$("a",mm).forEach(function(a){a.addEventListener("click",function(){mm.classList.remove("open");burger.setAttribute("aria-expanded","false")})});
+}
+
+/* ---------- scrollspy ---------- */
+(function(){
+  var links=$$("#navLinks a");if(!links.length||!("IntersectionObserver" in window))return;
+  var map={};links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a});
+  var watched=["home","menu","about","reviews","order","directions","catering"].map(function(id){return document.getElementById(id)}).filter(Boolean);
+  var spy=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting)return;
+      var id=en.target.id;if(id==="reviews")id="about";
+      links.forEach(function(a){a.classList.remove("active")});
+      if(map[id])map[id].classList.add("active");
+    });
+  },{rootMargin:"-38% 0px -55% 0px"});
+  watched.forEach(function(s){spy.observe(s)});
+})();
+
+/* ---------- taco picker ---------- */
+(function(){
+  var data={
+    res:{kind:"de Res",desc:"Slow-braised beef on double corn tortillas, cilantro, onion — then you pick your salsa at the bar.",price:"$4.25 <small>/ each</small>"},
+    pollo:{kind:"de Pollo",desc:"Achiote-marinated chicken off the plancha, double tortillas, cilantro and onion. The sleeper hit.",price:"$4.25 <small>/ each</small>"},
+    pescado:{kind:"de Pescado",desc:"Crisp battered fish, cabbage, lime crema — Baja style. Best friend of the verde tomatillo.",price:"$5.25 <small>/ each</small>"}
+  };
+  var kind=$("#tacoKind"),desc=$("#tacoDesc"),price=$("#tacoPrice");
+  $$(".taco-picker button").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      $$(".taco-picker button").forEach(function(b){b.setAttribute("aria-pressed","false")});
+      btn.setAttribute("aria-pressed","true");
+      var d=data[btn.getAttribute("data-taco")];if(!d)return;
+      if(kind)kind.textContent=d.kind;
+      if(desc)desc.textContent=d.desc;
+      if(price)price.innerHTML=d.price;
+    });
+  });
+})();
+
+/* ---------- reviews carousel ---------- */
+(function(){
+  var cards=$$("#reviewTrack .review-card");if(!cards.length)return;
+  var dotsWrap=$("#carDots"),idx=0,timer=null;
+  cards.forEach(function(_,i){
+    var b=document.createElement("button");
+    b.setAttribute("aria-label","Review "+(i+1));
+    b.addEventListener("click",function(){go(i,true)});
+    dotsWrap.appendChild(b);
+  });
+  var dots=$$("button",dotsWrap);
+  function paint(){
+    cards.forEach(function(c,i){c.classList.toggle("current",i===idx)});
+    dots.forEach(function(d,i){if(i===idx)d.setAttribute("aria-current","true");else d.removeAttribute("aria-current")});
+  }
+  function go(i,manual){idx=(i+cards.length)%cards.length;paint();if(manual)stopAuto()}
+  function stopAuto(){if(timer){clearInterval(timer);timer=null}}
+  $("#nextReview").addEventListener("click",function(){go(idx+1,true)});
+  $("#prevReview").addEventListener("click",function(){go(idx-1,true)});
+  if(!reducedMotion){timer=setInterval(function(){go(idx+1)},6500);
+    var wrap=$(".carousel");wrap.addEventListener("mouseenter",stopAuto)}
+  paint();
+})();
+
+/* ---------- share ---------- */
+(function(){
+  var url=location.href,txt="Taqueria La Mexicana — fast tacos, slow margaritas, open till 1 AM.";
+  var wa=$("#shareWa"),fb=$("#shareFb"),x=$("#shareX"),nat=$("#shareNative");
+  if(wa)wa.href="https://wa.me/?text="+encodeURIComponent(txt+" "+url);
+  if(fb)fb.href="https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(url);
+  if(x)x.href="https://twitter.com/intent/tweet?text="+encodeURIComponent(txt)+"&url="+encodeURIComponent(url);
+  if(nat)nat.addEventListener("click",function(){
+    if(navigator.share){navigator.share({title:"Taqueria La Mexicana",text:txt,url:url}).catch(function(){})}
+    else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){toast("Link copied — ¡compártelo!")}).catch(function(){toast(url)})}
+    else{toast(url)}
+  });
+})();
+
+/* ---------- demo CTAs + newsletter ---------- */
+$$("[data-demo]").forEach(function(el){
+  el.addEventListener("click",function(e){
+    e.preventDefault();
+    var w=el.getAttribute("data-demo");
+    toast(w==="pickup"?"Demo — links to the online-ordering flow in production":"Demo — opens "+w+" in production");
+  });
+});
+(function(){
+  var f=$("#nlForm"),msg=$("#nlMsg");
+  if(f)f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var em=$("#nlEmail");
+    if(em&&em.value){msg.textContent="¡Gracias! You're on the list. (demo — no email sent)";em.value=""}
+  });
+})();
+
+/* ============================================================
+   MÚSICA — an original mariachi/cumbia-flavored loop, synthesized
+   with WebAudio (CSP-safe: no audio files). Browsers require a
+   user gesture before sound, so it starts from the toggle.
+   ============================================================ */
+var musica=(function(){
+  var ctx=null,master=null,playing=false,timer=null,nextTime=0,step=0;
+  var BPM=126,SPB=60/BPM,STEPS=64,EIGHTH=SPB/2; // 8 bars of 4/4 in eighths
+  var chords={G:[43,55,59,62],C:[48,55,60,64],D:[50,54,57,62]}; // bass root + triad
+  var barChord=["G","G","C","C","G","D","D","G"]; // wait — set below
+  barChord=["G","C","G","D","G","C","D","G"];
+  // original melody, eighth grid (0 = rest, -1 = tie/hold handled as rest)
+  var lead=[
+    74,74,76,74, 71,67,71,74,   76,76,79,76, 72,76,79,76,
+    74,71,74,79, 74,71,67,0,    66,69,73,69, 74,73,69,66,
+    67,71,74,71, 79,0,74,0,     81,79,76,79, 76,72,76,79,
+    78,0,81,78,  74,0,73,69,    71,74,79,0,  79,0,0,0
+  ];
+  var thirdMap={74:71,76:72,71:67,67:64,79:76,72:69,78:74,81:78,69:66,73:69,66:62};
+  function mtof(m){return 440*Math.pow(2,(m-69)/12)}
+  function ensureCtx(){
+    if(ctx)return true;
+    try{
+      var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;
+      ctx=new AC();
+      master=ctx.createGain();master.gain.value=0.16;
+      var comp=ctx.createDynamicsCompressor();
+      comp.threshold.value=-18;comp.ratio.value=6;
+      master.connect(comp);comp.connect(ctx.destination);
+      return true;
+    }catch(e){return false}
+  }
+  function trumpet(midi,t,dur,gain){
+    var f=mtof(midi);
+    var g=ctx.createGain();
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.linearRampToValueAtTime(gain,t+0.025);
+    g.gain.setValueAtTime(gain*0.82,t+dur*0.7);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur+0.06);
+    var lp=ctx.createBiquadFilter();lp.type="lowpass";lp.frequency.value=1750;lp.Q.value=0.8;
+    g.connect(lp);lp.connect(master);
+    var vib=ctx.createOscillator();vib.frequency.value=5.6;
+    var vibG=ctx.createGain();vibG.gain.setValueAtTime(0,t);vibG.gain.linearRampToValueAtTime(f*0.006,t+0.14);
+    vib.connect(vibG);
+    [ -4,3 ].forEach(function(det){
+      var o=ctx.createOscillator();o.type="sawtooth";o.frequency.value=f;o.detune.value=det;
+      vibG.connect(o.frequency);
+      o.connect(g);o.start(t);o.stop(t+dur+0.1);
+    });
+    vib.start(t);vib.stop(t+dur+0.1);
+  }
+  function bass(midi,t){
+    var o=ctx.createOscillator(),g=ctx.createGain(),lp=ctx.createBiquadFilter();
+    o.type="triangle";o.frequency.value=mtof(midi);
+    lp.type="lowpass";lp.frequency.value=420;
+    g.gain.setValueAtTime(0.0001,t);g.gain.linearRampToValueAtTime(0.34,t+0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+0.30);
+    o.connect(lp);lp.connect(g);g.connect(master);o.start(t);o.stop(t+0.34);
+  }
+  function stab(ch,t){
+    ch.slice(1).forEach(function(m){
+      var o=ctx.createOscillator(),g=ctx.createGain(),lp=ctx.createBiquadFilter();
+      o.type="sawtooth";o.frequency.value=mtof(m+12);
+      lp.type="lowpass";lp.frequency.value=1000;
+      g.gain.setValueAtTime(0.0001,t);g.gain.linearRampToValueAtTime(0.055,t+0.008);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+0.10);
+      o.connect(lp);lp.connect(g);g.connect(master);o.start(t);o.stop(t+0.12);
+    });
+  }
+  var noiseBuf=null;
+  function noise(){
+    if(noiseBuf)return noiseBuf;
+    noiseBuf=ctx.createBuffer(1,ctx.sampleRate*0.06,ctx.sampleRate);
+    var d=noiseBuf.getChannelData(0);
+    for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+    return noiseBuf;
+  }
+  function shaker(t,accent){
+    var s=ctx.createBufferSource();s.buffer=noise();
+    var hp=ctx.createBiquadFilter();hp.type="highpass";hp.frequency.value=6200;
+    var g=ctx.createGain();
+    var v=accent?0.06:0.03;
+    g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(0.0001,t+0.05);
+    s.connect(hp);hp.connect(g);g.connect(master);s.start(t);
+  }
+  function thump(t){
+    var o=ctx.createOscillator(),g=ctx.createGain();
+    o.type="sine";o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(55,t+0.09);
+    g.gain.setValueAtTime(0.30,t);g.gain.exponentialRampToValueAtTime(0.0001,t+0.13);
+    o.connect(g);g.connect(master);o.start(t);o.stop(t+0.15);
+  }
+  function scheduleStep(s,t){
+    var bar=Math.floor(s/8),beat8=s%8;
+    var ch=chords[barChord[bar]];
+    if(beat8%2===0){ // quarter beats: bass oompah + thump on 1,3
+      var q=beat8/2;
+      bass(q%2===0?ch[0]:ch[0]+7,t);
+      if(q===0||q===2)thump(t);
+    }else{
+      stab(ch,t); // offbeat chord stabs = the cumbia motor
+    }
+    shaker(t,beat8%2===1);
+    var m=lead[s];
+    if(m&&m>0){
+      var dur=EIGHTH*0.92;
+      var nxt=lead[(s+1)%STEPS];
+      if(nxt===0)dur=EIGHTH*1.85;
+      trumpet(m,t,dur,0.10);
+      var h=thirdMap[m];if(h)trumpet(h,t,dur,0.055);
+    }
+  }
+  function loop(){
+    while(nextTime<ctx.currentTime+0.14){
+      scheduleStep(step,nextTime);
+      step=(step+1)%STEPS;
+      nextTime+=EIGHTH;
+    }
+  }
+  return {
+    start:function(){
+      if(!ensureCtx())return false;
+      if(ctx.state==="suspended")ctx.resume();
+      if(playing)return true;
+      playing=true;step=0;nextTime=ctx.currentTime+0.08;
+      timer=setInterval(loop,25);
+      return true;
+    },
+    stop:function(){
+      playing=false;
+      if(timer){clearInterval(timer);timer=null}
+      if(ctx&&ctx.state==="running")ctx.suspend();
+    },
+    isPlaying:function(){return playing}
+  };
+})();
+
+(function(){
+  var btn=$("#musicaBtn"),label=$("#musicaLabel"),hint=$("#musicaHint");
+  if(!btn)return;
+  function setUI(on){
+    btn.classList.toggle("playing",on);
+    btn.setAttribute("aria-pressed",on?"true":"false");
+    label.textContent=on?"Suena":"Música";
+  }
+  btn.addEventListener("click",function(){
+    if(musica.isPlaying()){musica.stop();setUI(false);store("musica","off")}
+    else{
+      if(musica.start()){setUI(true);store("musica","on");toast("🎺 ¡Que suene!")}
+      else{toast("Audio isn't available in this browser")}
+    }
+    if(hint)hint.classList.remove("show");
+  });
+  // If the visitor turned música on last time, resume on their first tap/keys
+  // (browsers require a gesture — this is the honest version of autoplay).
+  var pref=store("musica");
+  function firstGesture(){
+    document.removeEventListener("pointerdown",firstGesture);
+    document.removeEventListener("keydown",firstGesture);
+    if(store("musica")==="on"&&!musica.isPlaying()){if(musica.start())setUI(true)}
+  }
+  if(pref==="on"){
+    document.addEventListener("pointerdown",firstGesture);
+    document.addEventListener("keydown",firstGesture);
+  }
+  if(pref===null&&hint&&!reducedMotion){
+    setTimeout(function(){hint.classList.add("show")},1600);
+    setTimeout(function(){hint.classList.remove("show")},9000);
+  }
+})();
+})();
+</script>
+
+</body></html>

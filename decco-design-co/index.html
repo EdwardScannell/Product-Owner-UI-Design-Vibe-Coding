@@ -1,0 +1,982 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Decco Design Co.</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Jost:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* ============ TOKENS — dark-first "Midnight Foyer" ============ */
+:root {
+  color-scheme: dark;
+  --bg: #10151c;
+  --bg-accent: #141b25;
+  --panel: #171f29;
+  --panel-2: #1e2833;
+  --line: #2b3644;
+  --gold-line: #5a4c2e;
+  --text: #f0e8d6;
+  --text-dim: #b3a88f;
+  --text-faint: #948b76;
+  --gold: #c9a45c;
+  --gold-bright: #e3c27d;
+  --jade: #66b39e;
+  --error: #d98071;
+  --ink-on-gold: #181307;
+  --ray: rgba(201, 164, 92, 0.05);
+  --chev: rgba(201, 164, 92, 0.15);
+  --flute: rgba(201, 164, 92, 0.03);
+  --shadow: rgba(0, 0, 0, 0.35);
+  --cut: 10px;
+  --bevel: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% var(--cut),
+    100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, var(--cut) 100%,
+    0 calc(100% - var(--cut)), 0 var(--cut));
+}
+/* Champagne daylight — system light, unless the viewer chose dark */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #f1e9d7;
+    --bg-accent: #ece2cb;
+    --panel: #f7f1e3;
+    --panel-2: #ece3cd;
+    --line: #d8cbae;
+    --gold-line: #c0a878;
+    --text: #262015;
+    --text-dim: #6d6350;
+    --text-faint: #857a61;
+    --gold: #7d6027;
+    --gold-bright: #664e1f;
+    --jade: #2f6f63;
+    --error: #a04a38;
+    --ink-on-gold: #f8f2e2;
+    --ray: rgba(122, 94, 40, 0.07);
+    --chev: rgba(122, 94, 40, 0.2);
+    --flute: rgba(122, 94, 40, 0.05);
+    --shadow: rgba(90, 70, 30, 0.18);
+  }
+}
+/* Explicit toggle wins in both directions */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f1e9d7;
+  --bg-accent: #ece2cb;
+  --panel: #f7f1e3;
+  --panel-2: #ece3cd;
+  --line: #d8cbae;
+  --gold-line: #c0a878;
+  --text: #262015;
+  --text-dim: #6d6350;
+  --text-faint: #857a61;
+  --gold: #7d6027;
+  --gold-bright: #664e1f;
+  --jade: #2f6f63;
+  --error: #a04a38;
+  --ink-on-gold: #f8f2e2;
+  --ray: rgba(122, 94, 40, 0.07);
+  --chev: rgba(122, 94, 40, 0.2);
+  --flute: rgba(122, 94, 40, 0.05);
+  --shadow: rgba(90, 70, 30, 0.18);
+}
+
+/* ============ BASE ============ */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Jost", "Century Gothic", Futura, "Trebuchet MS", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: repeating-linear-gradient(90deg, var(--flute) 0 1px, transparent 1px 84px);
+  padding-bottom: calc(74px + env(safe-area-inset-bottom));
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { text-wrap: balance; }
+a { color: var(--jade); }
+::selection { background: var(--gold); color: var(--ink-on-gold); }
+:focus-visible { outline: 2px solid var(--jade); outline-offset: 2px; }
+.mono { font-family: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace; }
+.skip {
+  position: absolute; left: -999px; top: 0; z-index: 100;
+  background: var(--gold); color: var(--ink-on-gold);
+  padding: .6rem 1rem; font-weight: 600; text-decoration: none;
+}
+.skip:focus-visible { left: .5rem; top: .5rem; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ============ HERO — the identity block ============ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 1.9rem 1.25rem 2.3rem;
+  background: linear-gradient(var(--bg-accent), var(--bg));
+  border-bottom: 1px solid var(--line);
+}
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: repeating-conic-gradient(from 0deg at 50% -90px,
+    var(--ray) 0deg 2.5deg, transparent 2.5deg 9deg);
+  -webkit-mask-image: linear-gradient(#000 0%, #000 42%, transparent 85%);
+  mask-image: linear-gradient(#000 0%, #000 42%, transparent 85%);
+  pointer-events: none;
+}
+.hero > * { position: relative; }
+.brandrow {
+  display: flex; align-items: center; justify-content: center;
+  gap: .7rem; margin-bottom: 1.5rem;
+}
+.brandrow svg { width: 42px; height: 42px; flex: none; }
+.wordmark {
+  font-family: "Cinzel", Georgia, serif; font-weight: 600;
+  font-size: .95rem; letter-spacing: .3em; text-align: left;
+  line-height: 1.2; color: var(--text);
+}
+.wordmark .est {
+  display: block; margin-top: .28rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .55rem; letter-spacing: .3em; color: var(--gold);
+}
+.avatar { width: 126px; margin: 0 auto .85rem; filter: drop-shadow(0 8px 26px var(--shadow)); }
+.avatar svg { display: block; width: 100%; height: auto; }
+.hero h1 {
+  font-family: "Cinzel", Georgia, serif; font-weight: 700;
+  font-size: clamp(2rem, 8vw, 2.7rem); line-height: 1.1;
+  letter-spacing: .05em; margin: 0 0 .4rem;
+}
+.role {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .72rem; letter-spacing: .4em; text-indent: .4em;
+  color: var(--gold); margin: 0 0 .85rem;
+  display: flex; align-items: center; justify-content: center; gap: .7rem;
+}
+.role::before, .role::after {
+  content: ""; width: 26px; height: 1px; background: var(--gold); opacity: .6;
+}
+.bio {
+  max-width: 36ch; margin: 0 auto 1.15rem;
+  color: var(--text-dim); font-size: 1.02rem; line-height: 1.55;
+  text-wrap: pretty;
+}
+.contact {
+  list-style: none; padding: 0; margin: 0 0 1.4rem;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem .55rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .76rem;
+}
+.contact a, .contact span {
+  display: inline-block; padding: .48rem .7rem;
+  border: 1px solid var(--line); background: var(--panel);
+  color: var(--text); text-decoration: none; letter-spacing: .02em;
+}
+.contact a:hover { border-color: var(--gold-line); color: var(--gold-bright); }
+.cta-row { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
+
+/* Beveled deco buttons */
+.btn {
+  position: relative; display: inline-block;
+  clip-path: var(--bevel);
+  background: var(--gold); color: var(--ink-on-gold);
+  border: none; cursor: pointer; text-decoration: none;
+  font-family: inherit; font-weight: 600; font-size: .92rem;
+  letter-spacing: .13em; text-transform: uppercase;
+  transition: background-color .18s;
+}
+.btn > span {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: .85rem 1.3rem;
+}
+.btn.solid:hover { background: var(--gold-bright); }
+.btn.ghost { background: var(--gold-line); color: var(--gold); }
+.btn.ghost::after {
+  content: ""; position: absolute; inset: 1px;
+  clip-path: var(--bevel); background: var(--bg-accent);
+  transition: background-color .18s;
+}
+.btn.ghost:hover { color: var(--gold-bright); }
+.btn.ghost:hover::after { background: var(--panel); }
+.btn:focus-visible { clip-path: none; }
+.btn.ghost:focus-visible::after { clip-path: none; inset: 2px; }
+
+/* Chevron section divider */
+.chevron {
+  height: 10px;
+  background-image:
+    linear-gradient(135deg, var(--chev) 25%, transparent 25%),
+    linear-gradient(225deg, var(--chev) 25%, transparent 25%);
+  background-size: 18px 10px;
+  background-repeat: repeat-x;
+}
+
+/* ============ SECTIONS ============ */
+main { max-width: 74rem; margin: 0 auto; padding: 0 1.1rem; }
+section { padding: 2.3rem 0 2.7rem; }
+.sec-head h2 {
+  font-family: "Cinzel", Georgia, serif; font-weight: 600;
+  font-size: clamp(1.45rem, 5vw, 1.85rem); letter-spacing: .1em;
+  margin: 0 0 .45rem; display: flex; align-items: center; gap: .75rem;
+}
+.sec-head h2::before {
+  content: ""; width: 9px; height: 9px; flex: none;
+  background: var(--gold); transform: rotate(45deg);
+}
+.sec-head h2::after {
+  content: ""; flex: 1; height: 5px;
+  border-top: 1px solid var(--gold-line);
+  border-bottom: 1px solid var(--gold-line);
+  opacity: .65; min-width: 30px;
+}
+.sec-sub { color: var(--text-dim); margin: 0 0 1.5rem; max-width: 52ch; }
+
+/* ============ FINDER (filters) ============ */
+.finder { display: flex; flex-direction: column; gap: .85rem; margin-bottom: 1.2rem; }
+.q-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+#q {
+  width: 100%; background: var(--panel-2);
+  border: 1px solid var(--line); color: var(--text);
+  font-family: inherit; font-size: 1rem; padding: .82rem .95rem;
+}
+#q::placeholder { color: var(--text-faint); }
+#q:focus { outline: none; border-color: var(--jade); box-shadow: 0 0 0 1px var(--jade); }
+.facet { display: flex; align-items: center; gap: .65rem; }
+.facet-label {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold); flex: none; width: 82px;
+}
+.chips {
+  display: flex; gap: .45rem; overflow-x: auto;
+  padding: 2px 2px .4rem; scrollbar-width: thin; flex: 1;
+}
+.chip {
+  flex: none; font-family: inherit; font-weight: 500;
+  font-size: .82rem; letter-spacing: .04em;
+  padding: .4rem .7rem; min-height: 34px;
+  background: var(--panel); border: 1px solid var(--line);
+  color: var(--text-dim); cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.chip:hover { border-color: var(--gold-line); color: var(--text); }
+.chip[aria-pressed="true"] {
+  background: var(--gold); border-color: var(--gold);
+  color: var(--ink-on-gold); font-weight: 600;
+}
+.count-row { display: flex; align-items: center; gap: .9rem; flex-wrap: wrap; }
+.count {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .72rem; letter-spacing: .08em; color: var(--text-faint); margin: 0;
+}
+#clear {
+  background: none; border: none; padding: .3rem 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .72rem; letter-spacing: .08em;
+  color: var(--jade); text-decoration: underline; cursor: pointer;
+}
+
+/* ============ PORTFOLIO GRID ============ */
+.grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: 1fr; gap: 1.2rem;
+}
+.card {
+  background: var(--panel); border: 1px solid var(--line);
+  display: flex; flex-direction: column;
+  transition: border-color .18s;
+}
+.card:hover, .card:focus-within { border-color: var(--gold-line); }
+.art { margin: 0; line-height: 0; border-bottom: 1px solid var(--line); }
+.art svg { width: 100%; height: auto; display: block; }
+.card-body { padding: 1rem 1rem 1.1rem; display: flex; flex-direction: column; gap: .55rem; flex: 1; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: .6rem; }
+.card h3 {
+  font-weight: 600; font-size: 1.16rem; line-height: 1.3;
+  letter-spacing: .01em; margin: 0;
+}
+.fmt {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .67rem; color: var(--gold);
+  border: 1px solid var(--gold-line); padding: .18rem .4rem;
+  flex: none; margin-top: .2rem;
+}
+.meta {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .7rem; letter-spacing: .05em; color: var(--text-faint);
+  margin: 0; display: flex; align-items: center; gap: .5rem;
+  font-variant-numeric: tabular-nums;
+}
+.dots { display: inline-flex; gap: 4px; margin-left: auto; }
+.dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 1px solid var(--line); display: inline-block;
+}
+.desc { margin: 0; color: var(--text-dim); font-size: .94rem; line-height: 1.55; }
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; margin: .1rem 0 0; }
+.tag {
+  font-family: inherit; font-weight: 500; font-size: .74rem;
+  letter-spacing: .05em; padding: .26rem .55rem;
+  border: 1px solid var(--line); background: var(--panel-2);
+  color: var(--text-dim); cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.tag:hover { border-color: var(--gold-line); color: var(--text); }
+.card blockquote {
+  margin: .35rem 0 0; padding: .6rem .8rem .65rem;
+  border-left: 2px solid var(--gold); background: var(--panel-2);
+  font-size: .9rem; line-height: 1.5; font-style: italic; color: var(--text);
+}
+.card cite {
+  display: block; margin-top: .35rem; font-style: normal;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .64rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--text-faint);
+}
+.empty {
+  grid-column: 1 / -1; border: 1px dashed var(--gold-line);
+  padding: 2rem 1.3rem; text-align: center; color: var(--text-dim);
+}
+.empty h3 { font-family: "Cinzel", Georgia, serif; letter-spacing: .08em; margin: 0 0 .4rem; color: var(--text); }
+.empty p { margin: 0 0 1rem; }
+
+/* ============ CONNECT FORM ============ */
+#lead { display: flex; flex-direction: column; gap: 1.05rem; max-width: 42rem; }
+.fgrid { display: grid; grid-template-columns: 1fr; gap: 1.05rem; }
+.field label, fieldset legend {
+  display: block; font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .64rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: .4rem;
+}
+.req::after { content: " *"; color: var(--gold-bright); }
+.field input, .field textarea {
+  width: 100%; background: var(--panel-2);
+  border: 1px solid var(--line); color: var(--text);
+  font-family: inherit; font-size: 1rem; padding: .78rem .9rem;
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--text-faint); }
+.field input:focus, .field textarea:focus {
+  outline: none; border-color: var(--jade); box-shadow: 0 0 0 1px var(--jade);
+}
+.field input[aria-invalid="true"] { border-color: var(--error); }
+.field .msg { font-size: .82rem; color: var(--error); margin: .35rem 0 0; }
+textarea { min-height: 110px; resize: vertical; }
+fieldset { border: 1px solid var(--line); padding: .9rem .95rem 1.05rem; margin: 0; min-width: 0; }
+fieldset legend { margin-bottom: 0; padding: 0 .5rem; }
+.interests { display: grid; grid-template-columns: repeat(2, 1fr); gap: .55rem .9rem; margin-top: .55rem; }
+.check {
+  display: flex; align-items: flex-start; gap: .55rem;
+  font-size: .92rem; line-height: 1.4; color: var(--text-dim); cursor: pointer; padding: .15rem 0;
+}
+.check input { width: 18px; height: 18px; accent-color: var(--gold); flex: none; margin: 2px 0 0; }
+.check:hover { color: var(--text); }
+.form-status {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .78rem; letter-spacing: .04em; margin: 0; min-height: 1.2em;
+  color: var(--jade);
+}
+.form-status.bad { color: var(--error); }
+#pipeline {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: .72rem; letter-spacing: .1em; color: var(--gold); margin: -0.9rem 0 1.4rem;
+}
+.success {
+  border: 1px solid var(--gold-line); background: var(--panel);
+  padding: 2.1rem 1.4rem; text-align: center; max-width: 42rem;
+}
+.success .mark { font-family: "Cinzel", Georgia, serif; font-size: 2rem; color: var(--gold); line-height: 1; }
+.success h3 {
+  font-family: "Cinzel", Georgia, serif; font-weight: 600;
+  letter-spacing: .06em; font-size: 1.35rem; margin: .6rem 0 .5rem;
+}
+.success p { color: var(--text-dim); margin: 0 auto 1.2rem; max-width: 44ch; }
+.success .note { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .72rem; letter-spacing: .06em; }
+
+/* ============ FOOTER + BOTTOM NAV ============ */
+footer {
+  border-top: 1px solid var(--line); margin-top: 2.2rem;
+  padding: 1.9rem 1.2rem; text-align: center;
+  color: var(--text-faint); font-size: .82rem; line-height: 1.75;
+}
+.f-brand {
+  font-family: "Cinzel", Georgia, serif; letter-spacing: .28em;
+  font-size: .82rem; color: var(--text-dim); margin: 0 0 .45rem;
+}
+footer p { margin: 0; }
+footer .mono { font-size: .68rem; letter-spacing: .05em; }
+.disclosure { margin-top: .85rem; font-size: .7rem; opacity: .85; }
+.bottomnav {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+  display: flex; align-items: stretch;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--gold-line);
+  padding: .3rem .5rem calc(.3rem + env(safe-area-inset-bottom));
+}
+.bottomnav a {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  min-height: 50px; font-weight: 600; font-size: .7rem;
+  letter-spacing: .08em; text-transform: uppercase; white-space: nowrap;
+  color: var(--text-dim); text-decoration: none; padding: 0 .25rem;
+  border-bottom: 2px solid transparent;
+}
+.bottomnav a:hover { color: var(--text); }
+.bottomnav a[aria-current="true"] { color: var(--gold); border-bottom-color: var(--gold); }
+.navmark { flex: 0 0 66px; }
+.navmark svg { width: 34px; height: 34px; }
+
+/* ============ LARGER SCREENS ============ */
+@media (min-width: 700px) {
+  .hero { padding: 2.6rem 1.5rem 3rem; }
+  .avatar { width: 148px; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .fgrid { grid-template-columns: 1fr 1fr; }
+  .interests { grid-template-columns: repeat(3, 1fr); }
+  section { padding: 3rem 0 3.4rem; }
+}
+@media (min-width: 1080px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 370px) {
+  .interests { grid-template-columns: 1fr; }
+  .facet { flex-direction: column; align-items: flex-start; gap: .3rem; }
+  .chips { width: 100%; }
+}
+</style>
+
+<a class="skip" href="#work">Skip to the portfolio</a>
+
+<header class="hero" id="top">
+  <div class="brandrow">
+    <svg viewBox="0 0 80 80" aria-hidden="true">
+      <polygon points="40,3 66,14 77,40 66,66 40,77 14,66 3,40 14,14" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+      <polygon points="40,9 62,18 71,40 62,62 40,71 18,62 9,40 18,18" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".55"/>
+      <polygon points="40,13 44,17 40,21 36,17" fill="var(--gold)"/>
+      <text x="40" y="52" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-weight="700" font-size="27" fill="var(--gold)">AD</text>
+    </svg>
+    <p class="wordmark">DECCO DESIGN CO.<span class="est">EST. CAMBRIDGE, MASS.</span></p>
+  </div>
+
+  <div class="avatar">
+    <svg viewBox="0 0 200 200" role="img" aria-label="Stylized Art Deco portrait of Arthur Decco — gold linework on midnight blue">
+      <circle cx="100" cy="100" r="97" fill="#0e1319"/>
+      <g stroke="#c9a45c" stroke-width="1.4" opacity=".3">
+        <line x1="148" y1="100" x2="190" y2="100"/><line x1="144.4" y1="118.4" x2="183.2" y2="134.5"/>
+        <line x1="133.9" y1="133.9" x2="163.6" y2="163.6"/><line x1="118.4" y1="144.4" x2="134.5" y2="183.2"/>
+        <line x1="100" y1="148" x2="100" y2="190"/><line x1="81.6" y1="144.4" x2="65.5" y2="183.2"/>
+        <line x1="66.1" y1="133.9" x2="36.4" y2="163.6"/><line x1="55.6" y1="118.4" x2="16.8" y2="134.5"/>
+        <line x1="52" y1="100" x2="10" y2="100"/><line x1="55.6" y1="81.6" x2="16.8" y2="65.5"/>
+        <line x1="66.1" y1="66.1" x2="36.4" y2="36.4"/><line x1="81.6" y1="55.6" x2="65.5" y2="16.8"/>
+        <line x1="100" y1="52" x2="100" y2="10"/><line x1="118.4" y1="55.6" x2="134.5" y2="16.8"/>
+        <line x1="133.9" y1="66.1" x2="163.6" y2="36.4"/><line x1="144.4" y1="81.6" x2="183.2" y2="65.5"/>
+      </g>
+      <polygon points="100,6 166,33 194,100 166,167 100,194 34,167 6,100 34,33" fill="none" stroke="#c9a45c" stroke-width="2.5"/>
+      <polygon points="100,12 160,37 188,100 160,163 100,188 40,163 12,100 40,37" fill="none" stroke="#c9a45c" stroke-width="1" opacity=".5"/>
+      <path d="M52 170 L60 136 Q100 128 140 136 L148 170 Z" fill="#161e28" stroke="#c9a45c" stroke-width="1"/>
+      <path d="M84 136 L100 152 L116 136" fill="none" stroke="#c9a45c" stroke-width="1" opacity=".6"/>
+      <polygon points="90,134 110,134 100,150" fill="#ecdfc3"/>
+      <rect x="91" y="116" width="18" height="16" fill="#e3d3b1"/>
+      <polygon points="86,134 97,129 97,141" fill="#c9a45c"/>
+      <polygon points="114,134 103,129 103,141" fill="#c9a45c"/>
+      <rect x="97" y="130" width="6" height="8" fill="#a8873f"/>
+      <polygon points="70,152 79,147 77,156" fill="#c9a45c"/>
+      <path d="M100 54 C120 54 128 68 127 88 C126 108 114 122 100 124 C86 122 74 108 73 88 C72 68 80 54 100 54 Z" fill="#ecdfc3"/>
+      <path d="M72 88 C70 62 82 48 100 48 C122 48 130 64 128 88 C124 72 118 64 108 64 C100 64 96 58 90 66 C82 64 76 74 72 88 Z" fill="#10151c"/>
+      <path d="M80 62 Q92 53 104 57" fill="none" stroke="#c9a45c" stroke-width="1" opacity=".5"/>
+      <path d="M112 58 Q121 63 125 73" fill="none" stroke="#c9a45c" stroke-width="1" opacity=".5"/>
+      <circle cx="87" cy="92" r="10.5" fill="rgba(236,223,195,.05)" stroke="#c9a45c" stroke-width="1.6"/>
+      <circle cx="113" cy="92" r="10.5" fill="rgba(236,223,195,.05)" stroke="#c9a45c" stroke-width="1.6"/>
+      <path d="M97.5 92 Q100 87.5 102.5 92" fill="none" stroke="#c9a45c" stroke-width="1.6"/>
+      <line x1="76.5" y1="92" x2="73.5" y2="88" stroke="#c9a45c" stroke-width="1"/>
+      <line x1="123.5" y1="92" x2="126.5" y2="88" stroke="#c9a45c" stroke-width="1"/>
+      <circle cx="87" cy="92.5" r="1.9" fill="#10151c"/>
+      <circle cx="113" cy="92.5" r="1.9" fill="#10151c"/>
+      <path d="M100 96 L97 106 Q100 109 103 106 Z" fill="#dcc9a2"/>
+      <path d="M88 112.5 Q96 108.5 100 112.5 Q104 108.5 112 112.5 Q104 114.5 100 113.2 Q96 114.5 88 112.5 Z" fill="#10151c"/>
+      <path d="M94 118.5 Q100 121.5 106 118.5" fill="none" stroke="#b08e5a" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <h1>Arthur Decco</h1>
+  <p class="role">GRAPHIC DESIGNER</p>
+  <p class="bio">Bold marks, timeless systems. Identity, print, and packaging for clients from corner bakeries to concert halls.</p>
+
+  <ul class="contact" aria-label="Contact details">
+    <li><a href="tel:+16175550128">(617)&nbsp;555-0128</a></li>
+    <li><a href="mailto:arthur@deccodesign.co">arthur@deccodesign.co</a></li>
+    <li><span>deccodesign.co &middot; Cambridge, MA</span></li>
+  </ul>
+
+  <div class="cta-row">
+    <a class="btn solid" href="#work"><span>Display Portfolio</span></a>
+    <a class="btn ghost" href="#connect"><span>Let&rsquo;s Connect</span></a>
+  </div>
+</header>
+
+<div class="chevron" aria-hidden="true"></div>
+
+<main>
+  <section id="work" aria-labelledby="work-h">
+    <div class="sec-head">
+      <h2 id="work-h">The Portfolio</h2>
+      <p class="sec-sub">Say what you need &mdash; the filters mirror the studio ledger. Every piece here shipped, and the client signed off.</p>
+    </div>
+
+    <div class="finder">
+      <div class="search">
+        <label class="q-label" for="q">Search the portfolio</label>
+        <input type="search" id="q" placeholder="Search clients, industries, styles&hellip;" autocomplete="off">
+      </div>
+      <div id="facets"></div>
+      <div class="count-row">
+        <p class="count" id="count" aria-live="polite"></p>
+        <button type="button" id="clear" hidden>Clear filters</button>
+      </div>
+    </div>
+
+    <ul class="grid" id="grid"></ul>
+  </section>
+
+  <div class="chevron" aria-hidden="true"></div>
+
+  <section id="connect" aria-labelledby="connect-h">
+    <div class="sec-head">
+      <h2 id="connect-h">Let&rsquo;s Connect</h2>
+      <p class="sec-sub">Leave your card &mdash; it files itself straight into the studio pipeline.</p>
+      <p id="pipeline" hidden></p>
+    </div>
+
+    <form id="lead" novalidate>
+      <div class="fgrid">
+        <div class="field">
+          <label for="f-name" class="req">Full name</label>
+          <input id="f-name" name="fullName" type="text" autocomplete="name" placeholder="Dorothy Draper">
+          <p class="msg" id="f-name-msg" hidden>Add a name so Arthur knows who he met.</p>
+        </div>
+        <div class="field">
+          <label for="f-phone">Work phone</label>
+          <input id="f-phone" name="workPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(617) 555-0100">
+        </div>
+        <div class="field">
+          <label for="f-email" class="req">Email address</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@yourcompany.com">
+          <p class="msg" id="f-email-msg" hidden>That email doesn&rsquo;t look complete.</p>
+        </div>
+        <div class="field">
+          <label for="f-site">Website / portfolio URL</label>
+          <input id="f-site" name="website" type="url" inputmode="url" placeholder="https://&hellip;">
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>What do you need?</legend>
+        <div class="interests" id="interests"></div>
+      </fieldset>
+
+      <div class="field">
+        <label for="f-notes">Next steps &amp; anything else</label>
+        <textarea id="f-notes" name="nextSteps" placeholder="What should happen next? Timelines, the idea you keep coming back to&hellip;"></textarea>
+      </div>
+
+      <p class="form-status" id="formstatus" role="status"></p>
+      <div><button class="btn solid" type="submit"><span>Let&rsquo;s Connect</span></button></div>
+    </form>
+
+    <div class="success" id="success" hidden>
+      <p class="mark" aria-hidden="true">&#10022;</p>
+      <h3 id="success-h">Card received.</h3>
+      <p id="success-p">Arthur has your details and will follow up within a day.</p>
+      <p class="note" id="success-note"></p>
+      <button class="btn ghost" type="button" id="again"><span>Collect another card</span></button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="f-brand">DECCO DESIGN CO.</p>
+  <p>Arthur Decco &middot; Cambridge, Massachusetts</p>
+  <p>(617) 555-0128 &middot; arthur@deccodesign.co</p>
+  <p class="mono" id="sync-note"></p>
+  <p class="disclosure">Demo page for a fictional studio &mdash; clients, works, and quotes are illustrative.</p>
+</footer>
+
+<nav class="bottomnav" aria-label="Primary">
+  <a href="#work" data-sec="work">Display Portfolio</a>
+  <a href="#top" class="navmark" aria-label="Back to top">
+    <svg viewBox="0 0 80 80" aria-hidden="true">
+      <polygon points="40,3 66,14 77,40 66,66 40,77 14,66 3,40 14,14" fill="none" stroke="var(--gold)" stroke-width="3"/>
+      <text x="40" y="52" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-weight="700" font-size="27" fill="var(--gold)">AD</text>
+    </svg>
+  </a>
+  <a href="#connect" data-sec="connect">Let&rsquo;s Connect</a>
+</nav>
+
+<script>
+"use strict";
+/* ================================================================
+   Decco Design Co. — data layer
+   Mirrors the Airtable base "Decco Design Co." (appYKlNeRstSCBOiR):
+   - projects  <-> Portfolio Assets (tblUv4ZHFNH8dGrZ5), one per record id
+   - the Let's Connect form <-> Prospects (tblSZV2MffLlpKP2p) via the
+     artifact database ("prospects" collection), synced by Claude.
+   ================================================================ */
+const DATA = {
+  profile: {
+    name: "Arthur Decco",
+    company: "Decco Design Co.",
+    title: "Graphic Designer",
+    location: "Cambridge, MA",
+    about: [
+      "Bold marks, timeless systems.",
+      "Identity, print, and packaging for clients from corner bakeries to concert halls."
+    ],
+    phone: "(617) 555-0128",
+    email: "arthur@deccodesign.co",
+    website: "deccodesign.co"
+  },
+  airtable: {
+    baseId: "appYKlNeRstSCBOiR",
+    portfolioTable: "tblUv4ZHFNH8dGrZ5",
+    prospectsTable: "tblSZV2MffLlpKP2p",
+    lastSync: "2026-09-07",
+    pieces: 12
+  },
+  skills: ["Brand Identity", "Print & Poster", "Packaging", "Menus & Hospitality",
+    "Web & Landing Pages", "Event & Music Graphics", "Editorial & Reports",
+    "Social Media Kits", "Non-Profit Campaigns"],
+  facets: [
+    { key: "style", label: "Style", values: ["Art Deco Revival", "Minimal", "Vintage", "Bold & Loud", "Editorial", "Playful", "Luxe"] },
+    { key: "industry", label: "Industry", values: ["Food & Beverage", "Music & Events", "Arts & Culture", "Real Estate", "Tech", "Retail", "Finance", "Health & Wellness", "Education", "Community"] },
+    { key: "orgType", label: "Org type", values: ["Corporate", "Small Business", "Independent", "Non-Profit", "Charity"] },
+    { key: "deliverable", label: "Deliverable", values: ["Logo & Identity", "Poster Series", "Packaging", "Menu System", "Web / Landing Page", "Annual Report", "Invitation Suite", "Album Art", "Social Kit", "Wayfinding & Signage"] }
+  ],
+  projects: [
+    {
+      id: "recqsToT7SaSkYEh3", name: "The Gilded Hour", deliverable: "Menu System",
+      style: "Art Deco Revival", industry: "Food & Beverage", orgType: "Small Business",
+      client: "The Gilded Hour, Somerville", year: 2025, format: ".indd", featured: true,
+      description: "Full identity and a fold-out cocktail menu for a candlelit lounge — gold rules, stepped frames, and a monogram that fits a matchbook.",
+      quote: "The menu gets photographed more than the drinks do.", cite: "Mara Quill, owner",
+      palette: ["#10151c", "#c8a45c", "#f2e9d8"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#10151c"/><g stroke="#c8a45c" opacity=".22"><path d="M200 310 L20 40"/><path d="M200 310 L80 12"/><path d="M200 310 L152 0"/><path d="M200 310 L248 0"/><path d="M200 310 L320 12"/><path d="M200 310 L380 40"/></g><rect x="14" y="14" width="372" height="272" fill="none" stroke="#c8a45c" opacity=".5"/><rect x="22" y="22" width="356" height="256" fill="none" stroke="#c8a45c" opacity=".25"/><path d="M140 96 L260 96 L200 156 Z" fill="none" stroke="#f2e9d8" stroke-width="3"/><line x1="200" y1="156" x2="200" y2="216" stroke="#f2e9d8" stroke-width="3"/><line x1="164" y1="218" x2="236" y2="218" stroke="#f2e9d8" stroke-width="3"/><circle cx="222" cy="86" r="6" fill="#c8a45c"/><line x1="222" y1="86" x2="204" y2="62" stroke="#c8a45c"/><circle cx="176" cy="72" r="3" fill="#c8a45c" opacity=".7"/><circle cx="196" cy="56" r="2.4" fill="#c8a45c" opacity=".5"/></svg>'
+    },
+    {
+      id: "recTbJwJVscgDMfoA", name: "Charles River Jazz Festival", deliverable: "Poster Series",
+      style: "Bold & Loud", industry: "Music & Events", orgType: "Non-Profit",
+      client: "Charles River Jazz Festival", year: 2024, format: ".ai", featured: true,
+      description: "Three-poster season series — angular horn shapes and syncopated stripes that read from across the T platform.",
+      quote: "Season passes up forty percent — people framed the posters.", cite: "Odile Brandt, festival director",
+      palette: ["#1b2a4a", "#e8b64c", "#d95d39"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#1b2a4a"/><polygon points="0,300 70,300 220,0 150,0" fill="#d95d39"/><polygon points="90,300 120,300 270,0 240,0" fill="#d95d39" opacity=".7"/><rect x="96" y="142" width="16" height="16" fill="#e8b64c"/><rect x="112" y="138" width="128" height="24" fill="#e8b64c"/><rect x="146" y="122" width="8" height="16" fill="#e8b64c"/><rect x="176" y="122" width="8" height="16" fill="#e8b64c"/><rect x="206" y="122" width="8" height="16" fill="#e8b64c"/><rect x="142" y="114" width="16" height="8" fill="#e8b64c"/><rect x="172" y="114" width="16" height="8" fill="#e8b64c"/><rect x="202" y="114" width="16" height="8" fill="#e8b64c"/><polygon points="240,138 240,162 274,186 274,114" fill="#e8b64c"/><circle cx="290" cy="150" r="52" fill="#e8b64c"/><circle cx="290" cy="150" r="36" fill="#1b2a4a"/><circle cx="290" cy="150" r="18" fill="#e8b64c"/><rect x="34" y="252" width="10" height="10" fill="#e8b64c"/><rect x="56" y="240" width="10" height="10" fill="#e8b64c" opacity=".8"/><rect x="78" y="252" width="10" height="10" fill="#e8b64c"/><rect x="100" y="234" width="10" height="10" fill="#e8b64c" opacity=".6"/></svg>'
+    },
+    {
+      id: "reccyZZKqpiOUkzQW", name: "Minuteman Mutual", deliverable: "Annual Report",
+      style: "Editorial", industry: "Finance", orgType: "Corporate",
+      client: "Minuteman Mutual Insurance", year: 2025, format: ".indd", featured: false,
+      description: "A 48-page annual report — a skyline of bar charts, patient typography, and numbers a board can trust.",
+      quote: "The first annual report our board read cover to cover.", cite: "T. Okafor, CFO",
+      palette: ["#232b38", "#8fa3bf", "#c8a45c"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#232b38"/><circle cx="70" cy="62" r="22" fill="none" stroke="#c8a45c"/><rect x="48" y="170" width="34" height="100" fill="#8fa3bf"/><rect x="94" y="130" width="34" height="140" fill="#8fa3bf" opacity=".85"/><rect x="140" y="190" width="34" height="80" fill="#8fa3bf" opacity=".7"/><rect x="186" y="96" width="34" height="174" fill="#8fa3bf"/><rect x="232" y="150" width="34" height="120" fill="#8fa3bf" opacity=".85"/><rect x="278" y="64" width="34" height="206" fill="#c8a45c"/><rect x="290" y="80" width="10" height="6" fill="#232b38"/><rect x="290" y="98" width="10" height="6" fill="#232b38"/><rect x="290" y="116" width="10" height="6" fill="#232b38"/><rect x="324" y="120" width="34" height="150" fill="#8fa3bf" opacity=".7"/><rect x="32" y="270" width="336" height="2" fill="#c8a45c"/></svg>'
+    },
+    {
+      id: "recu3pWGyifkEGwZT", name: "Fresh Truck Collective", deliverable: "Logo & Identity",
+      style: "Playful", industry: "Community", orgType: "Charity",
+      client: "Fresh Truck Collective", year: 2024, format: ".ai", featured: false,
+      description: "Rebrand for a mobile produce market — a rolling wordmark, crate-stencil iconography, and paint-ready truck livery.",
+      quote: "Kids wave at the truck now. That's the brand working.", cite: "R. Delgado, program lead",
+      palette: ["#f4e9d2", "#4a8f5c", "#e07b39"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#f4e9d2"/><path d="M0 246 L40 226 L80 246 L120 226 L160 246 L200 226 L240 246 L280 226 L320 246 L360 226 L400 246 L400 258 L360 238 L320 258 L280 238 L240 258 L200 238 L160 258 L120 238 L80 258 L40 238 L0 258 Z" fill="#4a8f5c" opacity=".45"/><rect x="96" y="118" width="150" height="78" fill="#e07b39"/><path d="M246 196 L246 140 L296 140 L316 172 L316 196 Z" fill="#4a8f5c"/><rect x="256" y="150" width="30" height="22" fill="#f4e9d2"/><circle cx="136" cy="200" r="18" fill="#24291f"/><circle cx="136" cy="200" r="6" fill="#f4e9d2"/><circle cx="282" cy="200" r="18" fill="#24291f"/><circle cx="282" cy="200" r="6" fill="#f4e9d2"/><circle cx="170" cy="158" r="17" fill="#f4e9d2"/><polygon points="162,142 168,124 174,142" fill="#4a8f5c"/><polygon points="170,142 178,128 182,144" fill="#4a8f5c"/></svg>'
+    },
+    {
+      id: "recBh8Ws7gtPrBJxw", name: "Aster & Oak Realty", deliverable: "Logo & Identity",
+      style: "Luxe", industry: "Real Estate", orgType: "Small Business",
+      client: "Aster & Oak Realty", year: 2026, format: ".ai", featured: false,
+      description: "Identity and yard signage for a boutique brokerage — a fluted monogram with vertical emphasis borrowed from lobby brass.",
+      quote: "Buyers ask who did our signs at every open house.", cite: "June Aster, principal broker",
+      palette: ["#151a14", "#b9a15f", "#e9e2d0"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#151a14"/><g stroke="#b9a15f" stroke-width="3" opacity=".8"><line x1="60" y1="300" x2="60" y2="150"/><line x1="88" y1="300" x2="88" y2="118"/><line x1="116" y1="300" x2="116" y2="92"/><line x1="340" y1="300" x2="340" y2="150"/><line x1="312" y1="300" x2="312" y2="118"/><line x1="284" y1="300" x2="284" y2="92"/></g><circle cx="200" cy="152" r="52" fill="none" stroke="#b9a15f" stroke-width="3"/><path d="M200 94 L172 212 M200 94 L228 212 M182 170 L218 170" fill="none" stroke="#e9e2d0" stroke-width="4"/><polygon points="200,58 208,70 200,82 192,70" fill="#b9a15f"/><rect x="60" y="286" width="280" height="2" fill="#b9a15f" opacity=".5"/></svg>'
+    },
+    {
+      id: "recSIEhvtR5frsCKc", name: "Pixel & Thread", deliverable: "Logo & Identity",
+      style: "Minimal", industry: "Tech", orgType: "Independent",
+      client: "Pixel & Thread Studio", year: 2025, format: ".png", featured: false,
+      description: "Mark and mini-system for a two-person game studio — a stitched pixel glyph that scales from favicon to trade-show banner.",
+      quote: "Reads at sixteen pixels. That sold us.", cite: "Casey Vo, co-founder",
+      palette: ["#20242b", "#57b8a5", "#e8e6e1"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#20242b"/><g fill="#57b8a5"><rect x="118" y="76" width="24" height="24"/><rect x="148" y="76" width="24" height="24" opacity=".85"/><rect x="178" y="76" width="24" height="24"/><rect x="118" y="106" width="24" height="24" opacity=".85"/><rect x="178" y="106" width="24" height="24" opacity=".7"/><rect x="118" y="136" width="24" height="24"/><rect x="148" y="136" width="24" height="24" opacity=".7"/><rect x="178" y="136" width="24" height="24" opacity=".85"/><rect x="118" y="166" width="24" height="24" opacity=".85"/><rect x="118" y="196" width="24" height="24"/></g><path d="M96 232 C160 184 240 214 306 100" fill="none" stroke="#e8e6e1" stroke-width="2" stroke-dasharray="7 6"/><polygon points="306,100 322,76 314,100" fill="#e8e6e1"/></svg>'
+    },
+    {
+      id: "rece75dT64qfdedfG", name: "Cambridge Open Studios", deliverable: "Wayfinding & Signage",
+      style: "Editorial", industry: "Arts & Culture", orgType: "Non-Profit",
+      client: "Cambridge Open Studios", year: 2025, format: ".pdf", featured: false,
+      description: "City-wide wayfinding kit — numbered door placards, directional arrows, and a map that folds to pocket size.",
+      quote: "Nobody got lost this year. First time in a decade.", cite: "H. Lindqvist, coordinator",
+      palette: ["#efe8da", "#23201c", "#c04a3a"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#efe8da"/><polygon points="52,40 68,40 28,260 12,260" fill="#c04a3a"/><polygon points="60,190 220,190 220,150 320,210 220,270 220,230 60,230" fill="#23201c"/><rect x="280" y="56" width="76" height="56" fill="none" stroke="#23201c" stroke-width="3"/><text x="318" y="96" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="30" fill="#23201c">12</text></svg>'
+    },
+    {
+      id: "recL4u9PUOteaRhve", name: "The Harbor Light Fund", deliverable: "Invitation Suite",
+      style: "Luxe", industry: "Community", orgType: "Charity",
+      client: "The Harbor Light Fund", year: 2026, format: ".indd", featured: true,
+      description: "Gala invitation suite — foil-ready beam motif, letterpressed reply cards, and place settings to match.",
+      quote: "Tables sold out three weeks before the gala.", cite: "P. Whitfield, board chair",
+      palette: ["#101821", "#d3b573", "#f0ead9"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#101821"/><polygon points="128,80 400,20 400,62" fill="#d3b573" opacity=".28"/><polygon points="128,84 400,98 400,152" fill="#d3b573" opacity=".16"/><polygon points="86,270 100,90 124,90 138,270" fill="#f0ead9"/><rect x="92" y="186" width="42" height="13" fill="#101821" opacity=".85"/><rect x="94" y="140" width="38" height="12" fill="#101821" opacity=".85"/><rect x="96" y="74" width="32" height="18" fill="#d3b573"/><polygon points="94,74 112,58 130,74" fill="#f0ead9"/><path d="M20 282 Q60 272 100 282 T180 282 T260 282 T340 282" fill="none" stroke="#d3b573" opacity=".4" stroke-width="2"/><polygon points="250,52 254,58 250,64 246,58" fill="#f0ead9" opacity=".8"/><polygon points="310,120 314,126 310,132 306,126" fill="#f0ead9" opacity=".6"/><polygon points="352,74 356,80 352,86 348,80" fill="#f0ead9" opacity=".7"/></svg>'
+    },
+    {
+      id: "recnylJpo3VNSdmNY", name: "Copper Kettle Coffee", deliverable: "Packaging",
+      style: "Vintage", industry: "Retail", orgType: "Small Business",
+      client: "Copper Kettle Coffee Co.", year: 2024, format: ".psd", featured: false,
+      description: "Retail bag system for three roasts — kettle badge, ticket-stub typography, and colorways a shelf can sort by.",
+      quote: "Shelf sales doubled at the co-op after the redesign.", cite: "B. Amari, head roaster",
+      palette: ["#d9c39a", "#7a4a2b", "#f2e8d5"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#d9c39a"/><rect x="0" y="96" width="400" height="112" fill="#f2e8d5"/><line x1="0" y1="96" x2="400" y2="96" stroke="#7a4a2b" stroke-width="3" stroke-dasharray="2 7"/><line x1="0" y1="208" x2="400" y2="208" stroke="#7a4a2b" stroke-width="3" stroke-dasharray="2 7"/><path d="M169 190 L241 190 L237 158 A 32 32 0 0 0 173 158 Z" fill="#7a4a2b"/><rect x="161" y="190" width="88" height="7" fill="#7a4a2b"/><polygon points="236,152 278,134 240,174" fill="#7a4a2b"/><path d="M183 136 Q205 114 227 136" fill="none" stroke="#7a4a2b" stroke-width="6"/><circle cx="205" cy="128" r="5" fill="#7a4a2b"/><polygon points="205,156 212,166 205,176 198,166" fill="#f2e8d5"/><path d="M196 106 Q200 94 194 86" fill="none" stroke="#7a4a2b" stroke-width="2" opacity=".55"/><path d="M216 106 Q220 94 214 86" fill="none" stroke="#7a4a2b" stroke-width="2" opacity=".55"/></svg>'
+    },
+    {
+      id: "recdtGi9Xcn0AxgBg", name: "Marlowe Quintet — Midnight Local", deliverable: "Album Art",
+      style: "Art Deco Revival", industry: "Music & Events", orgType: "Independent",
+      client: "The Marlowe Quintet", year: 2025, format: ".psd", featured: true,
+      description: "LP jacket and label for a late-night jazz record — a streamlined locomotive of stacked curves running through a starless city.",
+      quote: "The pressing sold out. Half the buyers mentioned the cover.", cite: "D. Marlowe, bandleader",
+      palette: ["#1a1626", "#c5c9d6", "#c8a45c"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#1a1626"/><rect x="0" y="234" width="400" height="3" fill="#c5c9d6" opacity=".55"/><polygon points="76,182 0,158 0,206" fill="#c8a45c" opacity=".5"/><circle cx="118" cy="188" r="46" fill="#c5c9d6"/><rect x="118" y="146" width="252" height="18" rx="9" fill="#c5c9d6"/><rect x="118" y="168" width="272" height="18" rx="9" fill="#c5c9d6" opacity=".85"/><rect x="118" y="190" width="252" height="18" rx="9" fill="#c5c9d6" opacity=".7"/><rect x="118" y="212" width="232" height="14" rx="7" fill="#c5c9d6" opacity=".5"/><rect x="150" y="150" width="18" height="10" fill="#1a1626"/><rect x="184" y="150" width="18" height="10" fill="#1a1626"/><rect x="218" y="150" width="18" height="10" fill="#1a1626"/><circle cx="84" cy="182" r="8" fill="#c8a45c"/><g stroke="#c8a45c" stroke-width="2" opacity=".6"><line x1="300" y1="120" x2="384" y2="120"/><line x1="320" y1="104" x2="390" y2="104"/></g><polygon points="330,52 334,58 330,64 326,58" fill="#c5c9d6" opacity=".8"/><polygon points="270,80 274,86 270,92 266,86" fill="#c5c9d6" opacity=".6"/></svg>'
+    },
+    {
+      id: "rec9dbV4mNxZxTx4G", name: "Nova Health Collective", deliverable: "Web / Landing Page",
+      style: "Minimal", industry: "Health & Wellness", orgType: "Corporate",
+      client: "Nova Health Collective", year: 2026, format: ".html", featured: false,
+      description: "Marketing landing page — calm type, generous whitespace, and a sign-up flow that stays out of the way.",
+      quote: "Sign-ups tripled in the first month.", cite: "L. Chen, VP marketing",
+      palette: ["#eef1ea", "#2e4a44", "#57b8a5"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#eef1ea"/><rect x="48" y="84" width="210" height="4" fill="#2e4a44"/><rect x="48" y="126" width="150" height="4" fill="#2e4a44" opacity=".85"/><rect x="48" y="168" width="180" height="4" fill="#2e4a44" opacity=".65"/><rect x="48" y="210" width="120" height="4" fill="#2e4a44" opacity=".45"/><circle cx="306" cy="142" r="54" fill="#57b8a5"/><circle cx="322" cy="124" r="14" fill="#eef1ea"/><circle cx="54" cy="252" r="5" fill="#57b8a5"/><circle cx="74" cy="252" r="5" fill="#57b8a5" opacity=".7"/><circle cx="94" cy="252" r="5" fill="#57b8a5" opacity=".4"/></svg>'
+    },
+    {
+      id: "recKjbY8EXmZ0X468", name: "Longfellow Tutoring", deliverable: "Social Kit",
+      style: "Playful", industry: "Education", orgType: "Small Business",
+      client: "Longfellow Tutoring", year: 2025, format: ".png", featured: false,
+      description: "Instagram template kit — chalk-bright shapes, quiz cards, and a mascot pencil with a bow tie.",
+      quote: "Parents recognize our posts before they read the name.", cite: "S. Longfellow, director",
+      palette: ["#f2c94c", "#2b5da8", "#d0442e"],
+      art: '<svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#f2c94c"/><rect x="150" y="46" width="100" height="16" fill="#d0442e"/><rect x="150" y="62" width="100" height="132" fill="#2b5da8"/><polygon points="150,194 250,194 200,250" fill="#fdf6e2"/><polygon points="188,236 212,236 200,250" fill="#26221a"/><circle cx="182" cy="112" r="6" fill="#fdf6e2"/><circle cx="218" cy="112" r="6" fill="#fdf6e2"/><circle cx="182" cy="112" r="2.5" fill="#26221a"/><circle cx="218" cy="112" r="2.5" fill="#26221a"/><path d="M184 136 Q200 148 216 136" fill="none" stroke="#fdf6e2" stroke-width="4"/><polygon points="186,172 199,165 199,179" fill="#d0442e"/><polygon points="214,172 201,165 201,179" fill="#d0442e"/><path d="M60 274 L90 256 L120 274 L150 256 L180 274 L210 256 L240 274 L270 256 L300 274 L330 256" fill="none" stroke="#d0442e" stroke-width="6"/></svg>'
+    }
+  ]
+};
+
+/* ================= helpers ================= */
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const state = { q: "", style: null, industry: null, orgType: null, deliverable: null };
+
+/* ================= facet chips ================= */
+function buildFacets() {
+  $("#facets").innerHTML = DATA.facets.map((f) =>
+    '<div class="facet"><span class="facet-label" id="fl-' + f.key + '">' + esc(f.label) + '</span>' +
+    '<div class="chips" role="group" aria-labelledby="fl-' + f.key + '">' +
+    f.values.map((v) =>
+      '<button type="button" class="chip" data-facet="' + f.key + '" data-value="' + esc(v) +
+      '" aria-pressed="false">' + esc(v) + "</button>").join("") +
+    "</div></div>").join("");
+}
+function syncChips() {
+  document.querySelectorAll(".chip").forEach((c) => {
+    c.setAttribute("aria-pressed", String(state[c.dataset.facet] === c.dataset.value));
+  });
+}
+
+/* ================= portfolio rendering ================= */
+function matches(p) {
+  for (const f of DATA.facets) {
+    if (state[f.key] && p[f.key] !== state[f.key]) return false;
+  }
+  if (state.q) {
+    const hay = [p.name, p.client, p.description, p.deliverable, p.style, p.industry,
+      p.orgType, p.format, p.quote, p.cite, p.year].join(" ").toLowerCase();
+    for (const w of state.q.toLowerCase().split(/\s+/).filter(Boolean)) {
+      if (!hay.includes(w)) return false;
+    }
+  }
+  return true;
+}
+function card(p) {
+  return '<li class="card" data-id="' + p.id + '">' +
+    '<figure class="art" role="img" aria-label="Cover artwork: ' + esc(p.name) + '">' + p.art + "</figure>" +
+    '<div class="card-body">' +
+    '<div class="card-top"><h3>' + esc(p.name) + '</h3><span class="fmt">' + esc(p.format) + "</span></div>" +
+    '<p class="meta">' + esc(p.client) + " &middot; " + p.year +
+    '<span class="dots" aria-hidden="true">' + p.palette.map((h) => '<span class="dot" style="background:' + esc(h) + '"></span>').join("") + "</span></p>" +
+    '<p class="desc">' + esc(p.description) + "</p>" +
+    '<ul class="tags">' + [["style", p.style], ["industry", p.industry], ["orgType", p.orgType], ["deliverable", p.deliverable]]
+      .map(([k, v]) => '<li><button type="button" class="tag" data-facet="' + k + '" data-value="' + esc(v) + '" title="Filter by ' + esc(v) + '">' + esc(v) + "</button></li>").join("") + "</ul>" +
+    "<blockquote>&ldquo;" + esc(p.quote) + '&rdquo;<cite>&mdash; ' + esc(p.cite) + "</cite></blockquote>" +
+    "</div></li>";
+}
+function render() {
+  const list = DATA.projects.filter(matches).sort((a, b) =>
+    (b.featured - a.featured) || (b.year - a.year) || a.name.localeCompare(b.name));
+  const grid = $("#grid");
+  if (list.length) {
+    grid.innerHTML = list.map(card).join("");
+  } else {
+    grid.innerHTML = '<li class="empty"><h3>Not on the wall &mdash; yet</h3>' +
+      "<p>Nothing matches that combination, which usually means it&rsquo;s in the flat files. Ask Arthur.</p>" +
+      '<button type="button" class="btn ghost" id="empty-clear"><span>Clear filters</span></button></li>';
+  }
+  const active = DATA.facets.filter((f) => state[f.key]).map((f) => state[f.key]);
+  if (state.q) active.unshift('"' + state.q + '"');
+  $("#count").textContent = list.length + " of " + DATA.projects.length + " pieces" +
+    (active.length ? " · " + active.join(" + ") : " · delivered + accepted");
+  $("#clear").hidden = !active.length;
+}
+
+/* ================= filter events ================= */
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-facet]");
+  if (b) {
+    const { facet, value } = b.dataset;
+    state[facet] = state[facet] === value ? null : value;
+    syncChips();
+    render();
+    if (b.classList.contains("tag")) {
+      $("#work").scrollIntoView({ block: "start" });
+    }
+    return;
+  }
+  if (e.target.closest("#clear") || e.target.closest("#empty-clear")) {
+    DATA.facets.forEach((f) => { state[f.key] = null; });
+    state.q = "";
+    $("#q").value = "";
+    syncChips();
+    render();
+  }
+});
+let qTimer;
+$("#q").addEventListener("input", (e) => {
+  clearTimeout(qTimer);
+  qTimer = setTimeout(() => { state.q = e.target.value.trim(); render(); }, 130);
+});
+
+/* ================= Let's Connect — the pipeline ================= */
+$("#interests").innerHTML = DATA.skills.map((s, i) =>
+  '<label class="check"><input type="checkbox" name="interest" value="' + esc(s) + '">' + esc(s) + "</label>").join("");
+
+let db = null;
+(async () => {
+  try {
+    if (!window.claude || !window.claude.use) return;
+    db = await window.claude.use("db");
+    if (!db) return;
+    db.collection("prospects").onSnapshot((snap) => {
+      const el = $("#pipeline");
+      el.hidden = false;
+      el.textContent = "◆ " + snap.size + (snap.size === 1 ? " card" : " cards") + " in the studio pipeline";
+    }, () => {});
+  } catch (err) { /* page works without the pipeline */ }
+})();
+
+function fieldError(id, bad) {
+  const input = $("#" + id);
+  const msg = $("#" + id + "-msg");
+  input.setAttribute("aria-invalid", String(bad));
+  if (msg) msg.hidden = !bad;
+  return bad;
+}
+$("#lead").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const name = $("#f-name").value.trim();
+  const email = $("#f-email").value.trim();
+  const badName = fieldError("f-name", !name);
+  const badEmail = fieldError("f-email", !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
+  const status = $("#formstatus");
+  if (badName || badEmail) {
+    status.classList.add("bad");
+    status.textContent = "◆ A name and a working email are all Arthur needs.";
+    (badName ? $("#f-name") : $("#f-email")).focus();
+    return;
+  }
+  status.classList.remove("bad");
+  status.textContent = "◆ Filing your card…";
+  const doc = {
+    fullName: name,
+    workPhone: $("#f-phone").value.trim(),
+    email: email,
+    website: $("#f-site").value.trim(),
+    interests: Array.from(document.querySelectorAll('input[name="interest"]:checked')).map((c) => c.value),
+    nextSteps: $("#f-notes").value.trim(),
+    capturedAt: new Date().toISOString(),
+    source: "Landing page",
+    status: "New",
+    synced: false
+  };
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  let note = "";
+  let filed = false;
+  if (db) {
+    try {
+      await db.collection("prospects").add(doc);
+      filed = true;
+      note = "◆ FILED TO THE STUDIO PIPELINE — SYNCS TO AIRTABLE";
+    } catch (err) { /* fall through to device storage */ }
+  }
+  if (!filed) {
+    try {
+      const KEY = "decco-prospects";
+      const arr = JSON.parse(localStorage.getItem(KEY) || "[]");
+      arr.push(doc);
+      localStorage.setItem(KEY, JSON.stringify(arr));
+      filed = true;
+      note = "◆ KEPT ON THIS DEVICE — THE PIPELINE WASN’T REACHABLE FROM THIS VIEW";
+    } catch (err) { /* no storage at all */ }
+  }
+  btn.disabled = false;
+  status.textContent = "";
+  const success = $("#success");
+  $("#success-h").textContent = "Card received, " + name.split(/\s+/)[0] + ".";
+  if (filed) {
+    $("#success-note").textContent = note;
+  } else {
+    const body = encodeURIComponent(
+      "Name: " + doc.fullName + "\nPhone: " + doc.workPhone + "\nEmail: " + doc.email +
+      "\nSite: " + doc.website + "\nInterests: " + doc.interests.join(", ") + "\nNext steps: " + doc.nextSteps);
+    $("#success-note").innerHTML =
+      '◆ Storage wasn’t available here — <a href="mailto:' + DATA.profile.email +
+      '?subject=' + encodeURIComponent("Let's connect — " + doc.fullName) + "&body=" + body +
+      '">email your card instead</a>.';
+  }
+  e.target.hidden = true;
+  success.hidden = false;
+  success.scrollIntoView({ block: "center" });
+});
+$("#again").addEventListener("click", () => {
+  const form = $("#lead");
+  form.reset();
+  fieldError("f-name", false);
+  fieldError("f-email", false);
+  $("#success").hidden = true;
+  form.hidden = false;
+  $("#f-name").focus();
+});
+
+/* ================= bottom nav state ================= */
+const navLinks = document.querySelectorAll(".bottomnav a[data-sec]");
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (en.isIntersecting) {
+        navLinks.forEach((a) => {
+          if (a.dataset.sec === en.target.id) a.setAttribute("aria-current", "true");
+          else a.removeAttribute("aria-current");
+        });
+      }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  io.observe($("#work"));
+  io.observe($("#connect"));
+}
+
+/* ================= boot ================= */
+$("#sync-note").textContent = "PORTFOLIO SYNCED FROM AIRTABLE · " + DATA.airtable.pieces +
+  " PIECES · " + DATA.airtable.lastSync + " — PROSPECT CARDS FILE TO THE PIPELINE";
+buildFacets();
+syncChips();
+render();
+</script>
+
+</body></html>
