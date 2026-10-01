@@ -19,3 +19,5 @@ Five front-end concepts by **Ed Scannell**. Each site started as a product brief
 - Forms and leaderboards save to the browser's local storage. Nothing is sent anywhere.
 
 Businesses, people, clients, prices, and reviews on these pages are illustrative.
+
+© 2026 Ed Scannell. All rights reserved.
