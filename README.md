@@ -1,6 +1,6 @@
 # Product Owner · UI Design · Vibe Coding
 
-Twelve front-end concepts and two slide decks by **Ed Scannell**. Each site started as a product brief I wrote, covering the audience, the look and feel, and exactly how things should behave. I then built it with Claude and kept reviewing and redirecting until it met the brief.
+**Ed Scannell**: 25+ years in product, UI/UX design, and usability testing, applied to twelve working websites and two slide decks. Each started as a product brief I wrote. I set the audience, the look and feel, and exactly how every piece should move, then built it with Fable and Astra and kept reviewing and redirecting until it met the brief. The goal was to see how each new frontier model approaches the same product brief.
 
 **Portfolio page:** https://edwardscannell.github.io/Product-Owner-UI-Design-Vibe-Coding/
 
