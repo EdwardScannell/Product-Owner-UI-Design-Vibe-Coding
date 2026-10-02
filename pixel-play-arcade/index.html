@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0b15">
+  <meta name="description" content="Step into PIXEL//PLAY. Three original arcade games, live demos, high scores, and endless free play. No downloads. Just one more game.">
+  <title>PIXEL//PLAY — Good times. High scores.</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/arcade.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg class="icon-definitions" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5ZM15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-muted" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm5 4 5 6m0-6-5 6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-game" viewBox="0 0 24 24"><path d="M7 7h10c2 0 3 1 4 4l1 7c0 2-2 3-4 1l-3-3H9l-3 3c-2 2-4 1-4-1l1-7c1-3 2-4 4-4Z M7 9v5m-2-2.5h4m7-1h.01m3 2h.01"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 3h10v7a5 5 0 0 1-10 0V3Zm10 2h4v3a4 4 0 0 1-4 4M7 5H3v3a4 4 0 0 0 4 4m5 3v5m-4 1h8"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m9 10 6-4M9 14l6 4"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14m8-14v14"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 1 1 4 3c-1 0-1 1-1 2m0 3v.01"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+    <symbol id="brand-x" viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-7.5L5.4 22H2.2l8.4-9.6L.8 2h6.5l4.5 6.9L18.9 2ZM17.8 20h1.8L6.3 3.9H4.4L17.8 20Z"/></symbol>
+    <symbol id="brand-facebook" viewBox="0 0 24 24"><path d="M24 12A12 12 0 1 0 10.1 23.9v-8.4h-3V12h3V9.3c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-1.9.9-1.9 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12Z"/></symbol>
+    <symbol id="brand-whatsapp" viewBox="0 0 24 24"><path d="M20.5 3.5A11.9 11.9 0 0 0 1.8 17.9L.1 24l6.3-1.7A12 12 0 0 0 24 11.9c0-3.2-1.2-6.1-3.5-8.4ZM12 21.9a9.9 9.9 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A9.9 9.9 0 1 1 12 21.9Zm5.5-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.4Z"/></symbol>
+  </defs></svg>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="brand" aria-label="Pixel Play home"><span class="brand-alien" aria-hidden="true">▟</span><span>PIXEL<span class="brand-slashes">//</span>PLAY<span class="brand-dot">®</span></span></a>
+      <nav aria-label="Main navigation"><a class="nav-link active" href="#arcade" data-nav="arcade"><svg class="icon" aria-hidden="true"><use href="#i-game"/></svg><span class="nav-label">THE ARCADE</span></a><a class="nav-link" href="#high-scores" data-nav="scores"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg><span class="nav-label">HIGH SCORES</span></a><button class="nav-link" data-action="help" data-nav="help"><svg class="icon" aria-hidden="true"><use href="#i-help"/></svg><span class="nav-label">HOW TO PLAY</span></button></nav>
+      <div class="header-right"><button class="sound-toggle" data-action="sound" aria-label="Turn sound on" aria-pressed="false"><svg class="icon"><use href="#i-muted"/></svg><span>SOUND OFF</span></button><span class="free-badge"><i></i> FREE TO PLAY</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="decor-star star-one" aria-hidden="true">✦</span><span class="decor-star star-two" aria-hidden="true">+</span><span class="decor-star star-three" aria-hidden="true">✦</span><span class="decor-star star-four" aria-hidden="true">+</span>
+      <div class="hero-eyebrow"><span></span> EST. 1984 IN SPIRIT. ONLINE FOREVER. <span></span></div>
+      <h1 id="hero-title">GOOD TIMES.<br><span>HIGH SCORES.</span></h1>
+      <p>Your favorite kind of time machine.<br class="mobile-break"> Three original games. One more try.</p>
+      <div class="hero-benefits"><span><svg class="icon"><use href="#i-game"/></svg> All skill levels</span><i></i><span><svg class="icon"><use href="#i-globe"/></svg> Any browser</span><i></i><span><svg class="icon"><use href="#i-bolt"/></svg> No downloads. Ever.</span><a href="#share-arcade" class="hero-share"><svg class="icon"><use href="#i-share"/></svg> Challenge a friend ↗</a></div>
+    </section>
+
+    <section id="arcade" class="arcade-section" aria-label="Choose an arcade game">
+      <div class="section-divider"><span></span><h2>CHOOSE YOUR MACHINE</h2><span></span></div>
+      <p class="section-hint"><span class="live-dot"></span> Live demos playing. Click a cabinet to take control.</p>
+      <div class="cabinet-grid">
+        <article class="game-column race-column">
+          <button class="cabinet cabinet-race" data-game="race" aria-label="Play Neon Rush, the racing game">
+            <div class="cabinet-marquee"><span class="screw screw-left"></span><div class="marquee-small">FULL THROTTLE. NO SECOND CHANCES.</div><h3>NEON RUSH</h3><div class="marquee-decoration"><span></span> THE RACE <span></span></div><span class="screw screw-right"></span></div>
+            <div class="cabinet-bezel"><div class="monitor-top"><span>01 / RACING</span><span><i></i> LIVE DEMO</span></div><div class="screen"><canvas id="demo-race" width="640" height="480" aria-label="Live demo of Neon Rush racing"></canvas><div class="screen-scanlines"></div><div class="play-overlay"><span>▶</span> LET'S RACE</div></div><div class="monitor-bottom"><span>3 LAPS</span><span>4 DRIVERS</span><span>1 LEGEND</span></div></div>
+            <div class="control-deck"><div class="deck-lines"></div><span class="joystick"><i></i></span><div class="arcade-buttons"><i></i><i></i><i></i></div><div class="deck-label">STEER <span>ACCELERATE · BOOST</span></div></div>
+            <div class="cabinet-base"><div class="base-art race-art"><span class="road-stripe"></span><span class="base-number">01</span><span class="base-type">CHASE THE<br>CHECKERED FLAG.</span></div><div class="coin-slot"><span></span><small>FREE<br>PLAY</small></div><span class="cabinet-start">PRESS TO PLAY <b>↗</b></span></div>
+          </button>
+          <div class="game-caption"><span class="genre">RACING</span><span>Fast turns. Faster rivals.</span><span class="difficulty" title="Challenge: 2 of 3"><i></i><i></i><i></i></span></div>
+          <div class="leaderboard" data-board="race" id="high-scores"></div>
+          <div class="machine-challenge" data-challenge="race" aria-label="Neon Rush challenges"></div>
+        </article>
+
+        <article class="game-column maze-column">
+          <button class="cabinet cabinet-maze" data-game="maze" aria-label="Play Dungeon Run, the dungeon exploration game">
+            <div class="cabinet-marquee"><span class="screw screw-left"></span><div class="marquee-small">A LITTLE MAGIC. A LOT OF TROUBLE.</div><h3>DUNGEON RUN</h3><div class="marquee-decoration"><span></span> THE MAZE <span></span></div><span class="screw screw-right"></span></div>
+            <div class="cabinet-bezel"><div class="monitor-top"><span>02 / ADVENTURE</span><span><i></i> LIVE DEMO</span></div><div class="screen"><canvas id="demo-maze" width="640" height="480" aria-label="Live demo of Dungeon Run exploration"></canvas><div class="screen-scanlines"></div><div class="play-overlay"><span>▶</span> ENTER THE DUNGEON</div></div><div class="monitor-bottom"><span>3 LEVELS</span><span>100 HP</span><span>STAY ALIVE</span></div></div>
+            <div class="control-deck"><div class="deck-lines"></div><span class="joystick"><i></i></span><div class="arcade-buttons"><i></i><i></i><i></i></div><div class="deck-label">MOVE <span>FIRE · MAGIC</span></div></div>
+            <div class="cabinet-base"><div class="base-art maze-art"><span class="base-number">02</span><span class="pixel-wizard" aria-hidden="true">✦</span><span class="base-type">GET LOST.<br>FIND YOUR MAGIC.</span></div><div class="coin-slot"><span></span><small>FREE<br>PLAY</small></div><span class="cabinet-start">PRESS TO PLAY <b>↗</b></span></div>
+          </button>
+          <div class="game-caption"><span class="genre">ADVENTURE</span><span>Keys, chaos & a little magic.</span><span class="difficulty" title="Challenge: 2 of 3"><i></i><i></i><i></i></span></div>
+          <div class="leaderboard" data-board="maze"></div>
+          <div class="machine-challenge" data-challenge="maze" aria-label="Dungeon Run challenges"></div>
+        </article>
+
+        <article class="game-column attack-column">
+          <button class="cabinet cabinet-attack" data-game="attack" aria-label="Play Star Assault, the space shooter">
+            <div class="cabinet-marquee"><span class="screw screw-left"></span><div class="marquee-small">SMALL SHIP. BIG HERO ENERGY.</div><h3>STAR ASSAULT</h3><div class="marquee-decoration"><span></span> THE ATTACK <span></span></div><span class="screw screw-right"></span></div>
+            <div class="cabinet-bezel"><div class="monitor-top"><span>03 / SPACE SHOOTER</span><span><i></i> LIVE DEMO</span></div><div class="screen"><canvas id="demo-attack" width="640" height="480" aria-label="Live demo of Star Assault space combat"></canvas><div class="screen-scanlines"></div><div class="play-overlay"><span>▶</span> SAVE THE GALAXY</div></div><div class="monitor-bottom"><span>3 SHIPS</span><span>∞ WAVES</span><span>ALL YOU</span></div></div>
+            <div class="control-deck"><div class="deck-lines"></div><span class="joystick"><i></i></span><div class="arcade-buttons"><i></i><i></i><i></i></div><div class="deck-label">MOVE <span>FIRE · BOMB</span></div></div>
+            <div class="cabinet-base"><div class="base-art attack-art"><span class="base-number">03</span><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="base-type">MAKE SPACE.<br>FOR A HIGH SCORE.</span></div><div class="coin-slot"><span></span><small>FREE<br>PLAY</small></div><span class="cabinet-start">PRESS TO PLAY <b>↗</b></span></div>
+          </button>
+          <div class="game-caption"><span class="genre">SPACE SHOOTER</span><span>The last line of fun.</span><span class="difficulty" title="Challenge: 3 of 3"><i></i><i></i><i></i></span></div>
+          <div class="leaderboard" data-board="attack"></div>
+          <div class="machine-challenge" data-challenge="attack" aria-label="Star Assault challenges"></div>
+        </article>
+      </div>
+      <div class="arcade-note"><svg class="icon"><use href="#i-trophy"/></svg><span>One arcade. Three chances to become a legend.</span><span class="local-note">Scores saved on this device</span></div>
+    </section>
+
+    <section class="share-section" id="share-arcade" aria-labelledby="share-title">
+      <div class="share-heading"><div><div class="eyebrow">DON'T KEEP THE GOOD GAMES TO YOURSELF</div><h2 id="share-title">Send a challenge. Start a rivalry.</h2><p>Bring your friends to the arcade. See whose name ends up on top.</p></div><svg class="share-emblem icon" aria-hidden="true"><use href="#i-share"/></svg></div>
+      <div class="social-buttons" aria-label="Share the arcade"><a id="share-x" class="social-button social-x" target="_blank" rel="noopener noreferrer" aria-label="Post an arcade challenge on X"><svg class="brand-icon" aria-hidden="true"><use href="#brand-x"/></svg> Post on X</a><a id="share-facebook" class="social-button social-facebook" target="_blank" rel="noopener noreferrer" aria-label="Share the arcade on Facebook"><svg class="brand-icon" aria-hidden="true"><use href="#brand-facebook"/></svg> Share on Facebook</a><a id="share-whatsapp" class="social-button social-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Send an arcade challenge on WhatsApp"><svg class="brand-icon" aria-hidden="true"><use href="#brand-whatsapp"/></svg> Send on WhatsApp</a><button class="social-button social-copy" data-action="copy"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy link</button><button class="social-button social-more" data-action="share"><svg class="icon" aria-hidden="true"><use href="#i-share"/></svg> More ways to share</button></div>
+    </section>
+
+    <section class="signup-section" id="player-club" aria-labelledby="club-title">
+      <div class="club-pixel" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M20 4h40v8h12v24H60v12H48v12h12v8H20v-8h12V48H20V36H8V12h12ZM20 20h-4v8h4Zm40 0v8h4v-8Z"/><path class="cup-shine" d="M28 12h8v24h-8Z"/></svg></div>
+      <div class="signup-copy"><div class="eyebrow">THE PLAYER ONE CLUB</div><h2>Your next high score starts here.</h2><p>New games first. Weekly tournaments. Real prizes.<br>Get on the list. Stay in the game.</p></div>
+      <form id="signup-form"><label for="email">A little arcade in your inbox.</label><div class="email-field"><svg class="icon"><use href="#i-mail"/></svg><input id="email" name="email" type="email" placeholder="Your email address" maxlength="254" autocomplete="email" required aria-describedby="signup-message"><button type="submit">COUNT ME IN <svg class="icon"><use href="#i-arrow"/></svg></button></div><p id="signup-message" aria-live="polite">Just the good stuff. Unsubscribe whenever.</p></form>
+    </section>
+  </main>
+
+  <footer><a href="#" class="brand footer-brand">PIXEL<span class="brand-slashes">//</span>PLAY</a><p>Made for the love of the game. <span>© 2026 PIXEL//PLAY</span></p><div><button data-action="privacy">Privacy</button><span class="footer-credit"><i></i> NO QUARTERS REQUIRED.</span></div></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="game-dialog" class="game-dialog" aria-labelledby="game-title">
+    <div class="game-frame"><header class="game-header"><div><span id="game-category" class="eyebrow"></span><h2 id="game-title"></h2></div><div class="game-toolbar"><button data-action="pause" title="Pause game (P)" aria-label="Pause game"><svg class="icon"><use href="#i-pause"/></svg></button><button data-action="game-sound" title="Toggle sound" aria-label="Toggle game sound"><svg class="icon"><use href="#i-sound"/></svg></button><button data-action="expand" title="Expand game" aria-label="Expand game"><svg class="icon"><use href="#i-expand"/></svg></button><button data-action="close-game" title="Exit to arcade (Escape)" aria-label="Close game"><svg class="icon"><use href="#i-close"/></svg></button></div></header>
+      <div class="active-screen"><canvas id="active-game" width="640" height="480" aria-label="Playable arcade game" tabindex="0"></canvas><div class="screen-scanlines"></div><div id="game-overlay" class="game-overlay" hidden></div></div>
+      <div id="game-controls" class="game-controls"></div>
+      <div class="touch-controls"><div class="d-pad"><button data-key="ArrowUp" aria-label="Move up">↑</button><button data-key="ArrowLeft" aria-label="Move left">←</button><button data-key="ArrowDown" aria-label="Move down">↓</button><button data-key="ArrowRight" aria-label="Move right">→</button></div><div id="touch-actions" class="touch-actions"></div></div>
+      <div class="game-footer"><span><i class="live-dot"></i> FREE PLAY · <b id="game-mode-label">ARCADE</b></span><span><kbd>P</kbd> PAUSE <kbd>ESC</kbd> EXIT</span></div>
+    </div>
+  </dialog>
+  <dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title"><button class="info-close" data-action="close-info" aria-label="Close dialog"><svg class="icon"><use href="#i-close"/></svg></button><div id="info-content"></div></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

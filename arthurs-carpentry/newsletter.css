@@ -1,0 +1,147 @@
+/* Shared newsletter band: sage support surface, ivory input, terracotta action.
+ * All copy uses relative units; labels and status remain present at narrow widths.
+ * The form is part of the page, never an interrupting modal or timed overlay. */
+.newsletter-section {
+  background: var(--sage);
+  border-top: 1px solid #d3daca;
+  border-bottom: 1px solid #d3daca;
+  padding: 52px 0;
+}
+.newsletter-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.newsletter-copy h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 3.2vw, 3rem);
+  font-weight: 400;
+  line-height: 1.08;
+  color: var(--green);
+  margin: 13px 0 17px;
+}
+.newsletter-copy h2 em {
+  font-weight: 400;
+}
+.newsletter-copy p {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 440px;
+  margin: 0;
+  color: var(--text);
+}
+#newsletter-content {
+  min-width: 0;
+}
+#newsletter-form > label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.newsletter-fields {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+.newsletter-fields input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  min-height: 54px;
+  padding: 13px 15px;
+  border: 1px solid var(--control-border);
+  border-radius: 5px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1rem;
+}
+.newsletter-fields input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+.newsletter-fields .button {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+#newsletter-form .newsletter-consent {
+  display: flex;
+  margin: 14px 0 4px;
+  min-height: 44px;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.newsletter-note {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin: 8px 0 0;
+  line-height: 1.6;
+}
+.newsletter-privacy {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--green);
+  font-size: inherit;
+}
+.newsletter-success {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--control-border);
+  border-radius: 8px;
+}
+.newsletter-check {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  background: var(--green);
+  color: var(--white);
+  border-radius: 50%;
+}
+.newsletter-success h3 {
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+  color: var(--green);
+}
+.newsletter-success p {
+  font-size: 0.9375rem;
+  margin: 0;
+  line-height: 1.65;
+  color: var(--text);
+}
+@media (max-width: 1000px) {
+  .newsletter-inner {
+    gap: 35px;
+  }
+  .newsletter-fields {
+    flex-wrap: wrap;
+  }
+  .newsletter-fields .button {
+    width: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .newsletter-section {
+    padding: 38px 0;
+  }
+  .newsletter-inner {
+    grid-template-columns: 1fr;
+    gap: 27px;
+  }
+  .newsletter-copy h2 {
+    font-size: 2.75rem;
+  }
+  .newsletter-success {
+    padding: 19px 16px;
+  }
+}

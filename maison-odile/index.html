@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#702b32">
+  <title>Maison Odile · A little taste of France</title>
+  <meta name="description" content="Find your French bakery favorites and plan pickup at Maison Odile in Wrenford, Calder Falls, or Pell Harbor. A redesigned ordering experience.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='20' fill='%23702b32'/%3E%3Ctext x='20' y='30' text-anchor='middle' font-family='Georgia' font-style='italic' font-size='34' fill='%23fff9ed'%3Ec%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#menu">Skip to menu</a>
+  <div class="announcement"><span>French roots. Neighborhood heart.</span><span class="announcement-right">Baked fresh in Wrenford, Calder Falls & Pell Harbor <span aria-hidden="true">✦</span></span></div>
+  <header class="site-header">
+    <a class="wordmark" href="./" aria-label="Maison Odile home">odile<span>FRENCH BAKERY</span></a>
+    <nav id="primary-navigation" aria-label="Main navigation">
+      <a class="nav-link active" href="#menu">Order online</a>
+      <button class="nav-link" data-action="locations">Our bakeries</button>
+      <button class="nav-link" data-action="help">How it works</button>
+      <button class="nav-link" data-action="contact">Contact</button>
+    </nav>
+    <button class="bag-button" data-action="bag" aria-label="View your shopping bag"><span data-icon="bag"></span><span class="bag-label">Your bag</span><span class="cart-count">0</span></button>
+    <button class="mobile-menu-toggle" data-action="toggle-menu" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu"><span data-icon="menu" aria-hidden="true"></span></button>
+  </header>
+  <main class="page-shell" id="customer-view">
+    <div class="breadcrumb"><span class="bakery-promise"><span class="tricolor-ribbon" aria-hidden="true"></span><span>THE GOOD THINGS, MADE FROM SCRATCH</span></span><span>Order for pickup <span data-icon="arrow-right"></span></span></div>
+    <button class="mobile-pickup-summary" data-action="schedule" aria-label="Choose bakery and pickup time"><span><span data-icon="pin"></span><span id="mobile-location">Pickup in Wrenford</span></span><span id="mobile-pickup-time">Choose a time <span data-icon="chevron-down"></span></span></button>
+    <div class="shop-layout">
+      <div class="shop-main">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy"><span class="eyebrow">BONJOUR, NEIGHBOR.</span><h1 id="hero-title">A little taste<br> of <em>France.</em></h1><p>French favorites, freshly baked for your next pickup.</p><a href="#menu" class="hero-link">Find your favorites <span data-icon="arrow-down"></span></a></div>
+          <div class="hero-photo"><img src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?fm=jpg&q=80&w=1080&fit=max" alt="Golden butter croissants, freshly baked at Maison Odile"><div class="hero-seal"><span>FAIT MAISON</span><strong>avec<br><i>amour</i></strong><span>EVERY SINGLE DAY</span></div></div>
+        </section>
+        <div class="service-strip"><button class="service-link" data-action="locations"><span data-icon="store" aria-hidden="true"></span><span class="service-label">Three neighborhood bakeries</span><span data-icon="arrow-right" aria-hidden="true"></span></button><button class="service-link" data-action="schedule"><span data-icon="clock" aria-hidden="true"></span><span class="service-label">Easy scheduled pickup</span><span data-icon="arrow-right" aria-hidden="true"></span></button><span><span data-icon="heart"></span>Made by our family, for yours</span></div>
+        <section class="menu-section" id="menu" aria-labelledby="menu-heading">
+          <div class="section-heading"><div><span class="eyebrow">SOMETHING GOOD IS WAITING</span><h2 id="menu-heading" tabindex="-1">Fresh from our ovens</h2></div><button class="search-toggle icon-button" data-action="search" aria-label="Search the menu"><span data-icon="search"></span></button></div>
+          <div class="search-wrap" hidden><span data-icon="search"></span><input id="menu-search" type="search" placeholder="Find your favorite…" aria-label="Search bakery products"><button class="icon-button" data-action="clear-search" aria-label="Clear search"><span data-icon="close"></span></button></div>
+          <div class="categories" role="group" aria-label="Menu categories"><button class="category active" data-category="All">All favorites</button><button class="category" data-category="Viennoiserie">Viennoiserie</button><button class="category" data-category="Pâtisserie">Pâtisserie</button><button class="category" data-category="Cakes & tarts">Cakes & tarts</button><button class="category" data-category="Savory">Savory</button></div>
+          <div class="menu-note"><span data-icon="info"></span><p>Good things take time. Cakes & whole tarts need at least <strong>48 hours’ notice.</strong></p><button data-action="help">Order details <span aria-hidden="true">↗</span></button></div>
+          <div class="product-grid" id="product-grid"></div>
+          <section class="custom-order" aria-labelledby="catering-promo-heading"><div class="custom-order-photo"><img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?fm=jpg&q=80&w=1080&fit=max" alt="Colorful French macarons from Maison Odile" loading="lazy" width="640" height="640"></div><div class="custom-order-copy"><span class="eyebrow">CATERING & CELEBRATIONS</span><h3 id="catering-promo-heading">Good company.<br>Great pastries.</h3><p>Let’s make your next gathering delicious.</p><button data-action="catering">Explore catering <span data-icon="arrow-right" aria-hidden="true"></span></button></div></section>
+        </section>
+      </div>
+      <aside class="order-panel" id="order-panel" aria-label="Your pickup and shopping bag">
+        <div class="panel-top"><span class="eyebrow">YOUR NEXT HAPPY MOMENT</span><h2>Your pickup</h2><p>A few clicks. A little anticipation.</p></div>
+        <div class="pickup-choice"><span class="choice-icon" data-icon="pin"></span><div><span class="field-caption">PICKUP BAKERY</span><strong id="selected-location">Wrenford</strong><span id="selected-address">128 Orchard Street</span></div><button data-action="schedule" data-focus="location" aria-label="Change pickup bakery"><span data-icon="chevron-down"></span></button></div>
+        <div class="pickup-choice"><span class="choice-icon" data-icon="calendar"></span><div><span class="field-caption">PICKUP TIME</span><strong id="selected-date">Choose your day</strong><span id="selected-time">Find a time that works for you</span></div><button data-action="schedule" aria-label="Choose pickup date and time"><span data-icon="chevron-down"></span></button></div>
+        <div class="pickup-footnote"><span data-icon="clock"></span><span>Prepared fresh for your scheduled pickup</span></div>
+        <div class="bag-heading"><h3>In your bag</h3><span id="bag-item-count">0 items</span></div>
+        <div id="cart-content"><div class="empty-bag"><span class="empty-bag-icon" data-icon="bag"></span><h4>Make room for something good.</h4><p>Add a favorite from the menu<br>and we’ll take it from here.</p></div></div>
+        <div class="bag-bottom"><div class="subtotal"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div><p class="tax-note">Demo subtotal · excludes tax</p><button class="primary-button checkout-button" id="review-button" data-action="review" disabled>Review your order <span data-icon="arrow-right"></span></button><div class="checkout-assurance"><span data-icon="shield"></span><button data-action="policy">Please review our cancellation & refund policy</button></div></div>
+        <div class="panel-note"><span>Un petit rappel</span><p>Planning ahead makes pickup a piece of cake.</p></div>
+      </aside>
+    </div>
+  </main>
+  <main id="catering-view" class="page-shell catering-page" hidden aria-labelledby="catering-title">
+    <a class="catering-back text-button" href="#menu"><span data-icon="arrow-right" aria-hidden="true"></span>Back to the menu</a>
+    <section class="catering-hero" aria-labelledby="catering-title">
+      <div><span class="eyebrow">CATERING & CELEBRATIONS</span><h1 id="catering-title" tabindex="-1">Good company.<br>Great pastries.</h1><p>Tell us about your gathering. We’ll help make it delicious.</p></div>
+      <img src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?fm=jpg&q=80&w=1080&fit=max" alt="Freshly baked Maison Odile croissants" width="800" height="600">
+    </section>
+    <div class="catering-layout">
+      <form id="catering-form" class="catering-form">
+        <fieldset><legend><span>01</span>Your gathering</legend>
+          <div class="catering-fields">
+            <label class="catering-field" for="catering-date">Event date <span class="field-hint">Required</span><input id="catering-date" name="eventDate" type="date" required></label>
+            <label class="catering-field" for="catering-time">Event time <span class="field-hint">Optional · Eastern time</span><input id="catering-time" name="eventTime" type="time"></label>
+            <label class="catering-field" for="catering-location">Event location <span class="field-hint">Required · city or venue</span><input id="catering-location" name="eventLocation" type="text" required maxlength="160" autocomplete="off" placeholder="e.g. Calder Falls"></label>
+            <label class="catering-field" for="catering-guests">Number of guests <span class="field-hint">Optional · an estimate is fine</span><input id="catering-guests" name="guests" type="number" min="1" step="1" inputmode="numeric" placeholder="e.g. 20"></label>
+            <label class="catering-field full-width" for="catering-details">What can we bake for you? <span class="field-hint">Required · favorites, quantities, and any dietary needs</span><textarea id="catering-details" name="details" required maxlength="2000" rows="4" placeholder="Tell us what you have in mind…"></textarea></label>
+          </div>
+        </fieldset>
+        <fieldset><legend><span>02</span>How to reach you</legend>
+          <div class="catering-fields">
+            <label class="catering-field" for="catering-name">Full name <span class="field-hint">Required</span><input id="catering-name" name="fullName" type="text" required maxlength="100" autocomplete="name"></label>
+            <label class="catering-field" for="catering-email">Email <span class="field-hint">Required</span><input id="catering-email" name="email" type="email" required maxlength="254" autocomplete="email"></label>
+            <label class="catering-field" for="catering-phone">Phone number <span class="field-hint">Optional</span><input id="catering-phone" name="phone" type="tel" maxlength="40" autocomplete="tel"></label>
+          </div>
+        </fieldset>
+        <div class="catering-form-actions"><button class="primary-button" type="submit" aria-describedby="catering-demo-note">Review catering request <span data-icon="arrow-right" aria-hidden="true"></span></button><p id="catering-demo-note">Demo only. Nothing is sent to Maison Odile. A request is not a confirmed booking.</p></div>
+      </form>
+      <aside class="catering-guidance" aria-label="Catering planning information">
+        <div class="catering-guidance-card"><span class="eyebrow">FROM OUR FAMILY TO YOURS</span><h2>A little planning.<br>A lovely gathering.</h2><p>The bakery reviews your event details and confirms availability, price, and pickup arrangements.</p><details class="catering-planning"><summary>Lead times & cancellation details</summary><div><p>Cakes need at least 48 hours’ notice. Other catering lead times depend on your request and must be confirmed by the bakery.</p><p>Please review the published refund policy and confirm the terms for your event before committing.</p><button class="text-button" type="button" data-action="policy">Cancellation & refund policy <span data-icon="arrow-right" aria-hidden="true"></span></button></div></details></div>
+        <div class="catering-menu-option"><h2>Already know your favorites?</h2><p>For a straightforward pickup order, choose directly from the menu.</p><a class="secondary-button" href="#menu">Shop the bakery menu <span data-icon="arrow-right" aria-hidden="true"></span></a></div>
+      </aside>
+    </div>
+  </main>
+  <main id="staff-view" class="page-shell" hidden aria-label="Bakery workspace"></main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-main">
+        <nav class="footer-links" aria-labelledby="footer-visit-heading">
+          <h2 id="footer-visit-heading">Visit & enjoy</h2>
+          <button data-action="locations">Locations & hours</button>
+          <button data-action="help">How pickup works</button>
+          <button data-action="catering">Explore catering</button>
+        </nav>
+        <div class="footer-pickup">
+          <h2>Plan your next pickup</h2>
+          <button class="footer-pickup-button" data-action="schedule">Choose a pickup time <span data-icon="arrow-right" aria-hidden="true"></span></button>
+          <button class="footer-policy-link" data-action="policy">Please review our cancellation & refund policy <span data-icon="arrow-right" aria-hidden="true"></span></button>
+        </div>
+      </div>
+      <section class="footer-contact" aria-labelledby="footer-contact-heading">
+        <h2 id="footer-contact-heading">Contact the bakery</h2>
+        <div class="footer-contact-links">
+          <a href="tel:+16175550141" data-contact-channel="phone" data-contact-location="wrenford"><span>Wrenford</span><strong>(617) 555-0141</strong></a>
+          <a href="tel:+16175550142" data-contact-channel="phone" data-contact-location="calder"><span>Calder Falls</span><strong>(617) 555-0142</strong></a>
+          <a href="tel:+16175550143" data-contact-channel="phone" data-contact-location="pellharbor"><span>Pell Harbor</span><strong>(617) 555-0143</strong></a>
+          <a href="mailto:bonjour@maisonodile.example" data-contact-channel="email"><span>Email us</span><strong>bonjour@maisonodile.example</strong></a>
+        </div>
+      </section>
+      <div class="footer-bottom">
+        <p class="preview-note"><strong>Ordering concept</strong><span>Explore the experience. No real orders or payments are sent.</span></p>
+        <button class="footer-workspace-button" data-action="staff"><span data-icon="store" aria-hidden="true"></span>Bakery workspace <span data-icon="arrow-right" aria-hidden="true"></span></button>
+      </div>
+    </div>
+  </footer>
+  <div class="mobile-bag-bar" hidden><button data-action="bag"><span><span data-icon="bag"></span>View your bag <span class="cart-count">0</span></span><strong id="mobile-total">$0.00</strong></button></div>
+  <dialog id="app-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <noscript><div class="workspace-notice">JavaScript is needed for this interactive ordering preview. For assistance, call Maison Odile’s Wrenford bakery at <a href="tel:+16175550141">(617) 555-0141</a>.</div></noscript>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+<p class="photo-credits" style="margin:0;padding:14px 16px;font:12px/1.5 system-ui,-apple-system,sans-serif;text-align:center;color:#6b6b6b;background:transparent">Photography: <a href="https://unsplash.com/@blsnki?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Yeh Xintong</a>, <a href="https://unsplash.com/@commonboxturtle?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Conor Brown</a>, <a href="https://unsplash.com/@chelseaaudibert?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Chelsea Audibert</a>, <a href="https://unsplash.com/@minkmingle?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Mink Mingle</a>, <a href="https://unsplash.com/@anvision?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">an_vision</a>, <a href="https://unsplash.com/@jannerboy62?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Nick Fewings</a>, <a href="https://unsplash.com/@sergich?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Sergio Arze</a> on <a href="https://unsplash.com/?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Unsplash</a>. Concept site: names, people, and details are fictional.</p>
+</body>
+</html>

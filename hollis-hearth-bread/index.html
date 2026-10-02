@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hollis Hearth Bread Co.</title>
+  <style>x-dc{display:block;visibility:hidden}</style>
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+  <style>
+    body { margin: 0; background: #F9F5EE; color: #2A1B12; font-family: 'Atkinson Hyperlegible', Verdana, 'Segoe UI', sans-serif; font-size: 18px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, .display { font-family: 'Young Serif', Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: -0.01em; text-wrap: pretty; }
+    p { text-wrap: pretty; }
+    a { color: #7A5410; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    a:hover { color: #2A1B12; }
+    :focus-visible { outline: 3px solid #2A1B12; outline-offset: 3px; border-radius: 3px; }
+    .on-dark :focus-visible { outline-color: #F9F5EE; }
+    .skip { position: absolute; left: 24px; top: -120px; z-index: 20; background: #2A1B12; color: #F9F5EE; padding: 14px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; }
+    .skip:focus { top: 16px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .nav a { color: #2A1B12; text-decoration: none; padding: 10px 2px; }
+    .nav a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 28px; border-radius: 8px; font-family: inherit; font-weight: 700; font-size: 17px; line-height: 1.2; text-decoration: none; border: 2px solid transparent; cursor: pointer; box-sizing: border-box; text-align: center; }
+    .btn-primary { background: #C99A3A; color: #2A1B12; border-color: #7A5410; }
+    .btn-primary:hover { background: #B4872C; border-color: #7A5410; }
+    .btn-secondary { background: transparent; color: #2A1B12; border-color: #2A1B12; }
+    .btn-secondary:hover { background: #F1E7D6; }
+    .btn-outline-light { background: transparent; color: #F9F5EE; border-color: #F9F5EE; }
+    .btn-outline-light:hover { background: rgba(249, 245, 238, 0.12); }
+    .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: #FFFDF9; color: #2A1B12; border: 2px solid #2A1B12; cursor: pointer; padding: 0; }
+    .icon-btn:hover { background: #2A1B12; color: #F9F5EE; }
+    .month { font-family: inherit; text-align: left; background: #FFFDF9; color: #2A1B12; border: 2px solid #7B664F; border-radius: 10px; cursor: pointer; }
+    .month:hover { border-color: #2A1B12; }
+    .month.is-selected { background: #2A1B12; color: #F9F5EE; border-color: #2A1B12; }
+    .seg { font-family: inherit; background: #FFFDF9; color: #2A1B12; border: 2px solid #7B664F; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 700; }
+    .seg:hover { border-color: #2A1B12; }
+    .seg.is-selected { background: #2A1B12; color: #F9F5EE; border-color: #2A1B12; }
+    .field { font-family: inherit; font-size: 18px; color: #2A1B12; background: #FFFFFF; border: 2px solid #7B664F; border-radius: 8px; min-height: 52px; padding: 0 16px; box-sizing: border-box; width: 100%; }
+    .field:focus { border-color: #2A1B12; }
+    .ph { display: flex; align-items: center; justify-content: center; text-align: center; background: #F1E7D6; border: 2px dashed #C99A3A; color: #5C4634; font-size: 15px; font-weight: 700; letter-spacing: 0.04em; box-sizing: border-box; padding: 24px; }
+    .pill { display: inline-flex; align-items: center; min-height: 32px; padding: 0 14px; border-radius: 999px; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .hours th, .hours td { text-align: left; padding: 12px 0; border-bottom: 1px solid rgba(249, 245, 238, 0.22); font-size: 18px; }
+    .hours th { font-weight: 700; }
+    .foot a { color: #D9C7B0; text-decoration: none; }
+    .foot a:hover { color: #F9F5EE; text-decoration: underline; }
+    .check { width: 24px; height: 24px; margin: 2px 0 0; accent-color: #7A5410; flex-shrink: 0; }
+    .slide img { display: block; width: 373px; height: 466px; object-fit: cover; border-radius: 14px; background: #F1E7D6; }
+    @media (prefers-reduced-motion: no-preference) { .btn, .month, .seg, .icon-btn { transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease; } }
+  </style>
+</helmet>
+<div id="top" style="position: relative; width: 1440px; height: 6300px; box-sizing: border-box; display: flex; flex-direction: column; background: #F9F5EE; overflow: hidden;">
+
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header style="height: 92px; flex-shrink: 0; box-sizing: border-box; padding: 0 120px; display: flex; align-items: center; gap: 40px; border-bottom: 1px solid #E3D5C0;">
+    <a href="#top" aria-label="Hollis Hearth Bread Co. home" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #2A1B12;">
+      <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#C99A3A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8"></path><path d="M12 8c-3 0-5-2-5-5 3 0 5 2 5 5z"></path><path d="M12 8c3 0 5-2 5-5-3 0-5 2-5 5z"></path><path d="M12 13c-3 0-5-2-5-5 3 0 5 2 5 5z"></path><path d="M12 13c3 0 5-2 5-5-3 0-5 2-5 5z"></path><path d="M12 18c-3 0-5-2-5-5 3 0 5 2 5 5z"></path><path d="M12 18c3 0 5-2 5-5-3 0-5 2-5 5z"></path></svg>
+      <span class="display" style="font-size: 28px; line-height: 1;">Hollis Hearth Bread Co.</span>
+    </a>
+    <nav class="nav" aria-label="Primary" style="display: flex; align-items: center; gap: 32px; margin-left: auto; font-size: 17px; font-weight: 700;">
+      <a href="#seasonal-menu">Seasonal Menu</a>
+      <a href="#hours">Hours &amp; Ordering</a>
+      <a href="#catering">Catering</a>
+      <a href="#newsletter">Newsletter</a>
+      <a href="#find">Find a Bakery</a>
+    </nav>
+    <a class="btn btn-primary" href="#loyalty" style="min-height: 48px; padding: 0 22px; font-size: 16px;">Reserve for pickup</a>
+  </header>
+
+  <main id="main" style="display: flex; flex-direction: column; flex-shrink: 0;">
+
+    <section aria-labelledby="hero-h" style="box-sizing: border-box; padding: 72px 120px 64px; display: grid; grid-template-columns: minmax(0, 1fr) 480px; gap: 80px; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+        <p style="margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #7A5410;">Brightwater, Massachusetts · Open every day</p>
+        <h1 id="hero-h" style="margin: 0; font-size: 62px; line-height: 1.06;">Old-fashioned bread, naturally leavened, out of the hearth every morning.</h1>
+        <p style="margin: 0; font-size: 21px; line-height: 1.5; color: #5C4634; max-width: 580px;">We give every dough 12 to 24 hours to rise, bake it when it is ready, and keep our everyday loaves priced so anyone can bring one home. Bread of the World means bread for all people.</p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a class="btn btn-primary" href="#loyalty">Reserve a loaf for pickup</a>
+          <a class="btn btn-secondary" href="#seasonal-menu">See the seasonal menu</a>
+        </div>
+        <p style="margin: 0; font-size: 16px; color: #5C4634;">Same-day pickup for what is on the shelf. Special orders by 12pm, two days ahead.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1624323210664-3659370c9346?fm=jpg&q=80&w=1080&fit=max" alt="A round country sourdough loaf, dusted with flour and stenciled with the Hollis mark, resting on a wooden board" style="display: block; width: 480px; height: 500px; object-fit: cover; border-radius: 240px 240px 24px 24px; background: #F1E7D6;">
+    </section>
+
+    <section aria-label="Why Hollis Hearth" style="box-sizing: border-box; padding: 0 120px 80px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 28px 0 0; border-top: 3px solid #C99A3A;">
+        <h2 class="display" style="margin: 0; font-size: 24px;">12 to 24 hours to rise</h2>
+        <p style="margin: 0; font-size: 17px; color: #5C4634;">No shortcuts. Fermentation sets the schedule, not the clock, and the flavor and texture show it.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 28px 0 0; border-top: 3px solid #C99A3A;">
+        <h2 class="display" style="margin: 0; font-size: 24px;">Organic, local, in season</h2>
+        <p style="margin: 0; font-size: 17px; color: #5C4634;">Our first choice for flour, grains and produce, whenever we can get it, and never chemically treated.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 28px 0 0; border-top: 3px solid #C99A3A;">
+        <h2 class="display" style="margin: 0; font-size: 24px;">Everyday loaves, kept affordable</h2>
+        <p style="margin: 0; font-size: 17px; color: #5C4634;">Country sourdough, whole wheat sourdough and francese, priced low on purpose so everyone can eat well.</p>
+      </div>
+    </section>
+
+    <section id="gallery" aria-roledescription="carousel" aria-labelledby="gallery-h" style="box-sizing: border-box; padding: 24px 120px 88px; display: flex; flex-direction: column; gap: 32px;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px;">
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <p style="margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #7A5410;">From the bakery</p>
+          <h2 id="gallery-h" style="margin: 0; font-size: 44px; line-height: 1.1;">Fresh from the hearth</h2>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <p aria-live="polite" style="margin: 0 8px 0 0; font-size: 16px; font-weight: 700; color: #5C4634;">{{carouselRange}}</p>
+          <button type="button" class="icon-btn" aria-label="Previous photos" onClick="{{prevSlide}}">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>
+          </button>
+          <button type="button" class="icon-btn" aria-label="Next photos" onClick="{{nextSlide}}">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+      </div>
+      <div aria-live="polite" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px;">
+        <sc-for list="{{slides}}" as="item" hint-placeholder-count="3">
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="{{item.pos}}" style="margin: 0; display: flex; flex-direction: column; gap: 14px;">
+            <img data-dc-src="{{item.src}}" alt="{{item.alt}}">
+            <figcaption style="display: flex; flex-direction: column; gap: 2px;">
+              <span class="display" style="font-size: 22px;">{{item.cap}}</span>
+              <span style="font-size: 16px; color: #5C4634;">{{item.sub}}</span>
+            </figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="seasonal-menu" aria-labelledby="menu-h" style="box-sizing: border-box; padding: 88px 120px; background: #F1E7D6; display: flex; flex-direction: column; gap: 40px;">
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 520px; gap: 80px; align-items: end;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <p style="margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #7A5410;">Twelve classics, one each month</p>
+          <h2 id="menu-h" style="margin: 0; font-size: 48px; line-height: 1.1;">Seasonal Menu</h2>
+        </div>
+        <p style="margin: 0 0 6px; font-size: 19px; color: #5C4634;">Every month puts one of our classics front and center. Come back on the first to see what the season brings; a few of these only exist while the harvest lasts.</p>
+      </div>
+
+      <div role="group" aria-label="Choose a month to see its bread" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; padding: 0 0 8px; border-bottom: 2px solid #2A1B12;">
+            <h3 style="margin: 0; font-size: 22px;">{{s1.name}}</h3>
+            <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7A5410;">{{s1.label}}</span>
+          </div>
+          <sc-for list="{{s1.months}}" as="item" hint-placeholder-count="3">
+            <button type="button" class="month {{item.cls}}" aria-pressed="{{item.pressed}}" onClick="{{item.pick}}" style="min-height: 72px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 12px 18px;">
+              <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">{{item.m}}</span>
+              <span class="display" style="font-size: 19px; line-height: 1.2;">{{item.bread}}</span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; padding: 0 0 8px; border-bottom: 2px solid #A08B6A;">
+            <h3 style="margin: 0; font-size: 22px;">{{s2.name}}</h3>
+            <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7A5410;">{{s2.label}}</span>
+          </div>
+          <sc-for list="{{s2.months}}" as="item" hint-placeholder-count="3">
+            <button type="button" class="month {{item.cls}}" aria-pressed="{{item.pressed}}" onClick="{{item.pick}}" style="min-height: 72px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 12px 18px;">
+              <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">{{item.m}}</span>
+              <span class="display" style="font-size: 19px; line-height: 1.2;">{{item.bread}}</span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; padding: 0 0 8px; border-bottom: 2px solid #A08B6A;">
+            <h3 style="margin: 0; font-size: 22px;">{{s3.name}}</h3>
+            <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7A5410;">{{s3.label}}</span>
+          </div>
+          <sc-for list="{{s3.months}}" as="item" hint-placeholder-count="3">
+            <button type="button" class="month {{item.cls}}" aria-pressed="{{item.pressed}}" onClick="{{item.pick}}" style="min-height: 72px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 12px 18px;">
+              <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">{{item.m}}</span>
+              <span class="display" style="font-size: 19px; line-height: 1.2;">{{item.bread}}</span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: baseline; gap: 10px; padding: 0 0 8px; border-bottom: 2px solid #A08B6A;">
+            <h3 style="margin: 0; font-size: 22px;">{{s4.name}}</h3>
+            <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7A5410;">{{s4.label}}</span>
+          </div>
+          <sc-for list="{{s4.months}}" as="item" hint-placeholder-count="3">
+            <button type="button" class="month {{item.cls}}" aria-pressed="{{item.pressed}}" onClick="{{item.pick}}" style="min-height: 72px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding: 12px 18px;">
+              <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">{{item.m}}</span>
+              <span class="display" style="font-size: 19px; line-height: 1.2;">{{item.bread}}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div aria-live="polite" style="display: grid; grid-template-columns: 520px minmax(0, 1fr); gap: 56px; align-items: center; background: #FFFDF9; border: 1px solid #E3D5C0; border-radius: 20px; padding: 32px; box-sizing: border-box;">
+        <sc-if value="{{featured.hasImg}}" hint-placeholder-val="{{true}}">
+          <img data-dc-src="{{featured.img}}" alt="{{featured.imgAlt}}" style="display: block; width: 520px; height: 400px; object-fit: cover; border-radius: 14px; background: #F1E7D6;">
+        </sc-if>
+        <sc-if value="{{featured.noImg}}" hint-placeholder-val="{{false}}">
+          <div class="ph" role="img" aria-label="Placeholder for a photograph of this month's loaf" style="width: 520px; height: 400px; border-radius: 14px;">
+            <span>[PHOTO]<br>{{featured.bread}}, sliced to show the crumb<br>Landscape, 520 × 400</span>
+          </div>
+        </sc-if>
+        <div style="display: flex; flex-direction: column; gap: 18px; padding-right: 24px;">
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span class="pill" style="background: #C99A3A; color: #2A1B12;">Bread of the Month</span>
+            <span class="pill" style="background: #2A1B12; color: #F9F5EE;">{{featured.status}}</span>
+            <span style="font-size: 16px; font-weight: 700; color: #5C4634;">{{featured.m}} · {{featured.season}}</span>
+          </div>
+          <h3 style="margin: 0; font-size: 42px; line-height: 1.1;">{{featured.bread}}</h3>
+          <p style="margin: 0; font-size: 20px; font-style: italic; color: #5C4634;">{{featured.tag}}</p>
+          <p style="margin: 0; font-size: 18px;">{{featured.desc}}</p>
+          <p style="margin: 0; font-size: 16px; font-weight: 700; color: #7A5410;">{{featured.avail}}</p>
+          <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding-top: 6px;">
+            <a class="btn btn-primary" href="#loyalty">Reserve this loaf</a>
+            <span style="font-size: 17px; color: #5C4634;">[PRICE] per loaf</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 440px; gap: 48px; align-items: center; background: #2A1B12; color: #F9F5EE; border-radius: 20px; padding: 32px 40px; box-sizing: border-box;" class="on-dark">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span class="pill" style="background: #D4A643; color: #2A1B12; align-self: flex-start;">Next month</span>
+          <h3 style="margin: 0; font-size: 30px; line-height: 1.15;">{{next.bread}} arrives {{next.date}}</h3>
+          <p style="margin: 0; font-size: 17px; color: #D9C7B0;">{{next.countdown}} Members can reserve it a week early.</p>
+        </div>
+        <sc-if value="{{remindIdle}}" hint-placeholder-val="{{true}}">
+          <div style="display: flex; justify-content: flex-end;">
+            <button type="button" class="btn btn-outline-light" onClick="{{openRemind}}">Remind me when it lands</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{remindOpen}}" hint-placeholder-val="{{false}}">
+          <form style="display: flex; flex-direction: column; gap: 10px;">
+            <label for="d-remind-email" style="font-size: 16px; font-weight: 700;">Email for your reminder</label>
+            <div style="display: flex; gap: 10px;">
+              <input class="field" id="d-remind-email" name="email" type="email" autocomplete="email" style="flex-grow: 1; border-color: #FFFFFF;">
+              <button type="button" class="btn btn-primary" onClick="{{setRemind}}" style="flex-shrink: 0;">Set reminder</button>
+            </div>
+          </form>
+        </sc-if>
+        <sc-if value="{{reminded}}" hint-placeholder-val="{{false}}">
+          <p role="status" style="margin: 0; font-size: 17px; font-weight: 700; text-align: right;">Done. We will email you on {{next.date}}. Want the weekly newsletter too? <a href="#newsletter" style="color: #D4A643;">Join below.</a></p>
+        </sc-if>
+      </div>
+    </section>
+
+    <section id="hours" class="on-dark" aria-labelledby="hours-h" style="box-sizing: border-box; padding: 88px 120px; background: #2A1B12; color: #F9F5EE; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 96px;">
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <p style="margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #D4A643;">The bakery</p>
+        <h2 id="hours-h" style="margin: 0; font-size: 48px; line-height: 1.1;">Hours</h2>
+        <p style="margin: 0; font-size: 19px; color: #D9C7B0;">60 Kiln Street, Brightwater, MA 00433</p>
+        <p style="margin: 0; font-size: 18px; font-weight: 700; color: #F9F5EE;">{{openNow}}</p>
+        <table class="hours" style="border-collapse: collapse; width: 100%; max-width: 440px;">
+          <caption class="sr-only">Weekly opening hours</caption>
+          <thead>
+            <tr><th scope="col" style="color: #D9C7B0; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;">Day</th><th scope="col" style="color: #D9C7B0; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;">Open</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Monday</th><td>7am – 5pm</td></tr>
+            <tr><th scope="row">Tuesday</th><td>7am – 5pm</td></tr>
+            <tr><th scope="row">Wednesday</th><td>7am – 5pm</td></tr>
+            <tr><th scope="row">Thursday</th><td>7am – 5pm</td></tr>
+            <tr><th scope="row">Friday</th><td>7am – 5pm</td></tr>
+            <tr><th scope="row">Saturday</th><td>7am – 5pm</td></tr>
+            <tr><th scope="row">Sunday</th><td>7am – 4pm</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <p style="margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #D4A643;">Ordering ahead</p>
+        <h2 style="margin: 0; font-size: 48px; line-height: 1.1;">Two ways to order</h2>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; flex-direction: column; gap: 8px; padding: 24px 28px; border: 1px solid rgba(249, 245, 238, 0.28); border-radius: 14px;">
+            <h3 style="margin: 0; font-size: 24px;">Same day: walk in or curbside</h3>
+            <p style="margin: 0; font-size: 17px; color: #D9C7B0;">Everything on the shelf is ready to go. Call from the lot and we will bring your order out to the car.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; padding: 24px 28px; border: 1px solid rgba(249, 245, 238, 0.28); border-radius: 14px; background: rgba(249, 245, 238, 0.06);">
+            <h3 style="margin: 0; font-size: 24px;">Special orders: by 12pm, two days ahead</h3>
+            <p style="margin: 0; font-size: 17px; color: #D9C7B0;">Large quantities, event orders, or a loaf we are not baking today. Place the order by noon two days before you need it.</p>
+            <p style="margin: 6px 0 0; font-size: 17px; font-weight: 700; color: #F9F5EE;">{{orderLine}}</p>
+          </div>
+        </div>
+        <p style="margin: 0; font-size: 17px; color: #D9C7B0;">Why the wait? Our doughs rise for 12 to 24 hours before they see the oven. The lead time belongs to the bread, not to us.</p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a class="btn btn-primary" href="tel:+16175550152">Call (617) 555-0152</a>
+          <a class="btn btn-outline-light" href="#loyalty">Reserve online with an account</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="loyalty" aria-labelledby="loyalty-h" style="box-sizing: border-box; padding: 88px 120px; display: grid; grid-template-columns: minmax(0, 1fr) 560px; gap: 80px; align-items: start;">
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+        <p style="margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #7A5410;">Loyalty account</p>
+        <h2 id="loyalty-h" style="margin: 0; font-size: 48px; line-height: 1.1;">Join Hearth Regulars</h2>
+        <p style="margin: 0; font-size: 20px; color: #5C4634;">A free account that lets you reserve loaves for pickup, schedule catering and earn toward a free loaf. Members also hear about next month's bread before it reaches the shelf.</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px;">
+          <li style="display: flex; flex-direction: column; gap: 6px; padding: 20px 0 0; border-top: 2px solid #C99A3A;">
+            <h3 style="margin: 0; font-size: 22px;">Reserve for pickup</h3>
+            <p style="margin: 0; font-size: 17px; color: #5C4634;">Choose your loaves and a day. We bake them fresh and hold them under your name until close.</p>
+          </li>
+          <li id="catering" style="display: flex; flex-direction: column; gap: 6px; padding: 20px 0 0; border-top: 2px solid #C99A3A;">
+            <h3 style="margin: 0; font-size: 22px;">Schedule catering</h3>
+            <p style="margin: 0; font-size: 17px; color: #5C4634;">Bread baskets and sandwich platters for meetings and gatherings. Send the date and headcount; we send a quote.</p>
+          </li>
+          <li style="display: flex; flex-direction: column; gap: 6px; padding: 20px 0 0; border-top: 2px solid #C99A3A;">
+            <h3 style="margin: 0; font-size: 22px;">Earn a free loaf</h3>
+            <p style="margin: 0; font-size: 17px; color: #5C4634;">[REWARD RULE, for example: every tenth loaf is on us.]</p>
+          </li>
+          <li style="display: flex; flex-direction: column; gap: 6px; padding: 20px 0 0; border-top: 2px solid #C99A3A;">
+            <h3 style="margin: 0; font-size: 22px;">Reserve a week early</h3>
+            <p style="margin: 0; font-size: 17px; color: #5C4634;">Next month's bread opens to members seven days before everyone else.</p>
+          </li>
+        </ul>
+        <img src="https://images.unsplash.com/photo-1678969406367-e7955197c2b5?fm=jpg&q=80&w=1080&fit=max" alt="A platter of sandwiches made on Hollis Hearth bread, ready for a gathering" style="display: block; width: 100%; height: 280px; object-fit: cover; object-position: center 40%; border-radius: 16px; background: #F1E7D6;">
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 24px; background: #FFFDF9; border: 1px solid #E3D5C0; border-radius: 20px; padding: 36px; box-sizing: border-box;">
+        <sc-if value="{{notJoined}}" hint-placeholder-val="{{true}}">
+          <form style="display: flex; flex-direction: column; gap: 22px;">
+            <h3 style="margin: 0; font-size: 30px;">Create your free account</h3>
+            <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 12px;">
+              <legend style="padding: 0; margin: 0 0 4px; font-size: 16px; font-weight: 700;">I would like to</legend>
+              <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+                <sc-for list="{{intents}}" as="item" hint-placeholder-count="3">
+                  <button type="button" class="seg {{item.cls}}" aria-pressed="{{item.pressed}}" onClick="{{item.pick}}" style="min-height: 52px; padding: 8px 12px; line-height: 1.2;">{{item.label}}</button>
+                </sc-for>
+              </div>
+              <p aria-live="polite" style="margin: 0; font-size: 16px; color: #5C4634;">{{intentHelp}}</p>
+            </fieldset>
+            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start;">
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="d-first" style="font-size: 16px; font-weight: 700; white-space: nowrap;">First name</label>
+                <input class="field" id="d-first" name="first" type="text" autocomplete="given-name">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="d-phone" style="font-size: 16px; font-weight: 700; white-space: nowrap;">Mobile (optional)</label>
+                <input class="field" id="d-phone" name="phone" type="tel" autocomplete="tel" aria-describedby="d-phone-hint">
+                <p id="d-phone-hint" style="margin: 0; font-size: 14px; color: #5C4634;">For pickup-ready texts.</p>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="d-email" style="font-size: 16px; font-weight: 700;">Email</label>
+              <input class="field" id="d-email" name="email" type="email" autocomplete="email">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="d-home" style="font-size: 16px; font-weight: 700;">Home bakery</label>
+              <select class="field" id="d-home" name="home">
+                <option>Brightwater, MA — 60 Kiln Street</option>
+                <option>I will choose later</option>
+              </select>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <input class="check" id="d-news" name="newsletter" type="checkbox">
+              <label for="d-news" style="font-size: 16px; line-height: 1.45;">Send me <strong>The Weekly Crumb</strong>, our Thursday newsletter with next month's bread and member-only early reservations.</label>
+            </div>
+            <button type="button" class="btn btn-primary" onClick="{{join}}" style="width: 100%;">Create my account</button>
+            <p style="margin: 0; font-size: 15px; color: #5C4634;">No card needed. We never sell or share your email.</p>
+          </form>
+        </sc-if>
+        <sc-if value="{{joined}}" hint-placeholder-val="{{false}}">
+          <div role="status" style="display: flex; flex-direction: column; gap: 16px; min-height: 420px; justify-content: center;">
+            <span class="pill" style="background: #C99A3A; color: #2A1B12; align-self: flex-start;">You are in</span>
+            <h3 style="margin: 0; font-size: 30px;">Welcome to the Regulars.</h3>
+            <p style="margin: 0; font-size: 18px; color: #5C4634;">Check your inbox to confirm your email. Then reserve your first loaf or tell us about your next gathering.</p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; padding-top: 8px;">
+              <a class="btn btn-primary" href="#seasonal-menu">Reserve this month's bread</a>
+              <a class="btn btn-secondary" href="#catering">Schedule catering</a>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <section id="newsletter" aria-labelledby="nl-h" style="box-sizing: border-box; padding: 0 120px 88px;">
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 480px; gap: 64px; align-items: center; background: #F1E7D6; border-radius: 20px; padding: 48px 56px; box-sizing: border-box;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <p style="margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #7A5410;">Weekly newsletter</p>
+          <h2 id="nl-h" style="margin: 0; font-size: 40px; line-height: 1.1;">The Weekly Crumb</h2>
+          <p style="margin: 0; font-size: 18px; color: #5C4634;">Every Thursday: what is coming out of the oven this week, the story behind next month's bread, and early reservations for members. One email a week, and you can leave whenever you like.</p>
+        </div>
+        <sc-if value="{{notSubscribed}}" hint-placeholder-val="{{true}}">
+          <form style="display: flex; flex-direction: column; gap: 12px;">
+            <label for="d-nl-email" style="font-size: 16px; font-weight: 700;">Email address</label>
+            <div style="display: flex; gap: 12px;">
+              <input class="field" id="d-nl-email" name="email" type="email" autocomplete="email" style="flex-grow: 1;">
+              <button type="button" class="btn btn-primary" onClick="{{subscribe}}" style="flex-shrink: 0;">Join the newsletter</button>
+            </div>
+            <p style="margin: 0; font-size: 15px; color: #5C4634;">Members: you can turn this on inside your account too.</p>
+          </form>
+        </sc-if>
+        <sc-if value="{{subscribed}}" hint-placeholder-val="{{false}}">
+          <div role="status" style="display: flex; flex-direction: column; gap: 8px; min-height: 120px; justify-content: center;">
+            <h3 style="margin: 0; font-size: 26px;">You are on the list.</h3>
+            <p style="margin: 0; font-size: 17px; color: #5C4634;">Look for the first Weekly Crumb this Thursday.</p>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <section id="find" aria-labelledby="find-h" style="box-sizing: border-box; padding: 72px 120px; border-top: 1px solid #E3D5C0; display: flex; align-items: center; justify-content: space-between; gap: 64px;">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px;">
+        <h2 id="find-h" style="margin: 0; font-size: 40px; line-height: 1.1;">Brightwater is home. Hollis Hearth is closer than you think.</h2>
+        <p style="margin: 0; font-size: 18px; color: #5C4634;">Our hearth is on Kiln Street, and our bread is on shelves across Massachusetts and in bakeries in other states. Find the one nearest you.</p>
+      </div>
+      <a class="btn btn-secondary" href="#find" style="flex-shrink: 0;">Find a bakery near you</a>
+    </section>
+
+  </main>
+
+  <footer class="on-dark foot" style="flex-grow: 1; box-sizing: border-box; padding: 64px 120px 40px; background: #2A1B12; color: #D9C7B0; display: flex; flex-direction: column; gap: 48px;">
+    <div style="display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 48px;">
+      <div style="display: flex; flex-direction: column; gap: 16px; padding-right: 24px;">
+        <a href="#top" aria-label="Hollis Hearth Bread Co. home" style="display: flex; align-items: center; gap: 12px; color: #F9F5EE;">
+          <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4A643" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8"></path><path d="M12 8c-3 0-5-2-5-5 3 0 5 2 5 5z"></path><path d="M12 8c3 0 5-2 5-5-3 0-5 2-5 5z"></path><path d="M12 13c-3 0-5-2-5-5 3 0 5 2 5 5z"></path><path d="M12 13c3 0 5-2 5-5-3 0-5 2-5 5z"></path><path d="M12 18c-3 0-5-2-5-5 3 0 5 2 5 5z"></path><path d="M12 18c3 0 5-2 5-5-3 0-5 2-5 5z"></path></svg>
+          <span class="display" style="font-size: 24px; line-height: 1;">Hollis Hearth Bread Co.</span>
+        </a>
+        <p style="margin: 0; font-size: 16px;">Naturally leavened, hearth-baked bread for all people. Baked in Brightwater since [YEAR].</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="margin: 0 0 4px; font-family: inherit; font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #F9F5EE;">Visit</h2>
+        <p style="margin: 0; font-size: 16px;">130 Kiln Street<br>Brightwater, MA 00433</p>
+        <a href="tel:+16175550152" style="font-size: 16px;">(617) 555-0152</a>
+        <a href="mailto:hello@hollishearth.example" style="font-size: 16px;">hello@hollishearth.example</a>
+        <p style="margin: 0; font-size: 16px;">Mon–Sat 7am–5pm<br>Sun 7am–4pm</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="margin: 0 0 4px; font-family: inherit; font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #F9F5EE;">Bread</h2>
+        <a href="#seasonal-menu" style="font-size: 16px;">Seasonal Menu</a>
+        <a href="#gallery" style="font-size: 16px;">Our breads</a>
+        <a href="#seasonal-menu" style="font-size: 16px;">Our ingredients</a>
+        <a href="#seasonal-menu" style="font-size: 16px;">Clean Label Project</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="margin: 0 0 4px; font-family: inherit; font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #F9F5EE;">Order</h2>
+        <a href="#loyalty" style="font-size: 16px;">Reserve for pickup</a>
+        <a href="#catering" style="font-size: 16px;">Schedule catering</a>
+        <a href="#loyalty" style="font-size: 16px;">Loyalty account</a>
+        <a href="#newsletter" style="font-size: 16px;">Weekly newsletter</a>
+        <a href="#find" style="font-size: 16px;">Find a bakery</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="margin: 0 0 4px; font-family: inherit; font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #F9F5EE;">Company</h2>
+        <a href="#top" style="font-size: 16px;">Community</a>
+        <a href="#top" style="font-size: 16px;">Sustainability</a>
+        <a href="#top" style="font-size: 16px;">Careers: we are hiring</a>
+        <a href="#top" style="font-size: 16px;">Wholesale partners</a>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-top: 28px; border-top: 1px solid rgba(249, 245, 238, 0.22); font-size: 15px;">
+      <p style="margin: 0;">© 2026 Hollis Hearth Bread Co.. All rights reserved.</p>
+      <nav aria-label="Legal and social" style="display: flex; gap: 28px; flex-wrap: wrap;">
+        <a href="#top">Privacy</a>
+        <a href="#top">Terms</a>
+        <a href="#top">Accessibility statement</a>
+        <a href="#top">Instagram</a>
+        <a href="#top">Facebook</a>
+      </nav>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<p class="photo-credits" style="margin:0;padding:14px 16px;font:12px/1.5 system-ui,-apple-system,sans-serif;text-align:center;color:#6b6b6b;background:transparent">Photography: <a href="https://unsplash.com/@spring_fed_images?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Spring Fed Images</a>, <a href="https://unsplash.com/@picoftasty?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Mae Mu</a>, <a href="https://unsplash.com/@bastroloog?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Bas Peperzak</a>, <a href="https://unsplash.com/@gmalhotra?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Gayatri Malhotra</a>, <a href="https://unsplash.com/@niki_emmert?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Nikolett Emmert</a>, <a href="https://unsplash.com/@jhc?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">James Coleman</a>, <a href="https://unsplash.com/@haseebm?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Haseeb Modi</a>, <a href="https://unsplash.com/@kiboka?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Nadya Spetnitskaya</a> on <a href="https://unsplash.com/?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Unsplash</a>. Concept site: names, people, and details are fictional.</p>
+
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":6300}}'>
+const MONTHS = [
+  { m: 'January', season: 'Winter', bread: 'Whole Wheat Sourdough', tag: 'A fresh-start loaf', desc: 'Stone-ground whole wheat, naturally leavened and given a full day to rise. Sturdy enough for toast, soft enough for sandwiches.' },
+  { m: 'February', season: 'Winter', bread: 'Raisin Pecan', tag: 'Warm, sweet, a little smoky', desc: 'Plump raisins and toasted pecans folded through a country dough. Breakfast for the coldest month.' },
+  { m: 'March', season: 'Spring', bread: 'Semolina', tag: 'Golden and bright', desc: 'Durum semolina gives this loaf its sunny color and a nutty, buttery crumb. A sign that spring is on its way.' },
+  { m: 'April', season: 'Spring', bread: 'Rosemary Focaccia', tag: 'Olive oil and fresh herbs', desc: 'Dimpled, salted and brushed with olive oil, with fresh rosemary pressed into the top before it bakes.' },
+  { m: 'May', season: 'Spring', bread: 'Francese', tag: 'Our everyday Italian loaf', desc: 'Crisp crust, open crumb, nothing fancy. One of the three basic breads we keep at a low price on purpose.' },
+  { m: 'June', season: 'Summer', bread: 'Ciabatta', tag: 'Built for sandwiches', desc: 'Airy, chewy and made for picnic season. Slice it lengthwise and fill it with whatever the market has.' },
+  { m: 'July', season: 'Summer', bread: 'Olive Bread', tag: 'Briny and bold', desc: 'Kalamata olives through a slow-risen dough. Best torn, not sliced, alongside tomatoes at their peak.' },
+  { m: 'August', season: 'Summer', bread: 'Seeded Sourdough', tag: 'Crunch in every slice', desc: 'Sunflower, flax and sesame baked into and onto a tangy sourdough. Late-summer toast at its best.' },
+  { m: 'September', season: 'Fall', bread: 'Country Sourdough', tag: 'The loaf that started it all', desc: 'Naturally leavened and hearth-baked, with a deep crust and a tangy, open crumb. Harvest season is its season.', img: 'https://images.unsplash.com/photo-1624323210664-3659370c9346?fm=jpg&q=80&w=1080&fit=max', imgAlt: "A round country sourdough loaf dusted with flour and stenciled with the Hollis mark" },
+  { m: 'October', season: 'Fall', bread: 'Pumpkin Seed Sourdough', tag: 'Toasted seeds, autumn color', desc: 'Green pumpkin seeds toasted and folded through our country dough. Only baked while the harvest lasts.' },
+  { m: 'November', season: 'Fall', bread: 'Cranberry Pecan', tag: 'Made for the holiday table', desc: 'Tart cranberries and toasted pecans in a soft, golden loaf. Reserve early for Thanksgiving week.', img: 'https://images.unsplash.com/photo-1608512110215-7f6acfe55016?fm=jpg&q=80&w=1080&fit=max', imgAlt: 'A tray of cranberry and pecan rolls fresh from the oven' },
+  { m: 'December', season: 'Winter', bread: 'Brioche', tag: 'Rich, golden, celebratory', desc: 'Butter and eggs, slowly proofed. For French toast on a winter morning or the centerpiece of a holiday brunch.' }
+];
+const SEASONS = [
+  { name: 'Winter', idx: [11, 0, 1] },
+  { name: 'Spring', idx: [2, 3, 4] },
+  { name: 'Summer', idx: [5, 6, 7] },
+  { name: 'Fall', idx: [8, 9, 10] }
+];
+const SLIDES = [
+  { src: 'https://images.unsplash.com/photo-1566698629409-787a68fc5724?fm=jpg&q=80&w=1080&fit=max', alt: "Assorted Hollis Hearth loaves and rolls arranged on a wooden board", cap: 'A little bit of our daily breads', sub: 'Naturally leavened, out of the oven every morning' },
+  { src: 'https://images.unsplash.com/photo-1599819055803-717bba43890f?fm=jpg&q=80&w=1080&fit=max', alt: 'A French baguette split open to show its airy crumb', cap: 'French baguette', sub: 'Crisp crust, open crumb' },
+  { src: 'https://images.unsplash.com/photo-1608512110215-7f6acfe55016?fm=jpg&q=80&w=1080&fit=max', alt: 'A tray of cranberry and pecan rolls', cap: 'Cranberry and pecan rolls', sub: 'In store and curbside' },
+  { src: 'https://images.unsplash.com/photo-1769521001298-f0415c53e013?fm=jpg&q=80&w=1080&fit=max', alt: 'Onion and plain ficelle loaves on a board', cap: 'Onion and plain ficelle', sub: 'Thin, crackly, made for sharing' },
+  { src: 'https://images.unsplash.com/photo-1549407981-2e656af56b4b?fm=jpg&q=80&w=1080&fit=max', alt: 'Sesame-topped joujous rolls', cap: 'Joujous', sub: 'Soft rolls with a sesame crown' },
+  { src: 'https://images.unsplash.com/photo-1678969406367-e7955197c2b5?fm=jpg&q=80&w=1080&fit=max', alt: "A platter of sandwiches made on Hollis Hearth bread", cap: 'Sandwich platters', sub: 'Catering for meetings and gatherings' },
+  { src: 'https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?fm=jpg&q=80&w=1080&fit=max', alt: 'A baker mixing seven-grain dough in the bakery', cap: 'Mixing our 7 grain', sub: '12 to 24 hours before it sees the oven' }
+];
+const INTENTS = [
+  { id: 'pickup', label: 'Reserve for pickup', help: 'Choose your loaves and a pickup day. We bake them fresh and hold them under your name until close.' },
+  { id: 'catering', label: 'Schedule catering', help: 'Bread baskets and sandwich platters for meetings and gatherings. Tell us the date, headcount and address and we will send a quote.' },
+  { id: 'both', label: 'Both', help: 'One account covers everyday pickup and event catering. Switch between them any time.' }
+];
+const VISIBLE = 3;
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { month: new Date().getMonth(), slide: 0, intent: 'pickup', joined: false, subscribed: false, remind: 'idle' };
+  }
+  renderVals() {
+    const now = new Date();
+    const cur = now.getMonth();
+    const sel = this.state.month;
+    const curSeason = SEASONS.findIndex((s) => s.idx.indexOf(cur) >= 0);
+    const item = (i) => Object.assign({}, MONTHS[i], {
+      cls: i === sel ? 'is-selected' : '',
+      pressed: i === sel,
+      pick: () => this.setState({ month: i })
+    });
+    const cols = [0, 1, 2, 3].map((k) => {
+      const s = SEASONS[(curSeason + k) % 4];
+      return { name: s.name, label: k === 0 ? 'Now' : (k === 1 ? 'Up next' : ''), months: s.idx.map(item) };
+    });
+
+    const f = MONTHS[sel];
+    let status;
+    let avail;
+    if (sel === cur) { status = 'Baking now'; avail = 'In the bakery every day this month.'; }
+    else if (sel > cur) { status = 'Coming up'; avail = 'Arrives ' + f.m + ' 1. Members can reserve a week early.'; }
+    else { status = 'Back next year'; avail = 'Returns ' + f.m + ' ' + (now.getFullYear() + 1) + '.'; }
+    const featured = Object.assign({}, f, { status: status, avail: avail, hasImg: !!f.img, noImg: !f.img, img: f.img || '', imgAlt: f.imgAlt || '' });
+
+    const n = MONTHS[(cur + 1) % 12];
+    const firstOfNext = new Date(now.getFullYear(), cur + 1, 1);
+    const days = Math.max(1, Math.ceil((firstOfNext - now) / 86400000));
+    const next = {
+      bread: n.bread,
+      date: n.m + ' 1',
+      countdown: days === 1 ? 'Tomorrow.' : days + ' days to go.'
+    };
+
+    const total = SLIDES.length;
+    const start = this.state.slide;
+    const slides = [];
+    for (let k = 0; k < VISIBLE; k++) {
+      const idx = (start + k) % total;
+      slides.push(Object.assign({}, SLIDES[idx], { pos: 'Photo ' + (idx + 1) + ' of ' + total }));
+    }
+    const endNum = ((start + VISIBLE - 1) % total) + 1;
+    const carouselRange = 'Photos ' + (start + 1) + ' to ' + endNum + ' of ' + total;
+
+    const day = now.getDay();
+    const hour = now.getHours() + now.getMinutes() / 60;
+    const closeHour = day === 0 ? 16 : 17;
+    const closeLabel = day === 0 ? '4pm' : '5pm';
+    let openNow;
+    if (hour >= 7 && hour < closeHour) { openNow = 'Open now. Closes ' + closeLabel + ' today.'; }
+    else if (hour >= closeHour) { openNow = 'Closed for the day. Opens 7am tomorrow.'; }
+    else { openNow = 'Opens 7am today.'; }
+
+    const fmt = (d) => d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+    const orderDay = new Date(now);
+    if (now.getHours() >= 12) { orderDay.setDate(orderDay.getDate() + 1); }
+    const pickupDay = new Date(orderDay);
+    pickupDay.setDate(pickupDay.getDate() + 2);
+    const sameDay = orderDay.toDateString() === now.toDateString();
+    const orderLine = 'Order by 12pm ' + (sameDay ? 'today' : 'tomorrow, ' + fmt(orderDay)) + ' and your bread is ready ' + fmt(pickupDay) + '.';
+
+    const intents = INTENTS.map((x) => Object.assign({}, x, {
+      cls: x.id === this.state.intent ? 'is-selected' : '',
+      pressed: x.id === this.state.intent,
+      pick: () => this.setState({ intent: x.id })
+    }));
+    const intentHelp = INTENTS.filter((x) => x.id === this.state.intent)[0].help;
+
+    return {
+      s1: cols[0], s2: cols[1], s3: cols[2], s4: cols[3],
+      featured: featured,
+      next: next,
+      remindIdle: this.state.remind === 'idle',
+      remindOpen: this.state.remind === 'open',
+      reminded: this.state.remind === 'done',
+      openRemind: () => this.setState({ remind: 'open' }),
+      setRemind: () => this.setState({ remind: 'done' }),
+      slides: slides,
+      carouselRange: carouselRange,
+      prevSlide: () => this.setState({ slide: (this.state.slide - 1 + total) % total }),
+      nextSlide: () => this.setState({ slide: (this.state.slide + 1) % total }),
+      openNow: openNow,
+      orderLine: orderLine,
+      intents: intents,
+      intentHelp: intentHelp,
+      joined: this.state.joined,
+      notJoined: !this.state.joined,
+      join: () => this.setState({ joined: true }),
+      subscribed: this.state.subscribed,
+      notSubscribed: !this.state.subscribed,
+      subscribe: () => this.setState({ subscribed: true })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ed Scannell · UI Design &amp; Vibe Coding</title>
-<meta name="description" content="Five front-end concepts by Ed Scannell: product briefs turned into working, single-file websites with Claude.">
+<meta name="description" content="Eleven front-end concepts by Ed Scannell: product briefs turned into working websites with Claude.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
@@ -86,10 +86,10 @@ footer a{color:var(--ink-2)}
   <div class="wrap">
     <p class="eyebrow">Product Owner · UI Design · Vibe Coding</p>
     <h1>Ed Scannell<br><em>front-end concepts</em></h1>
-    <p class="lede">Five working websites, each built from a product brief I wrote. I set the audience, the look and feel, and exactly how every piece should move, then built it with Claude and kept reviewing and redirecting until it met the brief. Each site is a single self-contained HTML file with no framework and no build step.</p>
+    <p class="lede">Eleven working websites, each built from a product brief I wrote. I set the audience, the look and feel, and exactly how every piece should move, then built it with Claude and kept reviewing and redirecting until it met the brief. Every site runs as plain HTML, CSS, and JavaScript, with no framework and no build step.</p>
     <ol class="steps">
       <li><b>01 · Brief</b><span>Audience, mood, palette, and the must-have behaviors, written down before any code.</span></li>
-      <li><b>02 · Build</b><span>Directed Claude through the build, one self-contained page per concept.</span></li>
+      <li><b>02 · Build</b><span>Directed Claude through the build, one concept at a time.</span></li>
       <li><b>03 · Review</b><span>Tested in the browser, named what missed the brief, and iterated until it held.</span></li>
     </ol>
   </div>
@@ -124,7 +124,7 @@ footer a{color:var(--ink-2)}
       <p class="num">02</p>
       <h2><a href="decco-design-co/">Decco Design Co.</a></h2>
       <p class="kind">Designer portfolio + lead capture · Art Deco</p>
-      <p class="desc">A one-page portfolio for a fictional Cambridge graphic designer, built around the question every visiting client asks: have you done work like mine?</p>
+      <p class="desc">A one-page portfolio for a fictional graphic designer, built around the question every visiting client asks: have you done work like mine?</p>
       <ul class="feats">
         <li>Search plus four filter rows (style, industry, organization type, deliverable) across 12 projects</li>
         <li>Every tag on a project card is a one-click shortcut into the filters</li>
@@ -203,10 +203,137 @@ footer a{color:var(--ink-2)}
     </div>
   </article>
 
+  <article class="project" id="maison-odile">
+    <a class="shot" href="maison-odile/" aria-label="Open Maison Odile"><img src="assets/thumbs/maison-odile.jpg" alt="Maison Odile home page: the headline A little taste of France over a pastry case photo, with a bakery and pickup-time chooser" loading="lazy" width="1280" height="800"></a>
+    <div>
+      <p class="num">06</p>
+      <h2><a href="maison-odile/">Maison Odile</a></h2>
+      <p class="kind">Bakery ordering site · scheduled pickup</p>
+      <p class="desc">A French bakery with three neighborhood shops, built around one job: get a pastry order placed for a pickup time that the chosen shop can actually meet.</p>
+      <ul class="feats">
+        <li>Pick a bakery, then a pickup date and time drawn from that shop's own hours, with a 48-hour lead time</li>
+        <li>Searchable menu with Viennoiserie, Pâtisserie, Cakes &amp; tarts, and Savory filters</li>
+        <li>Shopping bag with an order review step before anything is confirmed</li>
+        <li>A catering planner form for larger gatherings</li>
+      </ul>
+      <ul class="tags"><li>ES modules</li><li>Time-zone scheduling</li><li>Cart state</li><li>Vanilla JS</li></ul>
+      <div class="actions">
+        <a class="btn primary" href="maison-odile/">Open the site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn" href="https://github.com/EdwardScannell/Product-Owner-UI-Design-Vibe-Coding/tree/main/maison-odile">View code</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project" id="hollis-hearth-bread">
+    <a class="shot" href="hollis-hearth-bread/" aria-label="Open Hollis Hearth Bread Co."><img src="assets/thumbs/hollis-hearth-bread.jpg" alt="Hollis Hearth Bread Co. home page: a crusty sourdough boule beside the headline about old-fashioned, naturally leavened bread" loading="lazy" width="1280" height="800"></a>
+    <div>
+      <p class="num">07</p>
+      <h2><a href="hollis-hearth-bread/">Hollis Hearth Bread Co.</a></h2>
+      <p class="kind">Artisan bakery site · seasonal menu</p>
+      <p class="desc">A site for a naturally leavened bread bakery, written around slow fermentation, local flour, and loaves kept affordable for every day.</p>
+      <ul class="feats">
+        <li>A twelve-month bread calendar: choose a month to see that season's featured loaf</li>
+        <li>Photo carousel of the daily breads</li>
+        <li>Hearth Regulars sign-up that adapts to pickup, catering, or both</li>
+        <li>Hours, two ways to order, and a newsletter sign-up</li>
+      </ul>
+      <ul class="tags"><li>Template rendering</li><li>Carousel</li><li>Adaptive forms</li><li>Vanilla JS</li></ul>
+      <div class="actions">
+        <a class="btn primary" href="hollis-hearth-bread/">Open the site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn" href="https://github.com/EdwardScannell/Product-Owner-UI-Design-Vibe-Coding/tree/main/hollis-hearth-bread">View code</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project" id="lanternfield-books">
+    <a class="shot" href="lanternfield-books/" aria-label="Open Lanternfield Books"><img src="assets/thumbs/lanternfield-books.jpg" alt="Lanternfield Books page: the headline Lose yourself in a good book above a featured staff pick and a carousel of designed book covers" loading="lazy" width="1280" height="800"></a>
+    <div>
+      <p class="num">08</p>
+      <h2><a href="lanternfield-books/">Lanternfield Books</a></h2>
+      <p class="kind">Independent bookstore · staff picks</p>
+      <p class="desc">An independent bookstore's "Shelf Talkers" page, where three booksellers (Wren, Theo, and June) each keep a shelf of the books they press into customers' hands.</p>
+      <ul class="feats">
+        <li>Browse by bookseller or by genre: gothic and horror, fantasy, literary fiction, graphic novels</li>
+        <li>A book carousel with a short note from the bookseller on every card</li>
+        <li>Book detail dialog and a reserve-for-pickup request flow</li>
+        <li>Nine cover designs made for this site, in place of publisher art</li>
+      </ul>
+      <ul class="tags"><li>Filtering</li><li>Native dialogs</li><li>Generated cover art</li><li>Vanilla JS</li></ul>
+      <div class="actions">
+        <a class="btn primary" href="lanternfield-books/">Open the site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn" href="https://github.com/EdwardScannell/Product-Owner-UI-Design-Vibe-Coding/tree/main/lanternfield-books">View code</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project" id="ironwood-beer-hall">
+    <a class="shot" href="ironwood-beer-hall/" aria-label="Open Ironwood Beer Hall"><img src="assets/thumbs/ironwood-beer-hall.jpg" alt="Ironwood Beer Hall home page: bold stadium-style type reading The energy of a stadium. The freedom of a beer hall." loading="lazy" width="1280" height="800"></a>
+    <div>
+      <p class="num">09</p>
+      <h2><a href="ironwood-beer-hall/">Ironwood Beer Hall</a></h2>
+      <p class="kind">Beer hall + live music venue</p>
+      <p class="desc">A big, loud beer hall with a patio BBQ and a stage, pitched as the energy of a stadium with the freedom of a beer hall.</p>
+      <ul class="feats">
+        <li>Open or closed status worked out live from the posted hours</li>
+        <li>A "how busy is it" meter drawn as a filling beer glass</li>
+        <li>Tonight's event strip and a running lineup of upcoming shows</li>
+        <li>Menus for the kitchen and the BBQ (meat, veggie, vegan), plus a share panel</li>
+      </ul>
+      <ul class="tags"><li>Live hours logic</li><li>SVG</li><li>Web Share API</li><li>Single file</li></ul>
+      <div class="actions">
+        <a class="btn primary" href="ironwood-beer-hall/">Open the site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn" href="https://github.com/EdwardScannell/Product-Owner-UI-Design-Vibe-Coding/tree/main/ironwood-beer-hall">View code</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project" id="arthurs-carpentry">
+    <a class="shot" href="arthurs-carpentry/" aria-label="Open Arthur's Carpentry &amp; Painting"><img src="assets/thumbs/arthurs-carpentry.jpg" alt="Arthur's product page: a pro angled paint brush with a size picker and an Ask Arthur help button in the header" loading="lazy" width="1280" height="800"></a>
+    <div>
+      <p class="num">10</p>
+      <h2><a href="arthurs-carpentry/">Arthur's Carpentry &amp; Painting</a></h2>
+      <p class="kind">Home-improvement shop · product page</p>
+      <p class="desc">A product detail page for a pro paint brush, from a local carpenter and painter who also sells the tools he trusts and takes on projects.</p>
+      <ul class="feats">
+        <li>Size picker, quantity, cart, and related supplies to complete the toolkit</li>
+        <li>Guided "shopping journey" walkthrough that explains the real working UI step by step</li>
+        <li>"Ask Arthur" free-quote form for anyone who would rather skip the work</li>
+        <li>A reviews widget with clearly labeled demo reviews</li>
+      </ul>
+      <ul class="tags"><li>ES modules</li><li>Guided walkthrough</li><li>Accessibility</li><li>sessionStorage</li></ul>
+      <div class="actions">
+        <a class="btn primary" href="arthurs-carpentry/">Open the site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn" href="https://github.com/EdwardScannell/Product-Owner-UI-Design-Vibe-Coding/tree/main/arthurs-carpentry">View code</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project" id="pixel-play-arcade">
+    <a class="shot" href="pixel-play-arcade/" aria-label="Open Pixel Play Arcade"><img src="assets/thumbs/pixel-play-arcade.jpg" alt="Pixel Play Arcade home page: the headline Good times. High scores. above three game cabinets named Neon Rush, Dungeon Run, and Star Assault" loading="lazy" width="1280" height="800"></a>
+    <div>
+      <p class="num">11</p>
+      <h2><a href="pixel-play-arcade/">Pixel Play Arcade</a></h2>
+      <p class="kind">Playable arcade · three original games</p>
+      <p class="desc">A second arcade, this time a bright, modern pixel-art take, with three machines that run live demos right on the page.</p>
+      <ul class="feats">
+        <li>Neon Rush, Dungeon Run, and Star Assault, each with a live attract-mode demo</li>
+        <li>Arcade and Rookie difficulty for the racer and the dungeon</li>
+        <li>Top-10 leaderboards, rotating cabinet taunts, and challenge links to send a friend</li>
+        <li>On-screen arrow controls so the games work on a phone</li>
+      </ul>
+      <ul class="tags"><li>Canvas 2D</li><li>ES modules</li><li>Touch controls</li><li>Pixel font</li></ul>
+      <div class="actions">
+        <a class="btn primary" href="pixel-play-arcade/">Play <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn" href="https://github.com/EdwardScannell/Product-Owner-UI-Design-Vibe-Coding/tree/main/pixel-play-arcade">View code</a>
+      </div>
+      <p class="note">Works on desktop with the arrow keys, or on a phone with the on-screen controls.</p>
+    </div>
+  </article>
+
 </main>
 
 <footer class="wrap">
-  <p>Businesses, people, clients, prices, and reviews on these pages are illustrative.</p>
+  <p>Businesses, people, clients, prices, and reviews on these pages are illustrative. Food, venue, and bookstore photos are from Unsplash, credited on each site.</p>
   <p>Source for every site: <a href="https://github.com/EdwardScannell/Product-Owner-UI-Design-Vibe-Coding">github.com/EdwardScannell/Product-Owner-UI-Design-Vibe-Coding</a></p>
 </footer>
 

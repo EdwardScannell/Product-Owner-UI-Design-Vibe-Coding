@@ -1,0 +1,1006 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Ironwood Beer Hall, 260 Foundry Road, Calder Falls MA. 30 New England taps, Ember & Oak's pizza, a 5,000 sq ft beer garden with a three-lane BBQ, live music Thursdays & Saturdays. Hours, Belly Buster busyness meter, pickup & delivery.">
+<meta name="theme-color" content="#0F2140">
+<meta property="og:title" content="Ironwood Beer Hall — Calder Falls, MA">
+<meta property="og:description" content="The energy of a stadium. The freedom of a beer hall. Hours, tonight's lineup, and how full it is right now.">
+<meta property="og:type" content="website">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
+<title>Ironwood Beer Hall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700&family=Barlow:wght@400;600&display=swap">
+<style>
+/* ============================================================
+   IRONWOOD BEER HALL — Bold Americana design system
+   Stadium Navy · Fire-Engine Red · Ballpark Cream · Draft Gold
+   Single file, no images, one font family. Target: < 100 KB.
+   ============================================================ */
+:root{
+  --bg:#F6EEDC; --bg-2:#EDE2C8; --bg-3:#E3D5B4;
+  --ink:#0F2140; --ink-2:#4B5670; --line:#D3C5A4;
+  --navy:#0F2140; --navy-2:#182F58; --navy-3:#22407A; --on-navy:#F6EEDC; --on-navy-2:#B7C1D8; --line-navy:#2B4478;
+  --red:#C8102E; --red-2:#A80C27; --on-red:#FFF6E6;
+  --gold:#E9A825; --gold-text:#7A4E00; --foam:#FFF6E0;
+  --green:#2E7D4F; --green-text:#1F6A3F;
+  --river:#3E77B6;
+  --footer:#0A1730;
+  --shadow:0 14px 34px -18px rgba(15,33,64,.45);
+  --r:6px;
+  --display:'Barlow Condensed','Arial Narrow','Helvetica Neue',Arial,sans-serif;
+  --body:'Barlow','Helvetica Neue',Arial,system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1730; --bg-2:#112343; --bg-3:#183058;
+    --ink:#F3EBDA; --ink-2:#B4BED4; --line:#28406B;
+    --navy:#132A50; --navy-2:#1B3665; --navy-3:#25488A; --on-navy:#F3EBDA; --on-navy-2:#B4BED4; --line-navy:#2F4F86;
+    --red:#DC1F3F; --red-2:#C8102E;
+    --gold:#F0B33A; --gold-text:#F0B33A; --green-text:#6FCF97;
+    --river:#4C8AD0;
+    --footer:#060F22;
+    --shadow:0 14px 34px -18px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1730; --bg-2:#112343; --bg-3:#183058;
+  --ink:#F3EBDA; --ink-2:#B4BED4; --line:#28406B;
+  --navy:#132A50; --navy-2:#1B3665; --navy-3:#25488A; --on-navy:#F3EBDA; --on-navy-2:#B4BED4; --line-navy:#2F4F86;
+  --red:#DC1F3F; --red-2:#C8102E;
+  --gold:#F0B33A; --gold-text:#F0B33A; --green-text:#6FCF97;
+  --river:#4C8AD0;
+  --footer:#060F22;
+  --shadow:0 14px 34px -18px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.55 var(--body);-webkit-font-smoothing:antialiased}
+h1,h2,h3,.display{font-family:var(--display);text-transform:uppercase;line-height:.95;margin:0;text-wrap:balance;letter-spacing:.005em}
+h1{font-weight:800;font-size:clamp(2.9rem,6.8vw,5rem)}
+h2{font-weight:700;font-size:clamp(2.1rem,4.4vw,3.4rem)}
+h3{font-weight:700;font-size:1.5rem;line-height:1}
+p{margin:0}
+a{color:inherit}
+ul.plain,ol.plain{list-style:none;margin:0;padding:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:#0F2140;padding:8px 12px;z-index:99;font-weight:600}
+.skip:focus{left:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Section bands: every component reads the band's tokens */
+.band{padding-block:clamp(56px,8vw,96px);background:var(--sbg);color:var(--stext)}
+.cream{--sbg:var(--bg);--stext:var(--ink);--smuted:var(--ink-2);--sline:var(--line);--saccent:var(--red);--scard:var(--bg-2);--scard-2:var(--bg-3);--sgold:var(--gold-text)}
+.navyb{--sbg:var(--navy);--stext:var(--on-navy);--smuted:var(--on-navy-2);--sline:var(--line-navy);--saccent:var(--gold);--scard:var(--navy-2);--scard-2:var(--navy-3);--sgold:var(--gold)}
+
+.eyebrow{display:inline-block;font:600 .8rem/1.5 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--saccent)}
+.eyebrow .star{display:inline-block;width:.85em;height:.85em;fill:currentColor;vertical-align:-.08em;margin:0 .5em}
+.eyebrow .star:first-child{margin-left:0}
+.rule{width:64px;height:5px;background:var(--saccent);margin-block:18px 20px;border-radius:2px}
+.lede{font-size:clamp(1.1rem,1.6vw,1.3rem);color:var(--smuted);max-width:36em}
+.muted{color:var(--smuted)}
+.section-head{display:grid;gap:8px;max-width:46em;margin-bottom:clamp(28px,4vw,44px)}
+.section-head .rule{margin-block:10px 8px}
+.sub-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:clamp(36px,5vw,56px) 0 18px}
+.sub-head h3{font-size:1.8rem}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:46px;padding:0 20px;border-radius:var(--r);font:600 1rem/1 var(--body);text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .12s ease,background .12s ease,color .12s ease,border-color .12s ease;white-space:nowrap}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--red);color:var(--on-red);border-color:var(--red)}
+.btn-primary:hover{background:var(--red-2);border-color:var(--red-2)}
+.btn-ghost{background:transparent;color:var(--stext);border-color:var(--sline)}
+.btn-ghost:hover{border-color:currentColor}
+.btn-gold{background:var(--gold);color:#0F2140;border-color:var(--gold)}
+.btn-gold:hover{filter:brightness(1.06)}
+.btn svg{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn-sm{min-height:38px;padding:0 14px;font-size:.92rem}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px}
+
+/* Pills / tags */
+.pill{display:inline-flex;align-items:center;gap:.5em;padding:7px 12px;border-radius:999px;font:600 .88rem/1.2 var(--body);letter-spacing:.01em;border:1.5px solid var(--sline);color:var(--stext)}
+.pill .dot{width:9px;height:9px;border-radius:50%;background:var(--green);flex:none}
+.pill.closed .dot{background:var(--red)}
+.tag{display:inline-block;padding:3px 7px;border-radius:3px;font:600 .68rem/1.2 var(--body);letter-spacing:.1em;text-transform:uppercase;vertical-align:middle;margin-left:.4em}
+.tag-meat{background:var(--red);color:var(--on-red)}
+.tag-veg{background:var(--gold);color:#0F2140}
+.tag-vegan{background:var(--green);color:#F6EEDC}
+.tag-gf{border:1.5px solid var(--sline);color:var(--smuted)}
+.tag-bbq{background:var(--navy);color:var(--on-navy)}
+.tag-today{background:var(--saccent);color:var(--sbg)}
+
+/* Racing stripe divider */
+.stripe{height:12px;background:linear-gradient(to bottom,var(--red) 0 33.4%,var(--bg) 33.4% 66.7%,var(--navy) 66.7%)}
+
+/* ---------- Header ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--navy);color:var(--on-navy);border-bottom:1px solid var(--line-navy)}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:68px;position:relative}
+.wm{display:inline-flex;align-items:center;gap:10px;text-decoration:none;text-transform:uppercase;white-space:nowrap;flex:none}
+.wm .star{width:22px;height:22px;fill:var(--red);flex:none}
+.wm-t{display:flex;flex-direction:column;gap:3px}
+.wm .the{font:700 .62rem/1 var(--body);letter-spacing:.2em;color:var(--on-navy-2)}
+.wm .big{font:800 1.45rem/1 var(--display);letter-spacing:.04em}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{padding:10px 12px;text-decoration:none;font:600 .95rem/1 var(--body);color:var(--on-navy-2);border-radius:4px;white-space:nowrap}
+.nav a:hover{color:var(--on-navy);background:var(--navy-2)}
+.nav .nav-order{display:none}
+.top-actions{display:flex;align-items:center;gap:10px}
+.tel{display:inline-flex;align-items:center;gap:.5em;text-decoration:none;font:600 1rem/1 var(--body);color:var(--on-navy);white-space:nowrap}
+.tel svg{width:18px;height:18px;fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.navtoggle{display:none;background:transparent;border:1.5px solid var(--line-navy);color:var(--on-navy);border-radius:var(--r);min-height:42px;padding:0 12px;font:600 .95rem/1 var(--body);cursor:pointer}
+@media (max-width:900px){
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--navy);border-bottom:1px solid var(--line-navy);flex-direction:column;padding:8px clamp(16px,4vw,32px) 16px;gap:2px;box-shadow:var(--shadow)}
+  .nav.open{display:flex}
+  .nav a{padding:14px 8px;font-size:1.1rem;border-bottom:1px solid var(--line-navy)}
+  .nav .nav-order{display:inline-flex;margin-top:14px;border-bottom:0;font-size:1rem;color:var(--on-red);justify-content:center}
+  .navtoggle{display:inline-flex;align-items:center}
+  .top-actions .btn{display:none}
+  .top-actions{margin-left:auto}
+  .tel .num{display:none}
+  .tel{border:1.5px solid var(--line-navy);border-radius:var(--r);min-height:42px;padding:0 12px}
+}
+@media (max-width:480px){.wm .big{font-size:1.25rem}.wm .the{font-size:.56rem}}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 26px,rgba(255,255,255,.028) 26px 52px);pointer-events:none}
+.hero .wrap{position:relative;padding-block:clamp(52px,7vw,88px) clamp(40px,5vw,64px)}
+.hero h1{max-width:12.5em;margin-top:16px}
+.hero h1 .l2{color:var(--gold)}
+.hero .lede{margin-top:22px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:.6em;font:600 .95rem/1.3 var(--body);color:var(--on-navy-2);margin-top:20px}
+.status .dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(46,125,79,.25);flex:none}
+.status.closed .dot{background:var(--red);box-shadow:0 0 0 4px rgba(200,16,46,.25)}
+.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:clamp(36px,5vw,56px);border-top:1px solid var(--line-navy);border-bottom:1px solid var(--line-navy)}
+.board div{padding:16px 18px 16px 0;border-right:1px solid var(--line-navy);margin-right:18px}
+.board div:last-child{border-right:0;margin-right:0}
+.board b{display:block;font:800 clamp(1.7rem,3vw,2.4rem)/1 var(--display);letter-spacing:.01em;font-variant-numeric:tabular-nums}
+.board span{display:block;margin-top:6px;font:600 .78rem/1.3 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--on-navy-2)}
+@media (max-width:700px){.board{grid-template-columns:1fr 1fr}.board div{border-right:0;margin-right:0;border-bottom:1px solid var(--line-navy)}.board div:nth-last-child(-n+2){border-bottom:0}.board div:nth-child(odd){border-right:1px solid var(--line-navy);margin-right:16px}}
+
+/* ---------- Tonight strip ---------- */
+.tonight{background:var(--red);color:var(--on-red)}
+.tonight .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px 22px;padding-block:16px}
+.tonight .label{font:800 1.1rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border:2px solid var(--on-red);border-radius:3px;white-space:nowrap}
+.tonight .what{font:600 1rem/1.35 var(--body);min-width:0}
+.tonight .what b{font:700 1.4rem/1 var(--display);text-transform:uppercase;letter-spacing:.02em;margin-right:.4em}
+.tonight .meta{display:block;color:rgba(255,246,230,.85);font-size:.92rem;font-weight:400;margin-top:2px}
+.tonight .btn-primary{background:var(--on-red);color:var(--red);border-color:var(--on-red)}
+.tonight .btn-primary:hover{background:#fff;border-color:#fff}
+@media (max-width:640px){.tonight .wrap{grid-template-columns:auto 1fr}.tonight .label{align-self:start;margin-top:3px}.tonight .btn{grid-column:1 / -1;justify-self:start}}
+
+/* ---------- Photos ---------- */
+.photos-band{padding-block:clamp(32px,4vw,48px);border-top:1px solid var(--line-navy)}
+.photos-band .sub-head h3{font-size:1.5rem}
+.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ph{margin:0;position:relative;border-radius:8px;overflow:hidden;background:var(--scard-2);aspect-ratio:4/3;max-width:100%;border:1px solid var(--sline)}
+.ph img{display:block;width:100%;height:100%;object-fit:cover}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;font:600 .82rem/1.3 var(--body);letter-spacing:.04em;color:#F6EEDC;background:linear-gradient(to top,rgba(10,23,48,.85),rgba(10,23,48,0))}
+.ph.missing img{display:none}
+.ph.missing{background:var(--scard-2) repeating-linear-gradient(135deg,transparent 0 14px,rgba(255,255,255,.04) 14px 28px)}
+.ph.missing::before{content:"Photo coming soon";position:absolute;inset:0;display:grid;place-content:center;font:700 1.1rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--on-navy-2)}
+.ph.missing figcaption{background:none;color:var(--on-navy)}
+@media (max-width:700px){.photos{grid-template-columns:1fr}.ph{aspect-ratio:16/10}}
+
+/* ---------- Grids / cards ---------- */
+.grid{display:grid;gap:clamp(16px,2.4vw,28px)}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.g3{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.g2,.g3{grid-template-columns:1fr}}
+.card{background:var(--scard);border:1px solid var(--sline);border-radius:8px;padding:22px}
+.card h3{margin-bottom:10px}
+.card p{color:var(--smuted)}
+.card .btn-row{margin-top:16px}
+
+/* ---------- Hours + Belly Buster ---------- */
+.hours-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:clamp(20px,4vw,48px);align-items:start}
+.hours-grid .meter{height:100%}
+@media (max-width:820px){.hours-grid{grid-template-columns:minmax(0,1fr)}}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours th,.hours td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--sline);font-size:1rem}
+.hours th{font:600 .75rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--smuted)}
+.hours td:first-child{font-weight:600}
+.hours tr.today td{background:var(--scard);font-weight:600}
+.hours tr.today td:first-child{color:var(--saccent);box-shadow:inset 4px 0 0 var(--saccent)}
+.hours .now{display:inline-block;margin-left:8px;font:700 .68rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--saccent)}
+.hours-note{margin-top:16px;color:var(--smuted);font-size:.92rem}
+.hours td:not(:first-child){white-space:nowrap}
+@media (max-width:420px){.hours th,.hours td{padding:9px 6px;font-size:.92rem}}
+
+.meter{background:var(--navy-2);border:1px solid var(--line-navy);border-radius:10px;padding:16px 18px 14px;box-shadow:var(--shadow);position:relative;color:var(--on-navy)}
+.meter::after{content:"";position:absolute;left:18px;right:18px;top:0;height:4px;background:var(--red);border-radius:0 0 3px 3px}
+.meter-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.meter-head .display{font-size:1.2rem;font-weight:800;letter-spacing:.03em}
+.meter-head .hint{font-size:.82rem;color:var(--on-navy-2)}
+.meter-body{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;margin-top:12px}
+.glass{height:88px;width:auto;display:block}
+.glass .beer{fill:var(--gold)}
+.glass .foam{fill:var(--foam)}
+.glass .outline{fill:none;stroke:var(--on-navy);stroke-width:5;stroke-linejoin:round}
+.read{display:grid;gap:4px;min-width:0;align-content:center}
+.read .row1{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pct{font:800 2.4rem/1 var(--display);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.pct small{font-size:1rem;color:var(--on-navy-2);margin-left:2px}
+.level{display:inline-flex;align-items:center;font:700 .92rem/1 var(--display);text-transform:uppercase;letter-spacing:.07em;padding:6px 9px;border-radius:4px;background:var(--navy-3);color:var(--on-navy);white-space:nowrap}
+.level.hot{background:var(--red);color:var(--on-red)}
+.read .sub{color:var(--on-navy-2);font-size:.85rem;line-height:1.35}
+.scale{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:12px}
+.scale li{font:600 .66rem/1.2 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--on-navy-2)}
+.scale li::before{content:"";display:block;height:5px;border-radius:3px;background:var(--navy-3);margin-bottom:6px}
+.scale li.fill::before{background:var(--gold)}
+.scale li.on{color:var(--on-navy)}
+.scale.hot li.fill::before{background:var(--red)}
+.meter-foot{margin-top:12px;padding-top:10px;border-top:1px solid var(--line-navy);color:var(--on-navy-2);font-size:.82rem;line-height:1.4}
+.meter-foot strong{color:var(--on-navy);font-weight:600}
+.meter.closed .glass .beer,.meter.closed .glass .foam{opacity:.15}
+
+/* ---------- Menu ---------- */
+.menu-col h3{display:flex;align-items:center;gap:.5em;padding-bottom:10px;border-bottom:3px solid var(--saccent);margin-bottom:6px}
+.menu-col li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px dashed var(--sline);font-size:1rem;line-height:1.35}
+.menu-col li:last-child{border-bottom:0}
+.menu-col .price{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap;color:var(--sgold)}
+.menu-col .note{margin-top:10px;font-size:.88rem;color:var(--smuted)}
+.taps{margin-top:clamp(28px,4vw,40px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px 28px;align-items:center;padding:22px 24px;border:1px solid var(--sline);border-radius:8px;background:var(--scard)}
+.taps b{font:800 clamp(2.6rem,5vw,3.6rem)/1 var(--display);color:var(--saccent);letter-spacing:-.01em}
+.taps b small{display:block;font:600 .75rem/1.2 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--smuted);margin-top:4px}
+.taps p{color:var(--smuted)}
+.taps p strong{color:var(--stext);font-weight:600}
+@media (max-width:760px){.taps{grid-template-columns:auto 1fr}.taps .btn-row{grid-column:1 / -1}}
+
+/* ---------- Patio / BBQ ---------- */
+.lanes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--sline);border-radius:8px;overflow:hidden;background:var(--scard)}
+.lane{padding:22px;border-right:1px solid var(--sline);position:relative}
+.lane:last-child{border-right:0}
+.lane::before{content:"";display:block;height:8px;border-radius:4px;margin-bottom:16px;background:var(--lane)}
+.lane-meat{--lane:var(--red)}
+.lane-veg{--lane:var(--gold)}
+.lane-vegan{--lane:var(--green)}
+.lane h3{font-size:1.6rem;letter-spacing:.04em}
+.lane p{margin-top:8px;color:var(--smuted)}
+.lane .grate{display:block;margin-top:14px;font:600 .74rem/1.3 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--stext)}
+@media (max-width:700px){.lanes{grid-template-columns:1fr}.lane{border-right:0;border-bottom:1px solid var(--sline)}.lane:last-child{border-bottom:0}}
+.perks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 28px;margin-top:clamp(28px,4vw,40px)}
+.perks li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--sline);font-weight:600}
+.perks li svg{width:22px;height:22px;flex:none;fill:none;stroke:var(--saccent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.perks li span{display:block;font-weight:400;color:var(--smuted);font-size:.92rem;margin-top:2px}
+@media (max-width:860px){.perks{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.perks{grid-template-columns:1fr}}
+
+/* ---------- Live music ---------- */
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.week li{background:var(--scard);border:1px solid var(--sline);border-radius:8px;padding:14px 12px 16px;min-height:150px;display:grid;align-content:start;gap:6px}
+.week li.hot{background:var(--scard-2);border-color:var(--saccent)}
+.week .d{font:800 1.5rem/1 var(--display);letter-spacing:.04em}
+.week .k{font:700 .78rem/1.3 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--saccent)}
+.week .t{font-size:.88rem;color:var(--smuted);line-height:1.35}
+.week li.today .d::after{content:"Today";display:inline-block;margin-left:8px;font:700 .6rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;padding:4px 6px;border-radius:3px;background:var(--saccent);color:var(--sbg);vertical-align:middle}
+@media (max-width:1000px){.week{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:640px){.week{grid-template-columns:repeat(2,1fr)}.week li{min-height:0}}
+.lineup{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(20px,4vw,48px)}
+.lineup li{display:grid;grid-template-columns:104px 1fr;gap:4px 16px;padding:14px 0;border-bottom:1px solid var(--sline);align-items:baseline}
+.lineup time{font:700 .82rem/1.3 var(--body);letter-spacing:.04em;text-transform:uppercase;color:var(--saccent);white-space:nowrap}
+.lineup time small{display:block;font:400 .82rem/1.3 var(--body);letter-spacing:0;text-transform:none;color:var(--smuted)}
+.lineup b{font:700 1.25rem/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.lineup span{grid-column:2;font-size:.92rem;color:var(--smuted)}
+@media (max-width:700px){.lineup{grid-template-columns:1fr}}
+
+/* ---------- Bring the crew / share ---------- */
+.crew{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:820px){.crew{grid-template-columns:minmax(0,1fr)}}
+.quote{font:italic 700 clamp(1.5rem,2.6vw,2.1rem)/1.15 var(--display);text-transform:none;margin:18px 0 6px;color:var(--stext)}
+.quote + .cite{font:600 .76rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--smuted)}
+.crew .lede{margin-top:20px}
+.crew-facts{display:grid;gap:10px;margin-top:22px}
+.crew-facts li{display:flex;gap:12px;align-items:flex-start}
+.crew-facts svg{width:22px;height:22px;flex:none;fill:none;stroke:var(--saccent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
+.sharebox{background:var(--red);color:var(--on-red);border-radius:10px;padding:24px;box-shadow:var(--shadow)}
+.sharebox h3{font-size:1.8rem}
+.sharebox p{color:rgba(255,246,230,.88);margin-top:8px}
+.sharegrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.sharegrid .btn{background:rgba(255,246,230,.12);color:var(--on-red);border-color:rgba(255,246,230,.4);justify-content:flex-start;white-space:normal;text-align:left;padding-block:10px;line-height:1.2}
+@media (max-width:440px){.sharegrid{grid-template-columns:1fr}}
+.sharegrid .btn:hover{background:rgba(255,246,230,.2);border-color:var(--on-red)}
+.sharegrid .btn.big{grid-column:1 / -1;background:var(--on-red);color:var(--red);border-color:var(--on-red);justify-content:center}
+.sharegrid .btn.big:hover{background:#fff}
+.sharebox .fine{margin-top:14px;font-size:.85rem;color:rgba(255,246,230,.75)}
+.crew-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+/* ---------- Visit ---------- */
+.visit{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:820px){.visit{grid-template-columns:minmax(0,1fr)}}
+.map{border:1px solid var(--sline);border-radius:10px;overflow:hidden;background:var(--scard);position:relative}
+.map svg{display:block;width:100%;height:auto;max-width:100%}
+.map .cap{position:absolute;left:12px;bottom:10px;font:600 .68rem/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--smuted)}
+.addr{font:700 clamp(1.6rem,2.6vw,2.2rem)/1.05 var(--display);text-transform:uppercase;letter-spacing:.01em}
+.addr small{display:block;font:400 1.05rem/1.4 var(--body);text-transform:none;letter-spacing:0;color:var(--smuted);margin-top:6px}
+.visit .btn-row{margin-top:18px}
+.vlist{display:grid;gap:14px;margin-top:26px}
+.vlist li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start}
+.vlist svg{width:22px;height:22px;fill:none;stroke:var(--saccent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.vlist b{display:block;font:600 .76rem/1.3 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--smuted);margin-bottom:2px}
+.contact-big{margin-top:28px;padding-top:22px;border-top:1px solid var(--sline);display:grid;gap:8px}
+.contact-big a{display:inline-flex;align-items:center;gap:.5em;text-decoration:none;font:800 clamp(1.5rem,2.6vw,2rem)/1.1 var(--display);letter-spacing:.01em;color:var(--stext)}
+.contact-big a.mail{font-size:clamp(1.2rem,2vw,1.5rem);font-weight:700;text-transform:none;letter-spacing:0}
+.contact-big a:hover{color:var(--saccent)}
+.contact-big svg{width:.9em;height:.9em;fill:none;stroke:var(--saccent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---------- Footer ---------- */
+.foot{background:var(--footer);color:#B7C1D8;padding-block:clamp(40px,6vw,64px) 24px;font-size:.95rem}
+.foot a{color:#F6EEDC;text-decoration:none}
+.foot a:hover{color:#E9A825}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px 28px}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
+.foot h4{margin:0 0 12px;font:600 .74rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:#E9A825}
+.foot ul{display:grid;gap:8px}
+.foot .wm{color:#F6EEDC}
+.foot .tag-line{margin-top:14px;font:italic 700 1.2rem/1.2 var(--display);color:#F6EEDC;text-transform:none}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.socials a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1.5px solid #2B4478;border-radius:var(--r);font:600 .92rem/1 var(--body)}
+.socials a:hover{border-color:#E9A825}
+.socials svg{width:16px;height:16px;fill:none;stroke:#E9A825;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.foot-bottom{margin-top:36px;padding-top:18px;border-top:1px solid #1E3560;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:.88rem}
+.foot-bottom .legal{display:flex;flex-wrap:wrap;gap:8px 18px}
+.hours-mini li{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
+.hours-mini li span:last-child{color:#F6EEDC}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="top">
+  <div class="wrap">
+    <a class="wm" href="#top" aria-label="Ironwood Beer Hall, back to top">
+      <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3 6.7 7.3.7-5.5 4.8 1.7 7.2L12 17.4 5.5 21.2l1.7-7.2L1.7 9.2 9 8.5z"/></svg>
+      <span class="wm-t"><span class="the">Ironwood</span><span class="big">Beer Hall</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Page sections">
+      <a href="#tonight">Tonight</a><a href="#hours">Hours</a><a href="#menu">Eat &amp; Drink</a><a href="#patio">Patio &amp; BBQ</a><a href="#music">Live Music</a><a href="#visit">Visit</a>
+      <a class="btn btn-primary nav-order" href="#order">Order pickup or delivery</a>
+    </nav>
+    <div class="top-actions">
+      <a class="tel" href="tel:+17815550186" aria-label="Call (781) 555-0186">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+        <span class="num">(781) 555-0186</span>
+      </a>
+      <a class="btn btn-primary btn-sm" href="#order">Order pickup</a>
+      <button class="navtoggle" type="button" aria-expanded="false" aria-controls="nav" id="navtoggle">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--gold)"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3 6.7 7.3.7-5.5 4.8 1.7 7.2L12 17.4 5.5 21.2l1.7-7.2L1.7 9.2 9 8.5z"/></svg>260 Foundry Road, Calder Falls<svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3 6.7 7.3.7-5.5 4.8 1.7 7.2L12 17.4 5.5 21.2l1.7-7.2L1.7 9.2 9 8.5z"/></svg>Free lot off the interstate</p>
+    <h1>The energy of a stadium.<br><span class="l2">The freedom of a beer hall.</span></h1>
+    <p class="lede">30 New England taps. Ember & Oak's pizza and share plates. A 5,000‑square‑foot beer garden with a fire pit, cornhole, and one gigantic BBQ. Live bands Thursdays and Saturdays. Room for you and everyone you know.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#order">Order pickup or delivery</a>
+      <a class="btn btn-ghost" href="#music">Tonight's lineup</a>
+    </div>
+    <p class="status" id="status"><span class="dot"></span><span id="status-text">Open every day from noon (11 AM weekends)</span></p>
+
+    <div class="board" aria-label="By the numbers">
+      <div><b>30</b><span>Draft lines, mostly New England</span></div>
+      <div><b>16,000</b><span>Square feet inside</span></div>
+      <div><b>5,000</b><span>Sq ft beer garden &amp; patio</span></div>
+      <div><b>14</b><span>Screens: 2 giant, 12 TVs</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TONIGHT STRIP ============ -->
+<div class="tonight" id="tonight">
+  <div class="wrap">
+    <span class="label" id="tn-label">Tonight</span>
+    <p class="what"><b id="tn-name">Rust Belt Revival</b><span id="tn-kind">Live music · 8–11 PM</span><span class="meta" id="tn-meta">Thu, Sep 17 · Kitchen till 12 AM, bar till 1 AM</span></p>
+    <a class="btn btn-primary btn-sm" href="#share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v13M7 8l5-5 5 5"/></svg>Tell a friend</a>
+  </div>
+</div>
+
+<!-- ============ LOOK AROUND (photos) ============
+     Drop your photos in as https://images.unsplash.com/photo-1654383837815-603a6f5ac956?fm=jpg&q=80&w=1080&fit=max, https://images.unsplash.com/photo-1545878587-bd777063c414?fm=jpg&q=80&w=1080&fit=max, https://images.unsplash.com/photo-1600779547877-be592ef5aad3?fm=jpg&q=80&w=1080&fit=max (1200×900, WebP or JPG, ≤150 KB each).
+     Until a file exists, each frame shows a styled placeholder with its caption. -->
+<section class="band navyb photos-band" aria-labelledby="look-title">
+  <div class="wrap">
+    <div class="sub-head" style="margin-top:0">
+      <h3 id="look-title">Take a look around</h3>
+      <a class="btn btn-ghost btn-sm" href="#order">More on Instagram</a>
+    </div>
+    <div class="photos">
+      <figure class="ph">
+        <img src="https://images.unsplash.com/photo-1654383837815-603a6f5ac956?fm=jpg&q=80&w=1080&fit=max" alt="The beer garden and patio outside Ironwood Beer Hall, with the fire pit and picnic tables" width="1200" height="900" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('missing')">
+        <figcaption>The beer garden &amp; patio</figcaption>
+      </figure>
+      <figure class="ph">
+        <img src="https://images.unsplash.com/photo-1545878587-bd777063c414?fm=jpg&q=80&w=1080&fit=max" alt="Inside the 16,000-square-foot hall: long tables, concession-style bars, and the two giant screens" width="1200" height="900" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('missing')">
+        <figcaption>Inside the hall</figcaption>
+      </figure>
+      <figure class="ph">
+        <img src="https://images.unsplash.com/photo-1600779547877-be592ef5aad3?fm=jpg&q=80&w=1080&fit=max" alt="A band playing on the main stage on a Saturday night" width="1200" height="900" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('missing')">
+        <figcaption>Saturday night on the main stage</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ §1 HOURS + BELLY BUSTER + ORDER ============ -->
+<section class="band cream" id="hours">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Open seven days a week</p>
+      <h2>Hours</h2>
+      <div class="rule"></div>
+      <p class="lede">Kitchen closes an hour or two before the bar most nights — put your food order in early if you're staying late.</p>
+    </div>
+
+    <div class="hours-grid">
+      <div>
+        <p class="pill" id="hours-pill"><span class="dot"></span><span id="hours-pill-text">Open every day</span></p>
+        <table class="hours" style="margin-top:12px">
+          <thead><tr><th scope="col">Day</th><th scope="col">Bar</th><th scope="col">Kitchen</th></tr></thead>
+          <tbody>
+            <tr data-dow="1,2,3"><td>Mon – Wed</td><td>12 PM – 11 PM</td><td>12 PM – 10 PM</td></tr>
+            <tr data-dow="4"><td>Thursday</td><td>12 PM – 1 AM</td><td>12 PM – 12 AM</td></tr>
+            <tr data-dow="5"><td>Friday</td><td>12 PM – 2 AM</td><td>12 PM – 12 AM</td></tr>
+            <tr data-dow="6"><td>Saturday</td><td>11 AM – 2 AM</td><td>11 AM – 12 AM</td></tr>
+            <tr data-dow="0"><td>Sunday</td><td>11 AM – 11 PM</td><td>11 AM – 11 PM</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="meter" id="belly" aria-labelledby="bb-title">
+        <div class="meter-head">
+          <span class="display" id="bb-title">Belly Buster Meter</span>
+          <span class="hint">How full is the Hall right now?</span>
+        </div>
+        <div class="meter-body">
+          <svg class="glass" viewBox="0 0 156 200" role="img" aria-label="Busyness meter" id="glass">
+            <defs><clipPath id="gclip"><path d="M10 6 H122 L110 194 H22 Z"/></clipPath></defs>
+            <g clip-path="url(#gclip)">
+              <rect class="beer" id="beer" x="0" y="200" width="140" height="200"/>
+              <rect class="foam" id="foam" x="0" y="200" width="140" height="12"/>
+            </g>
+            <path class="outline" d="M10 6 H122 L110 194 H22 Z"/>
+            <path class="outline" d="M122 52 h14 a12 12 0 0 1 12 12 v52 a12 12 0 0 1 -12 12 h-22"/>
+          </svg>
+          <div class="read">
+            <div class="row1"><div class="pct"><span id="pct">—</span><small>%</small></div><div class="level" id="level">Checking</div></div>
+            <p class="sub" id="sub">Reading the room…</p>
+          </div>
+        </div>
+        <ol class="plain scale" id="scale" aria-hidden="true"><li>Chill</li><li>Filling up</li><li>Buzzing</li><li>Belly Buster</li></ol>
+        <p class="meter-foot"><strong>Fills as our tables fill.</strong> Chillest: weekday lunch &amp; 3–5 PM. Saturdays after 8 are a Belly Buster.</p>
+      </aside>
+    </div>
+    <p class="hours-note">Holiday and festival hours can differ — Oktoberfest Saturdays run noon to midnight. Questions? Call <a href="tel:+17815550186">(781) 539‑6157</a>.</p>
+
+    <div class="sub-head" id="order">
+      <h3>Eat here, take it home, or get it delivered.</h3>
+      <span class="muted">Same Ember & Oak menu, three ways.</span>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <h3>Dine in</h3>
+        <p>Walk in — no reservation needed on regular nights. Grab a table inside, out on the patio, or up on the mezzanine. Coming with 15 or more? Book a space.</p>
+        <div class="btn-row"><a class="btn btn-ghost btn-sm" href="#">Book a space</a></div>
+      </div>
+      <div class="card">
+        <h3>Pick up</h3>
+        <p>Order online from Ember & Oak, then grab it at the host stand or curbside — call <a href="tel:+17815550186">(781) 539‑6157</a> when you pull into the lot.</p>
+        <div class="btn-row"><a class="btn btn-primary btn-sm" href="#order">Order pickup</a></div>
+      </div>
+      <div class="card">
+        <h3>Delivery</h3>
+        <p>Pizza night without the drive. Order through whichever app you already have.</p>
+        <div class="btn-row">
+          <a class="btn btn-ghost btn-sm" href="#order">DoorDash</a>
+          <a class="btn btn-ghost btn-sm" href="#order">Grubhub</a>
+          <a class="btn btn-ghost btn-sm" href="#order">Uber Eats</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ §2 EAT & DRINK ============ -->
+<section class="band navyb" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From Ember & Oak, our in‑house kitchen</p>
+      <h2>Eat &amp; Drink</h2>
+      <div class="rule"></div>
+      <p class="lede">Chef Tomas Avery's Neapolitan‑meets‑New York pizzas, share plates built for a whole table, and rice bowls with gluten‑free options. Prices as of September 15, 2026.</p>
+    </div>
+
+    <div class="grid g3">
+      <div class="menu-col">
+        <h3>Share plates &amp; handhelds</h3>
+        <ul class="plain">
+          <li><span>Colossal Pretzel<span class="tag tag-veg">Veggie</span></span><span class="price">$12.50</span></li>
+          <li><span>BBQ Pulled Pork Nachos</span><span class="price">$24.50</span></li>
+          <li><span>Trainwreck Fries</span><span class="price">$15.50</span></li>
+          <li><span>Chicken Tenders</span><span class="price">$18</span></li>
+          <li><span>Chicken Schnitty</span><span class="price">$17.50</span></li>
+          <li><span>The Buff Chix Sandwich</span><span class="price">$17</span></li>
+          <li><span>House Caesar Salad</span><span class="price">$14.50</span></li>
+        </ul>
+      </div>
+      <div class="menu-col">
+        <h3>Pizza</h3>
+        <ul class="plain">
+          <li><span>The Cheese<span class="tag tag-veg">Veggie</span></span><span class="price">$17.50</span></li>
+          <li><span>Pepperoni</span><span class="price">$19.50</span></li>
+          <li><span>Sausage</span><span class="price">$23</span></li>
+          <li><span>Pepper, Onion &amp; Mushroom<span class="tag tag-veg">Veggie</span></span><span class="price">$21.50</span></li>
+          <li><span>Buffalo Chicken</span><span class="price">$22.50</span></li>
+          <li><span>Roasted Butternut Squash &amp; Goat Cheese<span class="tag tag-veg">Veggie</span></span><span class="price">$22.50</span></li>
+        </ul>
+        <p class="note">Gluten‑free corn‑and‑chickpea crust available on any pizza.</p>
+      </div>
+      <div class="menu-col">
+        <h3>Rice bowls</h3>
+        <ul class="plain">
+          <li><span>Sweet Corn &amp; Chickpea<span class="tag tag-veg">Veggie</span><span class="tag tag-gf">GF</span></span><span class="price">$18.50</span></li>
+          <li><span>Orange Ginger Chicken<span class="tag tag-gf">GF</span></span><span class="price">$18.50</span></li>
+          <li><span>Korean BBQ Beef Short Rib</span><span class="price">$21.50</span></li>
+          <li><span>Ahi Tuna &amp; Tamari<span class="tag tag-gf">GF</span></span><span class="price">$22.50</span></li>
+        </ul>
+        <p class="note">Kids' menu too — hot dog &amp; chips, $9.50. GF items come from a shared kitchen.</p>
+      </div>
+    </div>
+
+    <div class="taps">
+      <b>30<small>Draft lines</small></b>
+      <p><strong>Three‑quarters of the taps are New England.</strong> Bissell Brothers, Trillium, Schilling, Zero Gravity, Vitamin Sea, Idle Hands, Fox Farm — plus a few national standards, wine, cocktails, and seltzers.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-sm" href="#">Full food menu</a>
+        <a class="btn btn-ghost btn-sm" href="#order">What's on tap</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ §3 PATIO & BBQ ============ -->
+<section class="band cream" id="patio">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The beer garden</p>
+      <h2>5,000 square feet of outside. One gigantic BBQ.</h2>
+      <div class="rule"></div>
+      <p class="lede">Patio orders tagged <span class="tag tag-bbq" style="margin-left:0">BBQ</span> come off the big grill out back. Three separate grates, three sets of tools, zero crossover — meat, veggie, and vegan never share a surface.</p>
+    </div>
+
+    <div class="lanes">
+      <div class="lane lane-meat">
+        <h3>Meat</h3>
+        <p>The hot end of the grill. Burgers, brats, wings, and whatever the pit's doing this week.</p>
+        <span class="grate">Grate 1 · its own tongs &amp; trays</span>
+      </div>
+      <div class="lane lane-veg">
+        <h3>Veggie</h3>
+        <p>The middle grate, kept clear of anything that walked. Vegetables, halloumi, and the veggie handhelds.</p>
+        <span class="grate">Grate 2 · separate tools</span>
+      </div>
+      <div class="lane lane-vegan">
+        <h3>Vegan</h3>
+        <p>The far grate — no dairy, no meat, ever. Plant‑based plates cooked apart from everything else.</p>
+        <span class="grate">Grate 3 · dedicated tools &amp; trays</span>
+      </div>
+    </div>
+
+    <ul class="plain perks">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="8" r="2"/><circle cx="12" cy="5.5" r="2"/><circle cx="17" cy="8" r="2"/><path d="M12 11c3 0 6 3 6 6a3 3 0 0 1-4 3l-2-1-2 1a3 3 0 0 1-4-3c0-3 3-6 6-6z"/></svg><div>Dog‑friendly patio<span>Bring the pup. Water bowls out back.</span></div></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22c4 0 7-3 7-7 0-3-2-5-3-7-1 2-2 3-3 3 0-3-1-6-3-8-1 3-2 5-4 7s-1 5-1 5c0 4 3 7 7 7z"/></svg><div>Fire pit<span>Adirondack chairs, cold‑weather approved.</span></div></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20L8 6h8l2 14"/><path d="M4 20h16"/><circle cx="12" cy="10.5" r="2"/></svg><div>Cornhole &amp; lawn games<span>Boards on the patio, first come first served.</span></div></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><div>Two giant screens, twelve TVs<span>Sound on for Sunday football and playoff games.</span></div></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12M9 21v-7h6v7"/></svg><div>Mezzanine &amp; roof deck<span>Two more levels when the main floor fills.</span></div></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7v6l4 4M12 13H8l-3 6M12 13l4 8"/></svg><div>ADA accessible<span>First and second floors, plus accessible parking.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ §4 LIVE MUSIC & YOUR WEEK ============ -->
+<section class="band navyb" id="music">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Live at the Hall</p>
+      <h2>Some nights, the stage lights up.</h2>
+      <div class="rule"></div>
+      <p class="lede">Live bands Thursdays and Saturdays, a DJ Fridays, country line dancing Wednesdays, and Sunday football on the big screens with the sound on. Something different every night, so make it a weekly thing.</p>
+    </div>
+
+    <ol class="plain week" id="week">
+      <li data-dow="1"><span class="d">Mon</span><span class="k">Easy night</span><span class="t">Game on the screens, kitchen till 10, bar till 11.</span></li>
+      <li data-dow="2"><span class="d">Tue</span><span class="k">Easy night</span><span class="t">Same deal — the chillest tables of the week.</span></li>
+      <li data-dow="3"><span class="d">Wed</span><span class="k">Line dancing</span><span class="t">Country line dancing 7:30–10:30 PM. Free. Lessons on select nights.</span></li>
+      <li data-dow="4" class="hot"><span class="d">Thu</span><span class="k">Live music</span><span class="t">Band on the main stage, 8–11 PM. Bar till 1 AM.</span></li>
+      <li data-dow="5"><span class="d">Fri</span><span class="k">DJ night</span><span class="t">DJ from 9 or 10 PM till late. Bar till 2 AM.</span></li>
+      <li data-dow="6" class="hot"><span class="d">Sat</span><span class="k">Live music</span><span class="t">Doors at 11 AM, band at 9 PM, bar till 2 AM.</span></li>
+      <li data-dow="0"><span class="d">Sun</span><span class="k">Football</span><span class="t">Watch parties with the sound on. Doors at 11 AM.</span></li>
+    </ol>
+
+    <div class="sub-head">
+      <h3>Coming up</h3>
+      <a class="btn btn-ghost btn-sm" href="#">Full calendar</a>
+    </div>
+    <ol class="plain lineup" id="lineup"></ol>
+  </div>
+</section>
+
+<!-- ============ §5 BRING THE CREW / SHARE ============ -->
+<section class="band cream" id="share">
+  <div class="wrap">
+    <div class="crew">
+      <div>
+        <p class="eyebrow">For your out‑of‑town people</p>
+        <h2 style="margin-top:10px">Bring the crew. We've got the room.</h2>
+        <p class="quote">"Long tables, loud cheers, and room for everyone."</p>
+        <p class="cite">— The Ironwood crew</p>
+        <p class="lede">Ten minutes on foot from the Harbor Line, a free lot right off the interstate, and space for about a thousand people. Send this page to whoever's visiting — they'll know exactly where to meet you, and how full it is when they get there.</p>
+        <ul class="plain crew-facts">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><strong>Easy to find:</strong> 260 Foundry Road, right off the interstate — one turn and you're in the lot.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16M8 21l1-4M16 21l-1-4M8 7h.01M16 7h.01"/></svg><span><strong>No car needed:</strong> Harbor Line to Foundry Street, then a 10‑minute walk. Buses stop on Foundry Road outside the door.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11a4 4 0 1 0-8 0M3 21a6 6 0 0 1 6-6h6a6 6 0 0 1 6 6M19 8a3 3 0 1 0-3-3"/></svg><span><strong>Big groups welcome:</strong> 15 or more? Book a space, and we'll set you up.</span></li>
+        </ul>
+        <div class="crew-links">
+          <a class="btn btn-ghost" href="#">Book a space</a>
+          <a class="btn btn-ghost" href="#">Gift cards</a>
+        </div>
+      </div>
+
+      <div class="sharebox">
+        <h3>Tell a friend</h3>
+        <p>Send them this page. It's the address, tonight's act, and the Belly Buster in one link.</p>
+        <div class="sharegrid">
+          <button class="btn big" type="button" data-share="native" id="share-native" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v13M7 8l5-5 5 5"/></svg>Share this page</button>
+          <a class="btn" data-share="sms" href="#" id="share-sms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-8 8H8l-5 3 1.5-4.5A8 8 0 1 1 21 12z"/></svg>Text a friend</a>
+          <a class="btn" data-share="mail" href="#" id="share-mail"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email it</a>
+          <a class="btn" data-share="fb" href="#" id="share-fb" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Share on Facebook</a>
+          <a class="btn" data-share="x" href="#" id="share-x" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Post on X</a>
+          <button class="btn" type="button" data-share="copy" id="share-copy" style="grid-column:1 / -1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span id="copy-label">Copy link</span></button>
+        </div>
+        <p class="fine">Follow along: <a href="#order" style="color:inherit;font-weight:600">@ironwoodbeerhall</a> on Instagram.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ §6 VISIT ============ -->
+<section class="band navyb" id="visit">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:clamp(20px,3vw,32px)">
+      <p class="eyebrow">Find us</p>
+      <h2>Right off the interstate in Calder Falls</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="visit">
+      <div class="map" aria-label="Schematic map: Ironwood Beer Hall on Foundry Road, beside the interstate, south of the Calder River, a 10-minute walk from Foundry Street station">
+        <svg viewBox="0 0 600 440" role="img" aria-hidden="true">
+          <defs>
+            <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0v30" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/></pattern>
+          </defs>
+          <rect width="600" height="440" fill="url(#grid)"/>
+          <!-- Calder River -->
+          <path d="M-10 62 C 90 40, 170 30, 250 58 S 400 150, 470 210 S 560 280, 620 320" fill="none" stroke="var(--river)" stroke-width="26" stroke-linecap="round" opacity=".9"/>
+          <text x="446" y="214" fill="var(--on-navy)" font-family="Barlow,Arial,sans-serif" font-size="12" font-weight="600" letter-spacing="1.5" transform="rotate(38 446 214)" opacity=".85">CALDER RIVER</text>
+          <!-- Route 16 -->
+          <path d="M-10 118 L 610 102" fill="none" stroke="var(--line-navy)" stroke-width="9" stroke-linecap="round"/>
+          <path d="M-10 118 L 610 102" fill="none" stroke="var(--on-navy-2)" stroke-width="1.2" stroke-dasharray="10 10" opacity=".5"/>
+          <text x="540" y="92" fill="var(--on-navy-2)" font-family="Barlow,Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="1.5">RT 16</text>
+          <!-- the interstate -->
+          <path d="M150 -10 L 340 450" fill="none" stroke="#08132A" stroke-width="26" stroke-linecap="round"/>
+          <path d="M150 -10 L 340 450" fill="none" stroke="var(--on-navy-2)" stroke-width="1.5" stroke-dasharray="14 10" opacity=".6"/>
+          <g transform="translate(232 260) rotate(67)"><rect x="-26" y="-12" width="52" height="24" rx="4" fill="var(--red)"/><text x="0" y="5" text-anchor="middle" fill="#FFF6E6" font-family="Barlow Condensed,Arial Narrow,Arial,sans-serif" font-size="15" font-weight="800">the interstate</text></g>
+          <!-- Foundry Road -->
+          <path d="M215 40 L 400 450" fill="none" stroke="var(--on-navy)" stroke-width="10" stroke-linecap="round" opacity=".95"/>
+          <text x="336" y="250" fill="var(--on-navy)" font-family="Barlow,Arial,sans-serif" font-size="12" font-weight="600" letter-spacing="1.5" transform="rotate(66 336 250)">FOUNDRY ROAD</text>
+          <!-- Calder Falls Square -->
+          <rect x="112" y="54" width="14" height="14" fill="var(--gold)" transform="rotate(45 119 61)"/>
+          <text x="20" y="50" fill="var(--on-navy)" font-family="Barlow,Arial,sans-serif" font-size="12" font-weight="600" letter-spacing="1.5">CALDER FALLS SQUARE</text>
+          <!-- Walk from Foundry Street -->
+          <path d="M78 302 C 120 250, 170 190, 246 122" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-dasharray="5 7" stroke-linecap="round"/>
+          <circle cx="78" cy="302" r="14" fill="var(--green)" stroke="var(--on-navy)" stroke-width="3"/>
+          <text x="78" y="307" text-anchor="middle" fill="#F6EEDC" font-family="Barlow Condensed,Arial Narrow,Arial,sans-serif" font-size="15" font-weight="800">T</text>
+          <text x="24" y="336" fill="var(--on-navy)" font-family="Barlow,Arial,sans-serif" font-size="12" font-weight="600" letter-spacing="1">FOUNDRY STREET · HARBOR LINE</text>
+          <text x="24" y="352" fill="var(--on-navy-2)" font-family="Barlow,Arial,sans-serif" font-size="11">10‑minute walk</text>
+          <!-- Wellington -->
+          <circle cx="500" cy="392" r="11" fill="#E8791D" stroke="var(--on-navy)" stroke-width="3"/>
+          <text x="500" y="396" text-anchor="middle" fill="#F6EEDC" font-family="Barlow Condensed,Arial Narrow,Arial,sans-serif" font-size="12" font-weight="800">T</text>
+          <text x="500" y="422" text-anchor="middle" fill="var(--on-navy-2)" font-family="Barlow,Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="1">WELLINGTON · ORANGE LINE</text>
+          <!-- Pin -->
+          <g transform="translate(250 118)">
+            <path d="M0 -6 C -22 -6 -34 -22 -34 -40 a34 34 0 0 1 68 0 c0 18 -12 34 -34 34z" fill="var(--red)" stroke="var(--on-navy)" stroke-width="3" transform="translate(0 6)"/>
+            <path d="M0 -50 l3.4 7.6 8.3.8-6.3 5.5 1.9 8.2L0 -32.2l-7.3 4.3 1.9-8.2-6.3-5.5 8.3-.8z" fill="#FFF6E6" transform="translate(0 6)"/>
+          </g>
+          <rect x="290" y="146" width="236" height="48" rx="5" fill="var(--on-navy)"/>
+          <text x="304" y="167" fill="#0F2140" font-family="Barlow Condensed,Arial Narrow,Arial,sans-serif" font-size="16" font-weight="800" letter-spacing=".3" textLength="208" lengthAdjust="spacingAndGlyphs">IRONWOOD BEER HALL</text>
+          <text x="304" y="185" fill="#4B5670" font-family="Barlow,Arial,sans-serif" font-size="12" font-weight="600">260 Foundry Road · Free lot on site</text>
+        </svg>
+        <span class="cap">Schematic — not to scale</span>
+      </div>
+
+      <div>
+        <p class="addr">260 Foundry Road<small>Calder Falls, MA 00418 · large free parking lot on site</small></p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#visit">Get directions</a>
+          <a class="btn btn-ghost" href="#visit">Apple Maps</a>
+        </div>
+        <ul class="plain vlist">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14M6 17l1.5-6h9L18 17M7 20v-3M17 20v-3M8 11l1-3h6l1 3"/></svg><div><b>Driving</b>Right off the interstate on Foundry Road. Pull straight into our lot — no meters, no garage.</div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16M8 21l1-4M16 21l-1-4M8 7h.01M16 7h.01"/></svg><div><b>Train &amp; bus</b>Harbor Line to Foundry Street, then a 10‑minute walk. the transit authority buses stop on Foundry Road right outside and across the street.</div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7v6l4 4M12 13H8l-3 6M12 13l4 8"/></svg><div><b>Accessibility</b>First and second floors are ADA accessible, with accessible parking and entrance.</div></li>
+        </ul>
+        <div class="contact-big">
+          <a href="tel:+17815550186"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>(781) 539‑6157</a>
+          <a class="mail" href="mailto:hello@ironwoodbeerhall.example"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>hello@ironwoodbeerhall.example</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="stripe" role="presentation"></div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wm" href="#top" aria-label="Ironwood Beer Hall, back to top">
+          <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3 6.7 7.3.7-5.5 4.8 1.7 7.2L12 17.4 5.5 21.2l1.7-7.2L1.7 9.2 9 8.5z"/></svg>
+          <span class="wm-t"><span class="the">Ironwood</span><span class="big">Beer Hall</span></span>
+        </a>
+        <p class="tag-line">The energy of a stadium. The freedom of a beer hall.</p>
+        <div class="socials">
+          <!-- Swap each label for the network's official icon file from its brand kit (see notes) -->
+          <a href="#order"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Instagram</a>
+          <a href="#order"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Facebook</a>
+          <a href="#order"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>Untappd</a>
+        </div>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul class="plain">
+          <li>260 Foundry Road<br>Calder Falls, MA 00418</li>
+          <li><a href="tel:+17815550186">(781) 539‑6157</a></li>
+          <li><a href="mailto:hello@ironwoodbeerhall.example">hello@ironwoodbeerhall.example</a></li>
+          <li><a href="#visit">Directions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours (bar)</h4>
+        <ul class="plain hours-mini">
+          <li><span>Mon–Wed</span><span>12 PM – 11 PM</span></li>
+          <li><span>Thu</span><span>12 PM – 1 AM</span></li>
+          <li><span>Fri</span><span>12 PM – 2 AM</span></li>
+          <li><span>Sat</span><span>11 AM – 2 AM</span></li>
+          <li><span>Sun</span><span>11 AM – 11 PM</span></li>
+        </ul>
+        <p style="margin-top:10px;font-size:.85rem"><a href="#hours">Kitchen hours →</a></p>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul class="plain">
+          <li><a href="#">Food menu</a></li>
+          <li><a href="#order">On tap now</a></li>
+          <li><a href="#">Live music</a></li>
+          <li><a href="#">Sports</a></li>
+          <li><a href="#">Country line dancing</a></li>
+          <li><a href="#">Private events</a></li>
+          <li><a href="#">Gift cards</a></li>
+          <li><a href="#order">Shop IBH</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Ironwood Beer Hall · 260 Foundry Road, Calder Falls, MA 00418</span>
+      <div class="legal">
+        <span>Please drink responsibly. 21+ to be served alcohol.</span>
+        <a href="#">FAQ</a>
+        <a href="mailto:hello@ironwoodbeerhall.example?subject=Accessibility">Accessibility</a>
+        <a href="mailto:hello@ironwoodbeerhall.example?subject=Privacy">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BarOrPub","name":"Ironwood Beer Hall","url":"#","telephone":"+1-781-555-0186","email":"hello@ironwoodbeerhall.example","priceRange":"$$","servesCuisine":["Pizza","American"],"address":{"@type":"PostalAddress","streetAddress":"260 Foundry Road","addressLocality":"Calder Falls","addressRegion":"MA","postalCode":"00418","addressCountry":"US"},"sameAs":["#order","#order","#order"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday"],"opens":"12:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"12:00","closes":"01:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"12:00","closes":"02:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"02:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"23:00"}],"hasMenu":"#","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Outdoor seating","value":true},{"@type":"LocationFeatureSpecification","name":"Live music","value":true},{"@type":"LocationFeatureSpecification","name":"Free parking","value":true}]}
+</script>
+
+<script>
+(function(){
+  'use strict';
+  var TZ='America/New_York';
+  // Sun..Sat → [opens, bar closes, kitchen closes] in hours; values over 24 mean after midnight.
+  var HOURS=[[11,23,23],[12,23,22],[12,23,22],[12,23,22],[12,25,24],[12,26,24],[11,26,24]];
+  var DAY_SHORT=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  // Upcoming programming (from ironwoodbeerhall.example). day:true = daytime event, so the strip says "Today" not "Tonight".
+  var EVENTS=[
+    {d:'2026-09-17',n:'Rust Belt Revival',k:'Live music',w:'8–11 PM'},
+    {d:'2026-09-18',n:'DJ Kip Marlowe',k:'DJ night',w:'9 PM–late'},
+    {d:'2026-09-19',n:'Oktoberfest with The Copper Kettles',k:'Festival · live music',w:'Noon–midnight',day:true},
+    {d:'2026-09-20',n:'Sunday Football: Home Opener',k:'Watch party · DJ Kip Marlowe · sound on',w:'1 PM kickoff',day:true},
+    {d:'2026-09-24',n:'Lantern Jaw',k:'Live music',w:'8–11 PM'},
+    {d:'2026-09-25',n:'DJ Sela Moon',k:'DJ night',w:'10 PM–late'},
+    {d:'2026-09-26',n:'Oktoberfest Weekend Two with Northbound Static',k:'Festival · live music',w:'Noon–midnight',day:true},
+    {d:'2026-09-27',n:'Sunday Football: Road Game',k:'Watch party · DJ Kip Marlowe · sound on',w:'1 PM kickoff',day:true},
+    {d:'2026-10-01',n:'Porch Light Parade',k:'Live music',w:'8–11 PM'},
+    {d:'2026-10-03',n:'Six Mile Creek',k:'Live music',w:'9 PM–late'},
+    {d:'2026-10-04',n:'Sunday Football: Division Rivals',k:'Watch party · sound on',w:'Game time',day:true},
+    {d:'2026-10-10',n:'The Late Shifts',k:'Live music',w:'9 PM–late'},
+    {d:'2026-10-11',n:'Sunday Football: Home Stand',k:'Watch party · sound on',w:'Game time',day:true},
+    {d:'2026-10-15',n:'Groove Cartel',k:'Live music',w:'8–11 PM'},
+    {d:'2026-10-17',n:'The Velvet Hours',k:'Live music',w:'9 PM–late'},
+    {d:'2026-10-24',n:'Brass Tacks Rebellion',k:'Live music',w:'9 PM–late'},
+    {d:'2026-10-31',n:'Hall‑O‑Ween with August Ghosts',k:'Live music',w:'9 PM–late'}
+  ];
+
+  function $(id){return document.getElementById(id);}
+  function nowNY(){
+    var o={};
+    new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',year:'numeric',month:'2-digit',day:'2-digit',hour:'numeric',minute:'2-digit',hour12:false}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value;});
+    var h=parseInt(o.hour,10)%24,m=parseInt(o.minute,10);
+    return {dow:DAY_SHORT.indexOf(o.weekday),h:h,m:m,t:h+m/60,date:o.year+'-'+o.month+'-'+o.day};
+  }
+  function fh(x){x=((x%24)+24)%24;var ap=x>=12?'PM':'AM',hh=Math.floor(x)%12;if(hh===0)hh=12;var mm=Math.round((x%1)*60);return hh+(mm?':'+(mm<10?'0':'')+mm:'')+' '+ap;}
+  function utc(d){var p=d.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2],12));}
+  function iso(dt){return dt.toISOString().slice(0,10);}
+  function fmtDate(d){return new Intl.DateTimeFormat('en-US',{timeZone:'UTC',weekday:'short',month:'short',day:'numeric'}).format(utc(d));}
+  function fmtTime(dt){return new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'}).format(dt);}
+  function hash(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0)/4294967295;}
+
+  // Which opening session are we in? Handles the after-midnight tail of the previous day.
+  function session(n){
+    var td=HOURS[n.dow];
+    if(n.t>=td[0]&&n.t<td[1])return {dow:n.dow,t:n.t,h:td};
+    var y=(n.dow+6)%7,yh=HOURS[y];
+    if(yh[1]>24&&n.t+24<yh[1])return {dow:y,t:n.t+24,h:yh};
+    return null;
+  }
+
+  /* ---- Open / closed status ---- */
+  function renderStatus(n){
+    var s=session(n),open=!!s,text;
+    if(s){
+      text=s.t<s.h[2]?'Open now · Kitchen till '+fh(s.h[2])+' · Bar till '+fh(s.h[1]):'Bar open till '+fh(s.h[1])+' · Kitchen closed for the night';
+    }else{
+      var td=HOURS[n.dow];
+      text=n.t<td[0]?'Closed · Opens today at '+fh(td[0]):'Closed · Opens tomorrow at '+fh(HOURS[(n.dow+1)%7][0]);
+    }
+    $('status-text').textContent=text;$('status').classList.toggle('closed',!open);
+    $('hours-pill-text').textContent=text;$('hours-pill').classList.toggle('closed',!open);
+    var rows=document.querySelectorAll('.hours tr[data-dow]');
+    for(var i=0;i<rows.length;i++){
+      var r=rows[i],isT=r.getAttribute('data-dow').split(',').indexOf(String(n.dow))>=0;
+      r.classList.toggle('today',isT);
+      var old=r.querySelector('.now');if(old)old.parentNode.removeChild(old);
+      if(isT){var b=document.createElement('span');b.className='now';b.textContent='Today';r.cells[0].appendChild(b);}
+    }
+    var wk=document.querySelectorAll('.week li[data-dow]');
+    for(var j=0;j<wk.length;j++)wk[j].classList.toggle('today',+wk[j].getAttribute('data-dow')===n.dow);
+  }
+
+  /* ---- Belly Buster meter ----
+     Live hookup: call IBH.setBusyness(percent, new Date()) from your POS / host-stand feed,
+     or define window.IBH_BUSYNESS = {percent: 62, updated: '2026-09-17T19:42:00-04:00'} before this script.
+     Until then it runs a time-of-day estimate from the weekly pattern. */
+  var LEVELS=['Chill','Filling up','Buzzing','Belly Buster'];
+  var SUBS=['Pick any table you like','Plenty of seats, patio included','Seats open — inside fills first','Expect a wait for a table'];
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var beer=$('beer'),foam=$('foam'),curFill=0,anim=null;
+  function paint(p){var top=6+188*(1-p/100);beer.setAttribute('y',top);foam.setAttribute('y',Math.max(6,top-10));foam.style.opacity=p>2?1:0;}
+  function fillTo(p){
+    if(anim)cancelAnimationFrame(anim);
+    if(reduce){curFill=p;paint(p);return;}
+    var from=curFill,start=null;
+    anim=requestAnimationFrame(function step(ts){if(!start)start=ts;var k=Math.min(1,(ts-start)/900);k=1-Math.pow(1-k,3);curFill=from+(p-from)*k;paint(curFill);if(k<1)anim=requestAnimationFrame(step);});
+  }
+  function setBusyness(pct,updated,closedInfo){
+    pct=Math.max(0,Math.min(100,Math.round(pct)));
+    var m=$('belly'),lvl=pct<=25?0:pct<=50?1:pct<=75?2:3,hot=lvl===3&&!closedInfo;
+    m.classList.toggle('closed',!!closedInfo);
+    $('pct').textContent=closedInfo?'0':pct;
+    $('level').textContent=closedInfo?'Closed':LEVELS[lvl];
+    $('level').classList.toggle('hot',hot);
+    $('sub').textContent=closedInfo?closedInfo:SUBS[lvl]+' · Updated '+fmtTime(updated||new Date());
+    var scale=$('scale');scale.classList.toggle('hot',hot);
+    var lis=scale.children;for(var i=0;i<lis.length;i++){lis[i].classList.toggle('fill',!closedInfo&&i<=lvl);lis[i].classList.toggle('on',!closedInfo&&i===lvl);}
+    $('glass').setAttribute('aria-label','Busyness meter: '+(closedInfo?'closed':pct+' percent full, '+LEVELS[lvl]));
+    fillTo(closedInfo?0:pct);
+  }
+  function estimate(n){
+    var s=session(n);
+    if(!s){var td=HOURS[n.dow];return {closed:'Opens '+(n.t<td[0]?'today':'tomorrow')+' at '+fh(n.t<td[0]?td[0]:HOURS[(n.dow+1)%7][0])+' — come early for the chillest seats'};}
+    var d=s.dow,t=s.t,wk=(d===5||d===6),b;
+    if(t<14)b=d===0?40:(d===6?46:32);else if(t<17)b=18;else if(t<19)b=wk?55:42;else if(t<21)b=wk?76:58;else if(t<24)b=wk?90:52;else b=wk?62:38;
+    if(d===0){if(t>=13&&t<16.5)b=Math.max(b,74);else if(t>=19)b=30;}
+    if(d===3&&t>=19.5&&t<22.5)b+=20;
+    if(d===4&&t>=20&&t<23)b+=25;
+    if((n.date==='2026-09-19'||n.date==='2026-09-26')&&t>=12&&t<24)b=Math.max(b,86);
+    var j=(hash(n.date+':'+Math.floor((n.h*60+n.m)/5))-0.5)*8;
+    return {pct:Math.max(3,Math.min(100,b+j))};
+  }
+  function renderBusyness(n){
+    var live=window.IBH_BUSYNESS;
+    if(live&&typeof live.percent==='number'){setBusyness(live.percent,live.updated?new Date(live.updated):new Date());return;}
+    var e=estimate(n);
+    if(e.closed)setBusyness(0,new Date(),e.closed);else setBusyness(e.pct,new Date());
+  }
+  window.IBH={setBusyness:function(p,when){window.IBH_BUSYNESS={percent:p,updated:when||new Date()};setBusyness(p,when?new Date(when):new Date());}};
+
+  /* ---- Tonight strip + lineup ---- */
+  function allEvents(n){
+    var list=EVENTS.slice(),start=utc(n.date);
+    for(var i=0;i<56;i++){var dt=new Date(start.getTime()+i*86400000);if(dt.getUTCDay()===3)list.push({d:iso(dt),n:'Country Line Dancing',k:'Free · lessons on select nights',w:'7:30–10:30 PM'});}
+    list.sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:0;});
+    return list;
+  }
+  function renderEvents(n){
+    var list=allEvents(n),today=list.filter(function(e){return e.d===n.date;}),up=list.filter(function(e){return e.d>=n.date;});
+    var ev=today[0]||up[0];
+    if(ev){
+      var isToday=ev.d===n.date,hz=HOURS[utc(ev.d).getUTCDay()];
+      $('tn-label').textContent=isToday?(ev.day?'Today':'Tonight'):'Next up';
+      $('tn-name').textContent=ev.n;
+      $('tn-kind').textContent=ev.k+' · '+ev.w;
+      $('tn-meta').textContent=fmtDate(ev.d)+' · Kitchen till '+fh(hz[2])+', bar till '+fh(hz[1]);
+    }
+    var ol=$('lineup'),html='';
+    up.slice(0,8).forEach(function(e){
+      var t=e.d===n.date;
+      html+='<li><time datetime="'+e.d+'">'+fmtDate(e.d).replace(', ',' · ')+(t?'<small>'+(e.day?'Today':'Tonight')+'</small>':'')+'</time><b>'+e.n+'</b><span>'+e.k+' · '+e.w+'</span></li>';
+    });
+    ol.innerHTML=html;
+  }
+
+  /* ---- Share tools ---- */
+  function shareSetup(){
+    var url=location.href.split('#')[0],title='Ironwood Beer Hall';
+    var text='Meet me at Ironwood Beer Hall in Calder Falls — 30 taps, a huge beer garden, live music Thursdays & Saturdays.';
+    var enc=encodeURIComponent;
+    $('share-sms').href='sms:?&body='+enc(text+' '+url);
+    $('share-mail').href='mailto:?subject='+enc('Let’s go to '+title)+'&body='+enc(text+'\n\n'+url);
+    $('share-fb').href='https://www.facebook.com/sharer/sharer.php?u='+enc(url);
+    $('share-x').href='https://twitter.com/intent/tweet?text='+enc(text)+'&url='+enc(url);
+    var nat=$('share-native');
+    if(navigator.share){nat.hidden=false;nat.addEventListener('click',function(){navigator.share({title:title,text:text,url:url}).catch(function(){});});}
+    $('share-copy').addEventListener('click',function(){
+      var done=function(){var l=$('copy-label');l.textContent='Copied!';setTimeout(function(){l.textContent='Copy link';},1800);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,function(){window.prompt('Copy this link:',url);});}
+      else{window.prompt('Copy this link:',url);}
+    });
+  }
+
+  /* ---- Nav ---- */
+  var t=$('navtoggle'),nv=$('nav');
+  t.addEventListener('click',function(){var o=nv.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.textContent=o?'Close':'Menu';});
+  nv.addEventListener('click',function(e){if(e.target.tagName==='A'){nv.classList.remove('open');t.setAttribute('aria-expanded','false');t.textContent='Menu';}});
+
+  function tick(){var n=nowNY();renderStatus(n);renderBusyness(n);renderEvents(n);}
+  tick();shareSetup();
+  setInterval(tick,5*60*1000);
+})();
+</script>
+
+
+<p class="photo-credits" style="margin:0;padding:14px 16px;font:12px/1.5 system-ui,-apple-system,sans-serif;text-align:center;color:#6b6b6b">Photography: <a href="https://unsplash.com/@kenkuo_melb?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Kenny Kuo</a>, <a href="https://unsplash.com/@cblanco_31?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Carlos Blanco</a>, <a href="https://unsplash.com/@djswingkid?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Magnus Lunay</a> on <a href="https://unsplash.com/?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Unsplash</a>. Concept site: names, people, and details are fictional.</p>
+</body>
+</html>

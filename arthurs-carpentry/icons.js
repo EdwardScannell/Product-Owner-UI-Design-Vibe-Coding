@@ -1,0 +1,46 @@
+// LIVE: Local SVG icons. No remote icon service, tracking, or font dependency.
+const paths = {
+  search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/>',
+  cart: '<path d="M3 3h2l2.4 11.4A2 2 0 0 0 9.4 16H18a2 2 0 0 0 2-1.6L22 7H6"/><circle cx="10" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>',
+  bag: '<path d="M5 7h14l1 14H4L5 7Z"/><path d="M9 8V5a3 3 0 0 1 6 0v3"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/>',
+  chevron: '<path d="m8 10 4 4 4-4"/>',
+  right: '<path d="m9 5 7 7-7 7"/>',
+  arrow: '<path d="M4 12h16m-6-6 6 6-6 6"/>',
+  back: '<path d="M20 12H4m6-6-6 6 6 6"/>',
+  check: '<path d="m5 12 4 4L19 6"/>',
+  close: '<path d="m6 6 12 12M6 18 18 6"/>',
+  minus: '<path d="M5 12h14"/>',
+  plus: '<path d="M5 12h14M12 5v14"/>',
+  bell: '<path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/>',
+  heart:
+    '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',
+  truck:
+    '<path d="M1 4h13v13H1zM14 9h4l4 4v4h-8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
+  return: '<path d="M3 10h11a6 6 0 0 1 0 12M3 10l5-5M3 10l5 5" transform="translate(0 -3)"/>',
+  shield: '<path d="M12 3 3 7v5c0 6 9 10 9 10s9-4 9-10V7l-9-4Z"/><path d="m8 12 3 3 5-6"/>',
+  brush: '<path d="m15 3 6 6-9 9-6-6 9-9ZM12 6l6 6M6 12l-3 3v6h6l3-3M3 17l4 4M5 15l5 5"/>',
+  hammer: '<path d="m15 12-9 9-3-3 9-9M9 6l6-4 7 7-4 6-9-9ZM15 2l-1 7 7-1"/>',
+  leaf: '<path d="M20 3C7 2 2 8 5 16c8 4 15-1 15-13Z"/><path d="m3 22 12-12"/>',
+  home: '<path d="m3 10 9-7 9 7v11H3V10ZM9 21v-8h6v8"/>',
+  mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/>',
+  share:
+    '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.7 10.5 6.6-4M8.7 13.5l6.6 4"/>',
+  link: '<path d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0M12 18a4 4 0 0 0 6 0l5-5a4 4 0 0 0-6-6l-1 1" transform="translate(0 -2)"/>',
+  star: '<path d="m12 2 3 6.5 7 1-5 5 1.2 7-6.2-3.4-6.2 3.4 1.2-7-5-5 7-1L12 2Z"/>',
+  sparkle: '<path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/>',
+  tag: '<path d="M20 12 12 20 2 10V2h8l10 10Z"/><circle cx="7" cy="7" r="1"/>',
+  zoom: '<circle cx="10" cy="10" r="7"/><path d="m15 15 6 6M10 6v8M6 10h8"/>',
+  menu: '<path d="M3 6h18M3 12h18M3 18h18"/>',
+  lock: '<rect x="5" y="10" width="14" height="12" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4M12 14v4"/>',
+  card: '<rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 9h20M6 15h4"/>',
+  pin: '<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  book: '<path d="M12 5C8 2 3 3 2 4v16c3-2 6-2 10 0 4-2 7-2 10 0V4c-3-2-6-2-10 1Zm0 0v15"/>',
+  download: '<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',
+  trash: '<path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7M14 10v7"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 1v2M12 21v2M1 12h2M21 12h2M4 4l1.5 1.5M18.5 18.5 20 20M4 20l1.5-1.5M18.5 5.5 20 4"/>',
+};
+export const icon = (name, cls = '') =>
+  `<svg class="icon ${cls}" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] || paths.sparkle}</svg>`;

@@ -1,0 +1,395 @@
+/* LIVE: Optional path guidance is revealed only when a visitor starts the
+ * walkthrough. It begins on the Product Detail page and never auto-checks-out.
+ * This is a review aid; the original storefront remains independently usable. */
+.journey-launch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-height: 44px;
+  padding: 8px 0;
+  white-space: nowrap;
+}
+.journey-launch .icon {
+  width: 17px;
+  height: 17px;
+}
+.journey-launch:hover {
+  color: var(--rust);
+}
+#journey-mount {
+  position: sticky;
+  top: 0;
+  z-index: 11;
+}
+.journey-bar {
+  background: #f0f2e9;
+  border-bottom: 1px solid #b5bfa9;
+  box-shadow: 0 3px 8px #293c300a;
+}
+.journey-bar .container {
+  padding: 10px 0 14px;
+}
+.journey-bar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+.journey-bar-top .eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 1.3px;
+}
+.journey-exit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-size: 0.75rem;
+  min-height: 32px;
+  padding: 4px;
+}
+.journey-exit .icon {
+  width: 14px;
+  height: 14px;
+}
+.journey-trail {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0;
+  padding: 3px 0 10px;
+  margin: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #81916e transparent;
+}
+.journey-trail li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.journey-trail li > span,
+.journey-trail li > button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+}
+.journey-trail b {
+  width: 21px;
+  height: 21px;
+  border: 1px solid #78866b;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.journey-trail b .icon {
+  width: 12px;
+  height: 12px;
+}
+.journey-trail li > .icon {
+  width: 13px;
+  height: 13px;
+  margin-right: 8px;
+  color: #718063;
+}
+.journey-trail .current {
+  color: var(--green);
+  font-weight: 600;
+}
+.journey-trail .current b {
+  background: var(--green);
+  color: var(--paper);
+  border-color: var(--green);
+}
+.journey-trail .completed b {
+  background: #dce5cf;
+  color: var(--green);
+  border-color: var(--green);
+}
+.journey-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid #ced6c1;
+  padding-top: 10px;
+}
+.journey-next strong {
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.journey-next p {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-top: 2px;
+  line-height: 1.55;
+}
+.journey-next .button {
+  font-size: 0.8125rem;
+  min-height: 44px;
+  padding: 10px 15px;
+  flex-shrink: 0;
+}
+.journey-active {
+  scroll-padding-top: 190px;
+}
+.journey-highlight {
+  outline: 3px solid var(--rust) !important;
+  outline-offset: 8px;
+  border-radius: 4px;
+}
+.journey-overview-modal {
+  width: 720px;
+}
+.journey-overview-modal > p {
+  font-size: 1rem;
+  max-width: 580px;
+}
+.journey-overview-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 23px;
+  margin: 28px 0;
+  padding: 0;
+  list-style: none;
+}
+.journey-overview-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.journey-overview-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--sage);
+  color: var(--green);
+}
+.journey-overview-icon .icon {
+  width: 18px;
+  height: 18px;
+}
+.journey-overview-list h3 {
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.journey-overview-list h3 > span {
+  color: var(--rust);
+}
+.journey-overview-list p {
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.journey-sample {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--sage);
+  border-radius: 4px;
+  padding: 17px 20px;
+  margin: 24px 0;
+  font-size: 0.875rem;
+}
+.journey-sample strong {
+  font-weight: 500;
+  color: var(--green);
+}
+.journey-sample small {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.journey-overview-modal > .journey-disclosure {
+  font-size: 0.8125rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+.journey-modal-guide {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 13px 15px;
+  background: var(--sage);
+  border-radius: 4px;
+  margin: 12px 0 24px;
+  text-align: left;
+}
+.journey-modal-guide > span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: var(--green);
+}
+.journey-modal-guide .icon {
+  width: 18px;
+  height: 18px;
+}
+.journey-modal-guide strong {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--green);
+}
+.journey-modal-guide p {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.sample-details-button {
+  min-height: 44px;
+  border: 1px solid var(--control-border, #75816b);
+  border-radius: 4px;
+  padding: 8px 13px;
+  color: var(--green);
+  font-size: 0.875rem;
+  margin: 0 0 22px;
+  background: var(--white);
+}
+.sample-details-button:hover {
+  background: var(--sage);
+}
+.product-type-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 8px 0 20px;
+}
+.product-type-links > span {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-right: 6px;
+}
+.product-type-links > button {
+  padding: 6px 8px;
+  min-height: 44px;
+  color: var(--green);
+  font-size: 0.875rem;
+  border-bottom: 2px solid transparent;
+}
+.product-type-links > button.selected {
+  border-bottom-color: var(--green);
+  font-weight: 600;
+}
+.product-type-links > button:hover {
+  background: var(--sage);
+}
+.product-type-links .icon {
+  width: 15px;
+  height: 15px;
+}
+@media (max-width: 1100px) {
+  .journey-launch {
+    font-size: 0.8125rem;
+  }
+  .journey-trail li {
+    gap: 5px;
+  }
+  .journey-trail li > .icon {
+    margin-right: 5px;
+  }
+}
+@media (max-width: 650px) {
+  .journey-launch {
+    justify-content: center;
+    width: 100%;
+    padding: 9px;
+    border-top: 1px solid var(--line);
+    font-size: 0.875rem;
+    min-height: 44px;
+  }
+  .journey-bar .container {
+    padding: 8px 0 11px;
+  }
+  .journey-bar-top .eyebrow {
+    font-size: 0.6875rem;
+    letter-spacing: 0.5px;
+  }
+  .journey-exit {
+    font-size: 0.75rem;
+    gap: 5px;
+  }
+  .journey-exit .icon {
+    width: 13px;
+  }
+  .journey-trail {
+    padding-bottom: 8px;
+  }
+  .journey-trail li {
+    font-size: 0.75rem;
+  }
+  .journey-next {
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .journey-next strong {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    display: block;
+  }
+  .journey-next p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-top: 5px;
+  }
+  .journey-next .button {
+    max-width: 125px;
+    font-size: 0.75rem;
+    padding: 9px;
+    gap: 5px;
+  }
+  .journey-next .button > .icon {
+    display: none;
+  }
+  .journey-overview-list {
+    grid-template-columns: 1fr;
+    gap: 19px;
+  }
+  .journey-overview-modal h2 {
+    font-size: 2.5rem;
+  }
+  .journey-overview-modal > p {
+    font-size: 0.9375rem;
+  }
+  .journey-overview-list h3 {
+    font-size: 1rem;
+  }
+  .journey-overview-list p {
+    font-size: 0.875rem;
+  }
+  .journey-modal-guide {
+    padding: 12px;
+    gap: 7px;
+  }
+  .journey-modal-guide p {
+    font-size: 0.8125rem;
+  }
+  .product-type-links {
+    gap: 7px;
+  }
+  .product-type-links > span {
+    flex-basis: 100%;
+  }
+  .product-type-links > button {
+    font-size: 0.8125rem;
+  }
+}
