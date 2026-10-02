@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kamp Kumquat Safety Orientation · Fable · Slides</title>
+<meta name="description" content="A seven-slide illustrated safety orientation for a fictional summer camp, built from a brief by Ed Scannell.">
+<style>
+:root{--bg:#f7f1e6;--ink:#2b2333;--muted:#6b6070;--plum:#4f2a6b;--accent:#c25a1c;--line:#e2d8c8;--card:#fffaf2}
+@media (prefers-color-scheme:dark){:root{--bg:#17131b;--ink:#efe8f3;--muted:#b3a8ba;--plum:#c9a6e6;--accent:#f0a46a;--line:#342c3a;--card:#201a25}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--plum)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header{padding:28px 0 12px}
+.back{font-size:14px;text-decoration:none;color:var(--muted)}
+.back:hover{color:var(--plum)}
+h1{font-size:clamp(26px,4vw,40px);line-height:1.15;margin:10px 0 6px;color:var(--plum)}
+.sub{margin:0;color:var(--muted);max-width:70ch}
+.stage{margin:22px 0 12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;position:relative}
+.stage img{display:block;width:min(100%,calc((100vh - 250px)*16/9));min-width:min(100%,560px);height:auto;aspect-ratio:16/9;margin:0 auto;border-radius:8px;background:#e9e1d3}
+header{padding:20px 0 4px}h1{margin:6px 0 4px}.stage{margin:14px 0 8px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:6px 0 16px}
+.nav{display:flex;gap:8px;align-items:center}
+button,.btn{font:inherit;font-size:15px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 16px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+button:hover,.btn:hover{border-color:var(--plum)}
+button:focus-visible,.btn:focus-visible,.thumbs button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.count{font-variant-numeric:tabular-nums;color:var(--muted);min-width:5.5em;text-align:center}
+.slide-title{font-weight:650;margin:0}
+.thumbs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:0 0 28px;padding:0;list-style:none}
+.thumbs button{padding:0;border-radius:6px;border:2px solid transparent;background:none;width:100%}
+.thumbs button[aria-current="true"]{border-color:var(--accent)}
+.thumbs img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px}
+.about{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:15px}
+.about p{max-width:75ch;margin:0 0 10px}
+@media (max-width:640px){.thumbs{grid-template-columns:repeat(4,minmax(0,1fr))}.bar{justify-content:center}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="back" href="../">← All projects</a>
+  <h1>Kamp Kumquat Safety Orientation</h1>
+  <p class="sub"><strong>Fable's deck.</strong> Same brief, other model: <a href="../kamp-kumquat-slides/">see Astra's deck</a>.</p>
+  <p class="sub">A seven-slide, illustrated orientation for a fictional summer camp. Director Ned runs the briefing while his well-meaning counterpart, Klutzy Karl, makes every mistake so the campers can spot and fix it.</p>
+</header>
+<main class="wrap">
+  <div class="stage">
+    <img id="slide" src="slides/slide-01.jpg" alt="" width="1600" height="900">
+  </div>
+  <div class="bar">
+    <p class="slide-title" id="title" aria-live="polite"></p>
+    <div class="nav">
+      <button type="button" id="prev" aria-label="Previous slide">←</button>
+      <span class="count" id="count"></span>
+      <button type="button" id="next" aria-label="Next slide">→</button>
+      <a class="btn" href="kamp-kumquat-safety-orientation-fable.pdf" download>Download PDF</a>
+      <a class="btn" href="neds-one-page-cue-card.pdf">Ned's cue card</a>
+    </div>
+  </div>
+  <ul class="thumbs" id="thumbs" aria-label="All slides"></ul>
+  <section style="margin:8px 0 28px">
+    <h2 style="font-size:22px;margin:0 0 10px;color:var(--plum)">Ned's One-Page Cue Card</h2>
+    <a href="neds-one-page-cue-card.pdf"><img src="neds-one-page-cue-card.jpg" alt="Ned's one-page cue card: the whole Day 1 presenter script on a single landscape sheet, one panel per slide plus a quick-answers panel" style="display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px" loading="lazy" width="1650" height="1275"></a>
+  </section>
+</main>
+<footer class="wrap about">
+  <p>Built from the same brief as Astra's deck. Fable turned each topic into a find-the-mistakes picture: six numbered klutzes per scene, a running klutz count, and a matching rule for every mistake. It also delivered Ned's one-page cue card, the whole presenter script on a single sheet.</p>
+  <p>Kamp Kumquat, its staff, and its campers are fictional. Slides shown as rendered images; text substitutes a similar typeface for the deck's original font.</p>
+  <p>© 2026 Ed Scannell. All rights reserved.</p>
+</footer>
+<script>
+const S=[
+ ["Welcome Back, Kampers!","Director Ned welcomes rows of campers under the Kamp Kumquat sign, while Kamper Klutzy Karl lurks behind it."],
+ ["Bug Off! Tick & Insect Protection","A vector scene with six numbered spots where Karl gets bug safety wrong; campers count the klutzes."],
+ ["Take a Hike (Safely!)","Karl wanders off the trail toward a raccoon he thinks is a kitty; six numbered mistakes to find."],
+ ["Karl's Big Splash: Waterfront Safety","Karl makes six waterfront mistakes for campers to spot and shout out."],
+ ["On Target: Archery Range Safety","Karl reaches for a dropped arrow while Rangemaster Burns blows four whistles to stop; six numbered mistakes."],
+ ["Campfire Safety: Keep It in the Ring","Karl breaks six campfire rules around the fire ring for campers to catch."],
+ ["Sweet Dreams, Karl...","Karl dreams of doing everything right, recapping one lesson from each topic."]
+];
+let i=0;const img=document.getElementById('slide'),t=document.getElementById('title'),c=document.getElementById('count'),th=document.getElementById('thumbs');
+const src=n=>`slides/slide-${String(n+1).padStart(2,'0')}.jpg`;
+S.forEach((s,n)=>{const li=document.createElement('li');const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Slide ${n+1}: ${s[0]}`);b.innerHTML=`<img src="${src(n)}" alt="" loading="lazy">`;b.onclick=()=>go(n);li.appendChild(b);th.appendChild(li)});
+function go(n){i=(n+S.length)%S.length;img.src=src(i);img.alt=`Slide ${i+1}, ${S[i][0]}. ${S[i][1]}`;t.textContent=S[i][0];c.textContent=`${i+1} / ${S.length}`;
+ th.querySelectorAll('button').forEach((b,k)=>b.setAttribute('aria-current',k===i?'true':'false'));
+ try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+document.getElementById('prev').onclick=()=>go(i-1);document.getElementById('next').onclick=()=>go(i+1);
+addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(i+1);if(e.key==='ArrowLeft')go(i-1)});
+let x0=null;img.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+img.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
+const h=parseInt(location.hash.slice(1),10);go(Number.isFinite(h)?h-1:0);
+</script>
+</body>
+</html>
