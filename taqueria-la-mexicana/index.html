@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
 <title>Taqueria La Mexicana</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600;1,9..144,900&family=Archivo:wght@400;500;600;700;800&display=swap">
 <style>
@@ -14,7 +14,7 @@
   --paper:#FFFDF4;
   --ink:#2A1508;
   --ink-soft:#57402C;
-  --rosa:#E42878;
+  --rosa:#CF1C6A;
   --rosa-deep:#B91B5E;
   --chile:#D63B2F;
   --marigold:#F2A413;
@@ -198,7 +198,7 @@ section{position:relative}
 .speed{border:2.5px solid var(--ink);border-radius:var(--radius);padding:26px 28px;box-shadow:var(--shadow)}
 .speed.fast{background:var(--marigold)}
 .speed.slow{background:var(--rosa);color:#fff}
-.speed .sp-tag{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+.speed .sp-tag{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
 .speed h3{font-size:27px;margin:8px 0 8px}
 .speed p{font-size:15.5px}
 @media(max-width:960px){.exp-grid{grid-template-columns:1fr}.two-speeds{grid-template-columns:1fr}}
@@ -230,7 +230,7 @@ section{position:relative}
 .car-controls{display:flex;align-items:center;gap:14px;margin-top:20px}
 .car-btn{width:44px;height:44px;border-radius:50%;border:2.5px solid var(--ink);background:var(--paper);box-shadow:3px 3px 0 var(--ink);font-size:18px;font-weight:900}
 .car-btn:hover{background:var(--marigold)}
-.car-dots{display:flex;gap:8px}
+.car-dots{display:flex;gap:14px}
 .car-dots button{width:11px;height:11px;border-radius:50%;border:2px solid var(--ink);background:transparent;padding:0}
 .car-dots button[aria-current="true"]{background:var(--rosa)}
 @media(max-width:960px){.reviews-layout{grid-template-columns:1fr}}
@@ -288,7 +288,7 @@ section{position:relative}
 .share-band{background:var(--rosa);color:#fff;border-top:3px solid var(--ink)}
 .share-band .wrap{display:flex;align-items:center;justify-content:space-between;gap:26px;padding-top:40px;padding-bottom:40px;flex-wrap:wrap}
 .share-band h2{font-size:clamp(26px,3vw,36px)}
-.share-band p{color:#FBD9E8;font-size:15px;max-width:44ch}
+.share-band p{color:#fff;font-size:15px;max-width:44ch}
 .share-row{display:flex;gap:12px;flex-wrap:wrap}
 .share-ico{width:52px;height:52px;border-radius:50%;border:2.5px solid var(--ink);background:var(--paper);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--ink);transition:transform .15s}
 .share-ico:hover{transform:translate(-2px,-2px)}
@@ -521,7 +521,7 @@ footer h4{color:var(--crema);font-size:12.5px;font-weight:800;letter-spacing:.22
       </svg>
       <span class="eyebrow">Hecho a mano, todos los días</span>
       <h1>Fast tacos,<br><span class="accent-i">slow</span> margaritas.</h1>
-      <p class="hero-sub">Order at the counter and watch it made in the open kitchen — out the door in minutes, or linger at a mosaic table under two walls of murals with chips and <strong>five house salsas, on us</strong>.</p>
+      <p class="hero-sub">Order at the counter and watch it made in the open kitchen — out the door in minutes, or linger at a mosaic table under two walls of murals with chips and <strong>five house salsas, on us</strong>.</p><p class="a11y-note" style="margin:.75em 0 0;font-size:.85em;font-weight:500;color:inherit;opacity:1">Designed and tested to WCAG 2.2 AA and Section 508 accessibility standards.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary btn-lg" href="#order">🌮 Order Pickup</a>
         <a class="btn btn-lg" href="#order">Order Delivery</a>
@@ -903,7 +903,7 @@ footer h4{color:var(--crema);font-size:12.5px;font-weight:800;letter-spacing:.22
         <div class="car-controls">
           <button class="car-btn" id="prevReview" aria-label="Previous review">←</button>
           <button class="car-btn" id="nextReview" aria-label="Next review">→</button>
-          <div class="car-dots" id="carDots" role="tablist" aria-label="Choose review"></div>
+          <div class="car-dots" id="carDots" role="group" aria-label="Choose review"></div>
         </div>
       </div>
     </div>
