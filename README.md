@@ -30,6 +30,7 @@ Most of these briefs went to two models, Fable and Astra, so I could see where t
 - Every site is plain HTML, CSS, and JavaScript with no framework and no build step. Brass, Edward's Arcade, Ironwood, Taqueria, Decco, Frog Pondian, and Arthur's take two are each a single `index.html` file; the others split their code into a few files in the same folder.
 - To run one locally, download its folder and serve it with any static server (for example `python3 -m http.server`), then open it in a browser. Sites that use JavaScript modules will not run straight from the file system.
 - Forms, carts, and leaderboards save to the browser's storage. Nothing is sent anywhere.
+- Accessibility: every page is designed and tested to WCAG 2.2 AA and Section 508. Each passes an automated axe-core audit (WCAG 2.0/2.1/2.2 A and AA plus Section 508 rules) with zero violations in light mode, dark mode, and at phone width, including every in-site route, and was checked for keyboard-only navigation and visible focus. Sites with motion honor the reduced-motion setting.
 
 Businesses, people, clients, prices, and reviews on these pages are illustrative. Phone numbers use the 555-01xx range, email and web addresses use the reserved `.example` domain, and towns are invented.
 
