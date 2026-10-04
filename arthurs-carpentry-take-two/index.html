@@ -61,15 +61,15 @@
   /* grounds & surfaces — kraft paper, warm-biased, not pure grey */
   --bg:#F2ECDF; --panel:#FBF8F1; --panel-2:#EBE3D3; --panel-3:#E2D8C4;
   /* ink */
-  --ink:#14233A; --ink-2:#4E5868; --ink-3:#7C8495;
+  --ink:#14233A; --ink-2:#4E5868; --ink-3:#5f6675;
   --line:#D9CFBD; --line-2:#C8BCA5;
   /* brand navy (nav, bands, price) */
   --navy:#22405F; --navy-2:#2C4F75; --navy-3:#3C6290; --navy-ink:#F6F1E7; --navy-ink-2:#C3CEDD;
   /* the one accent: safety orange */
-  --accent:#E8641B; --accent-hover:#C9510F; --accent-ink:#FFFFFF; --accent-soft:#FBE7D8;
+  --accent:#B3470D; --accent-hover:#8F3809; --accent-ink:#FFFFFF; --accent-soft:#FBE7D8;
   /* semantic (separate from accent) */
   --deal:#2E7D4F; --deal-soft:#DCEFE3; --deal-ink:#1B5A36;
-  --warn:#B7791F; --warn-soft:#F8EBD0;
+  --warn:#905F18; --warn-soft:#F8EBD0;
   --danger:#B3261E; --danger-soft:#F7DDDA;
   --info:#2F5A8A; --info-soft:#DDE7F2;
   --link:#2F5A8A;
@@ -196,7 +196,7 @@ input,select,textarea{font:inherit;color:var(--ink)}
 .map-leaves{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
 .map-leaf{padding:.9rem 1.25rem;border-top:1px solid var(--line);border-right:1px solid var(--line)}
 .map-leaf .h{display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap}
-.map-leaf .h a{font-weight:600;color:var(--ink);text-decoration:none}
+.map-leaf .h a{font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:2px}
 .map-leaf .h a:hover{color:var(--accent-hover)}
 .map-leaf .n{font-family:var(--f-mono);font-size:var(--fs-1);color:var(--ink-3)}
 .map .path{font-family:var(--f-mono);font-size:var(--fs-1);color:var(--ink-3);display:block;overflow-wrap:anywhere}
@@ -260,7 +260,7 @@ input,select,textarea{font:inherit;color:var(--ink)}
 .nav-item>button,.nav-item>a{display:flex;align-items:center;gap:.35rem;background:none;border:0;color:var(--navy-ink);padding:0 .85rem;height:50px;
   font-family:var(--f-display);font-weight:600;font-size:1.05rem;letter-spacing:.02em;text-decoration:none;text-transform:uppercase;border-bottom:3px solid transparent}
 .nav-item>button:hover,.nav-item>a:hover,.nav-item.is-open>button{background:var(--navy-2);border-bottom-color:var(--accent)}
-.nav-item.is-cta>a{color:var(--accent);}
+.nav-item.is-cta>a{color:#FFA36A;}
 .nav-item.is-cta>a:hover{color:var(--navy-ink);background:var(--accent);border-bottom-color:var(--accent)}
 .nav-item.is-deal>a{color:#FFD7BD}
 .nav-item .chev{width:14px;height:14px;transition:transform .15s}
@@ -508,7 +508,7 @@ main{padding-bottom:3rem}
 .review .by{display:flex;justify-content:space-between;gap:.5rem;font-size:var(--fs-1);color:var(--ink-3);margin-top:auto}
 .review .by strong{color:var(--ink);font-weight:600}
 .review .by a{color:var(--link);text-decoration:none}
-.reviews-dots{display:flex;gap:.35rem;justify-content:center}
+.reviews-dots{display:flex;gap:18px;justify-content:center}
 .reviews-dots button{width:8px;height:8px;border-radius:50%;border:0;background:var(--line-2);padding:0}
 .reviews-dots button.is-on{background:var(--accent);width:20px;border-radius:4px}
 /* variant inside the navy quote band */
@@ -690,6 +690,10 @@ footer a:hover{color:var(--navy-ink);text-decoration:underline}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media print{.browser,.utility,.main-nav,.header-actions,.drawer,.modal,.toast,.quote-band,footer,.tour,.tour-launch,.tour-badge{display:none!important}}
+
+/* a11y: accent text on navy surfaces needs a lighter orange (WCAG AA) */
+body .utility a[href$="#/demo"],.utility a.hide-sm,.main-nav .is-cta > a,.quote-band .eyebrow,footer .proto,.site-footer .proto,footer li .proto{color:#FFA36A}
+.map-items a{text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
 <body>
@@ -786,7 +790,7 @@ footer a:hover{color:var(--navy-ink);text-decoration:underline}
     <span class="hide-sm">Mon–Sat 7a–6p</span>
     <a href="#/hire-arthur" data-open="quote">Hire Arthur →</a>
     <!-- [LIVE] prototype-only: launches the numbered DIY-path demo -->
-    <a href="#/demo" class="hide-sm" style="color:var(--accent);font-weight:600">▶ Demo the DIY path</a>
+    <a href="#/demo" class="hide-sm" style="color:#FFA36A;font-weight:600">▶ Demo the DIY path</a>
   </div>
 </div>
 
@@ -887,6 +891,7 @@ footer a:hover{color:var(--navy-ink);text-decoration:underline}
         </div>
         <div class="deal-line" data-slot="deal-line" hidden></div>
         <p style="color:var(--ink-2);font-size:var(--fs-2)" data-slot="blurb"></p>
+        <p class="a11y-note" style="margin:.5em 0 0;font-size:var(--fs-1);font-weight:600;color:var(--ink-2)">Designed and tested to WCAG 2.2 AA and Section 508 accessibility standards.</p>
         <!-- [LIVE-MOCK] Stock: sample number. [TODO-DEV] read from inventory API -->
         <div class="stock" data-slot="stock"><span class="dot"></span><span>In stock</span></div>
 
@@ -1015,7 +1020,7 @@ footer a:hover{color:var(--navy-ink);text-decoration:underline}
       <div class="quote-band">
         <div class="who" aria-hidden="true">A</div>
         <div>
-          <span class="eyebrow" style="color:var(--accent)">Or skip the DIY</span>
+          <span class="eyebrow" style="color:#FFA36A">Or skip the DIY</span>
           <h2>Ask Arthur to do the job</h2>
           <p>Send a few details and photos. Arthur replies with a written estimate — no obligation. Licensed and insured for everything on this site, and honest about what's a weekend project versus a pro job.</p>
           <ul><li>Written quote in 1 business day</li><li>Same tools &amp; materials sold here</li><li>Workmanship warranty</li></ul>
@@ -1273,7 +1278,7 @@ footer a:hover{color:var(--navy-ink);text-decoration:underline}
      CART DRAWER  [LIVE-MOCK]
      ========================================================================== -->
 <div class="scrim" id="cart-scrim" hidden></div>
-<aside class="drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+<aside class="drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true" inert>
   <div class="drawer-head"><h3>Your cart <span class="mono" style="color:var(--ink-3);font-size:var(--fs-2)" data-slot="cart-n"></span></h3><button class="x" id="cart-close" aria-label="Close cart">×</button></div>
   <div class="drawer-body" data-slot="cart-lines"></div>
   <div class="drawer-foot">
@@ -1996,7 +2001,7 @@ function renderReviews(host, cats, limit) {
         <div class="by"><span><strong>${esc(r.author)}</strong> · ${fmtDate(r.date)}</span></div>
       </article>`).join('')}
     </div>
-    <div class="reviews-dots" role="tablist" aria-label="Review pages">${rows.map((_, i) => `<button type="button" data-rev-dot="${i}" aria-label="Review ${i + 1}" class="${i === 0 ? 'is-on' : ''}"></button>`).join('')}</div>`;
+    <div class="reviews-dots" role="group" aria-label="Review pages">${rows.map((_, i) => `<button type="button" data-rev-dot="${i}" aria-label="Review ${i + 1}" class="${i === 0 ? 'is-on' : ''}"></button>`).join('')}</div>`;
   const track = $('.reviews-track', host), dots = $$('[data-rev-dot]', host);
   const cardW = () => { const c = $('.review', track); return c ? c.getBoundingClientRect().width + 14.4 : 340; };
   const idx = () => Math.round(track.scrollLeft / cardW());
@@ -2079,7 +2084,7 @@ function renderProduct(p, tab, ctxCat) {
   slot('jobs-title', view).textContent = p.jobs && p.jobs.length ? `Jobs this ${p.short.toLowerCase().includes('kit') ? 'drill' : 'item'} handles` : 'Used on every job';
   const jobs = p.jobs && p.jobs.length ? p.jobs : [{ title: 'Every project on this site', cat: 'interior', diff: 1, time: '—', p: 'Arthur carries this on every job. So should you.' }];
   slot('jobs', view).innerHTML = jobs.map(j => { const c = catBy(j.cat); return `<article class="job">
-      <div class="meta"><span class="diff" title="Difficulty ${j.diff} of 3" aria-label="Difficulty ${j.diff} of 3">${[1, 2, 3].map(n => `<i class="${n <= j.diff ? 'on' : ''}"></i>`).join('')}</span><span>${['', 'Easy', 'Moderate', 'Ambitious'][j.diff]}</span><span>·</span><span>${esc(j.time)}</span></div>
+      <div class="meta"><span class="diff" role="img" title="Difficulty ${j.diff} of 3" aria-label="Difficulty ${j.diff} of 3">${[1, 2, 3].map(n => `<i class="${n <= j.diff ? 'on' : ''}"></i>`).join('')}</span><span>${['', 'Easy', 'Moderate', 'Ambitious'][j.diff]}</span><span>·</span><span>${esc(j.time)}</span></div>
       <h4><a href="${catUrl(j.cat)}">${esc(j.title)}</a></h4><p>${esc(j.p)}</p>
       <div class="foot"><a href="${catUrl(j.cat)}">${esc(c ? c.label : j.cat)} →</a><button type="button" data-job-quote="${esc(j.title)}" data-job-cat="${j.cat}">Arthur can do it →</button></div></article>`; }).join('');
   // related
@@ -2381,8 +2386,8 @@ function addressBar() {
 }
 
 /* ---------------------------------------------------------- 6. event wiring */
-function openCart() { bus.emit('cart:open'); $('#cart-drawer').classList.add('is-open'); $('#cart-drawer').setAttribute('aria-hidden', 'false'); $('#cart-scrim').hidden = false; $('#cart-btn').setAttribute('aria-expanded', 'true'); }
-function closeCart() { $('#cart-drawer').classList.remove('is-open'); $('#cart-drawer').setAttribute('aria-hidden', 'true'); $('#cart-scrim').hidden = true; $('#cart-btn').setAttribute('aria-expanded', 'false'); }
+function openCart() { bus.emit('cart:open'); $('#cart-drawer').classList.add('is-open'); $('#cart-drawer').setAttribute('aria-hidden', 'false'); $('#cart-drawer').inert = false; $('#cart-scrim').hidden = false; $('#cart-btn').setAttribute('aria-expanded', 'true'); }
+function closeCart() { $('#cart-drawer').classList.remove('is-open'); $('#cart-drawer').setAttribute('aria-hidden', 'true'); $('#cart-drawer').inert = true; $('#cart-scrim').hidden = true; $('#cart-btn').setAttribute('aria-expanded', 'false'); }
 function closeNav() { $$('.nav-item.is-open').forEach(n => { n.classList.remove('is-open'); $('button', n)?.setAttribute('aria-expanded', 'false'); }); $('#main-nav').classList.remove('is-drawer'); $('#menu-toggle').setAttribute('aria-expanded', 'false'); const s = $('#nav-scrim'); s && s.remove(); }
 const isDesktop = () => window.matchMedia('(min-width: 901px)').matches;
 

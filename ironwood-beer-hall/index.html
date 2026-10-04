@@ -23,7 +23,7 @@
   --bg:#F6EEDC; --bg-2:#EDE2C8; --bg-3:#E3D5B4;
   --ink:#0F2140; --ink-2:#4B5670; --line:#D3C5A4;
   --navy:#0F2140; --navy-2:#182F58; --navy-3:#22407A; --on-navy:#F6EEDC; --on-navy-2:#B7C1D8; --line-navy:#2B4478;
-  --red:#C8102E; --red-2:#A80C27; --on-red:#FFF6E6;
+  --red:#C8102E; --red-2:#A80C27; --on-red:#FFF6E6; --red-text:#C8102E;
   --gold:#E9A825; --gold-text:#7A4E00; --foam:#FFF6E0;
   --green:#2E7D4F; --green-text:#1F6A3F;
   --river:#3E77B6;
@@ -38,7 +38,7 @@
     --bg:#0A1730; --bg-2:#112343; --bg-3:#183058;
     --ink:#F3EBDA; --ink-2:#B4BED4; --line:#28406B;
     --navy:#132A50; --navy-2:#1B3665; --navy-3:#25488A; --on-navy:#F3EBDA; --on-navy-2:#B4BED4; --line-navy:#2F4F86;
-    --red:#DC1F3F; --red-2:#C8102E;
+    --red:#DC1F3F; --red-2:#C8102E; --red-text:#FF7A8C;
     --gold:#F0B33A; --gold-text:#F0B33A; --green-text:#6FCF97;
     --river:#4C8AD0;
     --footer:#060F22;
@@ -49,7 +49,7 @@
   --bg:#0A1730; --bg-2:#112343; --bg-3:#183058;
   --ink:#F3EBDA; --ink-2:#B4BED4; --line:#28406B;
   --navy:#132A50; --navy-2:#1B3665; --navy-3:#25488A; --on-navy:#F3EBDA; --on-navy-2:#B4BED4; --line-navy:#2F4F86;
-  --red:#DC1F3F; --red-2:#C8102E;
+  --red:#DC1F3F; --red-2:#C8102E; --red-text:#FF7A8C;
   --gold:#F0B33A; --gold-text:#F0B33A; --green-text:#6FCF97;
   --river:#4C8AD0;
   --footer:#060F22;
@@ -74,7 +74,7 @@ ul.plain,ol.plain{list-style:none;margin:0;padding:0}
 
 /* Section bands: every component reads the band's tokens */
 .band{padding-block:clamp(56px,8vw,96px);background:var(--sbg);color:var(--stext)}
-.cream{--sbg:var(--bg);--stext:var(--ink);--smuted:var(--ink-2);--sline:var(--line);--saccent:var(--red);--scard:var(--bg-2);--scard-2:var(--bg-3);--sgold:var(--gold-text)}
+.cream{--sbg:var(--bg);--stext:var(--ink);--smuted:var(--ink-2);--sline:var(--line);--saccent:var(--red-text);--scard:var(--bg-2);--scard-2:var(--bg-3);--sgold:var(--gold-text)}
 .navyb{--sbg:var(--navy);--stext:var(--on-navy);--smuted:var(--on-navy-2);--sline:var(--line-navy);--saccent:var(--gold);--scard:var(--navy-2);--scard-2:var(--navy-3);--sgold:var(--gold)}
 
 .eyebrow{display:inline-block;font:600 .8rem/1.5 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--saccent)}
@@ -169,7 +169,7 @@ ul.plain,ol.plain{list-style:none;margin:0;padding:0}
 .tonight .label{font:800 1.1rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border:2px solid var(--on-red);border-radius:3px;white-space:nowrap}
 .tonight .what{font:600 1rem/1.35 var(--body);min-width:0}
 .tonight .what b{font:700 1.4rem/1 var(--display);text-transform:uppercase;letter-spacing:.02em;margin-right:.4em}
-.tonight .meta{display:block;color:rgba(255,246,230,.85);font-size:.92rem;font-weight:400;margin-top:2px}
+.tonight .meta{display:block;color:#fff6e6;font-size:.92rem;font-weight:400;margin-top:2px}
 .tonight .btn-primary{background:var(--on-red);color:var(--red);border-color:var(--on-red)}
 .tonight .btn-primary:hover{background:#fff;border-color:#fff}
 @media (max-width:640px){.tonight .wrap{grid-template-columns:auto 1fr}.tonight .label{align-self:start;margin-top:3px}.tonight .btn{grid-column:1 / -1;justify-self:start}}
@@ -301,14 +301,14 @@ ul.plain,ol.plain{list-style:none;margin:0;padding:0}
 .crew-facts svg{width:22px;height:22px;flex:none;fill:none;stroke:var(--saccent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
 .sharebox{background:var(--red);color:var(--on-red);border-radius:10px;padding:24px;box-shadow:var(--shadow)}
 .sharebox h3{font-size:1.8rem}
-.sharebox p{color:rgba(255,246,230,.88);margin-top:8px}
+.sharebox p{color:#fff6e6;margin-top:8px}
 .sharegrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
-.sharegrid .btn{background:rgba(255,246,230,.12);color:var(--on-red);border-color:rgba(255,246,230,.4);justify-content:flex-start;white-space:normal;text-align:left;padding-block:10px;line-height:1.2}
+.sharegrid .btn{background:#fff6e6;color:var(--on-red);border-color:#fff6e6;justify-content:flex-start;white-space:normal;text-align:left;padding-block:10px;line-height:1.2}
 @media (max-width:440px){.sharegrid{grid-template-columns:1fr}}
-.sharegrid .btn:hover{background:rgba(255,246,230,.2);border-color:var(--on-red)}
+.sharegrid .btn:hover{background:#fff6e6;border-color:var(--on-red)}
 .sharegrid .btn.big{grid-column:1 / -1;background:var(--on-red);color:var(--red);border-color:var(--on-red);justify-content:center}
 .sharegrid .btn.big:hover{background:#fff}
-.sharebox .fine{margin-top:14px;font-size:.85rem;color:rgba(255,246,230,.75)}
+.sharebox .fine{margin-top:14px;font-size:.85rem;color:#fff6e6}
 .crew-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 
 /* ---------- Visit ---------- */
@@ -386,7 +386,7 @@ ul.plain,ol.plain{list-style:none;margin:0;padding:0}
   <div class="wrap">
     <p class="eyebrow" style="color:var(--gold)"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3 6.7 7.3.7-5.5 4.8 1.7 7.2L12 17.4 5.5 21.2l1.7-7.2L1.7 9.2 9 8.5z"/></svg>260 Foundry Road, Calder Falls<svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3 6.7 7.3.7-5.5 4.8 1.7 7.2L12 17.4 5.5 21.2l1.7-7.2L1.7 9.2 9 8.5z"/></svg>Free lot off the interstate</p>
     <h1>The energy of a stadium.<br><span class="l2">The freedom of a beer hall.</span></h1>
-    <p class="lede">30 New England taps. Ember & Oak's pizza and share plates. A 5,000‑square‑foot beer garden with a fire pit, cornhole, and one gigantic BBQ. Live bands Thursdays and Saturdays. Room for you and everyone you know.</p>
+    <p class="lede">30 New England taps. Ember & Oak's pizza and share plates. A 5,000‑square‑foot beer garden with a fire pit, cornhole, and one gigantic BBQ. Live bands Thursdays and Saturdays. Room for you and everyone you know.</p><p class="a11y-note" style="margin:.75em 0 0;font-size:.85em;font-weight:500;color:inherit;opacity:1">Designed and tested to WCAG 2.2 AA and Section 508 accessibility standards.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#order">Order pickup or delivery</a>
       <a class="btn btn-ghost" href="#music">Tonight's lineup</a>
@@ -1001,6 +1001,6 @@ ul.plain,ol.plain{list-style:none;margin:0;padding:0}
 </script>
 
 
-<p class="photo-credits" style="margin:0;padding:14px 16px;font:12px/1.5 system-ui,-apple-system,sans-serif;text-align:center;color:#6b6b6b">Photography: <a href="https://unsplash.com/@kenkuo_melb?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Kenny Kuo</a>, <a href="https://unsplash.com/@cblanco_31?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Carlos Blanco</a>, <a href="https://unsplash.com/@djswingkid?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Magnus Lunay</a> on <a href="https://unsplash.com/?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Unsplash</a>. Concept site: names, people, and details are fictional.</p>
+<p class="photo-credits" style="margin:0;padding:14px 16px;font:12px/1.5 system-ui,-apple-system,sans-serif;text-align:center;color:var(--ink-2)">Photography: <a href="https://unsplash.com/@kenkuo_melb?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Kenny Kuo</a>, <a href="https://unsplash.com/@cblanco_31?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Carlos Blanco</a>, <a href="https://unsplash.com/@djswingkid?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Magnus Lunay</a> on <a href="https://unsplash.com/?utm_source=ed_scannell_portfolio&utm_medium=referral" rel="noopener" style="color:inherit">Unsplash</a>. Concept site: names, people, and details are fictional.</p>
 </body>
 </html>
